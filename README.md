@@ -1,2 +1,2 @@
-# ieee-rvce.github.io
+# IEEE-RVCE.github.io
 Development site of only frontend
