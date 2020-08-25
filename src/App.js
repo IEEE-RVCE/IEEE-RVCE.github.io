@@ -1,12 +1,27 @@
 import React from 'react';
-import './App.css';
+import {createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
+import {CssBaseline} from '@material-ui/core';
 
-function App() {
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+export default function App() {
+  const theme = createMuiTheme({
+    typography: {
+      fontFamily: 'Open Sans, sans-serif',
+    },
+    root: {
+      backgroundColor: "#fff",
+    }
+  });
+  
   return (
-    <div>
-      <p>Hello there!</p>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className={theme.root}>
+        <CssBaseline />
+        <Header />
+        <Footer />
+      </div>  
+    </ThemeProvider>
   );
 }
-
-export default App;
