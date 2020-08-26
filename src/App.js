@@ -1,9 +1,10 @@
 import React from 'react';
 import {createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
 import {CssBaseline} from '@material-ui/core';
+import {Route} from 'react-router-dom';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
 
 export default function App() {
   const theme = createMuiTheme({
@@ -19,8 +20,12 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <div className={theme.root}>
         <CssBaseline />
-        <Header />
-        <Footer />
+        <Route exact path='/'>
+          <HomePage/>
+        </Route>
+        <Route path='/about'>
+          <AboutPage/>
+        </Route>
       </div>  
     </ThemeProvider>
   );

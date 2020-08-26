@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import {makeStyles} from '@material-ui/core/styles';
 import {AppBar, Toolbar, Button, Container, useScrollTrigger, IconButton, List, ListItem, ListItemText, Drawer} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
+import {Link} from 'react-router-dom';
 
 // All the styling information for the whole header component is in here
 const useStyles = makeStyles((theme) => ({
@@ -34,6 +35,11 @@ const useStyles = makeStyles((theme) => ({
             display: 'none',
         },
     },
+    // To remove hyperlink from each Nav
+    nav: {
+        textDecoration: 'none',
+        color: '#00629B',
+    },
     // Don't display menu button when on a not-small screen
     menuButton: {
         marginRight: theme.spacing(2),
@@ -53,7 +59,7 @@ export default function Header(props) {
     // Edit this list and the navs shall change accordingly
     const navs = [
         {name: "Home", link: '/'},
-        {name: "Example1", link: '/'},
+        {name: "About Us", link: '/about'},
         {name: "Example2", link: '/'},
         {name: "Example3", link: '/'},
         {name: "Example4", link: '/'},
@@ -80,9 +86,13 @@ export default function Header(props) {
     };
 
     // Renders all the navigation buttons by traversing array
-    const Buttons = (props) => {
+    const Buttons = () => {
         let buttons = navs.map((nav) => {
-            return <Button color="inherit" className={props.button} href={nav.link}>{nav.name}</Button>
+            return (
+                <Link to={nav.link} className={classes.nav}>
+                    <Button color="inherit" className={classes.button}>{nav.name}</Button>
+                </Link>
+            )
         })
         return buttons
     }
@@ -104,7 +114,9 @@ export default function Header(props) {
           <List>
             {navs.map((nav) => (
               <ListItem button key={nav.name}>
-                  <ListItemText primary={nav.name} />
+                    <Link to={nav.link} className={classes.nav}>
+                        <ListItemText primary={nav.name}/>
+                    </Link>      
               </ListItem>
             ))}
           </List>
