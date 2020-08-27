@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Container, Box, Grid } from '@material-ui/core';
-// import { loremIpsum } from 'react-lorem-ipsum';
 import { LoremIpsum } from 'lorem-ipsum';
 const lorem = new LoremIpsum({
     sentencesPerParagraph: {
