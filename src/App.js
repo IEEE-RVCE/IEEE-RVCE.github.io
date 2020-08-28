@@ -5,6 +5,12 @@ import {Route} from 'react-router-dom';
 
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
+import MembershipPage from './pages/MembershipPage';
+import DevelopersPage from './pages/DevelopersPage';
+import SocietyPage from './pages/SocietyPage';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Sitecrumb from './components/Sitecrumb';
 
 export default function App() {
   const theme = createMuiTheme({
@@ -20,12 +26,26 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <div className={theme.root}>
         <CssBaseline />
+        <Header/>
+        <Sitecrumb/>
+        
         <Route exact path='/'>
           <HomePage/>
         </Route>
         <Route path='/about'>
           <AboutPage/>
         </Route>
+        <Route path='/membership'>
+          <MembershipPage/>
+        </Route>
+        <Route path='/devs'>
+          <DevelopersPage/>
+        </Route>
+        <Route path='/society'>
+          <SocietyPage/>
+        </Route>
+
+        <Footer/>
       </div>  
     </ThemeProvider>
   );

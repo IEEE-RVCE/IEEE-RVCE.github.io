@@ -1,13 +1,9 @@
 import React from 'react';
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-
 export default function HomePage(props) {
     return(
         <React.Fragment>
-            <Header />
-            <Footer />
+            <h1 style={{marginLeft: "45%"}}>Home page works</h1>
         </React.Fragment>
     )
 }
