@@ -31,9 +31,10 @@ const useStyles = makeStyles((theme) => ({
     },
     // Don't display the navigation buttons if on a small screen
     navs: {
-        [theme.breakpoints.down('sm')]: {
-            display: 'none',
+        [theme.breakpoints.up('md')]: {
+            display: 'block',
         },
+        display: 'none',
     },
     // To remove hyperlink from each Nav
     nav: {
@@ -43,9 +44,10 @@ const useStyles = makeStyles((theme) => ({
     // Don't display menu button when on a not-small screen
     menuButton: {
         marginRight: theme.spacing(2),
-        [theme.breakpoints.up('sm')]: {
+        [theme.breakpoints.up('md')]: {
           display: 'none',
         },
+        display: 'block',
     },
 }))
 
