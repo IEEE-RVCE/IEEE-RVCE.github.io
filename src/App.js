@@ -5,7 +5,7 @@ import {Route} from 'react-router-dom';
 
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
-
+import SignInPage from './pages/SignInPage';
 export default function App() {
   const theme = createMuiTheme({
     typography: {
@@ -25,6 +25,9 @@ export default function App() {
         </Route>
         <Route path='/about'>
           <AboutPage/>
+        </Route>
+        <Route path='/signin'>
+          <SignInPage/>
         </Route>
       </div>  
     </ThemeProvider>
