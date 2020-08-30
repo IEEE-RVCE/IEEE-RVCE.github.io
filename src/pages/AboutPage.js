@@ -1,12 +1,9 @@
 import React from 'react';
 
-import Header from '../components/Header';
-
-// Example page for now only containing header
 export default function AboutPage(props) {
     return(
         <React.Fragment>
-            <Header/>
+            <h1 style={{marginLeft: "45%"}}>About page works</h1>
         </React.Fragment>
     )
 }

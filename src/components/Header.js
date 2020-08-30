@@ -89,7 +89,7 @@ export default function Header(props) {
     const Buttons = () => {
         let buttons = navs.map((nav) => {
             return (
-                <Link to={nav.link} className={classes.nav}>
+                <Link to={nav.link} className={classes.nav} key={nav.name+nav.link}>
                     <Button color="inherit" className={classes.button}>{nav.name}</Button>
                 </Link>
             )
