@@ -2,9 +2,9 @@ import React from 'react';
 import {createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
 import {CssBaseline} from '@material-ui/core';
 import {Route} from 'react-router-dom';
-
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
+import SignInPage from './pages/SignInPage';
 import MembershipPage from './pages/MembershipPage';
 import DevelopersPage from './pages/DevelopersPage';
 import SocietyPage from './pages/SocietyPage';
@@ -34,6 +34,9 @@ export default function App() {
         </Route>
         <Route path='/about'>
           <AboutPage/>
+        </Route>
+        <Route path='/signin'>
+          <SignInPage/>
         </Route>
         <Route path='/membership'>
           <MembershipPage/>

@@ -62,7 +62,7 @@ export default function Header(props) {
     const navs = [
         {name: "Home", link: '/'},
         {name: "About Us", link: '/about'},
-        {name: "Example2", link: '/'},
+        {name: "SignIn", link: '/signin'},
         {name: "Example3", link: '/'},
         {name: "Example4", link: '/'},
     ]
