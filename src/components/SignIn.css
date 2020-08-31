@@ -1,0 +1,6 @@
+textarea.no-outline:focus, input.no-outline:focus{
+    outline: none;
+}
+input,textarea{
+    transition: border .5s ease;
+}

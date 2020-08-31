@@ -1,13 +1,24 @@
 import React from 'react';
+// import { makeStyles } from '@material-ui/core/styles';
 import 'tachyons';
+import './SignIn.css';
+
+// const useStyles = makeStyles(theme => ({
+//   "no-outline": {
+//     "transition": "border .5s ease",
+//     "&:focus":{
+//       "outline": null
+//     }
+//   }
+// }));
 
 
 class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      signInEmail: '',
-      signInPassword: '',
+      ieeeID: '',
+      pwd: '',
       ieeeIDValid: true,
       passValid: true
     }
@@ -39,7 +50,7 @@ class SignIn extends React.Component {
    * @returns {string}
    */
   getInputClasses(state) {
-    let base = 'pa2 input-reset ba bg-transparent w-100';
+    let base = 'no-outline pa2 input-reset ba bg-transparent w-100';
     if (!state) {
       base += ' b--red';
     }
@@ -49,16 +60,16 @@ class SignIn extends React.Component {
 
 
   onIDChange = (event) => {
-    console.warn(this.validateID(event.target.value)); 
+    console.warn(this.validateID(event.target.value));
     this.setState({
-      signInEmail: event.target.value,
+      ieeeID: event.target.value,
       ieeeIDValid: this.validateID(event.target.value)
     })
   }
 
   onPasswordChange = (event) => {
     this.setState({
-      signInPassword: event.target.value,
+      pwd: event.target.value,
       passValid: this.validatePassword(event.target.value)
     })
 
@@ -72,14 +83,14 @@ class SignIn extends React.Component {
     // Put some assertion code to submit only if 
     // ids & pass are valid
     fetch('http://localhost:3000/api/auth', {
-      method: 'get',
+      method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        email: this.state.signInEmail,
-        password: this.state.signInPassword
+        uid: this.state.ieeeID,
+        pwd: this.state.pwd
       })
     })
-      .then(response => response.json(),(rejectionreason)=>console.error)
+      .then(response => response.json(), (rejectionreason) => console.error)
       .then(user => {
         if (user.id) {
           // To set the state of various state variables upon getting the response
@@ -98,12 +109,11 @@ class SignIn extends React.Component {
             <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
               <legend className="f1 fw6 ph0 mh0">Sign In</legend>
               <div className="mt3">
-                <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
+                <label className="db fw6 lh-copy f6" htmlFor="ieeeID">IEEE ID</label>
                 <input
                   className={this.getInputClasses(this.state.ieeeIDValid)}
-                  type="email"
-                  name="email-address"
-                  id="email-address"
+                  type="number"
+                  name="ieeeID"
                   placeholder="IEEE ID"
                   onChange={this.onIDChange}
                 />
@@ -114,7 +124,6 @@ class SignIn extends React.Component {
                   className={this.getInputClasses(this.state.passValid)}
                   type="password"
                   name="password"
-                  id="password"
                   placeholder="Password"
                   onChange={this.onPasswordChange}
                 />
