@@ -1,0 +1,27 @@
+.right-menu{
+    position: relative;
+    display: inline-block;
+    border: '1px solid #00629B';
+    color: '#00629B';
+}
+.drop-menu{
+    position: absolute;
+    display: none;
+    min-width: 150px;
+    z-index: 1;
+    background-color: azure;
+    font-size: large;
+}
+.drop-menu a{
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+.drop-menu a:hover{
+    text-decoration: underline;
+    background-color: #00629B;
+    color: aliceblue;
+}
+.right-menu:hover .drop-menu{
+    display: block;
+}
