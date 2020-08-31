@@ -122,7 +122,7 @@ export default function Header(props) {
                         (nav.name === "Societies") && (
                         <div> */}
                         <div className="right-menu">
-                        <Button color="inherit" className={classes.button} onMouseOver={handleClick}>{nav.name}</Button>
+                        <Button color="inherit" className={classes.button} onMouseEnter={handleClick}>{nav.name}</Button>
                         <div className="drop-menu">
                             <MenuItems/>
                         </div>
