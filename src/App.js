@@ -11,6 +11,7 @@ import SocietyPage from './pages/SocietyPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Sitecrumb from './components/Sitecrumb';
+import CalendarPage from './pages/CalendarPage';
 
 export default function App() {
   const theme = createMuiTheme({
@@ -35,7 +36,7 @@ export default function App() {
         <Route path='/about'>
           <AboutPage/>
         </Route>
-        <Route path='/signin'>
+        <Route path='/login'>
           <SignInPage/>
         </Route>
         <Route path='/membership'>
@@ -46,6 +47,9 @@ export default function App() {
         </Route>
         <Route path='/society'>
           <SocietyPage/>
+        </Route>
+        <Route path='/calendar'>
+          <CalendarPage/>
         </Route>
 
         <Footer/>

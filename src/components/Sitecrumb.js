@@ -11,6 +11,7 @@ export default function Sitecrumb() {
         '/about': "About us",
         '/devs': "Developers",
         '/membership': "Membership",
+        '/login': "Login",
     }
 
     return(
