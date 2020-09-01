@@ -10,7 +10,6 @@ import DevelopersPage from './pages/DevelopersPage';
 import SocietyPage from './pages/SocietyPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Sitecrumb from './components/Sitecrumb';
 import CalendarPage from './pages/CalendarPage';
 
 export default function App() {
@@ -20,7 +19,7 @@ export default function App() {
     },
     root: {
       backgroundColor: "#fff",
-    }
+    },
   });
   
   return (
@@ -28,7 +27,7 @@ export default function App() {
       <div className={theme.root}>
         <CssBaseline />
         <Header/>
-        <Sitecrumb/>
+        <br/><br/>
         
         <Route exact path='/'>
           <HomePage/>

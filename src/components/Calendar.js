@@ -22,20 +22,35 @@ export default class EventsCalendar extends React.Component {
   }
 
   componentDidMount() {
+    this.getEvents();
     window.onresize = this.setDims;
   }
 
   getEvents = () => {
       // Code that gets events from backend
-      this.state.setState({
+      this.setState({
           eventsList: [
             {
-                title: "Test",
-                start: new Date("August 30, 2020 22:00:00"),
-                end: new Date("August 30, 2020 23:00:00"),
+                title: "Event 1",
+                start: new Date("September 2, 2020 16:00:00"),
+                end: new Date("September 2, 2020 17:00:00"),
                 allDay: false,
                 resource: false
             },
+            {
+              title: "Event 2",
+              start: new Date("September 2, 2020 22:00:00"),
+              end: new Date("September 2, 2020 23:00:00"),
+              allDay: false,
+              resource: false
+          },
+          {
+            title: "Event 3",
+            start: new Date("September 3, 2020 09:00:00"),
+            end: new Date("September 3, 2020 10:00:00"),
+            allDay: false,
+            resource: false
+        },
         ]
         }
       )
@@ -48,13 +63,21 @@ export default class EventsCalendar extends React.Component {
     });
   };
 
+  static defaultProps = {
+    defaultView: 'month',
+    toolbar: true,
+    maxHeight: "100%",
+  }
+
   render() {
     return (
       <div
         style={{
           height: this.state.height * (this.state.proportions.height / 100),
           width: this.state.width * (this.state.proportions.width / 100),
-          margin: "auto"
+          margin: "auto",
+          maxWidth: this.props.maxHeight,
+          paddingBottom: 20,
         }}
       >
         <Calendar
