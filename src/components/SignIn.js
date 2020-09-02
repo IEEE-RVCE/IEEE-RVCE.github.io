@@ -19,6 +19,9 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(8)
   },
+  button: {
+    color: "#00629B",
+  }
 }));
 
 export default function Signin() {
@@ -141,7 +144,7 @@ export default function Signin() {
         </div>
         <br />
         <div>
-          <Button variant="contained" color="primary" onSubmit={onSubmitSignIn}>
+          <Button variant="outlined" color="inherit" className={classes.button} onSubmit={onSubmitSignIn}>
             Submit
           </Button>
         </div>
