@@ -1,146 +1,151 @@
-import React from 'react';
-// import { makeStyles } from '@material-ui/core/styles';
-import 'tachyons';
-import './SignIn.css';
+import React from "react";
+import {
+  Paper,
+  TextField,
+  Container,
+  Typography,
+  InputAdornment,
+  IconButton,
+  Button
+} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import Visibility from "@material-ui/icons/Visibility";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
 
-// const useStyles = makeStyles(theme => ({
-//   "no-outline": {
-//     "transition": "border .5s ease",
-//     "&:focus":{
-//       "outline": null
-//     }
-//   }
-// }));
+const useStyles = makeStyles((theme) => ({
+  root: {
+    padding: theme.spacing(4)
+  },
+  paper: {
+    padding: theme.spacing(8)
+  },
+}));
 
+export default function Signin() {
+  const classes = useStyles();
+  const [values, setValues] = React.useState({
+    ieeeid: "",
+    password: "",
+    ieeeidValid: true,
+    passwordValid: true,
+    showPassword: false
+  });
 
-class SignIn extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      ieeeID: '',
-      pwd: '',
-      ieeeIDValid: true,
-      passValid: true
+  function validateValues(prop) {
+    let re = "";
+    if (prop === "ieeeid") {
+      re = /\d{10}/;
+      return re.test(String(prop).toLowerCase());
+    } else {
+      re = /.{7}.+/;
+      return re.test(String(prop).toLowerCase());
     }
   }
 
-  /**
-   * Validate an email
-   * @param {string} ieeeid 
-   * @returns {boolean}
-   */
-  validateID(ieeeid) {
-    const re = /\d{10}/;
-    return re.test(String(ieeeid).toLowerCase());
-  }
+  // Handle changes on text and updates value
+  const handleChange = (prop) => (event) => {
+    setValues({
+      ...values,
+      [prop]: event.target.value,
+      [prop + "Valid"]: validateValues(event.target.value)
+    });
+  };
 
   /**
-   * Validate a password
-   * @param {string} password 
-   * @param {boolean}
+   *
+   * @param {React.MouseEvent<HTMLInputElement, MouseEvent>} event
    */
-  validatePassword(password) {
-    const re = /.{7}.+/;
-    return re.test(String(password).toLowerCase());
-  }
-
-  /**
-   * Get classes for email
-   * @param {boolean} state
-   * @returns {string}
-   */
-  getInputClasses(state) {
-    let base = 'no-outline pa2 input-reset ba bg-transparent w-100';
-    if (!state) {
-      base += ' b--red';
-    }
-    return base;
-  }
-
-
-
-  onIDChange = (event) => {
-    console.warn(this.validateID(event.target.value));
-    this.setState({
-      ieeeID: event.target.value,
-      ieeeIDValid: this.validateID(event.target.value)
-    })
-  }
-
-  onPasswordChange = (event) => {
-    this.setState({
-      pwd: event.target.value,
-      passValid: this.validatePassword(event.target.value)
-    })
-
-  }
-
-  /**
-   * 
-   * @param {React.MouseEvent<HTMLInputElement, MouseEvent>} event 
-   */
-  onSubmitSignIn = (event) => {
-    // Put some assertion code to submit only if 
+  const onSubmitSignIn = (event) => {
+    // Put some assertion code to submit only if
     // ids & pass are valid
-    fetch('http://localhost:3000/api/auth', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
+    fetch("http://localhost:3000/api/auth", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         uid: this.state.ieeeID,
         pwd: this.state.pwd
       })
     })
-      .then(response => response.json(), (rejectionreason) => console.error)
-      .then(user => {
+      .then(
+        (response) => response.json(),
+        (rejectionreason) => console.error
+      )
+      .then((user) => {
         if (user.id) {
           // To set the state of various state variables upon getting the response
           // this.state.loadUser(user)
-          // this.props.onRouteChange('home'); 
+          // this.props.onRouteChange('home');
         }
-      })
-  }
+      });
+  };
 
-  render() {
-    const { onRouteChange } = this.props; //for later use
-    return (
-      <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
-        <main className="pa4 black-80">
-          <div className="measure">
-            <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-              <legend className="f1 fw6 ph0 mh0">Sign In</legend>
-              <div className="mt3">
-                <label className="db fw6 lh-copy f6" htmlFor="ieeeID">IEEE ID</label>
-                <input
-                  className={this.getInputClasses(this.state.ieeeIDValid)}
-                  type="number"
-                  name="ieeeID"
-                  placeholder="IEEE ID"
-                  onChange={this.onIDChange}
-                />
-              </div>
-              <div className="mv3">
-                <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
-                <input
-                  className={this.getInputClasses(this.state.passValid)}
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  onChange={this.onPasswordChange}
-                />
-              </div>
-            </fieldset>
-            <div className="submitContainer">
-              <input
-                onClick={this.onSubmitSignIn}
-                className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
-                type="submit"
-                value="Sign in"
-              />
-            </div>
-          </div>
-        </main>
-      </article>
-    );
-  }
+  // Handling show and hide password
+  const handleClickShowPassword = () => {
+    setValues({ ...values, showPassword: !values.showPassword });
+  };
+
+  // So that the usual mouse down activity doesn't happen
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+
+  return (
+    <Container maxWidth="sm" className={classes.root}>
+      <Paper className={classes.paper}>
+        <Typography variant="h4">Sign in</Typography>
+        <br />
+        <div>
+          <TextField
+            id="ieeeid"
+            label="IEEE ID"
+            type="number"
+            placeholder="Enter your IEEE ID"
+            variant="outlined"
+            fullWidth
+            error={!values.ieeeidValid}
+            onChange={handleChange("ieeeid")}
+            InputLabelProps={{
+              shrink: true
+            }}
+          />
+        </div>
+        <br />
+        <div>
+          <TextField
+            id="standard-adornment-password"
+            label="Password"
+            placeholder="Enter your password"
+            error={!values.passwordValid}
+            InputLabelProps={{
+              shrink: true
+            }}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                  >
+                    {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                  </IconButton>
+                </InputAdornment>
+              )
+            }}
+            fullWidth
+            type={values.showPassword ? "text" : "password"}
+            value={values.password}
+            variant="outlined"
+            onChange={handleChange("password")}
+          />
+        </div>
+        <br />
+        <div>
+          <Button variant="contained" color="primary" onSubmit={onSubmitSignIn}>
+            Submit
+          </Button>
+        </div>
+      </Paper>
+    </Container>
+  );
 }
-export default SignIn;
