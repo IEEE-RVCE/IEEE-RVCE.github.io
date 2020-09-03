@@ -11,6 +11,7 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,14 +35,14 @@ export default function Signin() {
     showPassword: false
   });
 
-  function validateValues(prop) {
-    let re = "";
+  function validateValues(prop, value) {
+    console.log(prop)
     if (prop === "ieeeid") {
-      re = /\d{10}/;
-      return re.test(String(prop).toLowerCase());
+      const re = /^\d{10}$/;
+      return re.test(String(value).toLowerCase());
     } else {
-      re = /.{7}.+/;
-      return re.test(String(prop).toLowerCase());
+      const re = /^.{8,}$/;
+      return re.test(String(value).toLowerCase());
     }
   }
 
@@ -50,7 +51,7 @@ export default function Signin() {
     setValues({
       ...values,
       [prop]: event.target.value,
-      [prop + "Valid"]: validateValues(event.target.value)
+      [prop + "Valid"]: validateValues(prop, event.target.value)
     });
   };
 
@@ -58,28 +59,24 @@ export default function Signin() {
    *
    * @param {React.MouseEvent<HTMLInputElement, MouseEvent>} event
    */
-  const onSubmitSignIn = (event) => {
-    // Put some assertion code to submit only if
-    // ids & pass are valid
-    fetch("http://localhost:3000/api/auth", {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        uid: this.state.ieeeID,
-        pwd: this.state.pwd
-      })
+  const onSubmitSignIn = async (event) => {
+    await axios.post("http://localhost:3000/api/auth", {
+      uid: values.ieeeid,
+      pwd: values.password
     })
-      .then(
-        (response) => response.json(),
-        (rejectionreason) => console.error
-      )
-      .then((user) => {
-        if (user.id) {
-          // To set the state of various state variables upon getting the response
-          // this.state.loadUser(user)
-          // this.props.onRouteChange('home');
-        }
-      });
+    .then(res => {
+      if(res.data.ok === true && res.data.auth === true)
+      {
+        localStorage.setItem('atoken', res.data.atoken)
+      }
+      else {
+        setValues({...values, ieeeidValid: false, passwordValid: false})
+        throw console.error('Failed on authentication');
+      }
+    })
+    .catch(err => {
+      console.error(`Axios request failed: ${err}`)
+    })
   };
 
   // Handling show and hide password
