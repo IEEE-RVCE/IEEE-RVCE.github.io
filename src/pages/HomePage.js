@@ -20,7 +20,7 @@ const lorem = new LoremIpsum({
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        padding: theme.spacing(4),
+        padding: theme.spacing(8),
     },
     paper: {
         padding: theme.spacing(4),

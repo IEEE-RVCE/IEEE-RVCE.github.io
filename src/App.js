@@ -27,7 +27,6 @@ export default function App() {
       <div className={theme.root}>
         <CssBaseline />
         <Header/>
-        <br/><br/>
         
         <Route exact path='/'>
           <HomePage/>
