@@ -2,9 +2,9 @@ import React from 'react';
 import {Container, Grid, Typography, Paper} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import {Link} from 'react-router-dom';
-import HomeCarousel from '../components/Header'
-import Avatar from '../components/Avatar'
+import HomeCarousel from '../components/Carousel'
 import EventsCalendar from '../components/Calendar';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 import { LoremIpsum } from 'lorem-ipsum';
 const lorem = new LoremIpsum({
@@ -31,6 +31,10 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
             textDecoration: 'underline',
         }
+    },
+    carousel: {
+        margin: "auto",
+        paddingTop: theme.spacing(4),
     }
 }))
 
@@ -39,12 +43,10 @@ export default function HomePage(props) {
 
     return(
         <React.Fragment>
-            <Container maxWidth='xl' className={classes.root}>
+            <Container maxWidth='lg' className={classes.carousel}>
                 <HomeCarousel images={carouselImages} />
             </Container>
-            <br/>
-            <Container maxWidth='md' className={classes.root}>
-                
+            <Container maxWidth='md' className={classes.root}>   
                 <Paper className={classes.paper}>
                     <Grid>
                         <Typography variant='h3'>
@@ -72,36 +74,6 @@ export default function HomePage(props) {
                 </Paper>
                 <br/>
                 <Paper className={classes.paper}>
-                    <Grid container spacing={2} justify= 'space evenly'>
-                        <Grid item xs>
-                            <Avatar/>
-                        </Grid>
-                        <Grid item xs>
-                            <Avatar/>
-                        </Grid>
-                        <Grid item xs>
-                            <Avatar/>
-                        </Grid>
-                        <Grid item xs>
-                            <Avatar/>
-                        </Grid>
-                    </Grid>
-                    <Grid container spacing={2} justify= 'space evenly'>
-                        <Grid item xs>
-                            <Avatar/>
-                        </Grid>
-                        <Grid item xs>
-                            <Avatar/>
-                        </Grid>
-                        <Grid item xs>
-                            <Avatar/>
-                        </Grid>
-                        {/* <Grid item xs>
-                            <Avatar/>
-                        </Grid> */}
-                    </Grid>
-                </Paper>
-                <Paper className={classes.paper}>
                     <Typography variant='h3'>
                         Upcoming Events
                     </Typography>
@@ -120,15 +92,15 @@ export default function HomePage(props) {
 
 const carouselImages = [
     {
-      src: "ieee-rvce.github.io/public/assetsimages/session1.png",
+      src: "/assets/images/session1.png",
       label: "session1"
     },
     {
-      src: "ieee-rvce.github.io/public/assetsimages/session2.png",
+      src: "/assets/images/session2.png",
       label: "session2"
     },
     {
-      src: "ieee-rvce.github.io/public/assetsimages/session3.png",
+      src: "/assets/images/session3.jpg",
       label: "session3"
     }
-  ];
+];
