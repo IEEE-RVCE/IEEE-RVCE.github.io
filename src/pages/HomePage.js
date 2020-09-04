@@ -1,9 +1,9 @@
 import React from 'react';
-
 import {Container, Grid, Typography, Paper} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import {Link} from 'react-router-dom';
-
+import HomeCarousel from '../components/Header'
+import Avatar from '../components/Avatar'
 import EventsCalendar from '../components/Calendar';
 
 import { LoremIpsum } from 'lorem-ipsum';
@@ -39,7 +39,12 @@ export default function HomePage(props) {
 
     return(
         <React.Fragment>
+            <Container maxWidth='xl' className={classes.root}>
+                <HomeCarousel images={carouselImages} />
+            </Container>
+            <br/>
             <Container maxWidth='md' className={classes.root}>
+                
                 <Paper className={classes.paper}>
                     <Grid>
                         <Typography variant='h3'>
@@ -67,6 +72,36 @@ export default function HomePage(props) {
                 </Paper>
                 <br/>
                 <Paper className={classes.paper}>
+                    <Grid container spacing={2} justify= 'space evenly'>
+                        <Grid item xs>
+                            <Avatar/>
+                        </Grid>
+                        <Grid item xs>
+                            <Avatar/>
+                        </Grid>
+                        <Grid item xs>
+                            <Avatar/>
+                        </Grid>
+                        <Grid item xs>
+                            <Avatar/>
+                        </Grid>
+                    </Grid>
+                    <Grid container spacing={2} justify= 'space evenly'>
+                        <Grid item xs>
+                            <Avatar/>
+                        </Grid>
+                        <Grid item xs>
+                            <Avatar/>
+                        </Grid>
+                        <Grid item xs>
+                            <Avatar/>
+                        </Grid>
+                        {/* <Grid item xs>
+                            <Avatar/>
+                        </Grid> */}
+                    </Grid>
+                </Paper>
+                <Paper className={classes.paper}>
                     <Typography variant='h3'>
                         Upcoming Events
                     </Typography>
@@ -81,3 +116,19 @@ export default function HomePage(props) {
         </React.Fragment>
     )
 }
+
+
+const carouselImages = [
+    {
+      src: "ieee-rvce.github.io/public/assetsimages/session1.png",
+      label: "session1"
+    },
+    {
+      src: "ieee-rvce.github.io/public/assetsimages/session2.png",
+      label: "session2"
+    },
+    {
+      src: "ieee-rvce.github.io/public/assetsimages/session3.png",
+      label: "session3"
+    }
+  ];

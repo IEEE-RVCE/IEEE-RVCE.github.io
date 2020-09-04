@@ -6,11 +6,12 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
-    "moment": "^2.27.0",
     "lorem-ipsum": "^2.0.3",
+    "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-big-calendar": "^0.27.0",
     "react-dom": "^16.13.1",
+    "react-responsive-carousel": "^3.2.9",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "tachyons": "^4.12.0"
