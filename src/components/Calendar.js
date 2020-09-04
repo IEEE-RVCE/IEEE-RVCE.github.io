@@ -78,9 +78,11 @@ export default class EventsCalendar extends React.Component {
           margin: "auto",
           maxWidth: this.props.maxHeight,
           paddingBottom: 20,
+          paddingTop: 40,
         }}
       >
         <Calendar
+          popup
           localizer={localizer}
           events={this.state.eventsList}
           defaultView={this.props.defaultView}

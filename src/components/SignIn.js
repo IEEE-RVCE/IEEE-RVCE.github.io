@@ -1,104 +1,181 @@
-import React from 'react';
-import 'tachyons';
+import React from "react";
+import {
+  Paper,
+  TextField,
+  Container,
+  Typography,
+  InputAdornment,
+  IconButton,
+  Button,
+  Snackbar,
+} from "@material-ui/core";
+import Alert from '@material-ui/lab/Alert';
+import { makeStyles } from "@material-ui/core/styles";
+import Visibility from "@material-ui/icons/Visibility";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
+import axios from 'axios';
 
-class SignIn extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      signInEmail: '',
-      signInPassword: ''
+const useStyles = makeStyles((theme) => ({
+  root: {
+    padding: theme.spacing(4)
+  },
+  paper: {
+    padding: theme.spacing(8)
+  },
+  button: {
+    color: "#00629B",
+  }
+}));
+
+export default function Signin() {
+  const classes = useStyles();
+  const [values, setValues] = React.useState({
+    ieeeid: "",
+    password: "",
+    ieeeidValid: true,
+    passwordValid: true,
+    showPassword: false,
+    authFail: false,
+    networkError: false,
+    incorrectInfo: false,
+  });
+
+  function validateValues(prop, value) {
+    console.log(prop)
+    if (prop === "ieeeid") {
+      const re = /^\d{10}$/;
+      return re.test(String(value).toLowerCase());
+    } else {
+      const re = /^.{8,}$/;
+      return re.test(String(value).toLowerCase());
     }
   }
 
-  // For further usage if necessary
-  // loadUser = (data) => {
-  //   this.setState({user: {
-  //     id: data.id,
-  //     name: data.name,
-  //     email: data.email,
-  //     entries: data.entries,
-  //     joined: data.joined
-  //   }})
-  // }
+  // Handle changes on text and updates value
+  const handleChange = (prop) => (event) => {
+    setValues({
+      ...values,
+      [prop]: event.target.value,
+      [prop + "Valid"]: validateValues(prop, event.target.value),
+    });
+  };
 
-  // For routing
-  // onRouteChange = (route) => {
-  //   if (route === 'signout') {
-  //     this.setState({isSignedIn: false})
-  //   } else if (route === 'home') {
-  //     this.setState({isSignedIn: true})
-  //   }
-  //   this.setState({route: route});
-  // }
-
-  onEmailChange = (event) => {
-    this.setState({signInEmail: event.target.value})
-  }
-
-  onPasswordChange = (event) => {
-    this.setState({signInPassword: event.target.value})
-  }
-
-  onSubmitSignIn = () => {
-    fetch('http://localhost:3000/signin', {
-      method: 'post',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        email: this.state.signInEmail,
-        password: this.state.signInPassword
+  /**
+   *
+   * @param {React.MouseEvent<HTMLInputElement, MouseEvent>} event
+   */
+  const onSubmitSignIn = async (event) => {
+    if(values.ieeeidValid && values.passwordValid){
+      await axios.post("/api/auth", {
+        uid: values.ieeeid,
+        pwd: values.password
       })
-    })
-      .then(response => response.json())
-      .then(user => {
-        if (user.id) {
-          // To set the state of various state variables upon getting the response
-          // this.state.loadUser(user)
-          // this.props.onRouteChange('home'); 
+      .then(res => {
+        if(res.data.ok === true && res.data.auth === true)
+        {
+          localStorage.setItem('atoken', res.data.atoken)
+        }
+        else {
+          setValues({...values, ieeeidValid: false, passwordValid: false, authFail: true})
+          throw console.error('Failed on authentication');
         }
       })
+      .catch(err => {
+        console.error(`Axios request failed: ${err}`)
+        setValues({...values, ieeeidValid: false, passwordValid: false, networkError: true})
+      })
+    }
+    else{
+      setValues({
+        ...values,
+        incorrectInfo: !values.ieeeidValid && !values.passwordValid,
+      })
+    }
+  };
+
+  // Handling show and hide password
+  const handleClickShowPassword = () => {
+    setValues({ ...values, showPassword: !values.showPassword });
+  };
+
+  // So that the usual mouse down activity doesn't happen
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+
+  // Handle closing of snackbars
+  const handleClose = (prop) => (event, reason) => {
+    if(reason === 'clickaway')
+      return;
+    setValues({...values, [prop]:false})
   }
 
-  render() {
-    const { onRouteChange } = this.props; //for later use
-    return (
-      <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
-        <main className="pa4 black-80">
-          <div className="measure">
-            <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-              <legend className="f1 fw6 ph0 mh0">Sign In</legend>
-              <div className="mt3">
-                <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
-                <input
-                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                  type="email"
-                  name="email-address"
-                  id="email-address"
-                  onChange={this.onEmailChange}
-                />
-              </div>
-              <div className="mv3">
-                <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
-                <input
-                  className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                  type="password"
-                  name="password"
-                  id="password"
-                  onChange={this.onPasswordChange}
-                />
-              </div>
-            </fieldset>
-            <div className="">
-              <input
-                onClick={this.onSubmitSignIn}
-                className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
-                type="submit"
-                value="Sign in"
-              />
-            </div>
-          </div>
-        </main>
-      </article>
-    );
-  }
+  return (
+    <Container maxWidth="sm" className={classes.root}>
+      <Paper className={classes.paper}>
+        <Typography variant="h4">Sign in</Typography>
+        <br />
+        <div>
+          <TextField
+            id="ieeeid"
+            label="IEEE ID"
+            type="number"
+            placeholder="Enter your IEEE ID"
+            variant="outlined"
+            fullWidth
+            error={!values.ieeeidValid}
+            onChange={handleChange("ieeeid")}
+            InputLabelProps={{
+              shrink: true
+            }}
+          />
+        </div>
+        <br />
+        <div>
+          <TextField
+            id="standard-adornment-password"
+            label="Password"
+            placeholder="Enter your password"
+            error={!values.passwordValid}
+            InputLabelProps={{
+              shrink: true
+            }}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                  >
+                    {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                  </IconButton>
+                </InputAdornment>
+              )
+            }}
+            fullWidth
+            type={values.showPassword ? "text" : "password"}
+            value={values.password}
+            variant="outlined"
+            onChange={handleChange("password")}
+          />
+        </div>
+        <br />
+        <Snackbar open={values.incorrectInfo} autoHideDuration={6000} onClose={handleClose('incorrectInfo')}>
+          <Alert elevation={6} variant="filled" onClose={handleClose('incorrectInfo')} severity="error">Incorrect Information entered</Alert>
+        </Snackbar>
+        <Snackbar open={values.authFail} autoHideDuration={6000} onClose={handleClose('authFail')}>
+          <Alert elevation={6} variant="filled" onClose={handleClose('authFail')} severity="error">Invalid username or password</Alert>
+        </Snackbar>
+        <Snackbar open={values.networkError} autoHideDuration={6000} onClose={handleClose('networkError')}>
+          <Alert elevation={6} variant="filled" onClose={handleClose('networkError')} severity="error">Failed connecting to server</Alert>
+        </Snackbar>
+        <div>
+          <Button variant="outlined" color="inherit" className={classes.button} onClick={onSubmitSignIn}>
+            Submit
+          </Button>
+        </div>
+      </Paper>
+    </Container>
+  );
 }
-export default SignIn;
