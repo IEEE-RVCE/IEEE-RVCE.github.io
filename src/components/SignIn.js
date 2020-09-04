@@ -6,8 +6,10 @@ import {
   Typography,
   InputAdornment,
   IconButton,
-  Button
+  Button,
+  Snackbar,
 } from "@material-ui/core";
+import Alert from '@material-ui/lab/Alert';
 import { makeStyles } from "@material-ui/core/styles";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
@@ -32,7 +34,10 @@ export default function Signin() {
     password: "",
     ieeeidValid: true,
     passwordValid: true,
-    showPassword: false
+    showPassword: false,
+    authFail: false,
+    networkError: false,
+    incorrectInfo: false,
   });
 
   function validateValues(prop, value) {
@@ -51,7 +56,7 @@ export default function Signin() {
     setValues({
       ...values,
       [prop]: event.target.value,
-      [prop + "Valid"]: validateValues(prop, event.target.value)
+      [prop + "Valid"]: validateValues(prop, event.target.value),
     });
   };
 
@@ -60,23 +65,32 @@ export default function Signin() {
    * @param {React.MouseEvent<HTMLInputElement, MouseEvent>} event
    */
   const onSubmitSignIn = async (event) => {
-    await axios.post("http://localhost:3000/api/auth", {
-      uid: values.ieeeid,
-      pwd: values.password
-    })
-    .then(res => {
-      if(res.data.ok === true && res.data.auth === true)
-      {
-        localStorage.setItem('atoken', res.data.atoken)
-      }
-      else {
-        setValues({...values, ieeeidValid: false, passwordValid: false})
-        throw console.error('Failed on authentication');
-      }
-    })
-    .catch(err => {
-      console.error(`Axios request failed: ${err}`)
-    })
+    if(values.ieeeidValid && values.passwordValid){
+      await axios.post("/api/auth", {
+        uid: values.ieeeid,
+        pwd: values.password
+      })
+      .then(res => {
+        if(res.data.ok === true && res.data.auth === true)
+        {
+          localStorage.setItem('atoken', res.data.atoken)
+        }
+        else {
+          setValues({...values, ieeeidValid: false, passwordValid: false, authFail: true})
+          throw console.error('Failed on authentication');
+        }
+      })
+      .catch(err => {
+        console.error(`Axios request failed: ${err}`)
+        setValues({...values, ieeeidValid: false, passwordValid: false, networkError: true})
+      })
+    }
+    else{
+      setValues({
+        ...values,
+        incorrectInfo: !values.ieeeidValid && !values.passwordValid,
+      })
+    }
   };
 
   // Handling show and hide password
@@ -88,6 +102,13 @@ export default function Signin() {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
+
+  // Handle closing of snackbars
+  const handleClose = (prop) => (event, reason) => {
+    if(reason === 'clickaway')
+      return;
+    setValues({...values, [prop]:false})
+  }
 
   return (
     <Container maxWidth="sm" className={classes.root}>
@@ -140,8 +161,17 @@ export default function Signin() {
           />
         </div>
         <br />
+        <Snackbar open={values.incorrectInfo} autoHideDuration={6000} onClose={handleClose('incorrectInfo')}>
+          <Alert elevation={6} variant="filled" onClose={handleClose('incorrectInfo')} severity="error">Incorrect Information entered</Alert>
+        </Snackbar>
+        <Snackbar open={values.authFail} autoHideDuration={6000} onClose={handleClose('authFail')}>
+          <Alert elevation={6} variant="filled" onClose={handleClose('authFail')} severity="error">Invalid username or password</Alert>
+        </Snackbar>
+        <Snackbar open={values.networkError} autoHideDuration={6000} onClose={handleClose('networkError')}>
+          <Alert elevation={6} variant="filled" onClose={handleClose('networkError')} severity="error">Failed connecting to server</Alert>
+        </Snackbar>
         <div>
-          <Button variant="outlined" color="inherit" className={classes.button} onSubmit={onSubmitSignIn}>
+          <Button variant="outlined" color="inherit" className={classes.button} onClick={onSubmitSignIn}>
             Submit
           </Button>
         </div>
