@@ -6,6 +6,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import {Link} from 'react-router-dom';
 
 import AppBarMenu from './AppBarMenu';
+import {navs, societies, affinities} from '../links';
 
 // All the styling information for the whole header component is in here
 const useStyles = makeStyles((theme) => ({
@@ -58,33 +59,6 @@ export default function Header(props) {
 
     // drawer has the state if drawer is open or not. setDrawer sets that as per UI clicks.
     const [drawer, setDrawer] = React.useState(false)
-
-    // Edit this list and the navs shall change accordingly
-    const navs = [
-        {name: "Home", link: '/'},
-        {name: "About Us", link: '/about'},
-        {name: "Societies", link: '/society'},
-        {name: "Affinities", link: '/'},
-        {name: "Membership", link: '/membership'},
-        {name: "About the developers", link: '/devs'},
-        {name: "Login", link: '/login'},
-    ]
-
-    //List of societies and links
-    const societies = [
-        {name: "Computer Society", link: '/society'},
-        {name: "Com Soc", link: '/society'},
-        {name: "PES", link: '/society'},
-        {name: "SPS", link: '/society'},
-        {name: "APS", link: '/society'},
-        {name: "RAS", link: '/society'},
-    ]
-
-    // List of affinities and links
-    const affinities = [
-        {name: "SIGHT", link:'/affinity'},
-        {name: "WIE", link:'/affinity'}
-    ]
 
     // Sort of has an elevation effect when you scroll down. Really cool
     function ElevationScroll(props) {
