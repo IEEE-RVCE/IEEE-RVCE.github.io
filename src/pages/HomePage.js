@@ -6,18 +6,6 @@ import HomeCarousel from '../components/Carousel'
 import EventsCalendar from '../components/Calendar';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
-import { LoremIpsum } from 'lorem-ipsum';
-const lorem = new LoremIpsum({
-    sentencesPerParagraph: {
-        max: 8,
-        min: 4
-    },
-    wordsPerSentence: {
-        max: 16,
-        min: 4
-    }
-});
-
 const useStyles = makeStyles((theme) => ({
     root: {
         padding: theme.spacing(8),
