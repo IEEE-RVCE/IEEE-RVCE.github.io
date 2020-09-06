@@ -68,7 +68,9 @@ export default function HomePage(props) {
                         </Typography>
                         <br/>
                         <Typography variant='body1'>
-                        {lorem.generateParagraphs(1)}
+                            <li>Eat</li>
+                            <li>Sleep</li>
+                            <li>Code</li>
                         </Typography>
                     </Grid>
                 </Paper>
