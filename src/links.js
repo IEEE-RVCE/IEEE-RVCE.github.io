@@ -2,8 +2,8 @@
 export const navs = [
     {name: "Home", link: '/'},
     {name: "About Us", link: '/about'},
-    {name: "Societies", link: '/society'},
-    {name: "Affinities", link: '/'},
+    {name: "Societies", isMenu: true},
+    {name: "Affinities", isMenu:true},
     {name: "Membership", link: '/membership'},
     {name: "About the developers", link: '/devs'},
     {name: "Login", link: '/login'},
