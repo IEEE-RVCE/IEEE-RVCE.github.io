@@ -77,7 +77,6 @@ export default function Signin() {
         }
         else {
           setValues({...values, ieeeidValid: false, passwordValid: false, authFail: true})
-          throw console.error('Failed on authentication');
         }
       })
       .catch(err => {
