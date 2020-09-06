@@ -1,5 +1,6 @@
 import React from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
+import axios from 'axios';
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 moment.locale("en-GB");
@@ -17,7 +18,15 @@ export default class EventsCalendar extends React.Component {
       },
       toolbar: props.toolbar,
       defaultView: props.defaultView,
-      eventsList: []
+      eventsList: [
+        {
+          title: "Event 1",
+          start: new Date(0),
+          end: new Date(0),
+          allDay: false,
+          resource: false
+        }
+      ]
     };
   }
 
@@ -28,32 +37,13 @@ export default class EventsCalendar extends React.Component {
 
   getEvents = () => {
       // Code that gets events from backend
-      this.setState({
-          eventsList: [
-            {
-                title: "Event 1",
-                start: new Date("September 2, 2020 16:00:00"),
-                end: new Date("September 2, 2020 17:00:00"),
-                allDay: false,
-                resource: false
-            },
-            {
-              title: "Event 2",
-              start: new Date("September 2, 2020 22:00:00"),
-              end: new Date("September 2, 2020 23:00:00"),
-              allDay: false,
-              resource: false
-          },
-          {
-            title: "Event 3",
-            start: new Date("September 3, 2020 09:00:00"),
-            end: new Date("September 3, 2020 10:00:00"),
-            allDay: false,
-            resource: false
-        },
-        ]
-        }
-      )
+      axios.get('/api/calendar')
+        .then(res => {
+          this.setState({eventsList: res.data.calendar})
+        })
+        .catch(err => {
+          console.error(`Error when getting calendar events: ${err}`)
+        })
   }
 
   setDims = () => {
