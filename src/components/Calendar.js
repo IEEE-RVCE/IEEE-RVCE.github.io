@@ -3,7 +3,7 @@ import { Calendar, momentLocalizer } from "react-big-calendar";
 import axios from 'axios';
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-moment.locale("en-in");
+moment.locale("en-GB");
 const localizer = momentLocalizer(moment);
 
 export default class EventsCalendar extends React.Component {
@@ -37,7 +37,7 @@ export default class EventsCalendar extends React.Component {
 
   getEvents = () => {
       // Code that gets events from backend
-      axios.get('https://forseti-full.herokuapp.com/api/calendar')
+      axios.get('/api/calendar')
         .then(res => {
           this.setState({eventsList: res.data.calendar})
         })

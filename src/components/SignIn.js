@@ -66,7 +66,7 @@ export default function Signin() {
    */
   const onSubmitSignIn = async (event) => {
     if(values.ieeeidValid && values.passwordValid){
-      await axios.post("https://forseti-full.herokuapp.com/api/auth", {
+      await axios.post("/api/auth", {
         uid: values.ieeeid,
         pwd: values.password
       })
