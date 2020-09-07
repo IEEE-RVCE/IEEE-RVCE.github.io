@@ -39,7 +39,7 @@ export default class EventsCalendar extends React.Component {
       // Code that gets events from backend
       axios.get('/api/calendar')
         .then(res => {
-          this.setState({eventsList: res.data.calendar})
+          this.setState({eventsList: res.data.eventsList})
         })
         .catch(err => {
           console.error(`Error when getting calendar events: ${err}`)
