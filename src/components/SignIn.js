@@ -8,6 +8,8 @@ import {
   IconButton,
   Button,
   Snackbar,
+  Backdrop,
+  CircularProgress,
 } from "@material-ui/core";
 import Alert from '@material-ui/lab/Alert';
 import { makeStyles } from "@material-ui/core/styles";
@@ -24,7 +26,11 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     color: "#00629B",
-  }
+  },
+  backdrop: {
+    zIndex: 100,
+    color: '#fff',
+  },
 }));
 
 export default function Signin() {
@@ -39,6 +45,8 @@ export default function Signin() {
     networkError: false,
     incorrectInfo: false,
   });
+
+  const [backdrop, setBackdrop] = React.useState(false)
 
   function validateValues(prop, value) {
     console.log(prop)
@@ -65,6 +73,7 @@ export default function Signin() {
    * @param {React.MouseEvent<HTMLInputElement, MouseEvent>} event
    */
   const onSubmitSignIn = async (event) => {
+    setBackdrop(true)
     if(values.ieeeidValid && values.passwordValid){
       await axios.post("http://forseti-full.herokuapp.com/api/auth", {
         uid: values.ieeeid,
@@ -74,14 +83,24 @@ export default function Signin() {
         if(res.data.ok === true && res.data.auth === true)
         {
           localStorage.setItem('atoken', res.data.atoken)
+          localStorage.setItem('isAuthenticated', true)
+          window.location.replace(window.location.origin)
         }
         else {
           setValues({...values, ieeeidValid: false, passwordValid: false, authFail: true})
+          setBackdrop(false)
         }
       })
       .catch(err => {
         console.error(`Axios request failed: ${err}`)
-        setValues({...values, ieeeidValid: false, passwordValid: false, networkError: true})
+        if(err.response.status === 401){
+          setValues({...values, ieeeidValid: false, passwordValid: false, authFail: true})
+          setBackdrop(false)
+        }
+        else {
+          setValues({...values, ieeeidValid: false, passwordValid: false, networkError: true})
+          setBackdrop(false)
+        }
       })
     }
     else{
@@ -89,6 +108,7 @@ export default function Signin() {
         ...values,
         incorrectInfo: !values.ieeeidValid && !values.passwordValid,
       })
+      setBackdrop(false)
     }
   };
 
@@ -169,6 +189,9 @@ export default function Signin() {
         <Snackbar open={values.networkError} autoHideDuration={6000} onClose={handleClose('networkError')}>
           <Alert elevation={6} variant="filled" onClose={handleClose('networkError')} severity="error">Failed connecting to server</Alert>
         </Snackbar>
+        <Backdrop className={classes.backdrop} open={backdrop}>
+          <CircularProgress color="inherit" />
+        </Backdrop>
         <div>
           <Button variant="outlined" color="inherit" className={classes.button} onClick={onSubmitSignIn}>
             Submit

@@ -60,6 +60,13 @@ export default function Header(props) {
     // drawer has the state if drawer is open or not. setDrawer sets that as per UI clicks.
     const [drawer, setDrawer] = React.useState(false)
 
+    // State for logged in
+    const [loggedin, setLoggedin] = React.useState(false)
+
+    React.useEffect(() => {
+        setLoggedin(localStorage.getItem('isAuthenticated'))
+    })
+
     // Sort of has an elevation effect when you scroll down. Really cool
     function ElevationScroll(props) {
         const { children, window } = props;
@@ -79,6 +86,12 @@ export default function Header(props) {
         children: PropTypes.element.isRequired,
         window: PropTypes.func,
     };
+
+    const logout = () => {
+        localStorage.removeItem('isAuthenticated')
+        localStorage.removeItem('atoken')
+        window.location.replace(window.location.origin)
+    }
   
     // Renders all the navigation buttons by traversing array
     const Buttons = () => {
@@ -93,12 +106,26 @@ export default function Header(props) {
                     <AppBarMenu name={nav.name} items={affinities}/>
                 )
             }
+            else if(nav.name==='Login'){
+                if(loggedin) {
+                    return(
+                        <Button color="inherit" onClick={logout} className={classes.button}>Logout</Button>
+                    )
+                }
+                else{
+                    return(
+                        <Link to={nav.link} className={classes.nav}>
+                            <Button color="inherit" className={classes.button}>{nav.name}</Button>
+                        </Link>
+                    )   
+                }
+            }
             else{
                 return(
                     <Link to={nav.link} className={classes.nav}>
                         <Button color="inherit" className={classes.button}>{nav.name}</Button>
                     </Link>
-                )    
+                )
             }
         })
         return buttons
