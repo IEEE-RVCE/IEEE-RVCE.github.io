@@ -12,11 +12,11 @@ export const navs = [
 //List of societies and links
 export const societies = [
     {name: "Computer Society", link: '/society'},
-    {name: "Com Soc", link: '/society'},
-    {name: "PES", link: '/society'},
-    {name: "SPS", link: '/society'},
-    {name: "APS", link: '/society'},
-    {name: "RAS", link: '/society'},
+    {name: "Communication Society", link: '/society'},
+    {name: "Power and Energy Society", link: '/society'},
+    {name: "Signal Processing Society", link: '/society'},
+    {name: "Antenna Propogation Society", link: '/society'},
+    {name: "Robotics and Automation Society", link: '/society'},
 ]
 
 // List of affinities and links
