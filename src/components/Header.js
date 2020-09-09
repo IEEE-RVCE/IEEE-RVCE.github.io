@@ -65,7 +65,7 @@ export default function Header(props) {
 
     React.useEffect(() => {
         setLoggedin(localStorage.getItem('isAuthenticated'))
-    })
+    }, [])
 
     // Sort of has an elevation effect when you scroll down. Really cool
     function ElevationScroll(props) {
