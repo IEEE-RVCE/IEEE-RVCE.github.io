@@ -7,18 +7,15 @@ import EventsCalendar from '../components/Calendar';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        padding: theme.spacing(8),
-    },
+    root: theme.root,
+    container: theme.page,
     paper: {
-        padding: theme.spacing(4),
+        ...theme.paper,
+        padding: theme.spacing(4)
     },
     link: {
-        textDecoration: 'none',
-        color: '#00629B',
-        '&:hover': {
-            textDecoration: 'underline',
-        }
+        ...theme.link,
+        color: localStorage.getItem('darkMode') === 'true' ? '#bbb':'#00629B',
     },
     carousel: {
         margin: "auto",
@@ -30,11 +27,11 @@ export default function HomePage(props) {
     const classes = useStyles();
 
     return(
-        <React.Fragment>
+        <div className={classes.root}>
             <Container maxWidth='lg' className={classes.carousel}>
                 <HomeCarousel images={carouselImages} />
             </Container>
-            <Container maxWidth='md' className={classes.root}>   
+            <Container maxWidth='md' className={classes.container}>   
                 <Paper className={classes.paper}>
                     <Grid>
                         <Typography variant='h3'>
@@ -56,9 +53,9 @@ export default function HomePage(props) {
                         </Typography>
                         <br/>
                         <Typography variant='body1'>
-                            <li>Eat</li>
-                            <li>Sleep</li>
-                            <li>Code</li>
+                        As members of a larger technical community,  IEEE RVCE aims to connect future engineers and researchers with industry experts and top academicians. 
+                        We provide a platform for students to stay updated with today's research through webinars and technical talks by eminent professors and professionals. 
+                        We also arrange workshops and Industrial visits that help students upgrade their skills to stay relevant in today's global market.
                         </Typography>
                     </Grid>
                 </Paper>
@@ -75,7 +72,7 @@ export default function HomePage(props) {
                     <Link to='/calendar' className={classes.link}>Click here to view full calendar</Link>
                 </Paper>
             </Container>
-        </React.Fragment>
+        </div>
     )
 }
 

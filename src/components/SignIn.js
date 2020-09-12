@@ -18,13 +18,17 @@ import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
-  root: theme.page,
+  root: theme.root,
+  container: {
+    ...theme.page,
+    paddingTop: theme.spacing(16),
+    paddingBottom: theme.spacing(16)
+  },
   paper: {
+    ...theme.paper,
     padding: theme.spacing(8)
   },
-  button: {
-    color: "#00629B",
-  },
+  button: theme.button,
   backdrop: {
     zIndex: 100,
     color: '#fff',
@@ -128,74 +132,76 @@ export default function Signin() {
   }
 
   return (
-    <Container maxWidth="sm" className={classes.root}>
-      <Paper className={classes.paper}>
-        <Typography variant="h4">Sign in</Typography>
-        <br />
-        <div>
-          <TextField
-            id="ieeeid"
-            label="IEEE ID"
-            type="number"
-            placeholder="Enter your IEEE ID"
-            variant="outlined"
-            fullWidth
-            error={!values.ieeeidValid}
-            onChange={handleChange("ieeeid")}
-            InputLabelProps={{
-              shrink: true
-            }}
-          />
-        </div>
-        <br />
-        <div>
-          <TextField
-            id="standard-adornment-password"
-            label="Password"
-            placeholder="Enter your password"
-            error={!values.passwordValid}
-            InputLabelProps={{
-              shrink: true
-            }}
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
-                    onMouseDown={handleMouseDownPassword}
-                  >
-                    {values.showPassword ? <Visibility /> : <VisibilityOff />}
-                  </IconButton>
-                </InputAdornment>
-              )
-            }}
-            fullWidth
-            type={values.showPassword ? "text" : "password"}
-            value={values.password}
-            variant="outlined"
-            onChange={handleChange("password")}
-          />
-        </div>
-        <br />
-        <Snackbar open={values.incorrectInfo} autoHideDuration={6000} onClose={handleClose('incorrectInfo')}>
-          <Alert elevation={6} variant="filled" onClose={handleClose('incorrectInfo')} severity="error">Incorrect Information entered</Alert>
-        </Snackbar>
-        <Snackbar open={values.authFail} autoHideDuration={6000} onClose={handleClose('authFail')}>
-          <Alert elevation={6} variant="filled" onClose={handleClose('authFail')} severity="error">Invalid username or password</Alert>
-        </Snackbar>
-        <Snackbar open={values.networkError} autoHideDuration={6000} onClose={handleClose('networkError')}>
-          <Alert elevation={6} variant="filled" onClose={handleClose('networkError')} severity="error">Failed connecting to server</Alert>
-        </Snackbar>
-        <Backdrop className={classes.backdrop} open={backdrop}>
-          <CircularProgress color="inherit" />
-        </Backdrop>
-        <div>
-          <Button variant="outlined" color="inherit" className={classes.button} onClick={onSubmitSignIn}>
-            Submit
-          </Button>
-        </div>
-      </Paper>
-    </Container>
+    <div className={classes.root}>
+      <Container maxWidth="sm" className={classes.container}>
+        <Paper className={classes.paper}>
+          <Typography variant="h4">Sign in</Typography>
+          <br />
+          <div>
+            <TextField
+              id="ieeeid"
+              label="IEEE ID"
+              type="number"
+              placeholder="Enter your IEEE ID"
+              variant="outlined"
+              fullWidth
+              error={!values.ieeeidValid}
+              onChange={handleChange("ieeeid")}
+              InputLabelProps={{
+                shrink: true
+              }}
+            />
+          </div>
+          <br />
+          <div>
+            <TextField
+              id="standard-adornment-password"
+              label="Password"
+              placeholder="Enter your password"
+              error={!values.passwordValid}
+              InputLabelProps={{
+                shrink: true
+              }}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                    >
+                      {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                    </IconButton>
+                  </InputAdornment>
+                )
+              }}
+              fullWidth
+              type={values.showPassword ? "text" : "password"}
+              value={values.password}
+              variant="outlined"
+              onChange={handleChange("password")}
+            />
+          </div>
+          <br />
+          <Snackbar open={values.incorrectInfo} autoHideDuration={6000} onClose={handleClose('incorrectInfo')}>
+            <Alert elevation={6} variant="filled" onClose={handleClose('incorrectInfo')} severity="error">Incorrect Information entered</Alert>
+          </Snackbar>
+          <Snackbar open={values.authFail} autoHideDuration={6000} onClose={handleClose('authFail')}>
+            <Alert elevation={6} variant="filled" onClose={handleClose('authFail')} severity="error">Invalid username or password</Alert>
+          </Snackbar>
+          <Snackbar open={values.networkError} autoHideDuration={6000} onClose={handleClose('networkError')}>
+            <Alert elevation={6} variant="filled" onClose={handleClose('networkError')} severity="error">Failed connecting to server</Alert>
+          </Snackbar>
+          <Backdrop className={classes.backdrop} open={backdrop}>
+            <CircularProgress color="inherit" />
+          </Backdrop>
+          <div>
+            <Button color="inherit" className={classes.button} onClick={onSubmitSignIn}>
+              Submit
+            </Button>
+          </div>
+        </Paper>
+      </Container>
+    </div>
   );
 }
