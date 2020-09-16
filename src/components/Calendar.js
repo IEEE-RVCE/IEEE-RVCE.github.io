@@ -37,7 +37,7 @@ export default class EventsCalendar extends React.Component {
 
   getEvents = () => {
       // Code that gets events from backend
-      axios.get('/api/calendar')
+      axios.get('https://forseti-full.herokuapp.com/api/calendar')
         .then(res => {
           this.setState({eventsList: res.data.eventsList})
         })

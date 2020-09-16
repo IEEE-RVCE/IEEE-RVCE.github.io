@@ -8,21 +8,15 @@ import {navs, societies, affinities} from '../links';
 
 // Makes new style for footer
 const useStyles = makeStyles((theme) => ({
-    // The colour is horrendous but we can change that later. Padding to make the footer prominent.
     root: {
         backgroundColor: "#111111",
         padding: theme.spacing(6),
+        borderTop: localStorage.getItem('darkMode')?'1px solid #eee':'none'
     },
     typography: {
         color: '#eeeeee',
     },
-    link: {
-        textDecoration: 'none',
-        color: '#bbbbbb',
-        '&:hover': {
-            textDecoration: 'underline',
-        }
-    },
+    link: theme.link,
     body: {
         color: '#bbbbbb',
     },
@@ -94,13 +88,13 @@ export default function Footer(props) {
                         </Typography>
                         <br/>
                         <Grid container justify='space-between' style={{paddingRight: 60}}>
-                            <IconButton href='https://instagram.com/ieee_rvce?igshid=1hbfgquvdu0yt' target='_blank' className={classes.iconbutton}>
+                            <IconButton href='https://instagram.com/ieee_rvce?igshid=1hbfgquvdu0yt' target='_blank' rel='noopener norefferer' className={classes.iconbutton}>
                                 <Instagram className={classes.icon} fontSize='large'/>
                             </IconButton>
-                            <IconButton href='https://www.linkedin.com/company/ieee-rvce' target='_blank' className={classes.iconbutton}>
+                            <IconButton href='https://www.linkedin.com/company/ieee-rvce' target='_blank' rel='noopener norefferer' className={classes.iconbutton}>
                                 <LinkedIn className={classes.icon} fontSize='large'/>
                             </IconButton>
-                            <IconButton href='mailto:ieeervce@rvce.edu.in' target='_blank' className={classes.iconbutton}>
+                            <IconButton href='mailto:ieeervce@rvce.edu.in' target='_blank' rel='noopener norefferer' className={classes.iconbutton}>
                                 <EmailOutlined className={classes.icon} fontSize='large'/>
                             </IconButton>
                         </Grid>
