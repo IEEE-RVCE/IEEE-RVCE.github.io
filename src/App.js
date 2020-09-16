@@ -16,7 +16,7 @@ import CalendarPage from './pages/CalendarPage';
 
 export default function App() {
   const tempMedia = useMediaQuery('(prefers-color-scheme: dark)');
-  if(localStorage.getItem('darkMode') === null)
+  if(localStorage.getItem('isSetByUser') === null)
     localStorage.setItem('darkMode', tempMedia)
   const prefersDarkMode = localStorage.getItem('darkMode') === 'true'
 
@@ -51,6 +51,7 @@ export default function App() {
       position: 'fixed',
       bottom: 32,
       right: 32,
+      zIndex: 100,
       color: prefersDarkMode?'#111':'#eee',
       backgroundColor: prefersDarkMode?'#eee':'#222',
     },
@@ -71,6 +72,7 @@ export default function App() {
 
   const changeTheme = () => {
     localStorage.setItem('darkMode', !prefersDarkMode)
+    localStorage.setItem('isSetByUser', true)
     window.location.reload()
   }
   
