@@ -9,14 +9,23 @@ export const navs = [
     {name: "Login", link: '/login'},
 ]
 
+//Buttons for Society Page
+export const societyNav = [
+    {name: "Home", link: '/'},
+    {name: "About Us", link: '/about'},
+    {name: "Events", link: '/society'},
+    {name: "Exec Com", link: '/society'},
+    {name: "Login", link: '/login'},
+]
+
 //List of societies and links
 export const societies = [
-    {name: "Computer Society", link: '/society'},
-    {name: "Communication Society", link: '/society'},
-    {name: "Power and Energy Society", link: '/society'},
-    {name: "Signal Processing Society", link: '/society'},
-    {name: "Antenna Propogation Society", link: '/society'},
-    {name: "Robotics and Automation Society", link: '/society'},
+    {name: "Computer Society", link: '/society/cs'},
+    {name: "Com Soc", link: '/society/comsoc'},
+    {name: "PES", link: '/society/pes'},
+    {name: "SPS", link: '/society/sps'},
+    {name: "APS", link: '/society/aps'},
+    {name: "RAS", link: '/society/ras'},
 ]
 
 // List of affinities and links
