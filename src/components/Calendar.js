@@ -18,11 +18,11 @@ export default class EventsCalendar extends React.Component {
       },
       toolbar: props.toolbar,
       defaultView: props.defaultView,
-      eventsList: [
+      events: [
         {
           title: "Event 1",
-          start: new Date(0),
-          end: new Date(0),
+          start: new Date(),
+          end: new Date(),
           allDay: false,
           resource: false
         }
@@ -37,9 +37,9 @@ export default class EventsCalendar extends React.Component {
 
   getEvents = () => {
       // Code that gets events from backend
-      axios.get('https://forseti-full.herokuapp.com/api/calendar')
+      axios.get('https://forseti-full.herokuapp.com/api/events')
         .then(res => {
-          this.setState({eventsList: res.data.eventsList})
+          this.setState({events: res.data.events})
         })
         .catch(err => {
           console.error(`Error when getting calendar events: ${err}`)
@@ -74,7 +74,7 @@ export default class EventsCalendar extends React.Component {
         <Calendar
           popup
           localizer={localizer}
-          events={this.state.eventsList}
+          events={this.state.events}
           defaultView={this.props.defaultView}
           startAccessor="start"
           endAccessor="end"
