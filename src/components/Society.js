@@ -2,20 +2,22 @@ import React from 'react';
 import {Container, Grid, Typography, Paper} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import {Link} from 'react-router-dom';
-import HomeCarousel from '../components/Carousel'
 import EventsCalendar from '../components/Calendar';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import Avatar from '../components/Avatar'
 
 const useStyles = makeStyles((theme) => ({
-    root: theme.root,
-    container: theme.page,
+    root: {
+        padding: theme.spacing(8),
+    },
     paper: {
-        ...theme.paper,
-        padding: theme.spacing(4)
+        padding: theme.spacing(4),
     },
     link: {
-        ...theme.link,
-        color: localStorage.getItem('darkMode') === 'true' ? '#bbb':'#00629B',
+        textDecoration: 'none',
+        color: '#00629B',
+        '&:hover': {
+            textDecoration: 'underline',
+        }
     },
     carousel: {
         margin: "auto",
@@ -23,46 +25,43 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
+
+
 export default function HomePage(props) {
-    const classes = useStyles();
+    const classes = useStyles();    
 
     return(
-        <div className={classes.root}>
-            <Container maxWidth='lg' className={classes.carousel}>
-                <HomeCarousel images={carouselImages} />
-            </Container>
-            <Container maxWidth='md' className={classes.container}>   
+        <React.Fragment>
+            <Container maxWidth='xl' className={classes.root} styles={{paddingTop:"10px"}}>   
                 <Paper className={classes.paper}>
                     <Grid>
                         <Typography variant='h3'>
-                            Vision
+                            Home
                         </Typography>
                         <br/>
                         <Typography variant='body1'>
-                        IEEE RVCE will be instrumental in facilitating the global outreach of IEEE 
-                        by providing a platform for students to connect with professionals worldwide 
-                        and develop their technical expertise, thus making a positive impact on the society
+                         Prop : {props.sname}
                         </Typography>
                     </Grid>
                 </Paper>
                 <br/>
                 <Paper className={classes.paper}>
                     <Grid>
-                    <Typography variant='h3'>
-                            What we do
+                        <Typography variant='h3'>
+                            About Us(Vision and Mission)
                         </Typography>
                         <br/>
                         <Typography variant='body1'>
-                        As members of a larger technical community,  IEEE RVCE aims to connect future engineers and researchers with industry experts and top academicians. 
-                        We provide a platform for students to stay updated with today's research through webinars and technical talks by eminent professors and professionals. 
-                        We also arrange workshops and Industrial visits that help students upgrade their skills to stay relevant in today's global market.
+                            <li>Eat</li>
+                            <li>Sleep</li>
+                            <li>Code</li>
                         </Typography>
                     </Grid>
                 </Paper>
                 <br/>
                 <Paper className={classes.paper}>
                     <Typography variant='h3'>
-                        Upcoming Events
+                        Events
                     </Typography>
                     <br/>
                     <EventsCalendar
@@ -71,8 +70,29 @@ export default function HomePage(props) {
                     />
                     <Link to='/calendar' className={classes.link}>Click here to view full calendar</Link>
                 </Paper>
+                <br/>
+                <Paper className={classes.paper}>
+                    <Typography variant='h3'>
+                        Exec Com
+                    </Typography>
+                    <br/>
+                    <Grid container spacing={2} justify='center'>
+                        <Grid item xs={12} md={3}>
+                            <Avatar/>
+                        </Grid>
+                        <Grid item xs={12} md={3}>
+                            <Avatar/>
+                        </Grid>
+                        <Grid item xs={12} md={3}>
+                            <Avatar/>
+                        </Grid>
+                        <Grid item xs={12} md={3}>
+                            <Avatar/>
+                        </Grid>
+                    </Grid>
+                </Paper>
             </Container>
-        </div>
+        </React.Fragment>
     )
 }
 

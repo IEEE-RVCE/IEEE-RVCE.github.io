@@ -1,6 +1,8 @@
 import React from 'react';
 import {createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
-import {CssBaseline} from '@material-ui/core';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import {CssBaseline, Fab, Tooltip} from '@material-ui/core';
+import {Brightness3, BrightnessHigh} from '@material-ui/icons';
 import {Route} from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
@@ -13,21 +15,72 @@ import Footer from './components/Footer';
 import CalendarPage from './pages/CalendarPage';
 
 export default function App() {
+  const tempMedia = useMediaQuery('(prefers-color-scheme: dark)');
+  if(localStorage.getItem('isSetByUser') === null)
+    localStorage.setItem('darkMode', tempMedia)
+  const prefersDarkMode = localStorage.getItem('darkMode') === 'true'
+
   const theme = createMuiTheme({
+    palette: {
+      type: prefersDarkMode ? 'dark' : 'light'
+    },
     typography: {
       fontFamily: 'Open Sans, sans-serif',
     },
+    appbar: {
+      backgroundColor: prefersDarkMode?'#222':"#FFF"
+    },
+    button: prefersDarkMode?{
+      border: '1px solid #eee ',
+      color: '#eee ',
+      marginRight: 16,
+    }:
+    {
+      border: '1px solid #00629B',
+      color: '#00629B',
+      marginRight: 16,
+    },
+    link: {
+      textDecoration: 'none',
+      color: '#bbbbbb',
+      '&:hover': {
+          textDecoration: 'underline',
+      }
+    },
+    fab: {
+      position: 'fixed',
+      bottom: 32,
+      right: 32,
+      zIndex: 100,
+      color: prefersDarkMode?'#111':'#eee',
+      backgroundColor: prefersDarkMode?'#eee':'#222',
+    },
+    paper: prefersDarkMode?{
+      backgroundColor: '#222',
+    }:
+    {
+      backgroundColor: '#fff',
+    },
     root: {
-      backgroundColor: "#fff",
+      backgroundColor: prefersDarkMode ? "#111":"#eee",
+    },
+    page: {
+      paddingTop: 64,
+      paddingBottom: 64,
     },
   });
+
+  const changeTheme = () => {
+    localStorage.setItem('darkMode', !prefersDarkMode)
+    localStorage.setItem('isSetByUser', true)
+    window.location.reload()
+  }
   
   return (
     <ThemeProvider theme={theme}>
-      <div className={theme.root}>
+      <div>
         <CssBaseline />
         <Header/>
-        <br/><br/>
         
         <Route exact path='/'>
           <HomePage/>
@@ -51,6 +104,11 @@ export default function App() {
           <CalendarPage/>
         </Route>
 
+        <Tooltip title={prefersDarkMode? 'Switch to light theme': 'Switch to dark theme'} aria-label='themeSwitcherTooltip'>
+          <Fab onClick={changeTheme} aria-label='themeSwitcher' style={{...theme.fab}}>
+              {prefersDarkMode?<BrightnessHigh/>:<Brightness3 style={{transform: 'rotate(150deg)'}}/>}
+          </Fab>
+        </Tooltip>
         <Footer/>
       </div>  
     </ThemeProvider>

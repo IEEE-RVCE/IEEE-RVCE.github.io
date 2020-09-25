@@ -1,5 +1,6 @@
 import React from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
+import axios from 'axios';
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 moment.locale("en-GB");
@@ -17,7 +18,15 @@ export default class EventsCalendar extends React.Component {
       },
       toolbar: props.toolbar,
       defaultView: props.defaultView,
-      eventsList: []
+      events: [
+        {
+          title: "Event 1",
+          start: new Date(),
+          end: new Date(),
+          allDay: false,
+          resource: false
+        }
+      ]
     };
   }
 
@@ -28,32 +37,13 @@ export default class EventsCalendar extends React.Component {
 
   getEvents = () => {
       // Code that gets events from backend
-      this.setState({
-          eventsList: [
-            {
-                title: "Event 1",
-                start: new Date("September 2, 2020 16:00:00"),
-                end: new Date("September 2, 2020 17:00:00"),
-                allDay: false,
-                resource: false
-            },
-            {
-              title: "Event 2",
-              start: new Date("September 2, 2020 22:00:00"),
-              end: new Date("September 2, 2020 23:00:00"),
-              allDay: false,
-              resource: false
-          },
-          {
-            title: "Event 3",
-            start: new Date("September 3, 2020 09:00:00"),
-            end: new Date("September 3, 2020 10:00:00"),
-            allDay: false,
-            resource: false
-        },
-        ]
-        }
-      )
+      axios.get('https://forseti-full.herokuapp.com/api/calendar')
+        .then(res => {
+          this.setState({events: res.data.events})
+        })
+        .catch(err => {
+          console.error(`Error when getting calendar events: ${err}`)
+        })
   }
 
   setDims = () => {
@@ -72,22 +62,45 @@ export default class EventsCalendar extends React.Component {
   render() {
     return (
       <div
-        style={{
-          height: this.state.height * (this.state.proportions.height / 100),
-          width: this.state.width * (this.state.proportions.width / 100),
-          margin: "auto",
-          maxWidth: this.props.maxHeight,
+        style={this.props.defaultView !== "agenda"?{
+          paddingBottom: 60,
+          paddingTop: 80,
+        }:
+        {
           paddingBottom: 20,
-        }}
+          paddingTop: 20,
+        }
+        }
       >
-        <Calendar
-          localizer={localizer}
-          events={this.state.eventsList}
-          defaultView={this.props.defaultView}
-          startAccessor="start"
-          endAccessor="end"
-          toolbar={this.props.toolbar}
-        />
+        <div
+          style={this.props.defaultView !== "agenda"?{
+            height: this.state.height * (this.state.proportions.height / 100),
+            width: this.state.width * (this.state.proportions.width / 100),
+            margin: "auto",
+            maxWidth: this.props.maxHeight,
+            padding: 30,
+            borderRadius: 5,
+            boxShadow: localStorage.getItem('darkMode') === "true"?"0px 0px 5px 3px #222":"0px 0px 5px 3px #ddd",
+            backgroundColor: '#fff',
+            color: '#000'
+          }:
+          {
+            height: this.state.height * (this.state.proportions.height / 100),
+            width: this.state.width * (this.state.proportions.width / 100),
+            margin: "auto",
+            maxWidth: this.props.maxHeight,
+          }
+          }>
+            <Calendar
+              popup
+              localizer={localizer}
+              events={this.state.events}
+              defaultView={this.props.defaultView}
+              startAccessor="start"
+              endAccessor="end"
+              toolbar={this.props.toolbar}
+            />
+          </div>
       </div>
     );
   }

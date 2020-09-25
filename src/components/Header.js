@@ -6,85 +6,70 @@ import MenuIcon from '@material-ui/icons/Menu';
 import {Link} from 'react-router-dom';
 
 import AppBarMenu from './AppBarMenu';
-
-// All the styling information for the whole header component is in here
-const useStyles = makeStyles((theme) => ({
-    // Make the container take up all space if free. Padding bottom as it's fixed, it should leave a little transparent space which really won't be noticed.
-    root: {
-        flexGrow: 1,
-        backgroundColor: "transparent",
-        paddingBottom: theme.spacing(6),
-    },
-    // White background for the bar for now
-    appbar: {
-        backgroundColor: theme.root.backgroundColor,
-    },
-    // Make brand stay on left by taking all remaining space while justifying
-    brand: {
-        flexGrow: 1,
-    },
-    // Bordered buttons in IEEE blue shade, can be changed as needed
-    button: {
-        border: '1px solid #00629B',
-        color: '#00629B',
-        marginLeft: theme.spacing(0),
-        marginRight: theme.spacing(2),
-    },
-    // Don't display the navigation buttons if on a small screen
-    navs: {
-        [theme.breakpoints.up('md')]: {
-            display: 'block',
-        },
-        display: 'none',
-    },
-    // To remove hyperlink from each Nav
-    nav: {
-        textDecoration: 'none',
-        color: '#00629B',
-    },
-    // Don't display menu button when on a not-small screen
-    menuButton: {
-        marginRight: theme.spacing(2),
-        [theme.breakpoints.up('md')]: {
-          display: 'none',
-        },
-        display: 'block',
-    },
-}))
+import {navs, societies, affinities} from '../links';
 
 export default function Header(props) {
+    // Get dark or light mode
+    const [darkMode,setDarkMode] = React.useState(localStorage.getItem('darkMode') === 'true')
+
+    React.useEffect(() => {
+        setDarkMode(localStorage.getItem('darkMode') === 'true')
+    })
+
+    // All the styling information for the whole header component is in here
+    const useStyles = makeStyles((theme) => ({
+        // Make the container take up all space if free. Padding bottom as it's fixed, it should leave a little transparent space which really won't be noticed.
+        root: {
+            flexGrow: 1,
+            backgroundColor: "transparent",
+            paddingBottom: theme.spacing(6),
+        },
+        // White background for the bar for now
+        appbar: {
+            backgroundColor: theme.appbar.backgroundColor,
+        },
+        // Make brand stay on left by taking all remaining space while justifying
+        brand: {
+            flexGrow: 1,
+        },
+        // Bordered buttons in IEEE blue shade, can be changed as needed
+        button: theme.button,
+        // Don't display the navigation buttons if on a small screen
+        navs: {
+            [theme.breakpoints.up('md')]: {
+                display: 'block',
+            },
+            display: 'none',
+        },
+        link: theme.link,
+        // To remove hyperlink from each Nav
+        nav: {
+            textDecoration: 'none',
+            color: darkMode? '#eee':'#00629B',
+        },
+        // Don't display menu button when on a not-small screen
+        menuButton: {
+            marginRight: theme.spacing(2),
+            [theme.breakpoints.up('md')]: {
+            display: 'none',
+            },
+            display: 'block',
+            color: darkMode ? '#eee':'#00629b',
+        },
+    }))
+
     // All styles are in classes now
     const classes = useStyles()
 
     // drawer has the state if drawer is open or not. setDrawer sets that as per UI clicks.
     const [drawer, setDrawer] = React.useState(false)
 
-    // Edit this list and the navs shall change accordingly
-    const navs = [
-        {name: "Home", link: '/'},
-        {name: "About Us", link: '/about'},
-        {name: "Societies", link: '/society'},
-        {name: "Affinities", link: '/'},
-        {name: "Membership", link: '/membership'},
-        {name: "About the developers", link: '/devs'},
-        {name: "Login", link: '/login'},
-    ]
+    // State for logged in
+    const [loggedin, setLoggedin] = React.useState(false)
 
-    //List of societies and links
-    const societies = [
-        {name: "Computer Society", link: '/society'},
-        {name: "Com Soc", link: '/society'},
-        {name: "PES", link: '/society'},
-        {name: "SPS", link: '/society'},
-        {name: "APS", link: '/society'},
-        {name: "RAS", link: '/society'},
-    ]
-
-    // List of affinities and links
-    const affinities = [
-        {name: "SIGHT", link:'/affinity'},
-        {name: "WIE", link:'/affinity'}
-    ]
+    React.useEffect(() => {
+        setLoggedin(localStorage.getItem('isAuthenticated'))
+    }, [])
 
     // Sort of has an elevation effect when you scroll down. Really cool
     function ElevationScroll(props) {
@@ -105,6 +90,12 @@ export default function Header(props) {
         children: PropTypes.element.isRequired,
         window: PropTypes.func,
     };
+
+    const logout = () => {
+        localStorage.removeItem('isAuthenticated')
+        localStorage.removeItem('atoken')
+        window.location.replace(window.location.origin)
+    }
   
     // Renders all the navigation buttons by traversing array
     const Buttons = () => {
@@ -119,12 +110,26 @@ export default function Header(props) {
                     <AppBarMenu name={nav.name} items={affinities}/>
                 )
             }
+            else if(nav.name==='Login'){
+                if(loggedin) {
+                    return(
+                        <Button color="inherit" onClick={logout} className={classes.button}>Logout</Button>
+                    )
+                }
+                else{
+                    return(
+                        <Link to={nav.link} className={classes.nav}>
+                            <Button color="inherit" className={classes.button}>{nav.name}</Button>
+                        </Link>
+                    )   
+                }
+            }
             else{
                 return(
                     <Link to={nav.link} className={classes.nav}>
                         <Button color="inherit" className={classes.button}>{nav.name}</Button>
                     </Link>
-                )    
+                )
             }
         })
         return buttons
@@ -154,6 +159,24 @@ export default function Header(props) {
                             <AppBarMenu name={nav.name} items={affinities}/>
                         )
                     }
+                    else if(nav.name==='Login'){
+                        if(loggedin) {
+                            return(
+                                <ListItem button key={nav.name} onClick={logout}>
+                                    <ListItemText primary='Logout'/>      
+                                </ListItem>
+                            )
+                        }
+                        else{
+                            return(
+                                <Link to={nav.link} className={classes.nav}>
+                                    <ListItem button key={nav.name}>
+                                            <ListItemText primary={nav.name}/>      
+                                    </ListItem>
+                                </Link>
+                            )   
+                        }
+                    }
                     else{
                         return(
                             <Link to={nav.link} className={classes.nav}>
@@ -176,7 +199,9 @@ export default function Header(props) {
                 <AppBar position="fixed" className={classes.appbar}>
                     <Toolbar style={{padding: 0}}>
                             <div className={classes.brand}>
-                                <img src='/assets/images/rvce_logo.png' height="70px" style={{float:"left"}} alt="RV logo"/>
+                                <Link to='/'>
+                                    <img src={darkMode?'/assets/images/ieee_rvce_white.png':'/assets/images/ieee_rvce.jpg'} height="70px" style={{float:"left"}} alt="IEEE RVCE logo"/>
+                                </Link>
                             </div>
                             
                             <div className={classes.navs}>
@@ -184,10 +209,11 @@ export default function Header(props) {
                             </div>
                             
                             <div className={classes.brand}>
-                                <img src='/assets/images/ieee_blue.jpg' height="40px" style={{float:"right", marginRight: "3%"}} alt="IEEE logo"/>
+                                <a href='https://www.ieee.org/' target='_blank' rel='noopener noreferrer'>
+                                    <img src={darkMode?'/assets/images/ieee_white.png':'/assets/images/ieee_blue.png'} height="40px" style={{float:"right", marginRight: "3%"}} alt="IEEE logo"/>
+                                </a>
                             </div>
                             <IconButton
-                                color="primary"
                                 onClick={handleDrawerToggle(true)}
                                 className={classes.menuButton}
                             >

@@ -6,12 +6,7 @@ import {Link} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     // Bordered buttons in IEEE blue shade, can be changed as needed
-    button: {
-        border: '1px solid #00629B',
-        color: '#00629B',
-        marginLeft: theme.spacing(0),
-        marginRight: theme.spacing(2),
-    },
+    button: theme.button,
     hiddenMed: {
         [theme.breakpoints.up('md')]: {
             display: 'inline',
@@ -21,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     // To remove hyperlink from each Nav
     menuitem: {
         textDecoration: 'none',
-        color: '#00629B',
+        color: localStorage.getItem('darkMode') === 'true' ? '#eee':'#00629B',
     },
     list: {
         [theme.breakpoints.up('md')]: {
