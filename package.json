@@ -13,6 +13,7 @@
     "react": "^16.13.1",
     "react-big-calendar": "^0.27.0",
     "react-dom": "^16.13.1",
+    "react-items-carousel": "^2.8.0",
     "react-responsive-carousel": "^3.2.9",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3"

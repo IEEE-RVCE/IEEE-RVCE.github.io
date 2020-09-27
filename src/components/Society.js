@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import {Container, Grid, Typography, Paper} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import {Link} from 'react-router-dom';
 import EventsCalendar from '../components/Calendar';
-import Avatar from '../components/Avatar'
+import Avatar from '../components/Avatar';
+import axios from 'axios';
+import ItemsCarousel from 'react-items-carousel';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -28,7 +30,19 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function HomePage(props) {
-    const classes = useStyles();    
+    const classes = useStyles();
+    const [hasError, setErrors] = useState(false);
+    const [planets, setPlanets] = useState({});
+    const [activeItemIndex, setActiveItemIndex] = useState(0);
+    const chevronWidth = 40;
+    
+    useEffect(() => {
+        // GET request using axios inside useEffect React hook
+        axios.get('https://api.npms.io/v2/search?q=react')
+            .then(response => console.log(response));
+    
+    // empty dependency array means this effect will only run once (like componentDidMount in classes)
+    }, []);
 
     return(
         <React.Fragment>
@@ -36,7 +50,7 @@ export default function HomePage(props) {
                 <Paper className={classes.paper}>
                     <Grid>
                         <Typography variant='h3'>
-                            Home
+                            <strong>APPEALING CONTENT</strong>
                         </Typography>
                         <br/>
                         <Typography variant='body1'>
@@ -47,8 +61,31 @@ export default function HomePage(props) {
                 <br/>
                 <Paper className={classes.paper}>
                     <Grid>
+                        <Typography variant='h4'>
+                            <strong>Vision</strong>
+                        </Typography>
+                        <br/>
+                        <Typography variant='body1'>
+                            <p>To impart knowledge pertaining to Computer Science and create a culture of continuous learning and innovation through research, development and experimentation while persevering to develop technology for the betterment of humanity and ensuring harmony within the community.</p>
+                        </Typography>
+                    </Grid><br/>
+                    <Grid>
+                        <Typography variant='h4'>
+                            <strong>Mission</strong>
+                        </Typography>
+                        <br/>
+                        <Typography variant='body1'>
+                            <li>To enable students to gain the skills needed to become responsible professionals and be more aware of the upcoming trends in computer science.</li>
+                            <li>To inculcate a mindset that makes students inquisitive</li>
+                            <li>To imbibe a sense of responsibility towards the technical and global community and fulfil the same by working towards building a collaborative network of like-minded     individuals</li>
+                            <li>To apply observations and knowledge to community-driven sustainable projects</li>
+                        </Typography>
+                    </Grid>
+                </Paper>
+                {/* <Paper className={classes.paper}>
+                    <Grid>
                         <Typography variant='h3'>
-                            About Us(Vision and Mission)
+                            <strong>Vision and Mission</strong>
                         </Typography>
                         <br/>
                         <Typography variant='body1'>
@@ -57,9 +94,9 @@ export default function HomePage(props) {
                             <li>Code</li>
                         </Typography>
                     </Grid>
-                </Paper>
+                </Paper> */}
                 <br/>
-                <Paper className={classes.paper}>
+                {/* <Paper className={classes.paper}>
                     <Typography variant='h3'>
                         Events
                     </Typography>
@@ -69,6 +106,32 @@ export default function HomePage(props) {
                         defaultView="agenda"
                     />
                     <Link to='/calendar' className={classes.link}>Click here to view full calendar</Link>
+                </Paper>
+                <br/> */}
+                <br/>
+                <Paper className={classes.paper}>
+                    <Typography variant='h3'>
+                        <strong>EVENTS</strong>
+                    </Typography><br/>
+                    <ItemsCarousel
+                        requestToChangeActive={setActiveItemIndex}
+                        activeItemIndex={activeItemIndex}
+                        numberOfCards={4}
+                        gutter={20}
+                        leftChevron={<button>{'<'}</button>}
+                        rightChevron={<button>{'>'}</button>}
+                        outsideChevron
+                        chevronWidth={chevronWidth}
+                    >
+                        <Avatar/>
+                        <Avatar/>
+                        <Avatar/>
+                        <Avatar/>
+                        <Avatar/>
+                        <Avatar/>
+                        <Avatar/>
+                        <Avatar/>
+                    </ItemsCarousel>
                 </Paper>
                 <br/>
                 <Paper className={classes.paper}>
@@ -89,6 +152,17 @@ export default function HomePage(props) {
                         <Grid item xs={12} md={3}>
                             <Avatar/>
                         </Grid>
+                    </Grid>
+                </Paper>
+                <Paper className={classes.paper}>
+                    <Grid>
+                        <Typography variant='h3'>
+                            <strong>APPEALING CONTENT</strong>
+                        </Typography>
+                        <br/>
+                        <Typography variant='body1'>
+                         Prop : {props.sname}
+                        </Typography>
                     </Grid>
                 </Paper>
             </Container>
