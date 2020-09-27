@@ -8,51 +8,56 @@ import {Link} from 'react-router-dom';
 import AppBarMenu from './AppBarMenu';
 import {navs, societies, affinities} from '../links';
 
-// Get dark or light mode
-const darkMode = localStorage.getItem('darkMode') === 'true'
-
-// All the styling information for the whole header component is in here
-const useStyles = makeStyles((theme) => ({
-    // Make the container take up all space if free. Padding bottom as it's fixed, it should leave a little transparent space which really won't be noticed.
-    root: {
-        flexGrow: 1,
-        backgroundColor: "transparent",
-        paddingBottom: theme.spacing(6),
-    },
-    // White background for the bar for now
-    appbar: {
-        backgroundColor: theme.appbar.backgroundColor,
-    },
-    // Make brand stay on left by taking all remaining space while justifying
-    brand: {
-        flexGrow: 1,
-    },
-    // Bordered buttons in IEEE blue shade, can be changed as needed
-    button: theme.button,
-    // Don't display the navigation buttons if on a small screen
-    navs: {
-        [theme.breakpoints.up('md')]: {
-            display: 'block',
-        },
-        display: 'none',
-    },
-    link: theme.link,
-    // To remove hyperlink from each Nav
-    nav: {
-        textDecoration: 'none',
-        color: darkMode? '#eee':'#00629B',
-    },
-    // Don't display menu button when on a not-small screen
-    menuButton: {
-        marginRight: theme.spacing(2),
-        [theme.breakpoints.up('md')]: {
-          display: 'none',
-        },
-        display: 'block',
-    },
-}))
-
 export default function Header(props) {
+    // Get dark or light mode
+    const [darkMode,setDarkMode] = React.useState(localStorage.getItem('darkMode') === 'true')
+
+    React.useEffect(() => {
+        setDarkMode(localStorage.getItem('darkMode') === 'true')
+    })
+
+    // All the styling information for the whole header component is in here
+    const useStyles = makeStyles((theme) => ({
+        // Make the container take up all space if free. Padding bottom as it's fixed, it should leave a little transparent space which really won't be noticed.
+        root: {
+            flexGrow: 1,
+            backgroundColor: "transparent",
+            paddingBottom: theme.spacing(6),
+        },
+        // White background for the bar for now
+        appbar: {
+            backgroundColor: theme.appbar.backgroundColor,
+        },
+        // Make brand stay on left by taking all remaining space while justifying
+        brand: {
+            flexGrow: 1,
+        },
+        // Bordered buttons in IEEE blue shade, can be changed as needed
+        button: theme.button,
+        // Don't display the navigation buttons if on a small screen
+        navs: {
+            [theme.breakpoints.up('md')]: {
+                display: 'block',
+            },
+            display: 'none',
+        },
+        link: theme.link,
+        // To remove hyperlink from each Nav
+        nav: {
+            textDecoration: 'none',
+            color: darkMode? '#eee':'#00629B',
+        },
+        // Don't display menu button when on a not-small screen
+        menuButton: {
+            marginRight: theme.spacing(2),
+            [theme.breakpoints.up('md')]: {
+            display: 'none',
+            },
+            display: 'block',
+            color: darkMode ? '#eee':'#00629b',
+        },
+    }))
+
     // All styles are in classes now
     const classes = useStyles()
 
@@ -209,7 +214,6 @@ export default function Header(props) {
                                 </a>
                             </div>
                             <IconButton
-                                color={darkMode? '#eee':'primary'} 
                                 onClick={handleDrawerToggle(true)}
                                 className={classes.menuButton}
                             >

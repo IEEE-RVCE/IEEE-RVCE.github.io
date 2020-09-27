@@ -51,7 +51,6 @@ export default function Signin() {
   const [backdrop, setBackdrop] = React.useState(false)
 
   function validateValues(prop, value) {
-    console.log(prop)
     if (prop === "ieeeid") {
       const re = /^\d{10}$/;
       return re.test(String(value).toLowerCase());
