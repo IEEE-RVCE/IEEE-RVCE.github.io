@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
       width: '80%',
       marginBottom: theme.spacing(1),
+      marginTop: theme.spacing(2),
       minHeight: '500px',
       marginLeft: '10%'
     },
@@ -130,7 +131,7 @@ export default function MembershipPage(){
     };
 
     return(
-        <div className={classes.root}>
+        <div className={classes.root} style={{marginTop:"2%"}}>
       <Stepper activeStep={activeStep} alternativeLabel>
         {steps.map((label) => (
           <Step key={label}>
