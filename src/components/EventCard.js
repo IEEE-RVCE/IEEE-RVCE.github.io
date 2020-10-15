@@ -16,7 +16,14 @@ function Alert(props) {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345
+    maxWidth: 345,
+    '&:hover': {
+      boxShadow: "20px 20px 20px 0px rgba(0, 0, 0, 0.64)",
+      marginLeft: "-3px",
+      marginTop: "-2px",
+      transitionDuration: 200
+   },
+   
   },
   media: {
     height: 0,
@@ -44,7 +51,7 @@ export default function RecipeReviewCard() {
 
   return (
     <div>
-      <Card className={classes.root}>
+      <Card className={classes.root} style={{cursor: "pointer"}}>
         <CardHeader
           title="Workshop on Machine Learning on Distributed Systems Platform"
           subheader="27-07-2020 to 31-07-2020"

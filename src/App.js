@@ -13,7 +13,6 @@ import SocietyPage from './pages/SocietyPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CalendarPage from './pages/CalendarPage';
-import SocietyHeader from './components/SocietyHeader';
 
 export default function App() {
   const tempMedia = useMediaQuery('(prefers-color-scheme: dark)');
@@ -81,14 +80,7 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <div>
         <CssBaseline />
-        <Switch>
-          <Route path="/society/:id">
-            <SocietyHeader/>
-          </Route>
-          <Route>
-            <Header />
-          </Route>
-        </Switch>
+        <Header/>
 
         <Route exact path='/'>
           <HomePage/>
