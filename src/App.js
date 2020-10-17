@@ -13,8 +13,10 @@ import SocietyPage from './pages/SocietyPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CalendarPage from './pages/CalendarPage';
+import EventPage from './pages/EventPage';
 
 export default function App() {
+
   const tempMedia = useMediaQuery('(prefers-color-scheme: dark)');
   if(localStorage.getItem('isSetByUser') === null)
     localStorage.setItem('darkMode', tempMedia)
@@ -102,6 +104,9 @@ export default function App() {
         </Route>
         <Route path='/calendar'>
           <CalendarPage/>
+        </Route>
+        <Route path='/event'>
+          <EventPage/>
         </Route>
 
         <Tooltip title={prefersDarkMode? 'Switch to light theme': 'Switch to dark theme'} aria-label='themeSwitcherTooltip'>

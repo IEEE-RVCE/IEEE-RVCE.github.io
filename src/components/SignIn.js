@@ -52,7 +52,7 @@ export default function Signin() {
 
   function validateValues(prop, value) {
     if (prop === "ieeeid") {
-      const re = /^\d{10}$/;
+      const re = /^\d{8}$/;
       return re.test(String(value).toLowerCase());
     } else {
       const re = /^.{8,}$/;
@@ -76,12 +76,12 @@ export default function Signin() {
   const onSubmitSignIn = async (event) => {
     setBackdrop(true)
     if(values.ieeeidValid && values.passwordValid){
-      await axios.post("https://forseti-full.herokuapp.com/api/auth", {
+      try{
+      const res = await axios.post("https://play.kekvrose.me/api/auth", {
         uid: values.ieeeid,
         pwd: values.password
       })
-      .then(res => {
-        if(res.data.ok === true && res.data.auth === true)
+      if(res.data.ok === true && res.data.auth === true)
         {
           localStorage.setItem('atoken', res.data.atoken)
           localStorage.setItem('isAuthenticated', true)
@@ -91,10 +91,10 @@ export default function Signin() {
           setValues({...values, ieeeidValid: false, passwordValid: false, authFail: true})
           setBackdrop(false)
         }
-      })
-      .catch(err => {
-        console.error(`Axios request failed: ${err}`)
-        if(err.response.status === 401){
+      }
+      catch(err){
+        console.log(`Axios request failed: ${err}`)
+        if(err.status === 401){
           setValues({...values, ieeeidValid: false, passwordValid: false, authFail: true})
           setBackdrop(false)
         }
@@ -102,7 +102,7 @@ export default function Signin() {
           setValues({...values, ieeeidValid: false, passwordValid: false, networkError: true})
           setBackdrop(false)
         }
-      })
+      }
     }
     else{
       setValues({

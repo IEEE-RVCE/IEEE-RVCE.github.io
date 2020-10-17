@@ -3,7 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
+import StepContent from '@material-ui/core/StepContent';
 import Button from '@material-ui/core/Button';
+import MobileStepper from '@material-ui/core/MobileStepper';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
@@ -36,16 +38,15 @@ const useStyles = makeStyles((theme) => ({
                 <br/>
                 <a href="https://www.ieee.org/profile/public/createwebaccount/showCreateAccount.html?url=https%3A%2F%2Fwww.ieee.org%2F ">https://www.ieee.org/profile/public/createwebaccount/showCreateAccount.html?url=https%3A%2F%2Fwww.ieee.org%2F </a>
                 <br/>
-                <img src="/assets/images/Membership_1.1.png" style={{width:"40%",marginRight:"2%",height:"240px",margin:"1%"}}/>
+                <img src="/assets/images/Membership_1.1.png" style={{width:"100%",marginRight:"2%",height:"240px",margin:"1%"}}/>
                 <img src="/assets/images/Membership_1.2.png" style={{width:"40%",height:"240px",margin:"1%"}}/>
                 <br/>
                 PS: You merely have an IEEE account and are not an IEEE Member yet.
                 </div>);
       case 1:
-        return (<div>Click on the given link below and sign in (if asked) with the credentials of the account you created in Step 1.
+        return (<div>Click <a href="http://www.ieee.org/go/join_student">here</a> and sign in (if asked) with the credentials of the account you created in Step 1.
                 <br/>
                 <img src="/assets/images/Membership_2.1.png" style={{height:"240px",margin:"1%"}}/><br/>
-                <a href="http://www.ieee.org/go/join_student">http://www.ieee.org/go/join_student</a>
                 </div>);
       case 2:
         return (<div>
@@ -115,6 +116,7 @@ const useStyles = makeStyles((theme) => ({
 export default function MembershipPage(){
 
     const classes = useStyles();
+    const [start,setStart]=React.useState(false);
     const [activeStep, setActiveStep] = React.useState(0);
     const steps = getSteps();
   
@@ -131,14 +133,38 @@ export default function MembershipPage(){
     };
 
     return(
-        <div className={classes.root} style={{marginTop:"2%"}}>
-      <Stepper activeStep={activeStep} alternativeLabel>
+        <div className={classes.root} style={{marginTop:"5%"}}>
+          {!start && (<Button onClick={() => setStart(true)}>Start</Button>)}
+      {start && (<div>
+        {/* <Stepper activeStep={activeStep} alternativeLabel orientation='vertical'>
         {steps.map((label) => (
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
+            <StepContent>            
+              <Typography >{getStepContent(activeStep)}</Typography>
+            </StepContent>
           </Step>
         ))}
-      </Stepper>
+      </Stepper> */}
+      <Typography >{getStepContent(activeStep)}</Typography>
+      <MobileStepper
+        steps={6}
+        position="static"
+        variant="text"
+        activeStep={activeStep}
+        nextButton={
+          <Button size="small" onClick={handleNext} disabled={activeStep === 5}>
+            Next
+            {/* {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />} */}
+          </Button>
+        }
+        backButton={
+          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+            {/* {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />} */}
+            Back
+          </Button>
+        }
+      />
       <div>
         {activeStep === steps.length ? (
           <div style={{display:"grid",alignContent:"center",alignItems:"center",justifyContent:"center"}}>
@@ -147,7 +173,7 @@ export default function MembershipPage(){
           </div>
         ) : (
           <div>
-            <Typography className={classes.instructions} style={{display:"grid",alignItems:"center",justifyContent:"center"}}>{getStepContent(activeStep)}</Typography>
+            {/* <Typography className={classes.instructions} style={{display:"grid",alignItems:"center",justifyContent:"center"}}>{getStepContent(activeStep)}</Typography> */}
             <div style={{display:"flex",alignContent:"center",alignItems:"center",justifyContent:"center"}}>
               <Button
                 disabled={activeStep === 0}
@@ -163,6 +189,8 @@ export default function MembershipPage(){
           </div>
         )}
       </div>
+      </div>
+      )}
     </div>
     )
 }

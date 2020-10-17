@@ -9,6 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";  
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
+import { Dialog, DialogTitle, DialogContent, DialogActions } from "@material-ui/core";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -16,17 +17,49 @@ function Alert(props) {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345
+    maxWidth: 345,
+    height:400,
+    '&:hover':{
+      boxShadow: '0px 0px 5px 5px rgba(0,0,0,0.14)',
+      // marginTop:"-3px",
+      // marginLeft:"-3px",
+      transitionDuration:300
+    },
   },
   media: {
     height: 0,
     paddingTop: "56.25%" // 16:9
-  }
+  },
+  dialog:{
+    [theme.breakpoints.up('md')]: {
+      flexDirection: 'row',
+  },
+  flexDirection: 'column',
+  display: 'flex',
+  },
+  poster:{
+    [theme.breakpoints.up('md')]:{
+      maxWidth: "40%",
+    },
+    width: "100%",
+  },
+  content:{
+    [theme.breakpoints.up('md')]:{
+      width: "60%",
+    },
+    width: "100%",
+    padding: '1%',
+  },
 }));
 
-export default function RecipeReviewCard() {
+export default function RecipeReviewCard(props) {
   const classes = useStyles();
+  const prefersDarkMode = localStorage.getItem('darkMode') === 'true';
+  let loggedIn = localStorage.getItem('isAuthenticated') === 'true';
+  console.log(loggedIn)
+  //let mobile = window.matchMedia('(max-width: 300px)').matches === 'true';
   const [open, setOpen] = React.useState(false);
+  const [eventDialog,setEventDialog] = React.useState(false);
 
   //Shows snackbar with message and copies link in '' for user
   const handleClick = () => {
@@ -44,22 +77,22 @@ export default function RecipeReviewCard() {
 
   return (
     <div>
-      <Card className={classes.root}>
+      <Card className={classes.root} onDoubleClick={() => setEventDialog(true)} style={{display:"flex",flexDirection:"column",backgroundColor:(prefersDarkMode)?"#717171":"azure"}}>
         <CardHeader
-          title="Workshop on Machine Learning on Distributed Systems Platform"
-          subheader="27-07-2020 to 31-07-2020"
+          title={props.event.name}
+          subheader={props.event.date}
         />
         <CardMedia
           className={classes.media}
-          image="https://www.uktech.news/wp-content/uploads/2020/02/shutterstock_1384554629-898x505.jpg"
+          image={props.event.smallposter}
           title="Paella dish"
         />
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
-            Keywords: ML, HPCC, Distributed Platform
+            Keywords: {props.event.keywords}
           </Typography>
         </CardContent>
-        <CardActions disableSpacing>
+        <CardActions disableSpacing style={{marginTop:"auto"}}>
           <Button size="small" onClick={handleClick}>
             Share
           </Button>
@@ -68,9 +101,58 @@ export default function RecipeReviewCard() {
               Link Copied!
             </Alert>
           </Snackbar>
-          <Button size="small">Read More</Button>
+          <Button size="small" onClick={() => setEventDialog(true)}>Read More</Button>
         </CardActions>
       </Card>
+
+      {/* Dialog for each event*/}
+      <Dialog
+        open={Boolean(eventDialog)}
+        onClose={() => setEventDialog(false)}
+        scroll="body"
+        variant="fade"
+      >
+        <DialogTitle>
+          {props.event.name}
+          {loggedIn && (<div style={{float:"right", display:"flex",flexDirection:"row"}}>
+            <Button size="small">Edit</Button>
+            <Button size="small">Remove</Button>
+          </div>)}
+        </DialogTitle>
+        <DialogContent>
+        <div className={classes.dialog}>
+            <div className={classes.content}>
+                <span style={{fontSize:"1em"}}>
+                    <b>Description:</b> {props.event.description}
+                </span><br/><br/>
+                <span style={{fontSize:"1em", margin:"2px"}}>
+                    <b>Date and Time:</b> {props.event.date},{props.event.time}
+                </span><br/><br/>
+                <span style={{fontSize:"1em", margin:"2px"}}>
+                    <b>Fee:</b> {props.event.fee}
+                </span><br/><br/>
+                <span style={{fontSize:"1em", margin:"2px"}}>
+                    <b>Speakers:</b> {props.event.speaker}
+                </span><br/><br/>
+                <span style={{fontSize:"1em", margin:"2px"}}>
+                    <b>About Speakers:</b> {props.event.aboutSpeaker}
+                </span><br/><br/>
+                <span style={{fontSize:"1em", margin:"2px"}}>
+                    <b>Registration Link:</b> <a href={props.event.reglink}>{props.event.reglink}</a>
+                </span><br/><br/>
+                <span style={{fontSize:"1em", margin:"2px"}}>
+                    <b>Keywords:</b> {props.event.keywords}
+                </span>
+            </div>
+            <div className={classes.poster}>
+                <img src={props.event.largeposter} style={{backgroundSize:"contain",width:"inherit",}}/>
+            </div>
+            </div>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setEventDialog(false)}>Close</Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 }

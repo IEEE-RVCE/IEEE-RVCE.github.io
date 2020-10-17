@@ -13,7 +13,7 @@ export const navs = [
 export const societyNav = [
     {name: "Home", link: '/'},
     {name: "About Us", link: '/about'},
-    {name: "Events", link: '/society'},
+    {name: "Events", link: '/event'},
     {name: "Exec Com", link: '/society'},
     {name: "Login", link: '/login'},
 ]
