@@ -3,7 +3,7 @@ import {createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import {CssBaseline, Fab, Tooltip} from '@material-ui/core';
 import {Brightness3, BrightnessHigh} from '@material-ui/icons';
-import {Route} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import SignInPage from './pages/SignInPage';
@@ -83,7 +83,7 @@ export default function App() {
       <div>
         <CssBaseline />
         <Header/>
-        
+
         <Route exact path='/'>
           <HomePage/>
         </Route>
@@ -99,7 +99,7 @@ export default function App() {
         <Route path='/devs'>
           <DevelopersPage/>
         </Route>
-        <Route path='/society'>
+        <Route path='/society/:id'>
           <SocietyPage/>
         </Route>
         <Route path='/calendar'>

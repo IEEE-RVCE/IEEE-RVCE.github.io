@@ -18,13 +18,13 @@ function Alert(props) {
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
-    height:400,
-    '&:hover':{
-      boxShadow: '0px 0px 5px 5px rgba(0,0,0,0.14)',
-      // marginTop:"-3px",
-      // marginLeft:"-3px",
-      transitionDuration:300
-    },
+    '&:hover': {
+      boxShadow: "20px 20px 20px 0px rgba(0, 0, 0, 0.64)",
+      marginLeft: "-3px",
+      marginTop: "-2px",
+      transitionDuration: 200
+   },
+   
   },
   media: {
     height: 0,
@@ -77,7 +77,7 @@ export default function RecipeReviewCard(props) {
 
   return (
     <div>
-      <Card className={classes.root} onDoubleClick={() => setEventDialog(true)} style={{display:"flex",flexDirection:"column",backgroundColor:(prefersDarkMode)?"#717171":"azure"}}>
+      <Card className={classes.root} onDoubleClick={() => setEventDialog(true)} style={{display:"flex",flexDirection:"column",backgroundColor:(prefersDarkMode)?"#717171":"azure", cursor:"pointer"}}>
         <CardHeader
           title={props.event.name}
           subheader={props.event.date}

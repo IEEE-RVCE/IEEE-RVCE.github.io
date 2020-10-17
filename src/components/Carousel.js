@@ -16,7 +16,7 @@ export default function HomeCarousel(props) {
         return (
           <div>
             <img alt="" src={img.src} />
-            {/* <p className="legend">{img.label}</p> */}
+            <p className="legend">{img.label}</p>
           </div>
         );
       })}
