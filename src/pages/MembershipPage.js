@@ -61,19 +61,19 @@ export default function MembershipPage(){
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
         window.scrollTo(0,0);
-        window.location.href = window.location.href.slice(0,35) + (activeStep + 2);
+        window.location.href = window.location.origin + '/#/membership/' + (activeStep + 2);
     };
   
     const handleBack = () => {
       setActiveStep((prevActiveStep) => prevActiveStep - 1);
       window.scrollTo(0,0);
-      window.location.href = window.location.href.slice(0,35) + (activeStep);
+      window.location.href = window.location.origin + '/#/membership/' + (activeStep);
     };
   
     const handleReset = () => {
       setActiveStep(0);
       setStart(false);
-      window.location.href = window.location.href.slice(0,34);
+      window.location.href = window.location.origin + '/#/membership/';
       window.location.reload();
     };
 
