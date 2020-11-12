@@ -93,3 +93,15 @@ export const images= {
         rvce: imagePath + '/logos/rvce_logo.png',
     }
 }
+
+//Map of socs and affs with ecat
+export const ecats = {
+    compsoc: 1,
+    comsoc: 2,
+    pes: 3,
+    aps: 4,
+    sps: 5,
+    ras: 6,
+    wie: 7,
+    sight: 8
+}

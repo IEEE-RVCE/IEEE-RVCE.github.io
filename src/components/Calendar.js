@@ -3,6 +3,8 @@ import { Calendar, momentLocalizer } from "react-big-calendar";
 import axios from 'axios';
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
+import {hostname} from '../links';
+
 moment.locale("en-GB");
 const localizer = momentLocalizer(moment);
 
@@ -13,20 +15,12 @@ export default class EventsCalendar extends React.Component {
       height: window.innerHeight,
       width: window.innerWidth,
       proportions: {
-        width: props.height,
-        height: props.width
+        width: props.width,
+        height: props.height
       },
       toolbar: props.toolbar,
       defaultView: props.defaultView,
-      events: [
-        {
-          title: "Event 1",
-          start: new Date(),
-          end: new Date(),
-          allDay: false,
-          resource: false
-        }
-      ]
+      events: []
     };
   }
 
@@ -37,9 +31,14 @@ export default class EventsCalendar extends React.Component {
 
   getEvents = () => {
       // Code that gets events from backend
-      axios.get('https://forseti-full.herokuapp.com/api/calendar')
+      axios.get(hostname + '/api/event')
         .then(res => {
-          this.setState({events: res.data.events})
+          let events = [];
+          res.data.events.forEach(({ename: title, eventstart: start, eventend: end, eid}) => {
+            events.push({title, start, end, allDay: false, resource: false, eid})
+          })
+          console.log(events)
+          this.setState({events: events})
         })
         .catch(err => {
           console.error(`Error when getting calendar events: ${err}`)
@@ -93,11 +92,15 @@ export default class EventsCalendar extends React.Component {
           }>
             <Calendar
               popup
+              views={['month','agenda']}
               localizer={localizer}
               events={this.state.events}
               defaultView={this.props.defaultView}
               startAccessor="start"
               endAccessor="end"
+              onDoubleClickEvent={(event) => {
+                window.location.href = window.location.origin + '/#/events/' + event.eid;
+              }}
               toolbar={this.props.toolbar}
             />
           </div>

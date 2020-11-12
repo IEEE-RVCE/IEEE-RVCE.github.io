@@ -9,7 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";  
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
-import { Dialog, DialogTitle, DialogContent, DialogActions } from "@material-ui/core";
+import {Link} from 'react-router-dom';
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -17,54 +17,32 @@ function Alert(props) {
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    ...theme.eventcard,
     maxWidth: 345,
     '&:hover': {
-      boxShadow: "20px 20px 20px 0px rgba(0, 0, 0, 0.64)",
-      marginLeft: "-3px",
-      marginTop: "-2px",
-      transitionDuration: 200
+      boxShadow: "0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12)",
+      transitionDuration: 200,
    },
-   
   },
   media: {
     height: 0,
     paddingTop: "56.25%" // 16:9
   },
-  dialog:{
-    [theme.breakpoints.up('md')]: {
-      flexDirection: 'row',
-  },
-  flexDirection: 'column',
-  display: 'flex',
-  },
-  poster:{
-    [theme.breakpoints.up('md')]:{
-      maxWidth: "40%",
-    },
-    width: "100%",
-  },
-  content:{
-    [theme.breakpoints.up('md')]:{
-      width: "60%",
-    },
-    width: "100%",
-    padding: '1%',
-  },
 }));
 
-export default function RecipeReviewCard(props) {
+export default function EventCard(props) {
   const classes = useStyles();
-  const prefersDarkMode = localStorage.getItem('darkMode') === 'true';
-  let loggedIn = localStorage.getItem('isAuthenticated') === 'true';
-  console.log(loggedIn)
-  //let mobile = window.matchMedia('(max-width: 300px)').matches === 'true';
   const [open, setOpen] = React.useState(false);
-  const [eventDialog,setEventDialog] = React.useState(false);
+
+  const eventTimes = {
+    start: new Date(props.event.eventstart),
+    end: new Date(props.event.eventend)
+  }
 
   //Shows snackbar with message and copies link in '' for user
   const handleClick = () => {
     setOpen(true);
-    navigator.clipboard.writeText("Copy this text to clipboard");
+    navigator.clipboard.writeText(document.URL + '/' + props.event.eid);
   };
 
   const handleClose = (event, reason) => {
@@ -77,14 +55,14 @@ export default function RecipeReviewCard(props) {
 
   return (
     <div>
-      <Card className={classes.root} onDoubleClick={() => setEventDialog(true)} style={{display:"flex",flexDirection:"column",backgroundColor:(prefersDarkMode)?"#717171":"azure", cursor:"pointer"}}>
+      <Card className={classes.root} onDoubleClick={() => window.location.href = window.location.href + '/' + props.event.eid}>
         <CardHeader
-          title={props.event.name}
-          subheader={props.event.date}
+          title={props.event.ename}
+          subheader={eventTimes.start.toString().slice(0,24) + " to " + eventTimes.end.toString().slice(0,24)}
         />
         <CardMedia
           className={classes.media}
-          image={props.event.smallposter}
+          image={props.event.smallposterlink}
           title="Paella dish"
         />
         <CardContent>
@@ -101,58 +79,11 @@ export default function RecipeReviewCard(props) {
               Link Copied!
             </Alert>
           </Snackbar>
-          <Button size="small" onClick={() => setEventDialog(true)}>Read More</Button>
+          <Link style={{textDecoration: 'none'}} to={'/events/'+props.event.eid}>
+            <Button size="small">Read More</Button>
+          </Link>
         </CardActions>
       </Card>
-
-      {/* Dialog for each event*/}
-      <Dialog
-        open={Boolean(eventDialog)}
-        onClose={() => setEventDialog(false)}
-        scroll="body"
-        variant="fade"
-      >
-        <DialogTitle>
-          {props.event.name}
-          {loggedIn && (<div style={{float:"right", display:"flex",flexDirection:"row"}}>
-            <Button size="small">Edit</Button>
-            <Button size="small">Remove</Button>
-          </div>)}
-        </DialogTitle>
-        <DialogContent>
-        <div className={classes.dialog}>
-            <div className={classes.content}>
-                <span style={{fontSize:"1em"}}>
-                    <b>Description:</b> {props.event.description}
-                </span><br/><br/>
-                <span style={{fontSize:"1em", margin:"2px"}}>
-                    <b>Date and Time:</b> {props.event.date},{props.event.time}
-                </span><br/><br/>
-                <span style={{fontSize:"1em", margin:"2px"}}>
-                    <b>Fee:</b> {props.event.fee}
-                </span><br/><br/>
-                <span style={{fontSize:"1em", margin:"2px"}}>
-                    <b>Speakers:</b> {props.event.speaker}
-                </span><br/><br/>
-                <span style={{fontSize:"1em", margin:"2px"}}>
-                    <b>About Speakers:</b> {props.event.aboutSpeaker}
-                </span><br/><br/>
-                <span style={{fontSize:"1em", margin:"2px"}}>
-                    <b>Registration Link:</b> <a href={props.event.reglink}>{props.event.reglink}</a>
-                </span><br/><br/>
-                <span style={{fontSize:"1em", margin:"2px"}}>
-                    <b>Keywords:</b> {props.event.keywords}
-                </span>
-            </div>
-            <div className={classes.poster}>
-                <img src={props.event.largeposter} style={{backgroundSize:"contain",width:"inherit",}}/>
-            </div>
-            </div>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={() => setEventDialog(false)}>Close</Button>
-        </DialogActions>
-      </Dialog>
     </div>
   );
 }
