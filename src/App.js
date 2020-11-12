@@ -9,7 +9,14 @@ import AboutPage from './pages/AboutPage';
 import SignInPage from './pages/SignInPage';
 import MembershipPage from './pages/MembershipPage';
 import DevelopersPage from './pages/DevelopersPage';
-import SocietyPage from './pages/SocietyPage';
+import CSSocietyPage from './pages/CSSocietyPage';
+import APSSocietyPage from './pages/APSSocietyPage';
+import RASSocietyPage from './pages/RASSocietyPage';
+import SPSSocietyPage from './pages/SPSSocietyPage';
+import PESSocietyPage from './pages/PESSocietyPage';
+import COMSOCSocietyPage from './pages/COMSOCSocietyPage';
+import WIEAffinityPage from './pages/WIEAffinityPage';
+import SIGHTAffinityPage from './pages/SIGHTAffinityPAge';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CalendarPage from './pages/CalendarPage';
@@ -97,8 +104,29 @@ export default function App() {
         <Route path='/devs'>
           <DevelopersPage/>
         </Route>
-        <Route path='/society/:id'>
-          <SocietyPage/>
+        <Route path='/society/cs'>
+          <CSSocietyPage/>
+        </Route>
+        <Route path='/society/aps'>
+          <APSSocietyPage/>
+        </Route>
+        <Route path='/society/comsoc'>
+          <COMSOCSocietyPage/>
+        </Route>
+        <Route path='/society/pes'>
+          <PESSocietyPage/>
+        </Route>
+        <Route path='/society/ras'>
+          <RASSocietyPage/>
+        </Route>
+        <Route path='/society/sps'>
+          <SPSSocietyPage/>
+        </Route>
+        <Route path='/affinity/wie'>
+          <WIEAffinityPage/>
+        </Route>
+        <Route path='/affinity/sight'>
+          <SIGHTAffinityPage/>
         </Route>
         <Route path='/calendar'>
           <CalendarPage/>

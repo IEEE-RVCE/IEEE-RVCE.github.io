@@ -1,100 +1,49 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Container, Grid, Typography, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '../components/Avatar';
-import axios from 'axios';
 import EventCard from '../components/EventCard';
-import HomeCarousel from '../components/Carousel';
+import { isMobile } from 'react-device-detect';
 import Collapsible from 'react-collapsible';
-import stylesT from '../components/type.module.css'
 
 const prefersDarkMode = localStorage.getItem('darkMode') === 'true'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        backgroundColor: prefersDarkMode?'#303030':"#FFF"
+        backgroundColor: prefersDarkMode ? '#303030' : "#FFF"
     },
     container: theme.page,
     paper: {
         ...theme.paper,
         padding: theme.spacing(4)
-    },
-    // link: {
-    //     ...theme.link,
-    //     color: localStorage.getItem('darkMode') === 'true' ? '#bbb' : '#00629B',
-    //     '&:hover': {
-    //         textDecoration: 'underline',
-    //     }
-    // },
-    carousel: {
-        margin: "auto",
-        paddingTop: theme.spacing(4),
     }
 }))
 
-const carouselImages = [
-    {
-        src: "/assets/images/session1.png",
-        label: "session1"
-    },
-    {
-        src: "/assets/images/session2.png",
-        label: "session2"
-    },
-    {
-        src: "/assets/images/session3.jpg",
-        label: "session3"
-    }
-];
-
-
-
-export default function HomePage(props) {
+export default function CSSocietyPage(props) {
     const classes = useStyles();
-
-    // useEffect(() => {
-    //     // GET request using axios inside useEffect React hook
-    //     axios.get('https://api.npms.io/v2/search?q=react')
-    //         .then(response => console.log(response));
-
-    //     // empty dependency array means this effect will only run once (like componentDidMount in classes)
-    // }, []);
 
     return (
         <React.Fragment>
-            <Container maxWidth='xl' className={classes.root}>
-                {/* <Paper className={classes.paper}>
-                    <Grid>
-                        <Typography variant='h5'>
-                            <span className={stylesT.typewriter}>
-                                <h1>{props.sname}</h1>
-                            </span>
-                        </Typography>
-                        <br />
-                    </Grid>
-                </Paper>
-                <br /> */}
-                <Grid>
-                    <Grid container spacing={2} justify='center'>
-                        <Grid item xs={12} md={8}><br />
+            <img src="/assets/images/ComputerSociety.png" id="imgID" style={{ maxHeight: "100vh", width: "100%" }} />
+            <Container maxWidth='xl' className={classes.root}><br/>
                             {/* <Paper className={classes.paper}> */}
-                            <div style={{ paddingRight: "15%" }}>
-                                <   Typography variant='h4'>
+                            <div>
+                                <Typography variant='h4' style={{ textAlign: (isMobile) ? "center" : "" }}>
                                     <strong>Vision</strong>
                                 </Typography>
-                                <Typography variant='body1'>
+                                <Typography variant='body1' style={{ paddingRight: "7%", paddingLeft: (isMobile) ? "5%" : "" }}>
                                     <p style={{ textAlign: "justify", textJustify: "inter-word" }}>To impart knowledge pertaining to Computer Science and create a culture of continuous learning and innovation through research, development and experimentation while persevering to develop technology for the betterment of humanity and ensuring harmony within the community.</p>
                                 </Typography>
                             </div>
 
                             {/* </Paper> */}
-                            <br /><br />
+                            <br />
                             {/* <Paper className={classes.paper}> */}
-                            <div style={{ paddingRight: "15%" }}>
-                                <Typography variant='h4'>
+                            <div>
+                                <Typography variant='h4' style={{ textAlign: (isMobile) ? "center" : "" }}>
                                     <strong>Mission</strong>
-                                </Typography><br />
-                                <Typography variant='body1'>
+                                </Typography>
+                                <Typography variant='body1' style={{ paddingRight: "7%" }}>
                                     <ul>
                                         <li style={{ textAlign: "justify", textJustify: "inter-word" }}>To enable students to gain the skills needed to become responsible professionals and be more aware of the upcoming trends in computer science.</li>
                                         <li style={{ textAlign: "justify", textJustify: "inter-word" }}>To inculcate a mindset that makes students inquisitive</li>
@@ -104,31 +53,8 @@ export default function HomePage(props) {
 
                                 </Typography>
                             </div>
-
-                            {/* </Paper> */}
-                        </Grid>
-                        <Grid item xs={12} md={4}>
-                            <Paper className={classes.paper}>
-                                <   Typography variant='h5'>
-                                    <strong>What do we do?</strong>
-                                </Typography>
-                                <Container maxWidth='lg' className={classes.carousel}>
-                                    <HomeCarousel images={carouselImages} />
-                                </Container>
-                                <Typography variant='body1'><br />
-                                    <li>Meetings</li>
-                                    <li>Meetings</li>
-                                    <li>Meetings</li>
-                                    <li>Meetings</li>
-                                    <li>Repeat</li>
-                                </Typography>
-                            </Paper>
-                        </Grid>
-                    </Grid>
                     <br />
-
-                </Grid>
-                <Typography variant='h4'>
+                <Typography variant='h4' style={{ textAlign: (isMobile) ? "center" : "" }}>
                     <strong>EVENTS</strong>
                 </Typography><br />
                 <Grid container spacing={2} justify='center'>
@@ -149,7 +75,7 @@ export default function HomePage(props) {
                 {/* </Paper> */}
                 <br />
                 {/* <Paper className={classes.paper}> */}
-                <Typography variant='h4'>
+                <Typography variant='h4' style={{ textAlign: (isMobile) ? "center" : "" }}>
                     <strong>ExeCom</strong>
                 </Typography>
                 <br />
@@ -169,7 +95,7 @@ export default function HomePage(props) {
                 </Grid>
                 {/* </Paper> */}
                 <br /><br />
-                <Typography variant="h4">
+                <Typography variant="h4" style={{ textAlign: (isMobile) ? "center" : "" }}>
                     <strong>Additional Resources</strong>
                 </Typography><br />
                 <Paper className={classes.paper} style={{ padding: "16px 32px", cursor: "pointer" }}>
@@ -196,7 +122,7 @@ export default function HomePage(props) {
                             <p>It can even be another Collapsible component. Check out the next section!</p>
                         </Collapsible>
                     </Typography>
-                </Paper><br/>
+                </Paper><br />
             </Container>
         </React.Fragment>
     )

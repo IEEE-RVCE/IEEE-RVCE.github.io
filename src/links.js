@@ -30,6 +30,6 @@ export const societies = [
 
 // List of affinities and links
 export const affinities = [
-    {name: "SIGHT", link:'/affinity'},
-    {name: "WIE", link:'/affinity'}
+    {name: "SIGHT", link:'/affinity/sight'},
+    {name: "WIE", link:'/affinity/wie'}
 ]
