@@ -7,16 +7,7 @@ import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
 
- let theme = createMuiTheme();
-// theme.typography.h5 = {
-//   fontSize: '1.2rem',
-//   '@media (min-width:700px)': {
-//     fontSize: '1.5rem',
-//   },
-//   [theme.breakpoints.up('md')]: {
-//     fontSize: '2rem',
-//   },
-// };
+let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,15 +20,13 @@ const useStyles = makeStyles((theme) => ({
   },
   media: {
     height: 0,
-    paddingTop: "56.25%" // 16:9
+    paddingTop: "56.25%"
   },
   name: {
-    color: "#006341",
     fontWeight: "bold",
     fontFamily: "Formata"
   },
   post: {
-    color: "#658D1B",
     fontFamily: "Cambria"
   },
  
@@ -56,25 +45,25 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function AvatarCard() {
+export default function AvatarCard(props) {
   const classes = useStyles();
 
   return (
-    <Card variant="outlined" className={classes.root}>
+    <Card className={classes.root}>
       <CardContent className={classes.content}>
         <Avatar
-          alt="First_Name Last_Name"
-          src="../../assets/images/avatar_demo.jpg"
+          alt={props.name}
+          src={props.src}
           className={classes.large}
         />
         <br />
         <ThemeProvider theme={theme}>
           <Typography className={classes.name} variant="h5">
-            Name
+            {props.name}
           </Typography>
         </ThemeProvider>
         <Typography className={classes.post} variant="h6">
-          Position, Society Name/ IEEE RVCE SB
+          {props.position}
         </Typography>
       </CardContent>
     </Card>

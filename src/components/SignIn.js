@@ -16,6 +16,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import axios from 'axios';
+import { hostname } from "../links";
 
 const useStyles = makeStyles((theme) => ({
   root: theme.root,
@@ -77,7 +78,7 @@ export default function Signin() {
     setBackdrop(true)
     if(values.ieeeidValid && values.passwordValid){
       try{
-      const res = await axios.post("https://play.kekvrose.me/api/auth", {
+      const res = await axios.post(hostname + "/api/auth", {
         uid: values.ieeeid,
         pwd: values.password
       })

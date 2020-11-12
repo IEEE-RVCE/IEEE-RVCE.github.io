@@ -7,7 +7,7 @@ node_modules
 .pnp.js
 
 # testing
-/coverage
+/backend-rest-test
 
 # production
 /build
