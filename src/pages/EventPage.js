@@ -9,7 +9,8 @@ import {AddEventDialog} from '../components/AddEventDialog';
 const useStyles = makeStyles((theme) => ({
     root: {
         ...theme.page,
-        padding: theme.spacing(4),
+        paddingTop: theme.spacing(4),
+        paddingBottom: theme.spacing(4),
     },
     link: theme.link,
     griditem: {
