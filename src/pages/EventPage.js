@@ -94,12 +94,12 @@ export default function EventPage() {
         loaded?
         (
             <div className={classes.root}>
+                <div className={classes.backButton}>
+                    <Button onClick={() => window.location.href = window.location.href.substring(0, window.location.href.indexOf(eid))} size="small">Go back</Button>
+                </div>
                 {
                         loggedIn && (
                             <>
-                                <div className={classes.backButton}>
-                                    <Button onClick={() => window.location.href = window.location.href.substring(0, window.location.href.indexOf(eid))} size="small">Go back</Button>
-                                </div>
                                 <div className={classes.adminButtons}>
                                     <Button onClick={handleDialogOpen} size="small">Edit</Button>
                                     <Button onClick={deleteEvent} size="small">Remove</Button>
