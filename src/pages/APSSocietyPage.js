@@ -1,10 +1,13 @@
-import React from "react";
+import React,{useState,useEffect} from 'react';
+import axios from 'axios';
 import { Container, Grid, Typography, Paper } from '@material-ui/core';
+import {Link} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '../components/Avatar';
 import EventCard from '../components/EventCard';
 import { isMobile } from 'react-device-detect';
 import Collapsible from 'react-collapsible';
+import {hostname} from '../links';
 
 const prefersDarkMode = localStorage.getItem('darkMode') === 'true'
 
@@ -19,10 +22,8 @@ const useStyles = makeStyles((theme) => ({
     },
     link: {
         ...theme.link,
-        color: localStorage.getItem('darkMode') === 'true' ? '#bbb' : '#00629B',
-        '&:hover': {
-            textDecoration: 'underline',
-        }
+        float: "right", 
+        textDecoration: "none",
     },
     carousel: {
         margin: "auto",
@@ -32,6 +33,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function APSSocietyPage(props) {
     const classes = useStyles();
+
+    const [events, setEvents] = useState([]);
+
+    useEffect(() => {
+        axios.get(hostname+'/api/event')
+            .then(response => {
+                setEvents(response.data.events)
+            });
+    }, []);
 
     return (
         <React.Fragment>
@@ -67,20 +77,17 @@ export default function APSSocietyPage(props) {
                     <strong>EVENTS</strong>
                 </Typography><br />
                 <Grid container spacing={2} justify='center'>
-                    <Grid item xs={12} md={3}>
-                        <EventCard />
-                    </Grid>
-                    <Grid item xs={12} md={3}>
-                        <EventCard />
-                    </Grid>
-                    <Grid item xs={12} md={3}>
-                        <EventCard />
-                    </Grid>
-                    <Grid item xs={12} md={3}>
-                        <EventCard />
-                    </Grid>
+                    {
+                        events.slice(0,4).map((item) => {
+                            return(
+                            <Grid item xs={12} md={3}>
+                                <EventCard event={item}/>
+                            </Grid>
+                            )
+                        })
+                    }
                 </Grid><br />
-                <a href="#" style={{ float: "right", textDecoration: "none" }}>Click here for more events</a>
+                <Link to="/events" className={classes.link}>Click here for more events</Link>
                 {/* </Paper> */}
                 <br />
                 {/* <Paper className={classes.paper}> */}
@@ -117,11 +124,10 @@ export default function APSSocietyPage(props) {
                 </Paper><br />
                 <Paper className={classes.paper} style={{ padding: "16px 32px", cursor: "pointer" }}>
                     <Typography variant="h6">
-                        <a><Collapsible trigger="Competitions" triggerStyle={{ fontWeight: "bold" }}>
+                        <Collapsible trigger="Competitions" triggerStyle={{ fontWeight: "bold" }}>
                             <p>This is the collapsible content. It can be any element or React component you like.</p>
                             <p>It can even be another Collapsible component. Check out the next section!</p>
                         </Collapsible>
-                        </a>
                     </Typography>
                 </Paper><br />
                 <Paper className={classes.paper} style={{ padding: "16px 32px", cursor: "pointer" }}>

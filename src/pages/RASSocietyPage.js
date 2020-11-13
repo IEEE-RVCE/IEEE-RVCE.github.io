@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React,{useState,useEffect} from 'react';
+import axios from 'axios';
 import { Container, Grid, Typography, Paper } from '@material-ui/core';
+import {Link} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '../components/Avatar';
 import EventCard from '../components/EventCard';
+import { isMobile } from 'react-device-detect';
 import Collapsible from 'react-collapsible';
+import {hostname} from '../links';
 
 const prefersDarkMode = localStorage.getItem('darkMode') === 'true'
 
@@ -15,11 +19,29 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         ...theme.paper,
         padding: theme.spacing(4)
+    },
+    link: {
+        ...theme.link,
+        float: "right", 
+        textDecoration: "none",
+    },
+    carousel: {
+        margin: "auto",
+        paddingTop: theme.spacing(4),
     }
 }))
 
 export default function RASSocietyPage(props) {
     const classes = useStyles();
+
+    const [events, setEvents] = useState([]);
+
+    useEffect(() => {
+        axios.get(hostname+'/api/event')
+            .then(response => {
+                setEvents(response.data.events)
+            });
+    }, []);
 
     return (
         <React.Fragment>

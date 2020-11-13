@@ -6,7 +6,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
 
 import AppBarMenu from './AppBarMenu';
-import { navs, societies, affinities } from '../links';
+import {navs, societies, affinities, images} from '../links';
 
 export default function Header(props) {
 
@@ -15,7 +15,7 @@ export default function Header(props) {
 
     React.useEffect(() => {
         setDarkMode(localStorage.getItem('darkMode') === 'true')
-    })
+    },[])
 
     // All the styling information for the whole header component is in here
     const useStyles = makeStyles((theme) => ({
@@ -197,33 +197,29 @@ export default function Header(props) {
     return (
         <div className={classes.root}>
             <ElevationScroll {...props}>
-                <AppBar
-                    position="fixed"
-                    className={classes.appbar}
-                    id="navbar"
-                  >
-                    <Toolbar style={{ padding: 0 }}>
-                        <div className={classes.brand}>
-                            <Link to='/'>
-                                <img src={darkMode ? '/assets/images/ieee_rvce_white.png' : '/assets/images/ieee_rvce.jpg'} height="70px" style={{ float: "left" }} alt="IEEE RVCE logo" />
-                            </Link>
-                        </div>
-
-                        <div className={classes.navs}>
-                            <Buttons />
-                        </div>
-
-                        <div className={classes.brand}>
-                            <a href='https://www.ieee.org/' target='_blank' rel='noopener noreferrer'>
-                                <img src={darkMode ? '/assets/images/ieee_white.png' : '/assets/images/ieee_blue.png'} height="40px" style={{ float: "right", marginRight: "3%" }} alt="IEEE logo" />
-                            </a>
-                        </div>
-                        <IconButton
-                            onClick={handleDrawerToggle(true)}
-                            className={classes.menuButton}
-                        >
-                            <MenuIcon />
-                        </IconButton>
+                <AppBar position="fixed" className={classes.appbar}>
+                    <Toolbar style={{padding: 0}}>
+                            <div className={classes.brand}>
+                                <Link to='/'>
+                                    <img src={darkMode?images.logos.ieee_rvce_white:images.logos.ieee_rvce_jpg} height="70px" style={{float:"left"}} alt="IEEE RVCE logo"/>
+                                </Link>
+                            </div>
+                            
+                            <div className={classes.navs}>
+                                <Buttons/>
+                            </div>
+                            
+                            <div className={classes.brand}>
+                                <a href='https://www.ieee.org/' target='_blank' rel='noopener noreferrer'>
+                                    <img src={darkMode?images.logos.ieee_white:images.logos.ieee_blue_png} height="40px" style={{float:"right", marginRight: "3%"}} alt="IEEE logo"/>
+                                </a>
+                            </div>
+                            <IconButton
+                                onClick={handleDrawerToggle(true)}
+                                className={classes.menuButton}
+                            >
+                                <MenuIcon />
+                            </IconButton>
                     </Toolbar>
                 </AppBar>
             </ElevationScroll>

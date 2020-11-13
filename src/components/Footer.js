@@ -16,7 +16,13 @@ const useStyles = makeStyles((theme) => ({
     typography: {
         color: '#eeeeee',
     },
-    link: theme.link,
+    link: {
+        textDecoration: 'none',
+        color: '#bbbbbb',
+        '&:hover': {
+            textDecoration: 'underline',
+        },
+    },
     body: {
         color: '#bbbbbb',
     },
