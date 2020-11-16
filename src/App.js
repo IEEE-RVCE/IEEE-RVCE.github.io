@@ -9,10 +9,18 @@ import AboutPage from './pages/AboutPage';
 import SignInPage from './pages/SignInPage';
 import MembershipPage from './pages/MembershipPage';
 import DevelopersPage from './pages/DevelopersPage';
-import SocietyPage from './pages/SocietyPage';
+import CSSocietyPage from './pages/CSSocietyPage';
+import APSSocietyPage from './pages/APSSocietyPage';
+import RASSocietyPage from './pages/RASSocietyPage';
+import SPSSocietyPage from './pages/SPSSocietyPage';
+import PESSocietyPage from './pages/PESSocietyPage';
+import COMSOCSocietyPage from './pages/COMSOCSocietyPage';
+import WIEAffinityPage from './pages/WIEAffinityPage';
+import SIGHTAffinityPage from './pages/SIGHTAffinityPAge';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CalendarPage from './pages/CalendarPage';
+import EventsPage from './pages/EventsPage';
 import EventPage from './pages/EventPage';
 
 export default function App() {
@@ -44,7 +52,7 @@ export default function App() {
     },
     link: {
       textDecoration: 'none',
-      color: '#bbbbbb',
+      color: prefersDarkMode? '#bbbbbb':'#00629B',
       '&:hover': {
           textDecoration: 'underline',
       }
@@ -56,6 +64,9 @@ export default function App() {
       zIndex: 100,
       color: prefersDarkMode?'#111':'#eee',
       backgroundColor: prefersDarkMode?'#eee':'#222',
+      '&:hover': {
+        backgroundColor: prefersDarkMode?'#eee':'#222'
+      }
     },
     paper: prefersDarkMode?{
       backgroundColor: '#222',
@@ -69,6 +80,9 @@ export default function App() {
     page: {
       paddingTop: 64,
       paddingBottom: 64,
+    },
+    eventcard: {
+      backgroundColor: prefersDarkMode?'#444':'#fff',
     },
   });
 
@@ -93,14 +107,32 @@ export default function App() {
         <Route path='/login'>
           <SignInPage/>
         </Route>
-        <Route path='/membership'>
-          <MembershipPage/>
-        </Route>
         <Route path='/devs'>
           <DevelopersPage/>
         </Route>
-        <Route path='/society/:id'>
-          <SocietyPage/>
+        <Route path='/society/cs'>
+          <CSSocietyPage/>
+        </Route>
+        <Route path='/society/aps'>
+          <APSSocietyPage/>
+        </Route>
+        <Route path='/society/comsoc'>
+          <COMSOCSocietyPage/>
+        </Route>
+        <Route path='/society/pes'>
+          <PESSocietyPage/>
+        </Route>
+        <Route path='/society/ras'>
+          <RASSocietyPage/>
+        </Route>
+        <Route path='/society/sps'>
+          <SPSSocietyPage/>
+        </Route>
+        <Route path='/affinity/wie'>
+          <WIEAffinityPage/>
+        </Route>
+        <Route path='/affinity/sight'>
+          <SIGHTAffinityPage/>
         </Route>
         <Route path='/calendar'>
           <CalendarPage/>
@@ -108,6 +140,24 @@ export default function App() {
         <Route path='/event'>
           <EventPage/>
         </Route>
+
+        <Switch>
+          <Route path='/membership/:step'>
+            <MembershipPage/>
+          </Route>
+          <Route path='/membership'>
+            <MembershipPage/>
+          </Route>
+        </Switch>
+
+        <Switch>
+          <Route path='/events/:eid'>
+            <EventPage/>
+          </Route>
+          <Route path='/events'>
+            <EventsPage/>
+          </Route>
+        </Switch>
 
         <Tooltip title={prefersDarkMode? 'Switch to light theme': 'Switch to dark theme'} aria-label='themeSwitcherTooltip'>
           <Fab onClick={changeTheme} aria-label='themeSwitcher' style={{...theme.fab}}>

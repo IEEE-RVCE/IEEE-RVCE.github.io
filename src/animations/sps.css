@@ -1,0 +1,28 @@
+body {
+    height: 100vh;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  svg {
+    width: 600px;
+    width: 800px;
+    height: 100%;
+    padding: 50px;
+  }
+  
+  line {
+    stroke-width: 1;
+    stroke: #3c3c3c;
+  }
+  
+  #wave {
+    fill: none;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #56acf4;
+  }

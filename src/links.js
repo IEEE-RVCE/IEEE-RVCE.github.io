@@ -30,8 +30,8 @@ export const societies = [
 
 // List of affinities and links
 export const affinities = [
-    {name: "SIGHT", link:'/affinity'},
-    {name: "WIE", link:'/affinity'}
+    {name: "SIGHT", link:'/affinity/sight'},
+    {name: "WIE", link:'/affinity/wie'}
 ]
 
 //Hostname link for API requests
@@ -92,4 +92,16 @@ export const images= {
         rv_letter_footer: imagePath + '/logos/rv_letter_footer.png',
         rvce: imagePath + '/logos/rvce_logo.png',
     }
+}
+
+//Map of socs and affs with ecat
+export const ecats = {
+    compsoc: 1,
+    comsoc: 2,
+    pes: 3,
+    aps: 4,
+    sps: 5,
+    ras: 6,
+    wie: 7,
+    sight: 8
 }
