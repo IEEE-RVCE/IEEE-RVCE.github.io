@@ -195,10 +195,35 @@ export default function MembershipPage(){
         <div className={classes.root} style={{marginTop:"5%"}}>
         {
             !start && (
-                    <>
-                        <Button onClick={() => {setStart(true);window.location.href=window.location.href+'/1'}}>Start</Button>
-                    </>
-                )
+                <>
+                    <Button onClick={() => {setStart(true);window.location.href=window.location.href+'/1'}}>Start</Button>
+                    <div style={{ display: "grid"}}>
+                        <div style={{ display: "grid", fontSize: "1.5em", justifyItems: "center" }}>
+                            <h1>Why Join IEEE?</h1>
+                            <ol>
+                            <li><b>Staying Technically Relevant:</b>Be aware of the new and changing technologies by getting access to the recent journals, publications and conferences</li>
+                            <li><b>Career Resources and Recognition:</b>Leadership is a skill that must be crafted over time. Keep your career moving in the right direction with IEEE career benefits and resources.</li>
+                            <li><b>Professional Networking:</b>With other IEEE members who share similar interests, you can build a network revolving around your profession, industry or projects.</li>
+                            <li><b>IEEE Chapters:</b>Engage with others through informative technical meetings</li>
+                            <li><b>Member discounts:</b>IEEE Member Discounts offer substantial cost savings on a variety of products and services as a benefit of IEEE membership. These include IEEE books and eBooks, journals and articles, conferences and proceedings, standards, society memberships etc.. </li>
+                            <li><b>Global benefits finder: </b>To uncover IEEE member benefits that are most relevant to you, you may use the Global Benefits finder which will render a list of key IEEE member benefits that can help you accelerate your career plans and help you grow as a technology professional.</li>
+                            </ol>
+                        </div>
+
+                        <div style={{ display: "grid", fontSize: "1.5em"}}>
+                            <h1 style={{ textAlign:"center" }}>What does the SB have to offer?</h1>
+                            <ul>
+                            <li>Opportunities to network on a local level</li>
+                            <li>Receive support for hosting professional awareness programs</li>
+                            <li>Obtain funding for events, projects, and activities</li>
+                            <li>Develop projects and obtain sponsorship based on your IEEE affiliation</li>
+                            <li>Connect with other like minded student groups to advance the IEEE mission</li>
+                            </ul>
+                        </div>
+                        <Button style={{ alignSelf: "center", fontSize:"1.2em", fontWeight:"bolder" }} onClick={() => {setStart(true);window.location.href=window.location.href+'/1'}}>Become a member now!! </Button>
+                    </div>
+                </>
+            )
         }
         {
             start && 
