@@ -16,7 +16,7 @@ import SPSSocietyPage from './pages/SPSSocietyPage';
 import PESSocietyPage from './pages/PESSocietyPage';
 import COMSOCSocietyPage from './pages/COMSOCSocietyPage';
 import WIEAffinityPage from './pages/WIEAffinityPage';
-import SIGHTAffinityPage from './pages/SIGHTAffinityPAge';
+import SIGHTAffinityPage from './pages/SIGHTAffinityPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CalendarPage from './pages/CalendarPage';
