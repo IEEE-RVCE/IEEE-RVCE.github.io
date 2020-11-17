@@ -156,6 +156,24 @@ export default function App() {
           </Route>
         </Switch>
 
+        <Switch>
+          <Route path='/membership/:step'>
+            <MembershipPage/>
+          </Route>
+          <Route path='/membership'>
+            <MembershipPage/>
+          </Route>
+        </Switch>
+
+        <Switch>
+          <Route path='/events/:eid'>
+            <EventPage/>
+          </Route>
+          <Route path='/events'>
+            <EventsPage/>
+          </Route>
+        </Switch>
+
         <Tooltip title={prefersDarkMode? 'Switch to light theme': 'Switch to dark theme'} aria-label='themeSwitcherTooltip'>
           <Fab onClick={changeTheme} aria-label='themeSwitcher' style={{...theme.fab}}>
               {prefersDarkMode?<BrightnessHigh/>:<Brightness3 style={{transform: 'rotate(150deg)'}}/>}
