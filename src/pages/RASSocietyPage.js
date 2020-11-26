@@ -5,16 +5,10 @@ import {Link} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '../components/Avatar';
 import EventCard from '../components/EventCard';
-import { isMobile } from 'react-device-detect';
-import Collapsible from 'react-collapsible';
-import {hostname} from '../links';
-
-const prefersDarkMode = localStorage.getItem('darkMode') === 'true'
+import {hostname, ecats, images, execom} from '../links';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        backgroundColor: prefersDarkMode ? '#303030' : "#FFF"
-    },
+    root: theme.root,
     container: theme.page,
     paper: {
         ...theme.paper,
@@ -37,74 +31,86 @@ export default function RASSocietyPage(props) {
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
-        axios.get(hostname+'/api/event')
+        axios.get(hostname+'/api/event/cat/' + ecats.ras)
             .then(response => {
                 setEvents(response.data.events)
             });
     }, []);
 
     return (
-        <React.Fragment>
-            <img src="/assets/images/RoboticsAndAutomation.png" id="imgID" style={{ maxHeight:"100vh", width: "100%" }} />
-            <Container maxWidth='xl' className={classes.root}><br/>
-
-                {/* <Paper className={classes.paper}> */}
-                <div style={{ paddingRight: "15%" }}>
-                    <   Typography variant='h4'>
-                        <strong>Coming Soon...</strong>
+        <div className={classes.root}>
+            <img src={images.landing.ras} id='soclanding' alt="Robotics and Automation Society" style={{ maxHeight:"100vh", width: "100%" }} />
+            <Container maxWidth='md'>
+                <br/>
+                <Paper className={classes.paper}>
+                    <Typography variant='h3'>
+                        Vision
                     </Typography>
-                </div><br/>
-
-                <Typography variant='h4'>
-                    <strong>ExeCom</strong>
-                </Typography>
+                    <br/>
+                    <Typography variant='body1'>
+                        Coming soon...
+                    </Typography>
+                </Paper>
                 <br />
-                <Grid container spacing={2} justify='center'>
-                    <Grid item xs={12} md={3}>
-                        <Avatar />
-                    </Grid>
-                    <Grid item xs={12} md={3}>
-                        <Avatar />
-                    </Grid>
-                    <Grid item xs={12} md={3}>
-                        <Avatar />
-                    </Grid>
-                    <Grid item xs={12} md={3}>
-                        <Avatar />
-                    </Grid>
-                </Grid>
-                {/* </Paper> */}
-                <br /><br />
-                <Typography variant="h4">
-                    <strong>Additional Resources</strong>
-                </Typography><br />
-                <Paper className={classes.paper} style={{ padding: "16px 32px", cursor: "pointer" }}>
-                    <Typography variant="h6" >
-                        <Collapsible trigger="Conferences" triggerStyle={{ fontWeight: "bold" }}>
-                            <p>This is the collapsible content. It can be any element or React component you like.</p>
-                            <p>It can even be another Collapsible component. Check out the next section!</p>
-                        </Collapsible>
+                <Paper className={classes.paper}>
+                    <Typography variant='h3'>
+                        Mission
                     </Typography>
-                </Paper><br />
-                <Paper className={classes.paper} style={{ padding: "16px 32px", cursor: "pointer" }}>
-                    <Typography variant="h6">
-                        <a><Collapsible trigger="Competitions" triggerStyle={{ fontWeight: "bold" }}>
-                            <p>This is the collapsible content. It can be any element or React component you like.</p>
-                            <p>It can even be another Collapsible component. Check out the next section!</p>
-                        </Collapsible>
-                        </a>
+                    <br/>
+                    <Typography variant='body1'>
+                        Coming soon...     
                     </Typography>
-                </Paper><br />
-                <Paper className={classes.paper} style={{ padding: "16px 32px", cursor: "pointer" }}>
-                    <Typography variant="h6">
-                        <Collapsible trigger="Certifications" triggerStyle={{ fontWeight: "bold" }}>
-                            <p>This is the collapsible content. It can be any element or React component you like.</p>
-                            <p>It can even be another Collapsible component. Check out the next section!</p>
-                        </Collapsible>
+                </Paper>
+                <br />
+                {
+                    events.length!==0 && (
+                        <>
+                            <Paper className={classes.paper}>
+                                <Typography variant='h3'>
+                                    Events
+                                </Typography><br />
+                                <Grid container spacing={2} justify='center'>
+                                    {
+                                        events.slice(0,3).map((item) => {
+                                            return(
+                                            <Grid item xs={12} md={4}>
+                                                <EventCard event={item}/>
+                                            </Grid>
+                                            )
+                                        })
+                                    }
+                                </Grid><br />
+                                {
+                                    events.length>=4 && (
+                                        <Link to={"/events?ecat=" + ecats.ras} className={classes.link}>Click here for more events</Link>
+                                    )
+                                }
+                            </Paper>
+                            <br />
+                        </>
+                    )
+                }
+                <Paper className={classes.paper}>
+                    <Typography variant='h3'>
+                        Executive Committee
                     </Typography>
-                </Paper><br />
+                    <br />
+                    <Typography variant='body1'>
+                        Coming soon...     
+                    </Typography>
+                    {/* <Grid container spacing={2} justify='center'>
+                        {
+                            execom.ras.map((member) => (
+                                <Grid item xs={12} md={4}>
+                                    <Avatar name={member.name} position={member.position} src={member.image}/>
+                                </Grid>
+                            ))
+                        }
+                    </Grid> */}
+                </Paper>
+                <br/>
             </Container>
-        </React.Fragment>
+        </div>
     )
 }
 
