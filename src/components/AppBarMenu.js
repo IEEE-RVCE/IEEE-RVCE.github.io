@@ -71,12 +71,16 @@ export default function AppBarMenu(props){
         let items = menuitems.map((item)=>{
             return (
                     <Link to={item.link} className={classes.menuitem} key={item.name+item.link}>
-                        <MenuItem key={item.name+item.link}>{item.name}</MenuItem>
+                        <MenuItem onClick={handleClose} key={item.name+item.link}>{item.name}</MenuItem>
                     </Link>
                 )
             }
         )
         return items
+    }
+
+    const handleDrawer = (open) => {
+        props.drawerHandle(open)
     }
 
     // Menu items but in list for phones
@@ -85,7 +89,7 @@ export default function AppBarMenu(props){
         let items = listitems.map((item)=>{
             return (
                 <Link to={item.link} className={classes.menuitem}>
-                    <ListItem button key={item.name} className={classes.nested}>
+                    <ListItem onClick={() => handleDrawer(false)} button key={item.name} className={classes.nested}>
                         <ListItemText primary={item.name}/>
                     </ListItem>
                 </Link>      

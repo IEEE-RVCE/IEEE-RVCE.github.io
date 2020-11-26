@@ -1,9 +1,10 @@
 import React from 'react';
-import {Container, Typography, Paper} from '@material-ui/core';
+import {Container, Typography, Paper, Grid} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import {Link} from 'react-router-dom';
 import EventsCalendar from '../components/Calendar';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import Avatar from '../components/Avatar';
+import {execom} from '../links';
 
 const useStyles = makeStyles((theme) => ({
     root: theme.root,
@@ -43,6 +44,22 @@ export default function HomePage(props) {
                         We provide a platform for students to stay updated with today's research through webinars and technical talks by eminent professors and professionals. 
                         We also arrange workshops and Industrial visits that help students upgrade their skills to stay relevant in today's global market.
                     </Typography>
+                </Paper>
+                <br/>
+                <Paper className={classes.paper}>
+                    <Typography variant='h3'>
+                        Executive Committee
+                    </Typography>
+                    <br />
+                    <Grid container spacing={2} justify='center'>
+                        {
+                            execom.main.map((member) => (
+                                <Grid item xs={12} md={4}>
+                                    <Avatar name={member.name} position={member.position} src={member.image}/>
+                                </Grid>
+                            ))
+                        }
+                    </Grid>
                 </Paper>
                 <br/>
                 <Paper className={classes.paper}>

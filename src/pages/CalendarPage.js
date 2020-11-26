@@ -1,5 +1,4 @@
 import React from 'react';
-
 import EventsCalendar from '../components/Calendar';
 
 export default function CalendarPage() {
@@ -8,8 +7,8 @@ export default function CalendarPage() {
             <EventsCalendar
                 toolbar={true}
                 defaultView="month"
-                width={70}
-                height={80}
+                width={window.innerWidth<450?95:70}
+                height={window.innerWidth<450?50:80}
             />
         </>
     )

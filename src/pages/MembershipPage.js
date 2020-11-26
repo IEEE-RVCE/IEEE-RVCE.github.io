@@ -1,19 +1,19 @@
 import React,{useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import MobileStepper from '@material-ui/core/MobileStepper';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
+import {Container, Typography, Button, MobileStepper, Paper} from '@material-ui/core';
 import {images} from '../links';
 import {useParams} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      width: '80%',
-      marginBottom: theme.spacing(1),
-      marginTop: theme.spacing(2),
-      minHeight: '500px',
-      marginLeft: '10%'
+      ...theme.root,
+      ...theme.page,
+    },
+    button: {
+        ...theme.button,
+        display: 'flex', 
+        float: 'right', 
+        flexDirection: 'row',
     },
     backButton: {
       marginRight: theme.spacing(1),
@@ -35,7 +35,14 @@ const useStyles = makeStyles((theme) => ({
     },
     content: {
         padding: theme.spacing(2),
-    }
+    },
+    paper: {
+        ...theme.paper,
+        padding: theme.spacing(4),
+    },
+    stepper: {
+        ...theme.root,
+    },
   }));
 
 export default function MembershipPage(){
@@ -192,36 +199,48 @@ export default function MembershipPage(){
     }
 
     return(
-        <div className={classes.root} style={{marginTop:"5%"}}>
+        <div className={classes.root}>
         {
             !start && (
                 <>
-                    <Button onClick={() => {setStart(true);window.location.href=window.location.href+'/1'}}>Start</Button>
-                    <div style={{ display: "grid"}}>
-                        <div style={{ display: "grid", fontSize: "1.5em", justifyItems: "center" }}>
-                            <h1>Why Join IEEE?</h1>
-                            <ol>
-                            <li><b>Staying Technically Relevant:</b>Be aware of the new and changing technologies by getting access to the recent journals, publications and conferences</li>
-                            <li><b>Career Resources and Recognition:</b>Leadership is a skill that must be crafted over time. Keep your career moving in the right direction with IEEE career benefits and resources.</li>
-                            <li><b>Professional Networking:</b>With other IEEE members who share similar interests, you can build a network revolving around your profession, industry or projects.</li>
-                            <li><b>IEEE Chapters:</b>Engage with others through informative technical meetings</li>
-                            <li><b>Member discounts:</b>IEEE Member Discounts offer substantial cost savings on a variety of products and services as a benefit of IEEE membership. These include IEEE books and eBooks, journals and articles, conferences and proceedings, standards, society memberships etc.. </li>
-                            <li><b>Global benefits finder: </b>To uncover IEEE member benefits that are most relevant to you, you may use the Global Benefits finder which will render a list of key IEEE member benefits that can help you accelerate your career plans and help you grow as a technology professional.</li>
-                            </ol>
+                    <Container maxWidth='md' style={{ display: "grid"}}>
+                        <Paper className={classes.paper}>
+                            <Typography variant='h3'>
+                                Why Join IEEE?
+                            </Typography>
+                            <br/>
+                            <Typography variant='body1'>
+                                <ol>
+                                    <li><b>Staying Technically Relevant:</b>Be aware of the new and changing technologies by getting access to the recent journals, publications and conferences</li>
+                                    <li><b>Career Resources and Recognition:</b>Leadership is a skill that must be crafted over time. Keep your career moving in the right direction with IEEE career benefits and resources.</li>
+                                    <li><b>Professional Networking:</b>With other IEEE members who share similar interests, you can build a network revolving around your profession, industry or projects.</li>
+                                    <li><b>IEEE Chapters:</b>Engage with others through informative technical meetings</li>
+                                    <li><b>Member discounts:</b>IEEE Member Discounts offer substantial cost savings on a variety of products and services as a benefit of IEEE membership. These include IEEE books and eBooks, journals and articles, conferences and proceedings, standards, society memberships etc.. </li>
+                                    <li><b>Global benefits finder: </b>To uncover IEEE member benefits that are most relevant to you, you may use the Global Benefits finder which will render a list of key IEEE member benefits that can help you accelerate your career plans and help you grow as a technology professional.</li>
+                                </ol>
+                            </Typography>
+                        </Paper>
+                        <br/>
+                        <Paper className={classes.paper}>
+                            <Typography variant='h3'>
+                                What does the SB have to offer?
+                            </Typography>
+                            <br/>
+                            <Typography variant='body1'>
+                                <ul>
+                                    <li>Opportunities to network on a local level</li>
+                                    <li>Receive support for hosting professional awareness programs</li>
+                                    <li>Obtain funding for events, projects, and activities</li>
+                                    <li>Develop projects and obtain sponsorship based on your IEEE affiliation</li>
+                                    <li>Connect with other like minded student groups to advance the IEEE mission</li>
+                                </ul>
+                            </Typography>
+                        </Paper>
+                        <br/>
+                        <div>
+                            <Button size='large' className={classes.button} onClick={() => {setStart(true);window.location.href=window.location.href+'/1'}}>Become a member now!! </Button>
                         </div>
-
-                        <div style={{ display: "grid", fontSize: "1.5em"}}>
-                            <h1 style={{ textAlign:"center" }}>What does the SB have to offer?</h1>
-                            <ul>
-                            <li>Opportunities to network on a local level</li>
-                            <li>Receive support for hosting professional awareness programs</li>
-                            <li>Obtain funding for events, projects, and activities</li>
-                            <li>Develop projects and obtain sponsorship based on your IEEE affiliation</li>
-                            <li>Connect with other like minded student groups to advance the IEEE mission</li>
-                            </ul>
-                        </div>
-                        <Button style={{ alignSelf: "center", fontSize:"1.2em", fontWeight:"bolder" }} onClick={() => {setStart(true);window.location.href=window.location.href+'/1'}}>Become a member now!! </Button>
-                    </div>
+                    </Container>
                 </>
             )
         }
@@ -235,6 +254,7 @@ export default function MembershipPage(){
                             steps={7}
                             position="static"
                             variant="text"
+                            className={classes.stepper}
                             activeStep={activeStep}
                             nextButton={
                             <Button size="small" onClick={handleNext} disabled={activeStep === 6}>

@@ -37,7 +37,6 @@ export default class EventsCalendar extends React.Component {
           res.data.events.forEach(({ename: title, eventstart: start, eventend: end, eid}) => {
             events.push({title, start, end, allDay: false, resource: false, eid})
           })
-          console.log(events)
           this.setState({events: events})
         })
         .catch(err => {

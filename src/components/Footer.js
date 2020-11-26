@@ -48,7 +48,7 @@ export default function Footer(props) {
                         </Typography>
                         {
                             navs.map(({name, link, isMenu}) => {
-                                if(!isMenu) {
+                                if(!isMenu && name!== 'Login') {
                                     return(
                                         <Link to={link} className={classes.link}>
                                             <Typography variant='body1'>{name}</Typography>
@@ -106,7 +106,7 @@ export default function Footer(props) {
                         </Grid>
                         <br/>
                         <Typography className={classes.body} variant='body1'>
-                            &copy; IEEE RVCE student chapter. All Rights Reserved.
+                            &copy; IEEE RVCE Student Branch. All Rights Reserved.
                         </Typography>
                     </Grid>
                 </Grid>
