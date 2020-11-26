@@ -22,6 +22,10 @@ import Footer from './components/Footer';
 import CalendarPage from './pages/CalendarPage';
 import EventsPage from './pages/EventsPage';
 import EventPage from './pages/EventPage';
+import GalleryPage from './pages/GalleryPage';
+import ArticlesPage from './pages/ArticlesPage';
+import RegisterAttendeePage from './pages/RegisterAttendeePage';
+// import NotFoundPage from './pages/NotFoundPage';
 
 export default function App() {
 
@@ -78,12 +82,15 @@ export default function App() {
       backgroundColor: prefersDarkMode ? "#111":"#eee",
     },
     page: {
-      paddingTop: 64,
+      paddingTop: 96,
       paddingBottom: 64,
     },
     eventcard: {
       backgroundColor: prefersDarkMode?'#444':'#fff',
     },
+    grid: {
+      margin: 'auto',
+    }
   });
 
   const changeTheme = () => {
@@ -139,21 +146,10 @@ export default function App() {
         </Route>
 
         <Switch>
-          <Route path='/membership/:step'>
-            <MembershipPage/>
-          </Route>
-          <Route path='/membership'>
-            <MembershipPage/>
-          </Route>
-        </Switch>
-
-        <Switch>
           <Route path='/events/:eid'>
             <EventPage/>
           </Route>
-          <Route path='/events'>
-            <EventsPage/>
-          </Route>
+          <Route path='/events' component={EventsPage}/>
         </Switch>
 
         <Switch>
@@ -166,13 +162,18 @@ export default function App() {
         </Switch>
 
         <Switch>
-          <Route path='/events/:eid'>
-            <EventPage/>
-          </Route>
-          <Route path='/events'>
-            <EventsPage/>
+          <Route path='/gallery' component={GalleryPage}/>
+        </Switch>
+
+        <Switch>
+          <Route path='/articles'>
+            <ArticlesPage/>
           </Route>
         </Switch>
+
+        <Route path='/register'>
+          <RegisterAttendeePage/>
+        </Route>
 
         <Tooltip title={prefersDarkMode? 'Switch to light theme': 'Switch to dark theme'} aria-label='themeSwitcherTooltip'>
           <Fab onClick={changeTheme} aria-label='themeSwitcher' style={{...theme.fab}}>
