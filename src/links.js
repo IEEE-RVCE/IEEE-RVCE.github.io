@@ -2,10 +2,12 @@
 export const navs = [
     {name: "Home", link: '/'},
     {name: "About Us", link: '/about'},
+    {name: 'Events', link: '/events'},
     {name: "Societies", isMenu: true},
     {name: "Affinities", isMenu:true},
     {name: "Membership", link: '/membership'},
-    {name: "About the developers", link: '/devs'},
+    {name: 'Gallery', link: '/gallery'},
+    {name: 'Articles', link: '/articles'},
     {name: "Login", link: '/login'},
 ]
 
@@ -78,6 +80,12 @@ export const images= {
         ieee_compsoc_color: imagePath + '/logos/ieee_computer_color.png',
         ieee_compsoc_white: imagePath + '/logos/ieee_computer_white.png',
         ieee_pes: imagePath + '/logos/ieee_pes.jpg',
+        ieee_rvce_new_black: imagePath + '/logos/ieee_rvce_new_black.png',
+        ieee_rvce_new_black_big: imagePath + '/logos/ieee_rvce_new_black_big.png',
+        ieee_rvce_new_blue: imagePath + '/logos/ieee_rvce_new_blue.png',
+        ieee_rvce_new_blue_big: imagePath + '/logos/ieee_rvce_new_blue_big.png',
+        ieee_rvce_new_white: imagePath + '/logos/ieee_rvce_new_white.png',
+        ieee_rvce_new_white_big: imagePath + '/logos/ieee_rvce_new_white_big.png',
         ieee_rvce_black: imagePath + '/logos/ieee_rvce_black.png',
         ieee_rvce_white: imagePath + '/logos/ieee_rvce_white.png',
         ieee_rvce_jpg: imagePath + '/logos/ieee_rvce.jpg',
@@ -91,6 +99,16 @@ export const images= {
         rv_caption: imagePath + '/logos/rv_caption.png',
         rv_letter_footer: imagePath + '/logos/rv_letter_footer.png',
         rvce: imagePath + '/logos/rvce_logo.png',
+    },
+    landing: {
+        aps: imagePath + '/landing/AntennaPropagation.png',
+        compsoc: imagePath + '/landing/ComputerSociety.png',
+        comsoc: imagePath + '/landing/comsoc.png',
+        pes: imagePath + '/landing/pes.png',
+        ras: imagePath + '/landing/RoboticsAndAutomation.png',
+        sight: imagePath + '/landing/Sight.png',
+        sps: imagePath + '/landing/SignalProcessing.png',
+        wie: imagePath + '/landing/WIE.png',
     }
 }
 
@@ -104,4 +122,56 @@ export const ecats = {
     ras: 6,
     wie: 7,
     sight: 8
+}
+
+//Execom details
+export const execom = {
+    main: [
+        {name: 'Dr. M Uttara Kumari', position: 'Branch Counselor', image: imagePath + '/execom/main/muk_maam.jpg'},
+        {name: 'SJ Ruthvik', position: 'Chair', image: imagePath + '/execom/main/ruthvik.jpg'},
+        {name: 'Srinivas Prabhu', position: 'Vice Chair', image: imagePath + '/execom/main/srini.jpg'},
+        {name: 'Deekshith Nayak', position: 'Secretary', image: imagePath + '/execom/main/deekshith.jpg'},
+        {name: 'Prajwal S Telkar', position: 'Treasurer', image: imagePath + '/execom/main/prajwal.jpg'},
+        {name: 'Siddarth Sai Amruth Yetikuri', position: 'Editor in Chief', image: imagePath + '/execom/main/sidsai.jpg'},
+    ],
+    aps: [
+        {name: 'Dr. Mahesh A', position: 'Faculty Advisor', image: imagePath + '/execom/aps/mahesh_sir.jpg'},
+        {name: 'Rahul Chikkodi', position: 'Chair', image: imagePath + '/execom/aps/rahul.jpg'},
+        {name: 'Pratap Vangol', position: 'Secretary', image: imagePath + '/execom/aps/pratap.jpg'},
+    ],
+    compsoc: [
+        {name: 'Risha Dassi', position: 'Chair', image: imagePath + '/execom/compsoc/risha.jpg'},
+        {name: 'Nischal J', position: 'Vice Chair', image: imagePath + '/execom/compsoc/nischal.jpg'},
+        {name: 'Nikitha Srikanth', position: 'Secretary', image: imagePath + '/execom/compsoc/niks.jpg'},
+        {name: 'Chirag Bapat', position: 'Treasurer', image: imagePath + '/execom/compsoc/chirag.jpg'},
+    ],
+    comsoc: [
+        {name: 'Kashish Malhotra', position: 'Chair', image: imagePath + '/execom/comsoc/kashish.jpg'},
+        {name: 'Nandesh Goudar', position: 'Vice Chair', image: imagePath + '/execom/comsoc/nandesh.jpg'},
+        {name: 'Saraansh Agarwal', position: 'Secretary', image: imagePath + '/execom/comsoc/saraansh.jpg'},
+    ],
+    pes: [
+        {name: 'Amith S Kumar', position: 'Chair', image: imagePath + '/execom/pes/amith.jpg'},
+        {name: 'Deeraj DS', position: 'Vice Chair', image: imagePath + '/execom/pes/deeraj.jpg'},
+        {name: 'Hariharasudhan J', position: 'Secretary', image: imagePath + '/execom/pes/hari.jpg'},
+        {name: 'Shirish Kumar', position: 'Treasurer', image: imagePath + '/execom/pes/shirish.jpg'},
+    ],
+    sps: [
+        {name: 'Prof. K Nagamani', position: 'Faculty Advisor', image: imagePath + '/execom/sps/nagamani_maam.jpg'},
+        {name: 'Niranjan DR', position: 'Chair', image: imagePath + '/execom/sps/niranjan.jpg'},
+        {name: 'R Vibha Narayan', position: 'Vice Chair', image: imagePath + '/execom/sps/vibha.jpg'},
+    ],
+    wie: [
+        {name: 'Dr. Usha Rani K R', position: 'Faculty Advisor', image: imagePath + '/execom/wie/usha_maam.jpg'},
+        {name: 'Aisiri HR', position: 'Chair', image: imagePath + '/execom/wie/aisiri.png'},
+        {name: 'Raghavi R', position: 'Vice Chair', image: imagePath + '/execom/wie/raghavi.jpg'},
+        {name: 'Sreelakshmi', position: 'Secretary', image: imagePath + '/execom/wie/sreelakshmi.png'},
+        {name: 'Sunidhi Salwadgi', position: 'Treasurer', image: imagePath + '/execom/wie/sunidhi.jpg'},
+    ],
+    ras: [
+
+    ],
+    sight: [
+
+    ],
 }
