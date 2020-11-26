@@ -4,18 +4,34 @@ import axios from 'axios';
 import {hostname} from '../links';
 import {makeStyles} from '@material-ui/core/styles';
 import { Typography, Button, Container, Grid, LinearProgress } from '@material-ui/core';
+import {SpeedDial, SpeedDialAction, SpeedDialIcon} from '@material-ui/lab';
+import {Delete, Edit, Mail} from '@material-ui/icons';
 import {AddEventDialog} from '../components/AddEventDialog';
+import {MetaTags} from 'react-meta-tags';
 
 const useStyles = makeStyles((theme) => ({
+    '@global': {
+        '.MuiFab-primary': {
+            backgroundColor: theme.fab.backgroundColor,
+            color: theme.fab.color,
+            '&:hover': {
+                backgroundColor: theme.fab.backgroundColor,
+                color: theme.fab.color,
+            }
+        },
+    },
     root: {
+        ...theme.root,
         ...theme.page,
-        paddingTop: theme.spacing(4),
         paddingBottom: theme.spacing(4),
     },
     link: theme.link,
     griditem: {
         width: '90%',
         padding: theme.spacing(4),
+        [theme.breakpoints.down('md')]: {
+            padding: theme.spacing(1),
+        }
     },
     backButton: {
         float: "left",
@@ -34,11 +50,16 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     loadingBar: {
-        paddingTop: 20,
+        paddingTop: 60,
         minHeight: 1000,
     },
     header: {
         textAlign: 'center',
+    },
+    speedDial: {
+        position: 'fixed',
+        bottom: 32,
+        right: 100,
     }
 }))
  
@@ -48,15 +69,22 @@ export default function EventPage() {
     const [loaded, setLoaded] = useState(false);
     let {eid} = useParams()
     const [event, setEvent] = useState({ename: ''})
+    const [error, setError] = useState(false)
     
     useEffect(() => {
         setLoaded(false)
         axios.get(hostname + '/api/event/' + eid)
         .then((response) => {
-            setEvent(response.data.event)
+            if(response.data.ok) {
+                setEvent(response.data.event)
+                setLoaded(true)
+            }
+            else
+                setError(true)
         })
-        .then(() => {
-            setLoaded(true)
+        .catch((error) => {
+            console.error(error)
+            setError(true)
         })
     },[eid])
 
@@ -82,8 +110,8 @@ export default function EventPage() {
         })
     }
 
+    // Dialog stuff
     const [dialog, setDialog] = useState(false);
-
     const handleDialogClose = () => {
         setDialog(false)
     }
@@ -91,23 +119,40 @@ export default function EventPage() {
         setDialog(true)
     }
 
+    // Speed dial stuff
+    const [dialopen, setDialopen] = useState(false);
+    const handleDialClose = () => {
+        setDialopen(false)
+    }
+    const handleDialOpen = () => {
+        setDialopen(true)
+    }
+
+    const notifyAll = () => {
+        console.log("Yay! Notified!!")
+    }
+    const actions = [
+        {icon: <Edit />, name: 'Edit event', onClick: handleDialogOpen},
+        {icon: <Delete />, name: 'Delete event', onClick: deleteEvent},
+        {icon: <Mail />, name: 'Notify attendees', onClick: notifyAll},
+    ]
     return(
         loaded?
         (
             <div className={classes.root}>
+                <MetaTags>
+                    <meta
+                    name={event.name}
+                    content={event.details}
+                    />
+                    <meta
+                    property="og:image"
+                    content={event.smallposterlink}
+                    />
+                </MetaTags>
                 <div className={classes.backButton}>
-                    <Button onClick={() => window.location.href = window.location.href.substring(0, window.location.href.indexOf(eid))} size="small">Go back</Button>
+                    <Button onClick={() => window.history.back()} size="small">Go back</Button>
                 </div>
-                {
-                        loggedIn && (
-                            <>
-                                <div className={classes.adminButtons}>
-                                    <Button onClick={handleDialogOpen} size="small">Edit</Button>
-                                    <Button onClick={deleteEvent} size="small">Remove</Button>
-                                </div>
-                            </>
-                        )
-                }
                 <Container maxWidth='xl' fluid>
                     <Typography variant='h3' className={classes.header}><b>{event.ename}</b></Typography>
                     <br/><br/>
@@ -141,36 +186,42 @@ export default function EventPage() {
                         </Grid>
                     </Grid>
                     <br/>
-                    <br/>
-                    <Typography variant='h4' className={classes.header}><b>Speakers:</b></Typography>
-                    <br/>
-                    <br/>
-                    <Grid container spacing={3} justify='center'>
-                        {
-                            event.hosts.map((host) => (
-                                <Grid container xs={12} md={6} lg={4} spacing={2} className={classes.griditem}>
-                                    <Grid xs={12} className={classes.griditem}>
-                                        <Typography variant='h5'><b>{host.name}</b></Typography><br/>
-                                        {
-                                            host.details !== "" && (
-                                                <>
-                                                    <Typography variant='h6'><b>About the host: </b>{host.details}</Typography><br/>
-                                                </>
-                                            )
-                                        }
-                                    </Grid>
+                    {
+                        Array.isArray(event.hosts) && event.hosts.length!==0 &&(
+                            <>
+                                <br/>
+                                <Typography variant='h4' className={classes.header}><b>Speakers:</b></Typography>
+                                <br/>
+                                <br/>
+                                <Grid container spacing={3} justify='center'>
                                     {
-                                        host.piclink !== "" && (
-                                            <Grid xs={12} className={classes.griditem}>
-                                                <img src={host.piclink} alt={host.name}/>
+                                        event.hosts.map((host) => (
+                                            <Grid container xs={12} md={6} lg={4} spacing={2} className={classes.griditem}>
+                                                <Grid xs={12} className={classes.griditem}>
+                                                    <Typography variant='h5'><b>{host.name}</b></Typography><br/>
+                                                    {
+                                                        host.details !== "" && (
+                                                            <>
+                                                                <Typography variant='h6'><b>About the host: </b>{host.details}</Typography><br/>
+                                                            </>
+                                                        )
+                                                    }
+                                                </Grid>
+                                                {
+                                                    host.piclink !== "" && (
+                                                        <Grid xs={12} className={classes.griditem}>
+                                                            <img src={host.piclink} alt={host.name} style={{width: 'inherit'}}/>
+                                                        </Grid>
+                                                    )
+                                                }
                                             </Grid>
-                                        )
+                                        ))
                                     }
                                 </Grid>
-                            ))
-                        }
-                    </Grid>
-                    <br/>
+                                <br/>
+                            </>
+                        )
+                    }
                 </Container>
                 <AddEventDialog 
                     open={dialog} 
@@ -185,12 +236,35 @@ export default function EventPage() {
                     }}
                     edit={true}
                 />
+                {
+                    loggedIn && (
+                        <>
+                            <SpeedDial
+                            ariaLabel="Event page speed dial"
+                            className={classes.speedDial}
+                            icon={<SpeedDialIcon />}
+                            onClose={handleDialClose}
+                            onOpen={handleDialOpen}
+                            open={dialopen}
+                            >
+                            {actions.map((action) => (
+                                <SpeedDialAction
+                                key={action.name}
+                                icon={action.icon}
+                                tooltipTitle={action.name}
+                                onClick={action.onClick}
+                                />
+                            ))}
+                            </SpeedDial>
+                        </>
+                    )
+                }
             </div>
         )
         :
         (
-            <div className={classes.loadingBar}>
-                <LinearProgress/>
+            <div classes={(classes.loadingBar,classes.root)}>
+                {error?(<Typography variant='h3' style={{textAlign: 'center', paddingTop: '20%'}}><b>No such event</b></Typography>):(<LinearProgress/>)}
             </div>
         )
     )

@@ -1,4 +1,4 @@
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormControl, InputLabel, makeStyles, MenuItem, Select, Snackbar, TextField, Typography } from '@material-ui/core'
+import { Button, Checkbox, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormControl, FormControlLabel, InputLabel, makeStyles, MenuItem, Select, Snackbar, TextField, Typography } from '@material-ui/core'
 import axios from 'axios';
 import React, { useState, useEffect } from 'react'
 import {ecats, hostname} from '../links';
@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
     },
     fields: {
         padding: theme.spacing(1),
-    }
+    },
 }))
 
 //Nice prototype to convert Date objects to datetime local strings
@@ -47,8 +47,8 @@ export const AddEventDialog = (props) => {
         pubstart: new Date().toDatetimeLocal(),
         pubend: new Date().toDatetimeLocal(),
         details: '',
-        feeNo: undefined,
-        feeYes: undefined,
+        feeno: '',
+        feeyes: '',
         ecat: '',
         smallposterlink: '',
         largeposterlink: '',
@@ -66,8 +66,9 @@ export const AddEventDialog = (props) => {
                     eventstart: props.data.eventstart.toDatetimeLocal(), 
                     eventend: props.data.eventend.toDatetimeLocal(), 
                     pubstart: props.data.pubstart.toDatetimeLocal(), 
-                    pubend: props.data.pubend.toDatetimeLocal()}
-                )
+                    pubend: props.data.pubend.toDatetimeLocal(),
+                }
+            )
         }
     },[props.data])
 
@@ -85,6 +86,7 @@ export const AddEventDialog = (props) => {
 
     const submitData = () => {
         props.onClose()
+        console.log(values)
         if(props.edit === true) {
             axios.put(hostname + '/api/event/' + props.data.eid, values, {
                 headers: {
@@ -102,7 +104,7 @@ export const AddEventDialog = (props) => {
                 window.location.reload()
             })
             .catch((error) => {
-                console.error(error)
+                console.error(error.response)
                 setMeta({...meta, error: true})
             })
         }
@@ -123,7 +125,7 @@ export const AddEventDialog = (props) => {
                 window.location.reload()
             })
             .catch((error) => {
-                console.error(error)
+                console.error(error.response)
                 setMeta({...meta, error: true})
             })
         }
@@ -134,6 +136,16 @@ export const AddEventDialog = (props) => {
         if(reason === 'clickaway')
         return;
         setMeta({...meta, [prop]:false})
+    }
+
+    const [checked, setChecked] = useState(false)
+    // Handle internal registration checkbox
+    const handleChecked = (event) => {
+        setChecked(event.target.checked)
+        if(event.target.checked)
+            setValues({...values, reglink: window.location.origin + '/#/register/'})
+        else
+            setValues({...values, reglink: props.data!==undefined?props.data.reglink:''})
     }
 
     return(
@@ -231,14 +243,14 @@ export const AddEventDialog = (props) => {
                     </div>
                     <div className={classes.fields}>
                         <TextField
-                            id="feeNo"
+                            id="feeno"
                             label="Non-IEEE member fee"
-                            type="number"
+                            type="text"
                             variant="outlined"
                             placeholder="Enter fee for Non-IEEE member"
                             multiline
-                            value={values.feeNo}
-                            onChange={handleChange('feeNo')}
+                            value={values.feeno}
+                            onChange={handleChange('feeno')}
                             InputLabelProps={{
                                 shrink: true
                             }}
@@ -246,14 +258,14 @@ export const AddEventDialog = (props) => {
                     </div>
                     <div className={classes.fields}>
                         <TextField
-                            id="feeYes"
+                            id="feeyes"
                             label="IEEE member fee"
-                            type="number"
+                            type="text"
                             variant="outlined"
                             placeholder="Enter fee for IEEE member"
                             multiline
-                            value={values.feeYes}
-                            onChange={handleChange('feeYes')}
+                            value={values.feeyes}
+                            onChange={handleChange('feeyes')}
                             InputLabelProps={{
                                 shrink: true
                             }}
@@ -322,19 +334,27 @@ export const AddEventDialog = (props) => {
                         />
                     </div>
                     <div className={classes.fields}>
-                        <TextField
-                            id="reglink"
-                            label="Registration link"
-                            type="text"
-                            placeholder="Enter link for registration"
-                            variant="outlined"
-                            value={values.reglink}
-                            onChange={handleChange('reglink')}
-                            InputLabelProps={{
-                                shrink: true
-                            }}
+                        <FormControlLabel
+                            control={<Checkbox color="#fff" checked={checked} onChange={handleChecked} inputProps={{ 'aria-label': 'internal-reg-checkbox' }} className={classes.checkbox}/>}
+                            label="Internal registration link?"
                         />
                     </div>
+                    {
+                        !checked && (<div className={classes.fields}>
+                            <TextField
+                                id="reglink"
+                                label="Registration link"
+                                type="text"
+                                placeholder="Enter link for registration"
+                                variant="outlined"
+                                value={values.reglink}
+                                onChange={handleChange('reglink')}
+                                InputLabelProps={{
+                                    shrink: true
+                                }}
+                            />
+                        </div>)
+                    }
                     <div className={classes.fields}>
                         <TextField
                             id="keywords"

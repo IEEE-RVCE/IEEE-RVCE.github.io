@@ -16,13 +16,19 @@ function Alert(props) {
 }
 
 const useStyles = makeStyles((theme) => ({
+  '@global': {
+    '.MuiCardHeader-content': {
+      minWidth: 0
+    }
+  },
   root: {
     ...theme.eventcard,
+    height: '100%',
     maxWidth: 345,
     '&:hover': {
       boxShadow: "0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12)",
       transitionDuration: 200,
-   },
+    },
   },
   media: {
     height: 0,
@@ -42,7 +48,7 @@ export default function EventCard(props) {
   //Shows snackbar with message and copies link in '' for user
   const handleClick = () => {
     setOpen(true);
-    navigator.clipboard.writeText(document.URL + '/' + props.event.eid);
+    navigator.clipboard.writeText(window.location.origin + '/#/events/' + props.event.eid);
   };
 
   const handleClose = (event, reason) => {
@@ -54,19 +60,22 @@ export default function EventCard(props) {
   };
 
   return (
-    <div>
+    <>
       <Card className={classes.root} onDoubleClick={() => window.location.href = window.location.href + '/' + props.event.eid}>
         <CardHeader
           title={props.event.ename}
           subheader={eventTimes.start.toString().slice(0,24) + " to " + eventTimes.end.toString().slice(0,24)}
+          titleTypographyProps={{
+            noWrap: true,
+          }}
         />
         <CardMedia
           className={classes.media}
           image={props.event.smallposterlink}
-          title="Paella dish"
+          title={props.event.ename}
         />
         <CardContent>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="body2" color="textSecondary" component="p" noWrap>
             Keywords: {props.event.keywords}
           </Typography>
         </CardContent>
@@ -84,6 +93,6 @@ export default function EventCard(props) {
           </Link>
         </CardActions>
       </Card>
-    </div>
+    </>
   );
 }
