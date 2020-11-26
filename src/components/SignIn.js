@@ -49,7 +49,11 @@ export default function Signin() {
     incorrectInfo: false,
   });
 
+  //Backdrop state
   const [backdrop, setBackdrop] = React.useState(false)
+
+  //Rickroll state
+  const [rickroll, setRickroll] = React.useState(0)
 
   function validateValues(prop, value) {
     if (prop === "ieeeid") {
@@ -90,6 +94,7 @@ export default function Signin() {
         }
         else {
           setValues({...values, ieeeidValid: false, passwordValid: false, authFail: true})
+          setRickroll(1)
           setBackdrop(false)
         }
       }
@@ -97,10 +102,12 @@ export default function Signin() {
         console.log(`Axios request failed: ${err}`)
         if(err.status === 401){
           setValues({...values, ieeeidValid: false, passwordValid: false, authFail: true})
+          setRickroll(1)
           setBackdrop(false)
         }
         else {
           setValues({...values, ieeeidValid: false, passwordValid: false, networkError: true})
+          setRickroll(1)
           setBackdrop(false)
         }
       }
@@ -134,6 +141,16 @@ export default function Signin() {
   return (
     <div className={classes.root}>
       <Container maxWidth="sm" className={classes.container}>
+        <iframe
+          title="Rickrolled" 
+          style={{display: 'none'}}
+          width="640" 
+          height="480" 
+          src={"https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=" + rickroll} 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+        ></iframe>
         <Paper className={classes.paper}>
           <Typography variant="h4">Sign in</Typography>
           <br />

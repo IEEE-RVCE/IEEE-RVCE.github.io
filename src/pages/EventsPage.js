@@ -59,6 +59,9 @@ export default function EventPage(props) {
     //Keyword search
     const handleSearch = (event) => {
         setText(event.target.value);
+    }
+
+    useEffect(() => {
         var updatedList = events;
         updatedList = events.filter(function (item) {
             if (text === "")
@@ -69,7 +72,7 @@ export default function EventPage(props) {
             );
         });
         setList(updatedList);
-    }
+    },[events, text])
 
     //Society names for dropdown filter
     const [category, setCategory] = React.useState(ecat !==undefined?ecat:0);
