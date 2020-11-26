@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Toolbar, Button, useScrollTrigger, IconButton, List, ListItem, ListItemText, SwipeableDrawer } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import { Link } from 'react-router-dom';
-
+import { Link, useRouteMatch } from 'react-router-dom';
+import useScrollPosition from '@react-hook/window-scroll';
 import AppBarMenu from './AppBarMenu';
 import {navs, societies, affinities, images} from '../links';
 
@@ -12,26 +12,54 @@ export default function Header(props) {
 
     // Get dark or light mode
     const [darkMode, setDarkMode] = React.useState(localStorage.getItem('darkMode') === 'true')
+    const [transparent, setTransparent] = React.useState(0)
+    const scrollY = useScrollPosition(120)
+    const matchSociety = useRouteMatch('/society/')
+    const matchAffinity = useRouteMatch('/affinity')
 
     React.useEffect(() => {
         setDarkMode(localStorage.getItem('darkMode') === 'true')
+        setTransparent(0)
     },[])
+
+    React.useEffect(() => {
+        setTransparent(0)
+        if(matchSociety || matchAffinity) {
+            let landingImg = document.getElementById('soclanding')
+            if(scrollY/(0.8*landingImg.scrollHeight) < 1)
+                setTransparent(scrollY/(0.8*landingImg.scrollHeight))
+            else
+                setTransparent(1)
+        }
+        else {
+            if(scrollY < 20) {
+                setTransparent(scrollY/20)
+            }
+            else
+                setTransparent(1)
+        }
+    }, [matchSociety, matchAffinity,scrollY])
 
     // All the styling information for the whole header component is in here
     const useStyles = makeStyles((theme) => ({
         // Make the container take up all space if free. Padding bottom as it's fixed, it should leave a little transparent space which really won't be noticed.
         root: {
             flexGrow: 1,
-            backgroundColor: "transparent",
-            paddingBottom:  theme.spacing(6),
         },
         // White background for the bar for now
         appbar: {
-            backgroundColor: theme.appbar.backgroundColor,
+            backgroundColor: transparent!==1?(darkMode?'rgb(34,34,34,' + transparent + ')':'rgb(255,255,255,' + transparent + ')'):theme.appbar.backgroundColor,
         },
         // Make brand stay on left by taking all remaining space while justifying
         brand: {
             flexGrow: 1,
+            [theme.breakpoints.down('sm')]: transparent!==1?{
+                opacity: 0,
+                transition: 'opacity 1s linear',
+            }:{
+                opacity: 1,
+                transition: 'opacity 1s linear',
+            }
         },
         // Bordered buttons in IEEE blue shade, can be changed as needed
         button: theme.button,
@@ -39,6 +67,7 @@ export default function Header(props) {
         navs: {
             [theme.breakpoints.up('md')]: {
                 display: 'block',
+                visibility: (transparent<0.75 && (matchAffinity || matchSociety))?'hidden':'visible',
             },
             display: 'none',
         },
@@ -119,9 +148,7 @@ export default function Header(props) {
                 }
                 else {
                     return (
-                        <Link to={nav.link} className={classes.nav}>
-                            <Button color="inherit" className={classes.button}>{nav.name}</Button>
-                        </Link>
+                        <React.Fragment/>
                     )
                 }
             }
@@ -152,12 +179,12 @@ export default function Header(props) {
                     navs.map((nav) => {
                         if (nav.name === 'Societies') {
                             return (
-                                <AppBarMenu name={nav.name} items={societies} />
+                                <AppBarMenu drawerHandle={setDrawer} name={nav.name} items={societies} />
                             )
                         }
                         else if (nav.name === 'Affinities') {
                             return (
-                                <AppBarMenu name={nav.name} items={affinities} />
+                                <AppBarMenu drawerHandle={setDrawer} name={nav.name} items={affinities} />
                             )
                         }
                         else if (nav.name === 'Login') {
@@ -170,18 +197,14 @@ export default function Header(props) {
                             }
                             else {
                                 return (
-                                    <Link to={nav.link} className={classes.nav}>
-                                        <ListItem button key={nav.name}>
-                                            <ListItemText primary={nav.name} />
-                                        </ListItem>
-                                    </Link>
+                                    <React.Fragment/>
                                 )
                             }
                         }
                         else {
                             return (
                                 <Link to={nav.link} className={classes.nav}>
-                                    <ListItem button key={nav.name}>
+                                    <ListItem onClick={handleDrawerToggle(false)} button key={nav.name}>
                                         <ListItemText primary={nav.name} />
                                     </ListItem>
                                 </Link>
@@ -201,7 +224,7 @@ export default function Header(props) {
                     <Toolbar style={{padding: 0}}>
                             <div className={classes.brand}>
                                 <Link to='/'>
-                                    <img src={darkMode?images.logos.ieee_rvce_white:images.logos.ieee_rvce_jpg} height="70px" style={{float:"left"}} alt="IEEE RVCE logo"/>
+                                    <img src={darkMode?images.logos.ieee_rvce_new_white:images.logos.ieee_rvce_new_blue} height="60px" style={{float:"left"}} alt="IEEE RVCE logo"/>
                                 </Link>
                             </div>
                             
@@ -211,7 +234,7 @@ export default function Header(props) {
                             
                             <div className={classes.brand}>
                                 <a href='https://www.ieee.org/' target='_blank' rel='noopener noreferrer'>
-                                    <img src={darkMode?images.logos.ieee_white:images.logos.ieee_blue_png} height="40px" style={{float:"right", marginRight: "3%"}} alt="IEEE logo"/>
+                                    <img src={darkMode?images.logos.ieee_white:images.logos.ieee_blue_png} height="60px" style={{float:"right", marginRight: "3%", paddingTop: '10px', paddingBottom: '10px'}} alt="IEEE logo"/>
                                 </a>
                             </div>
                             <IconButton
