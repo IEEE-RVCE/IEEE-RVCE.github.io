@@ -86,7 +86,6 @@ export const AddEventDialog = (props) => {
 
     const submitData = () => {
         props.onClose()
-        console.log(values)
         if(props.edit === true) {
             axios.put(hostname + '/api/event/' + props.data.eid, values, {
                 headers: {

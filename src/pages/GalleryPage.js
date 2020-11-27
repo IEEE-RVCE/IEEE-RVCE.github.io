@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
     root: {
         ...theme.root,
         ...theme.page,
-        minHeight: 800,
     },
     imgrid: {
         display: 'flex',
@@ -128,7 +127,7 @@ export default function GalleryPage(props) {
         })
         .then(response => {
             if (response.data.ok === true) {
-                console.log("Successfully deleted event " + iid)
+                console.log("Successfully deleted image " + iid)
                 window.location.reload()
             }
             else {
@@ -187,58 +186,66 @@ export default function GalleryPage(props) {
                 <Typography variant='h4' style={{textAlign: 'center'}}><b>Gallery</b></Typography>
                 <br/>
                 <div className={classes.imgrid}>
-                    <GridList 
-                        cellHeight={400} 
-                        cols={colnum}
-                    >
-                        {
-                            tileData.map((tile, index) => {
-                                if(loading) {
-                                    return(
-                                        <GridListTile key={"skeleton" + index} cols={1}>
-                                            <Skeleton animation="pulse" variant="rect" height={400} width={400}/>
-                                        </GridListTile>
-                                    )
-                                }
-                                else {
-                                    if(tileData.length >=0) {
-                                        return (
-                                            <GridListTile key={tile.image} cols={1} style={{minHeight: 400, minWidth: 400}}>
-                                                <img onClick={onTileClicked(index)} style={{objectFit: 'contain', width: '100%'}} src={`data:image/png;base64,${Buffer(tile.image.data).toString('base64')}`} alt={tile.name}/>
-                                                {
-                                                    loggedIn && (<GridListTileBar
-                                                        titlePosition="top"
-                                                        actionIcon={
-                                                            <>
-                                                                <IconButton aria-label={`delete ${tile.name}`} onClick={handleDeleteImage(tile.iid)}>
-                                                                    <Delete />
-                                                                </IconButton>
-                                                                <IconButton aria-label={`delete ${tile.name}`} onClick={handleEditImage(index)}>
-                                                                    <Edit />
-                                                                </IconButton>
-                                                            </>
+                    {
+                        (tileData!==undefined && tileData.length!==0)? (
+                            <GridList 
+                                cellHeight={400} 
+                                cols={colnum}
+                            >
+                                {
+                                    tileData.map((tile, index) => {
+                                        if(loading) {
+                                            return(
+                                                <GridListTile key={"skeleton" + index} cols={1}>
+                                                    <Skeleton animation="pulse" variant="rect" height={400} width={400}/>
+                                                </GridListTile>
+                                            )
+                                        }
+                                        else {
+                                            if(tileData.length >=0) {
+                                                return (
+                                                    <GridListTile key={tile.image} cols={1} style={{minHeight: 400, minWidth: 400}}>
+                                                        <img onClick={onTileClicked(index)} style={{objectFit: 'contain', width: '100%'}} src={`data:image/png;base64,${Buffer(tile.image.data).toString('base64')}`} alt={tile.name}/>
+                                                        {
+                                                            loggedIn && (<GridListTileBar
+                                                                titlePosition="top"
+                                                                actionIcon={
+                                                                    <>
+                                                                        <IconButton aria-label={`delete ${tile.name}`} onClick={handleDeleteImage(tile.iid)}>
+                                                                            <Delete />
+                                                                        </IconButton>
+                                                                        <IconButton aria-label={`delete ${tile.name}`} onClick={handleEditImage(index)}>
+                                                                            <Edit />
+                                                                        </IconButton>
+                                                                    </>
+                                                                }
+                                                                actionPosition="right"
+                                                                className={classes.titleBar}
+                                                            />)
                                                         }
-                                                        actionPosition="right"
-                                                        className={classes.titleBar}
-                                                    />)
-                                                }
-                                            </GridListTile>
-                                        )
-                                    }
-                                    else {
-                                        return(
-                                            <Typography variant='h5' style={{textAlign: 'center'}}>No images to display</Typography>
-                                        )
-                                    }
+                                                    </GridListTile>
+                                                )
+                                            }
+                                            else {
+                                                return(
+                                                    <Typography variant='h5' style={{textAlign: 'center'}}>No images to display</Typography>
+                                                )
+                                            }
+                                        }
+                                    })
                                 }
-                            })
-                        }
-                    </GridList>
+                            </GridList>
+                        )
+                        :
+                        (
+                            <Typography variant='h5' style={{textAlign: 'center'}}>No images to display</Typography>
+                        )
+                    }
                 </div>
             </Container>
             {
                 !loading && (<Backdrop className={classes.backdrop} open={openBackdrop} onClick={handleBackdropClose}>
-                    <img src={`data:image/png;base64,${Buffer(tileData[iid].image.data).toString('base64')}`} alt={tileData[iid].name} style={{maxHeight: window.innerHeight*0.9, maxWidth: window.innerWidth *0.9}}/>
+                    {tileData!==undefined && tileData.length!==0 && <img src={`data:image/png;base64,${Buffer(tileData[iid].image.data).toString('base64')}`} alt={tileData[iid].name} style={{maxHeight: window.innerHeight*0.9, maxWidth: window.innerWidth *0.9}}/>}
                 </Backdrop>)
             }
             {

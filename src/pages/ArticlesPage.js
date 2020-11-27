@@ -1,8 +1,216 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import {Container, Typography, FormControl, InputLabel, Select, MenuItem, Fab, Tooltip, Grid, TextField} from '@material-ui/core';
+import {Add} from '@material-ui/icons';
+import {Skeleton,} from '@material-ui/lab';
+import {makeStyles} from '@material-ui/core/styles';
+import {ecats, hostname} from '../links';
+import * as queryString from 'query-string';
+import axios from 'axios';
+import {AddArticleDialog} from '../components/AddArticleDialog';
+import ArticleCard from '../components/ArticleCard';
+
+const useStyles = makeStyles(theme => ({
+    root: {
+        ...theme.root,
+        ...theme.page,
+    },
+    filter: {
+        display: 'block',
+        [theme.breakpoints.down('sm')]: {
+            display: 'none'
+        }
+    },
+    fab: {
+        ...theme.fab,
+        right: 100,
+    },
+    bar: {
+        ...theme.transbg,
+    },
+}))
 
 export default function ArticlesPage(props) {
+    const classes = useStyles()
+    let loggedIn = localStorage.getItem('isAuthenticated') === 'true';
+    const {ecat} = queryString.parse(props.location.search)
+
+    const [articles, setArticles] = useState([]);
+    const [list, setList] = useState([
+        {"hi": "these"},
+        {"dont": "mean"},
+        {"anything": "they"},
+        {"help": "skeletons"}
+    ])
+
+    //search text
+    const [text, setText] = React.useState("");
+    //Keyword search
+    const handleSearch = (event) => {
+        setText(event.target.value);
+    }
+
+    useEffect(() => {
+        var updatedList = articles;
+        updatedList = articles.filter(function (item) {
+            if (text === "")
+                return articles;
+            return (
+                item.keywords.toLowerCase().search(text.toLowerCase()) !== -1 ||
+                item.title.toLowerCase().search(text.toLowerCase()) !== -1
+            );
+        });
+        setList(updatedList);
+    },[articles, text])
+    
+    //Society names for dropdown filter
+    const [category, setCategory] = useState(ecat !==undefined?ecat:0);
+    //Society filter
+    const handleFilter = (event) => {
+        setCategory(event.target.value);
+        window.location.href = event.target.value!==0?window.location.origin + '/#/articles?ecat=' + event.target.value:window.location.origin + '/#/articles';
+    }
+
+    //Loading skeletons
+    const [loading, setLoading] = useState(false)
+
+    //Use effect to fetch images
+    useEffect(() => {
+        setLoading(true)
+        axios.get(ecat!==undefined?hostname+'/api/article/cat/'+ecat:hostname+'/api/article')
+            .then(response => {
+                console.log(response.data.articles)
+                setArticles(response.data.articles)
+                setList(response.data.articles)
+            })
+            .then(() => {
+                setLoading(false)
+            })
+    },[ecat])
+
+    //Dialog stuff
+    const [dialog, setDialog] = useState(false);
+
+    const handleDialogClose = () => {
+        setDialog(false)
+    }
+    const handleDialogOpen = () => {
+        setDialog(true)
+    }
+
+    //Test list useEffect
+    // useEffect(() => {
+    //     setLoading(true)
+    //     setList([
+    //         {
+    //             arid: 1,
+    //             ecat: 1,
+    //             author: "Author 1",
+    //             adate: "2002-10-10T00:00:00.000Z",
+    //             title: 'Article 1',
+    //             keywords: "this is a keyword set",
+    //         },
+    //         {
+    //             arid: 2,
+    //             ecat: 1,
+    //             author: "Author 2",
+    //             adate: "2002-10-10T00:00:00.000Z",
+    //             content: "This is a big article 2",
+    //             title: 'Article 2',
+    //             keywords: "this is a keyword set",
+    //         }
+    //     ])
+    // },[])
+
     return(
-        <>
-        </>
+        <div className={classes.root}>
+            <div className={classes.filter}>
+                <div className={classes.bar} style={{ float: "right", display: "flex", flexDirection: 'row', marginRight: '5%', }}>
+                    <FormControl>
+                        <TextField
+                            value={text}
+                            onChange={handleSearch}
+                            placeholder="Enter keywords or name"
+                            label="Search events"
+                            InputLabelProps= {{
+                                shrink: true
+                            }}
+                            defaultValue='All'
+                        />
+                    </FormControl>
+                </div>
+                <div className={classes.bar} style={{ float: "left", display: "flex", flexDirection: 'row-reverse', marginLeft: '5%', textAlign: 'center' }}>
+                    <FormControl>
+                        <InputLabel id='ecat-search-label'>Search by category</InputLabel>
+                        <Select
+                            labelId='ecat-search-label'
+                            id='ecat-search'
+                            value={category}
+                            onChange={handleFilter}
+                            style={{minWidth:"200px"}}
+                        >
+                            <MenuItem key={"All"} value={0}>All</MenuItem>
+                            <MenuItem key={"CompSoc"} value={ecats.compsoc}>Computer Society</MenuItem>
+                            <MenuItem key={"ComSoc"} value={ecats.comsoc}>Communication Society</MenuItem>
+                            <MenuItem key={"APS"} value={ecats.aps}>Antenna Propogation Society</MenuItem>
+                            <MenuItem key={"SPS"} value={ecats.sps}>Signal Processing Society</MenuItem>
+                            <MenuItem key={"PES"} value={ecats.pes}>Power and Energy Society</MenuItem>
+                            <MenuItem key={"RAS"} value={ecats.ras}>Robotic and Automation Society</MenuItem>
+                            <MenuItem key={"SIGHT"} value={ecats.sight}>Special Interest Group on Humanitarian Technology</MenuItem>
+                            <MenuItem key={"WIE"} value={ecats.wie}>Women in Engineering</MenuItem>
+                        </Select>
+                    </FormControl>
+                </div>
+            </div>
+            <Container maxWidth='lg'>
+                <Typography variant='h4' style={{textAlign: 'center'}}><b>Articles</b></Typography>
+                <br/>
+                {
+                    (Array.isArray(list) && list.length!==0)?(
+                        <Grid container spacing={3} direction='row' alignItems="stretch" className={classes.grid}>
+                            {list.map(function (item) {
+                                if(loading)
+                                {
+                                    return(
+                                        <Grid item lg={3} sm={6} xs={12} md={4}>
+                                            <Skeleton animation="wave" variant="rect" height={400}/>
+                                        </Grid>
+                                    )
+                                }
+                                else
+                                {
+                                    return(   
+                                        <Grid item lg={3} sm={6} xs={12} md={4}>
+                                            <ArticleCard article={item} />
+                                        </Grid>
+                                    )
+                                }
+                            })
+                            }
+                        </Grid>
+                    )
+                    :
+                    (
+                        <Typography variant='h5' style={{textAlign: 'center'}}>No articles to display</Typography>
+                    )
+                }
+            </Container>
+            {
+                !loading && loggedIn && (
+                    <>
+                        <Tooltip title="Add article" aria-label="add-article-tooltip">
+                            <Fab onClick={handleDialogOpen} aria-label='addArticle' className={classes.fab}>
+                                <Add/>
+                            </Fab>
+                        </Tooltip>
+                    </>
+                )
+            }
+            <AddArticleDialog 
+                open={dialog} 
+                onClose={handleDialogClose} 
+                edit={false} 
+                aria-label="add-article-dialog"
+            />
+        </div>
     )
 }

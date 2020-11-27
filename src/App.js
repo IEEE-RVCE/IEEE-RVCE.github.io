@@ -25,6 +25,7 @@ import EventPage from './pages/EventPage';
 import GalleryPage from './pages/GalleryPage';
 import ArticlesPage from './pages/ArticlesPage';
 import RegisterAttendeePage from './pages/RegisterAttendeePage';
+import ArticlePage from './pages/ArticlePage';
 // import NotFoundPage from './pages/NotFoundPage';
 import {images} from './links';
 
@@ -81,6 +82,9 @@ export default function App() {
     },
     mainColor: {
       backgroundColor: prefersDarkMode ? "#111":"#eee",
+    },
+    root: {
+      minHeight: 800,
     },
     background: {
       backgroundColor: prefersDarkMode ? "#111":"#eee",
@@ -176,9 +180,10 @@ export default function App() {
         </Switch>
 
         <Switch>
-          <Route path='/articles'>
-            <ArticlesPage/>
+          <Route path='/articles/:arid'>
+            <ArticlePage/>
           </Route>
+          <Route path='/articles' component={ArticlesPage}/>
         </Switch>
 
         <Route path='/register'>

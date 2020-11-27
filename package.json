@@ -9,6 +9,7 @@
     "@material-ui/lab": "^4.0.0-alpha.56",
     "@react-hook/window-scroll": "^1.3.0",
     "axios": "^0.20.0",
+    "draft-js": "^0.11.7",
     "moment": "^2.27.0",
     "query-string": "^6.13.7",
     "react": "^16.13.1",
