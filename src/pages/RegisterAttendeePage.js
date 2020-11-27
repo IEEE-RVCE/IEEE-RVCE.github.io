@@ -1,11 +1,26 @@
 import React, { useEffect, useState } from 'react'
-import { Select, Paper, FormControl, MenuItem, InputLabel, Typography, TextField, RadioGroup, FormLabel, FormControlLabel, Radio, Button, Snackbar } from '@material-ui/core';
+import { Select, Paper, FormControl, MenuItem, InputLabel, Typography, TextField, RadioGroup, FormLabel, FormControlLabel, Radio, Button, Snackbar, Container } from '@material-ui/core';
 import { ecats, hostname } from '../links';
 import Alert from '@material-ui/lab/Alert';
 import axios from 'axios';
+import {makeStyles} from '@material-ui/core/styles';
+
+const useStyles = makeStyles(theme => ({
+    root: {
+        ...theme.page,
+        ...theme.root,
+    },
+    paper: {
+        ...theme.paper,
+        padding: theme.spacing(4),
+    },
+    fields: {
+        padding: theme.spacing(1),
+    }
+}))
 
 export default function RegisterAttendeePage(props) {
-
+    const classes = useStyles();
     const [events, setEvents] = useState([]);
     const [loading, setLoading] = useState(false);
     const [category, setCategory] = useState(0);
@@ -82,109 +97,111 @@ export default function RegisterAttendeePage(props) {
     }
 
     return (
-        <div style={{ marginTop: "5%" }} align="center">
-            <Paper style={{ width: "80%" }} align="center">
-                <Typography variant="h3" margin="normal">Event Registration Form</Typography>
-                <FormControl style={{margin:"1%"}}>
-                    <InputLabel id='ecat-search-label'>Select Society/Affinity</InputLabel>
-                    <Select
-                        labelId='ecat-search-label'
-                        id='ecat-search'
-                        value={category}
-                        onChange={handleFilter}
-                        style={{ minWidth: "200px" }}
-                    >
-                        <MenuItem key={"All"} value={0}>All</MenuItem>
-                        <MenuItem key={"CompSoc"} value={ecats.compsoc}>Computer Society</MenuItem>
-                        <MenuItem key={"ComSoc"} value={ecats.comsoc}>Communication Society</MenuItem>
-                        <MenuItem key={"APS"} value={ecats.aps}>Antenna Propogation Society</MenuItem>
-                        <MenuItem key={"SPS"} value={ecats.sps}>Signal Processing Society</MenuItem>
-                        <MenuItem key={"PES"} value={ecats.pes}>Power and Energy Society</MenuItem>
-                        <MenuItem key={"RAS"} value={ecats.ras}>Robotic and Automation Society</MenuItem>
-                        <MenuItem key={"SIGHT"} value={ecats.sight}>Special Interest Group on Humanitarian Technology</MenuItem>
-                        <MenuItem key={"WIE"} value={ecats.wie}>Women in Engineering</MenuItem>
-                    </Select>
-                </FormControl>
-                <br />
-                <FormControl style={{margin:"1%"}}>
-                    <InputLabel id="event-selection">Select Event</InputLabel>
-                    <Select
-                        labelId="event-selection"
-                        id="eid-select"
-                        value={eid}
-                        onChange={(e) => setEid(e.target.value)}
-                        style={{ minWidth: "300px",maxWidth:"400px" }}
-                    >
-                        {events.map(function (item) {
-                            return <MenuItem key={item.ename} value={item.eid} style={{ minWidth: "300px",maxWidth:"400px"}}>{item.ename}</MenuItem>
-                        })}
-                    </Select>
-                </FormControl>
-                <br />
-                <FormControl>
-                    <TextField
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        placeholder="Enter full name"
-                        label="Full Name"
-                        InputLabelProps={{
-                            shrink: true
-                        }}
-                        defaultValue=''
-                        required
-                        style={{margin:"1%"}}
-                    />
-                    <br />
-                    <TextField
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Enter e-mail ID"
-                        label="Email ID"
-                        InputLabelProps={{
-                            shrink: true
-                        }}
-                        defaultValue=''
-                        required
-                        style={{margin:"1%"}}
-                    />
+        <div className={classes.root}>
+            <Container>
+                <Paper className={classes.paper} align="center">
+                    <Typography variant="h3" margin="normal">Event Registration Form</Typography>
+                    <FormControl style={{margin:"1%"}}>
+                        <InputLabel id='ecat-search-label'>Select Society/Affinity</InputLabel>
+                        <Select
+                            labelId='ecat-search-label'
+                            id='ecat-search'
+                            value={category}
+                            onChange={handleFilter}
+                            style={{ minWidth: "200px" }}
+                        >
+                            <MenuItem key={"All"} value={0}>All</MenuItem>
+                            <MenuItem key={"CompSoc"} value={ecats.compsoc}>Computer Society</MenuItem>
+                            <MenuItem key={"ComSoc"} value={ecats.comsoc}>Communication Society</MenuItem>
+                            <MenuItem key={"APS"} value={ecats.aps}>Antenna Propogation Society</MenuItem>
+                            <MenuItem key={"SPS"} value={ecats.sps}>Signal Processing Society</MenuItem>
+                            <MenuItem key={"PES"} value={ecats.pes}>Power and Energy Society</MenuItem>
+                            <MenuItem key={"RAS"} value={ecats.ras}>Robotic and Automation Society</MenuItem>
+                            <MenuItem key={"SIGHT"} value={ecats.sight}>Special Interest Group on Humanitarian Technology</MenuItem>
+                            <MenuItem key={"WIE"} value={ecats.wie}>Women in Engineering</MenuItem>
+                        </Select>
+                    </FormControl>
                     <br />
                     <FormControl style={{margin:"1%"}}>
-                    <FormLabel component="legend">Are you an IEEE member?</FormLabel>
-                    <RadioGroup aria-label="isIEEEmem" name="gender1" value={isMem} onChange={(e)=>setIsMem(e.target.value)}>
-                        <FormControlLabel value={true} control={<Radio />} label="Yes" />
-                        <FormControlLabel value={false} control={<Radio />} label="No" />
-                    </RadioGroup>
+                        <InputLabel id="event-selection">Select Event</InputLabel>
+                        <Select
+                            labelId="event-selection"
+                            id="eid-select"
+                            value={eid}
+                            onChange={(e) => setEid(e.target.value)}
+                            style={{ minWidth: "300px",maxWidth:"400px" }}
+                        >
+                            {events.map(function (item) {
+                                return <MenuItem key={item.ename} value={item.eid} style={{ minWidth: "300px",maxWidth:"400px"}}>{item.ename}</MenuItem>
+                            })}
+                        </Select>
                     </FormControl>
-                    <TextField
-                        value={memNum}
-                        onChange={(e) => setMemNum(e.target.value)}
-                        placeholder="Enter IEEE member number"
-                        label="IEEE Member Number"
-                        InputLabelProps={{
-                            shrink: true
-                        }}
-                        //defaultValue=''
-                        disabled={isMem===false}
-                        style={{margin:"1%"}}
-                    />
                     <br />
-                    <TextField
-                        value={phNo}
-                        onChange={(e) => setPhNo(e.target.value)}
-                        placeholder="Enter Contact number"
-                        label="Contact Number"
-                        InputLabelProps={{
-                            shrink: true
-                        }}
-                        defaultValue=''
-                        required
-                        //error={phNo.length < 10}
-                        style={{margin:"1%"}}
-                    />
-                </FormControl>
-                <br/>
-                <Button onClick={submitData} style={{margin:"1%"}}>Register</Button>
-            </Paper>
+                    <FormControl>
+                        <TextField
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            placeholder="Enter full name"
+                            label="Full Name"
+                            InputLabelProps={{
+                                shrink: true
+                            }}
+                            defaultValue=''
+                            required
+                            style={{margin:"1%"}}
+                        />
+                        <br />
+                        <TextField
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="Enter e-mail ID"
+                            label="Email ID"
+                            InputLabelProps={{
+                                shrink: true
+                            }}
+                            defaultValue=''
+                            required
+                            style={{margin:"1%"}}
+                        />
+                        <br />
+                        <FormControl style={{margin:"1%"}}>
+                            <FormLabel component="legend">Are you an IEEE member?</FormLabel>
+                            <RadioGroup aria-label="isIEEEmem" name="gender1" value={isMem} onChange={(e)=>setIsMem(e.target.value === "true")}>
+                                <FormControlLabel value="true" control={<Radio />} label="Yes" />
+                                <FormControlLabel value="false" control={<Radio />} label="No" />
+                            </RadioGroup>
+                        </FormControl>
+                        <TextField
+                            value={memNum}
+                            onChange={(e) => setMemNum(e.target.value)}
+                            placeholder="Enter IEEE member number"
+                            label="IEEE Member Number"
+                            InputLabelProps={{
+                                shrink: true
+                            }}
+                            //defaultValue=''
+                            disabled={isMem===false}
+                            style={{margin:"1%"}}
+                        />
+                        <br />
+                        <TextField
+                            value={phNo}
+                            onChange={(e) => setPhNo(e.target.value)}
+                            placeholder="Enter Contact number"
+                            label="Contact Number"
+                            InputLabelProps={{
+                                shrink: true
+                            }}
+                            defaultValue=''
+                            required
+                            //error={phNo.length < 10}
+                            style={{margin:"1%"}}
+                        />
+                    </FormControl>
+                    <br/>
+                    <Button onClick={submitData} style={{margin:"1%"}}>Register</Button>
+                </Paper>
+            </Container>
             <Snackbar open={regRes.error} autoHideDuration={6000} onClose={handleClose('error')}>
                 <Alert elevation={6} variant="filled" onClose={handleClose('error')} severity="error">An error occurred while registering, please try again</Alert>
             </Snackbar>
