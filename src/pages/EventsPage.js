@@ -32,9 +32,12 @@ const useStyles = makeStyles((theme) => ({
     },
     searchBars: {
         display: 'block',
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('sm')]: {
             display: 'none'
-        }
+        },
+    },
+    bar: {
+        ...theme.transbg,
     },
     grid: theme.grid,
 }));
@@ -59,6 +62,9 @@ export default function EventPage(props) {
     //Keyword search
     const handleSearch = (event) => {
         setText(event.target.value);
+    }
+
+    useEffect(() => {
         var updatedList = events;
         updatedList = events.filter(function (item) {
             if (text === "")
@@ -69,7 +75,7 @@ export default function EventPage(props) {
             );
         });
         setList(updatedList);
-    }
+    },[events, text])
 
     //Society names for dropdown filter
     const [category, setCategory] = React.useState(ecat !==undefined?ecat:0);
@@ -102,7 +108,7 @@ export default function EventPage(props) {
     return (
             <div className={classes.root}>
                 <div className={classes.searchBars}>
-                    <div style={{ float: "right", display: "flex", flexDirection: 'row', marginRight: '5%' }}>
+                    <div className={classes.bar} style={{ float: "right", display: "flex", flexDirection: 'row', marginRight: '5%', }}>
                         <FormControl>
                             <TextField
                                 value={text}
@@ -116,7 +122,7 @@ export default function EventPage(props) {
                             />
                         </FormControl>
                     </div>
-                    <div style={{ float: "left", display: "flex", flexDirection: 'row-reverse', marginLeft: '5%' }}>
+                    <div className={classes.bar} style={{ float: "left", display: "flex", flexDirection: 'row-reverse', marginLeft: '5%' }}>
                         <FormControl>
                             <InputLabel id='ecat-search-label'>Search by category</InputLabel>
                             <Select

@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         ...theme.root,
         ...theme.page,
+        minHeight: 800,
     },
     imgrid: {
         display: 'flex',
@@ -21,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
     filter: {
         display: 'block',
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('sm')]: {
             display: 'none'
         }
     },
@@ -38,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
         background:
           'linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, ' +
           'rgba(0,0,0,0.1) 70%, rgba(0,0,0,0) 100%)',
+    },
+    bar: {
+        ...theme.transbg,
     },
 }))
 
@@ -156,7 +160,7 @@ export default function GalleryPage(props) {
     return(
         <div className={classes.root}>
             <div className={classes.filter}>
-                <div style={{ float: "left", display: "flex", flexDirection: 'row-reverse', marginLeft: '5%' }}>
+                <div className={classes.bar} style={{ float: "left", display: "flex", flexDirection: 'row-reverse', marginLeft: '5%', textAlign: 'center' }}>
                     <FormControl>
                         <InputLabel id='ecat-search-label'>Search by category</InputLabel>
                         <Select
@@ -200,7 +204,7 @@ export default function GalleryPage(props) {
                                     if(tileData.length >=0) {
                                         return (
                                             <GridListTile key={tile.image} cols={1} style={{minHeight: 400, minWidth: 400}}>
-                                                <img onClick={onTileClicked(index)} src={`data:image/png;base64,${Buffer(tile.image.data).toString('base64')}`} alt={tile.name}/>
+                                                <img onClick={onTileClicked(index)} style={{objectFit: 'contain', width: '100%'}} src={`data:image/png;base64,${Buffer(tile.image.data).toString('base64')}`} alt={tile.name}/>
                                                 {
                                                     loggedIn && (<GridListTileBar
                                                         titlePosition="top"

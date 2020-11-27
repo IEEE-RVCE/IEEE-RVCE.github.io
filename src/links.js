@@ -109,6 +109,8 @@ export const images= {
         sight: imagePath + '/landing/Sight.png',
         sps: imagePath + '/landing/SignalProcessing.png',
         wie: imagePath + '/landing/WIE.png',
+        mainBlack: imagePath + '/landing/MainBlack.png',
+        mainWhite: imagePath + '/landing/MainWhite.png',
     }
 }
 
