@@ -85,6 +85,8 @@ export default function Header(props) {
             },
             display: 'block',
             color: darkMode ? '#eee':'#00629b',
+            backgroundColor: transparent!==1?theme.transbg.backgroundColor:'inherit',
+            transition: 'backgroundColor 1s linear',
         },
     }))
 

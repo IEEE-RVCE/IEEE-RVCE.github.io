@@ -26,6 +26,7 @@ import GalleryPage from './pages/GalleryPage';
 import ArticlesPage from './pages/ArticlesPage';
 import RegisterAttendeePage from './pages/RegisterAttendeePage';
 // import NotFoundPage from './pages/NotFoundPage';
+import {images} from './links';
 
 export default function App() {
 
@@ -78,8 +79,14 @@ export default function App() {
     {
       backgroundColor: '#fff',
     },
-    root: {
+    mainColor: {
       backgroundColor: prefersDarkMode ? "#111":"#eee",
+    },
+    background: {
+      backgroundColor: prefersDarkMode ? "#111":"#eee",
+      backgroundImage: prefersDarkMode ? `url(${images.landing.mainBlack})`: `url(${images.landing.mainWhite})`,
+      backgroundPositionX: 'center',
+      backgroundSize: 'contain',
     },
     page: {
       paddingTop: 96,
@@ -90,6 +97,9 @@ export default function App() {
     },
     grid: {
       margin: 'auto',
+    },
+    transbg: {
+      backgroundColor: prefersDarkMode?'#0a0a0aee':'#fefefeee',
     }
   });
 
@@ -101,7 +111,7 @@ export default function App() {
   
   return (
     <ThemeProvider theme={theme}>
-      <div>
+      <div style={{...theme.background}}>
         <CssBaseline />
         <Header/>
 
