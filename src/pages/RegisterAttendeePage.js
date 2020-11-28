@@ -161,7 +161,7 @@ export default function RegisterAttendeePage(props) {
                         <br />
                         <FormControl style={{margin:"1%"}}>
                             <FormLabel component="legend">Are you an IEEE member?</FormLabel>
-                            <RadioGroup aria-label="isIEEEmem" name="gender1" value={isMem} onChange={(e)=>setIsMem(e.target.value === "true")}>
+                            <RadioGroup aria-label="isIEEEmem" name="gender1" value={String(isMem)} onChange={(e)=>setIsMem(e.target.value === "true")}>
                                 <FormControlLabel value="true" control={<Radio />} label="Yes" />
                                 <FormControlLabel value="false" control={<Radio />} label="No" />
                             </RadioGroup>
