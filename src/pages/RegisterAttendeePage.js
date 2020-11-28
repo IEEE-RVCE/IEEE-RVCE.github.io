@@ -66,7 +66,7 @@ export default function RegisterAttendeePage(props) {
             name: name,
             email: email,
             isieee: isMem,
-            memnum: memNum,
+            memnum: isMem?memNum:'0',
             phnum: phNo
         };
 
