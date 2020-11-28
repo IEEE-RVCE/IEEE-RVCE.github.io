@@ -51,15 +51,20 @@ export default function ArticlesPage(props) {
 
     useEffect(() => {
         var updatedList = articles;
-        updatedList = articles.filter(function (item) {
-            if (text === "")
-                return articles;
-            return (
-                item.keywords.toLowerCase().search(text.toLowerCase()) !== -1 ||
-                item.title.toLowerCase().search(text.toLowerCase()) !== -1
-            );
-        });
-        setList(updatedList);
+        if(articles) {
+            updatedList = articles.filter(function (item) {
+                if (text === "")
+                    return articles;
+                return (
+                    item.keywords.toLowerCase().search(text.toLowerCase()) !== -1 ||
+                    item.title.toLowerCase().search(text.toLowerCase()) !== -1
+                );
+            });
+            setList(updatedList);
+        }
+        else {
+            setList([])
+        }
     },[articles, text])
     
     //Society names for dropdown filter
@@ -78,11 +83,13 @@ export default function ArticlesPage(props) {
         setLoading(true)
         axios.get(ecat!==undefined?hostname+'/api/article/cat/'+ecat:hostname+'/api/article')
             .then(response => {
-                console.log(response.data.articles)
                 setArticles(response.data.articles)
                 setList(response.data.articles)
             })
             .then(() => {
+                setLoading(false)
+            })
+            .catch(() => {
                 setLoading(false)
             })
     },[ecat])
@@ -161,7 +168,7 @@ export default function ArticlesPage(props) {
                     </FormControl>
                 </div>
             </div>
-            <Container maxWidth='lg'>
+            <Container maxWidth='md'>
                 <Typography variant='h4' style={{textAlign: 'center'}}><b>Articles</b></Typography>
                 <br/>
                 {
@@ -171,7 +178,7 @@ export default function ArticlesPage(props) {
                                 if(loading)
                                 {
                                     return(
-                                        <Grid item lg={3} sm={6} xs={12} md={4}>
+                                        <Grid item lg={12} sm={12} xs={12} md={12}>
                                             <Skeleton animation="wave" variant="rect" height={400}/>
                                         </Grid>
                                     )
@@ -179,7 +186,7 @@ export default function ArticlesPage(props) {
                                 else
                                 {
                                     return(   
-                                        <Grid item lg={3} sm={6} xs={12} md={4}>
+                                        <Grid item lg={12} sm={12} xs={12} md={12}>
                                             <ArticleCard article={item} />
                                         </Grid>
                                     )
@@ -195,7 +202,7 @@ export default function ArticlesPage(props) {
                 }
             </Container>
             {
-                !loading && loggedIn && (
+                loggedIn && (
                     <>
                         <Tooltip title="Add article" aria-label="add-article-tooltip">
                             <Fab onClick={handleDialogOpen} aria-label='addArticle' className={classes.fab}>

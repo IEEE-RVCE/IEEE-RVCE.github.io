@@ -22,7 +22,6 @@ const useStyles = makeStyles(theme => ({
 export default function RegisterAttendeePage(props) {
     const classes = useStyles();
     const [events, setEvents] = useState([]);
-    const [loading, setLoading] = useState(false);
     const [category, setCategory] = useState(0);
     const [eid, setEid] = useState(0);
     const [name, setName] = useState("");
@@ -49,13 +48,9 @@ export default function RegisterAttendeePage(props) {
     }
 
     useEffect(() => {
-        setLoading(true)
         axios.get(category !== 0 ? hostname + '/api/event/cat/' + category : hostname + '/api/event')
             .then(response => {
                 setEvents(response.data.events)
-            })
-            .then(() => {
-                setLoading(false)
             })
     }, [category]);
 
@@ -70,7 +65,7 @@ export default function RegisterAttendeePage(props) {
             eid: eid,
             name: name,
             email: email,
-            isIeee: isMem,
+            isieee: isMem,
             memnum: memNum,
             phnum: phNo
         };
