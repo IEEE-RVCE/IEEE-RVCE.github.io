@@ -37,7 +37,7 @@ export const affinities = [
 ]
 
 //Hostname link for API requests
-export const hostname = "http://play.kekvrose.me";
+export const hostname = "https://play.kekvrose.me";
 
 //Image source links
 const imagePath = '/assets/images';
