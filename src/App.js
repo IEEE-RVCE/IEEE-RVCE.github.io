@@ -1,6 +1,6 @@
 import React from 'react';
 import {createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+// import useMediaQuery from '@material-ui/core/useMediaQuery';
 import {CssBaseline, Fab, Tooltip} from '@material-ui/core';
 import {Brightness3, BrightnessHigh} from '@material-ui/icons';
 import {Route, Switch} from 'react-router-dom';
@@ -31,9 +31,9 @@ import {images} from './links';
 
 export default function App() {
 
-  const tempMedia = useMediaQuery('(prefers-color-scheme: dark)');
+  // const tempMedia = useMediaQuery('(prefers-color-scheme: dark)');
   if(localStorage.getItem('isSetByUser') === null)
-    localStorage.setItem('darkMode', tempMedia)
+    localStorage.setItem('darkMode', true)
   const prefersDarkMode = localStorage.getItem('darkMode') === 'true'
 
   const theme = createMuiTheme({
@@ -82,6 +82,9 @@ export default function App() {
     },
     mainColor: {
       backgroundColor: prefersDarkMode ? "#111":"#eee",
+    },
+    backgroundBlend: {
+      backgroundColor: prefersDarkMode ? '#000':"#fff",
     },
     root: {
       minHeight: 800,

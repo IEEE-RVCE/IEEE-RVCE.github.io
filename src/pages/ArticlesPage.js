@@ -104,34 +104,10 @@ export default function ArticlesPage(props) {
         setDialog(true)
     }
 
-    //Test list useEffect
-    // useEffect(() => {
-    //     setLoading(true)
-    //     setList([
-    //         {
-    //             arid: 1,
-    //             ecat: 1,
-    //             author: "Author 1",
-    //             adate: "2002-10-10T00:00:00.000Z",
-    //             title: 'Article 1',
-    //             keywords: "this is a keyword set",
-    //         },
-    //         {
-    //             arid: 2,
-    //             ecat: 1,
-    //             author: "Author 2",
-    //             adate: "2002-10-10T00:00:00.000Z",
-    //             content: "This is a big article 2",
-    //             title: 'Article 2',
-    //             keywords: "this is a keyword set",
-    //         }
-    //     ])
-    // },[])
-
     return(
         <div className={classes.root}>
             <div className={classes.filter}>
-                <div className={classes.bar} style={{ float: "right", display: "flex", flexDirection: 'row', marginRight: '5%', }}>
+                <div className={classes.bar} style={{ float: "right", display: "flex", flexDirection: 'row', marginRight: '15%', }}>
                     <FormControl>
                         <TextField
                             value={text}
@@ -145,7 +121,7 @@ export default function ArticlesPage(props) {
                         />
                     </FormControl>
                 </div>
-                <div className={classes.bar} style={{ float: "left", display: "flex", flexDirection: 'row-reverse', marginLeft: '5%', textAlign: 'center' }}>
+                <div className={classes.bar} style={{ float: "left", display: "flex", flexDirection: 'row-reverse', marginLeft: '15%', textAlign: 'center' }}>
                     <FormControl>
                         <InputLabel id='ecat-search-label'>Search by category</InputLabel>
                         <Select
@@ -197,7 +173,7 @@ export default function ArticlesPage(props) {
                     )
                     :
                     (
-                        <Typography variant='h5' style={{textAlign: 'center'}}>No articles to display</Typography>
+                        <Typography variant='h5' style={{textAlign: 'center'}}>Coming soon...</Typography>
                     )
                 }
             </Container>

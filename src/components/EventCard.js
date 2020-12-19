@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
       boxShadow: "0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12)",
       transitionDuration: 200,
     },
+    margin: 'auto',
   },
   media: {
     height: 0,
@@ -61,7 +62,7 @@ export default function EventCard(props) {
 
   return (
     <>
-      <Card className={classes.root} onDoubleClick={() => window.location.href = window.location.href + '/' + props.event.eid}>
+      <Card title={props.event.ename} className={classes.root} onDoubleClick={() => window.location.href = window.location.href + '/' + props.event.eid}>
         <CardHeader
           title={props.event.ename}
           subheader={eventTimes.start.toString().slice(0,24) + " to " + eventTimes.end.toString().slice(0,24)}

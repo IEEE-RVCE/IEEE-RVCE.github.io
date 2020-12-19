@@ -43,6 +43,9 @@ const useStyles = makeStyles((theme) => ({
     stepper: {
         backgroundColor: 'inherit',
     },
+    steps: {
+        ...theme.backgroundBlend,
+    }
   }));
 
 export default function MembershipPage(){
@@ -238,7 +241,7 @@ export default function MembershipPage(){
                         </Paper>
                         <br/>
                         <div>
-                            <Button size='large' className={classes.button} onClick={() => {setStart(true);window.location.href=window.location.href+'/1'}}>Become a member now!! </Button>
+                            <Button size='large' className={classes.button} style={{marginRight: '50px'}} onClick={() => {setStart(true);window.location.href=window.location.href+'/1'}}>Become a member now!! </Button>
                         </div>
                     </Container>
                 </>
@@ -247,27 +250,29 @@ export default function MembershipPage(){
         {
             start && 
                 (
-                    <div>
+                    <Container className={classes.steps}>
                         <Typography className={classes.heading} variant='h4'><b>{steps[activeStep]}</b></Typography>
                         <Typography className={classes.content}>{getStepContent(activeStep)}</Typography>
-                        <MobileStepper
-                            steps={7}
-                            position="static"
-                            variant="text"
-                            className={classes.stepper}
-                            activeStep={activeStep}
-                            nextButton={
-                            <Button size="small" onClick={handleNext} disabled={activeStep === 6}>
-                                Next
-                            </Button>
-                            }
-                            backButton={
-                            <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-                                Back
-                            </Button>
-                            }
-                        />
-                    </div>
+                        <Container maxWidth='lg'>
+                            <MobileStepper
+                                steps={7}
+                                position="static"
+                                variant="text"
+                                className={classes.stepper}
+                                activeStep={activeStep}
+                                nextButton={
+                                <Button size="small" onClick={handleNext} disabled={activeStep === 6}>
+                                    Next
+                                </Button>
+                                }
+                                backButton={
+                                <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+                                    Back
+                                </Button>
+                                }
+                            />
+                        </Container>
+                    </Container>
                 )
             }
         </div>

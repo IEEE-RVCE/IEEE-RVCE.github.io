@@ -205,7 +205,7 @@ export default function GalleryPage(props) {
                                             if(tileData.length >=0) {
                                                 return (
                                                     <GridListTile key={tile.image} cols={1} style={{minHeight: 400, minWidth: 400}}>
-                                                        <img onClick={onTileClicked(index)} style={{objectFit: 'contain', width: '100%'}} src={`data:image/png;base64,${Buffer(tile.image.data).toString('base64')}`} alt={tile.name}/>
+                                                        <img onClick={onTileClicked(index)} style={{objectFit: 'contain', width: '100%'}} title={tile.alt} src={`data:image/png;base64,${Buffer(tile.image.data).toString('base64')}`} alt={tile.alt}/>
                                                         {
                                                             loggedIn && (<GridListTileBar
                                                                 titlePosition="top"

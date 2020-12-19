@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
         ...theme.root,
         textAlign: 'center',
         alignContent: 'center',
-        margin: 'auto',
     },
     instructions: {
         marginLeft: theme.spacing(3),
@@ -39,7 +38,6 @@ const useStyles = makeStyles((theme) => ({
     bar: {
         ...theme.transbg,
     },
-    grid: theme.grid,
 }));
 
 export default function EventPage(props) {
@@ -107,45 +105,45 @@ export default function EventPage(props) {
     }, [ecat]);
     return (
             <div className={classes.root}>
-                <div className={classes.searchBars}>
-                    <div className={classes.bar} style={{ float: "right", display: "flex", flexDirection: 'row', marginRight: '5%', }}>
-                        <FormControl>
-                            <TextField
-                                value={text}
-                                onChange={handleSearch}
-                                placeholder="Enter keywords or name"
-                                label="Search events"
-                                InputLabelProps= {{
-                                    shrink: true
-                                }}
-                                defaultValue='All'
-                            />
-                        </FormControl>
-                    </div>
-                    <div className={classes.bar} style={{ float: "left", display: "flex", flexDirection: 'row-reverse', marginLeft: '5%' }}>
-                        <FormControl>
-                            <InputLabel id='ecat-search-label'>Search by category</InputLabel>
-                            <Select
-                                labelId='ecat-search-label'
-                                id='ecat-search'
-                                value={category}
-                                onChange={handleFilter}
-                                style={{minWidth:"200px"}}
-                            >
-                                <MenuItem key={"All"} value={0}>All</MenuItem>
-                                <MenuItem key={"CompSoc"} value={ecats.compsoc}>Computer Society</MenuItem>
-                                <MenuItem key={"ComSoc"} value={ecats.comsoc}>Communication Society</MenuItem>
-                                <MenuItem key={"APS"} value={ecats.aps}>Antenna Propogation Society</MenuItem>
-                                <MenuItem key={"SPS"} value={ecats.sps}>Signal Processing Society</MenuItem>
-                                <MenuItem key={"PES"} value={ecats.pes}>Power and Energy Society</MenuItem>
-                                <MenuItem key={"RAS"} value={ecats.ras}>Robotic and Automation Society</MenuItem>
-                                <MenuItem key={"SIGHT"} value={ecats.sight}>Special Interest Group on Humanitarian Technology</MenuItem>
-                                <MenuItem key={"WIE"} value={ecats.wie}>Women in Engineering</MenuItem>
-                            </Select>
-                        </FormControl>
-                    </div>
-                </div>
                 <Container maxWidth='lg'>
+                    <div className={classes.searchBars}>
+                        <div className={classes.bar} style={{ float: "right", display: "flex", flexDirection: 'row', }}>
+                            <FormControl>
+                                <TextField
+                                    value={text}
+                                    onChange={handleSearch}
+                                    placeholder="Enter keywords or name"
+                                    label="Search events"
+                                    InputLabelProps= {{
+                                        shrink: true
+                                    }}
+                                    defaultValue='All'
+                                />
+                            </FormControl>
+                        </div>
+                        <div className={classes.bar} style={{ float: "left", display: "flex", flexDirection: 'row-reverse', }}>
+                            <FormControl>
+                                <InputLabel id='ecat-search-label'>Search by category</InputLabel>
+                                <Select
+                                    labelId='ecat-search-label'
+                                    id='ecat-search'
+                                    value={category}
+                                    onChange={handleFilter}
+                                    style={{minWidth:"200px"}}
+                                >
+                                    <MenuItem key={"All"} value={0}>All</MenuItem>
+                                    <MenuItem key={"CompSoc"} value={ecats.compsoc}>Computer Society</MenuItem>
+                                    <MenuItem key={"ComSoc"} value={ecats.comsoc}>Communication Society</MenuItem>
+                                    <MenuItem key={"APS"} value={ecats.aps}>Antenna Propogation Society</MenuItem>
+                                    <MenuItem key={"SPS"} value={ecats.sps}>Signal Processing Society</MenuItem>
+                                    <MenuItem key={"PES"} value={ecats.pes}>Power and Energy Society</MenuItem>
+                                    <MenuItem key={"RAS"} value={ecats.ras}>Robotic and Automation Society</MenuItem>
+                                    <MenuItem key={"SIGHT"} value={ecats.sight}>Special Interest Group on Humanitarian Technology</MenuItem>
+                                    <MenuItem key={"WIE"} value={ecats.wie}>Women in Engineering</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </div>
+                    </div>
                     <Typography variant='h4' style={{textAlign: 'center'}}><b>Events</b></Typography>
                     <br/>
                     {

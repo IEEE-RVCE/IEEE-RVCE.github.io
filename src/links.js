@@ -6,7 +6,6 @@ export const navs = [
     {name: "Societies", isMenu: true},
     {name: "Affinities", isMenu:true},
     {name: "Membership", link: '/membership'},
-    {name: 'Gallery', link: '/gallery'},
     {name: 'Articles', link: '/articles'},
     {name: "Login", link: '/login'},
 ]

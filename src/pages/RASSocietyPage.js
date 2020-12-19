@@ -98,7 +98,7 @@ export default function RASSocietyPage(props) {
                     <Typography variant='body1'>
                         Coming soon...     
                     </Typography>
-                    {/* <Grid container spacing={2} justify='center'>
+                    <Grid hidden container spacing={2} justify='center'>
                         {
                             execom.ras.map((member) => (
                                 <Grid item xs={12} md={4}>
@@ -106,7 +106,7 @@ export default function RASSocietyPage(props) {
                                 </Grid>
                             ))
                         }
-                    </Grid> */}
+                    </Grid>
                 </Paper>
                 <br/>
             </Container>
