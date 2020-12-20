@@ -3,11 +3,10 @@ import {useParams} from 'react-router-dom';
 import axios from 'axios';
 import {hostname} from '../links';
 import {makeStyles} from '@material-ui/core/styles';
-import { Typography, Button, Container, Grid, LinearProgress } from '@material-ui/core';
+import { Typography, Container, Grid, LinearProgress } from '@material-ui/core';
 import {SpeedDial, SpeedDialAction, SpeedDialIcon} from '@material-ui/lab';
 import {Delete, Edit, Mail} from '@material-ui/icons';
 import {AddEventDialog} from '../components/AddEventDialog';
-import {MetaTags} from 'react-meta-tags';
 
 const useStyles = makeStyles((theme) => ({
     '@global': {
@@ -60,6 +59,9 @@ const useStyles = makeStyles((theme) => ({
         position: 'fixed',
         bottom: 32,
         right: 100,
+    },
+    container: {
+        ...theme.backgroundBlend,
     }
 }))
  
@@ -140,24 +142,11 @@ export default function EventPage() {
         loaded?
         (
             <div className={classes.root}>
-                <MetaTags>
-                    <meta
-                    name={event.ename}
-                    content={event.details}
-                    />
-                    <meta
-                    property="og:image"
-                    content={event.smallposterlink}
-                    />
-                </MetaTags>
-                <div className={classes.backButton}>
-                    <Button onClick={() => window.history.back()} size="small">Go back</Button>
-                </div>
-                <Container maxWidth='xl' fluid>
+                <Container className={classes.container} maxWidth='lg'>
                     <Typography variant='h3' className={classes.header}><b>{event.ename}</b></Typography>
                     <br/><br/>
                     <Grid container spacing={3} justify='center'>
-                        <Grid xs={12} md={6} lg={4}>
+                        <Grid xs={12} md={6}>
                             <div className={classes.griditem}>
                                 <Typography variant='h5'>
                                     <b>Description:</b> {event.details}
@@ -179,7 +168,7 @@ export default function EventPage() {
                                 </Typography>
                             </div>
                         </Grid>
-                        <Grid xs={12} md={6} lg={4}>
+                        <Grid xs={12} md={6}>
                             <div className={classes.griditem}>
                                 <img src={event.largeposterlink} alt='Event poster' style={{width: 'inherit'}}/>
                             </div>
