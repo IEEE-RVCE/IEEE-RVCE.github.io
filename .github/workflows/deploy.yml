@@ -21,7 +21,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Deploy website
+    - name: Setup node
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
