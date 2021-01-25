@@ -158,7 +158,7 @@ export default function MembershipPage(){
                 <Container>
                     After this step payment can be done either online or by cash.<br/>
                     For online payment:<br/> 
-                    <b>UPI : prajwaltelkar98@okaxis </b>
+                    <b>UPI : prajwaltelkar98-1@okaxis </b>
                     Or
                     <b> GPAY TO : 9972985281</b><br/>
                     Put Your name - IEEE in description during payment.<br/>
