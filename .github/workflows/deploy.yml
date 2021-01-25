@@ -26,5 +26,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-    - run: npm install --only=dev
+    - run: npm install --dev
     - run: npm run deploy
