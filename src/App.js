@@ -27,7 +27,7 @@ import ArticlesPage from './pages/ArticlesPage';
 import RegisterAttendeePage from './pages/RegisterAttendeePage';
 import ArticlePage from './pages/ArticlePage';
 // import NotFoundPage from './pages/NotFoundPage';
-// import {images} from './links';
+import {images} from './links';
 
 export default function App() {
 
