@@ -17,11 +17,11 @@ const useStyles = makeStyles((theme) => ({
   },
   name: {
     fontWeight: "bold",
-    fontFamily: "Formata"
+    // fontFamily: "Formata"
   },
-  post: {
-    fontFamily: "Cambria"
-  },
+  // post: {
+  //   fontFamily: "Cambria"
+  // },
   large: {
     width: theme.spacing(15),
     height: theme.spacing(15),
