@@ -27,7 +27,7 @@ import ArticlesPage from './pages/ArticlesPage';
 import RegisterAttendeePage from './pages/RegisterAttendeePage';
 import ArticlePage from './pages/ArticlePage';
 // import NotFoundPage from './pages/NotFoundPage';
-import {images} from './links';
+// import {images} from './links';
 
 export default function App() {
 
@@ -95,7 +95,7 @@ export default function App() {
     },
     background: {
       backgroundColor: prefersDarkMode ? "#111":"#eee",
-      // backgroundImage: prefersDarkMode ? `url(${images.landing.mainBlack})`: `url(${images.landing.mainWhite})`,
+      backgroundImage: prefersDarkMode ? `url(${images.landing.mainBlack})`: `url(${images.landing.mainWhite})`,
       backgroundPositionX: 'center',
       backgroundSize: 'contain',
     },
