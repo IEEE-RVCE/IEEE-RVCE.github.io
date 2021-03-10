@@ -47,14 +47,18 @@ export default function App() {
       backgroundColor: prefersDarkMode?'#222':"#FFF"
     },
     button: prefersDarkMode?{
-      border: '1px solid #eee ',
+      // border: '1px solid #bbbbbb',
+      borderRadius: '.1rem',
       color: '#eee ',
       marginRight: 16,
     }:
     {
-      border: '1px solid #00629B',
+      // border: '1px solid #00629B',
       color: '#00629B',
       marginRight: 16,
+    },
+    buttonBigText:{
+      fontSize:'15rem'
     },
     link: {
       textDecoration: 'none',
@@ -78,7 +82,7 @@ export default function App() {
       backgroundColor: '#222',
     }:
     {
-      backgroundColor: '#fff',
+      backgroundColor: '#fefefe',
     },
     mainColor: {
       backgroundColor: prefersDarkMode ? "#111":"#eee",

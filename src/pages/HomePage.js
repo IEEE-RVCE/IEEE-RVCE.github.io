@@ -21,7 +21,7 @@ export default function HomePage(props) {
 
     return(
         <div className={classes.root}>
-            <Container maxWidth='md' className={classes.container}>   
+            <Container maxWidth="lg" className={classes.container}>   
                 <Paper className={classes.paper}>     
                     <Typography variant='h3'>
                         Vision

@@ -1,4 +1,15 @@
+//@ts-check
 // Edit this list and the navs shall change accordingly
+
+
+/**
+ * @typedef {{name:string,link:string}} menuitem
+ * @typedef {{name:string,isMenu:true}} isMenuItem
+ */
+/**
+ * Main navifation link
+ * @type {(menuitem|isMenuItem)[]}
+ */
 export const navs = [
     {name: "Home", link: '/'},
     {name: "About Us", link: '/about'},
@@ -10,7 +21,10 @@ export const navs = [
     {name: "Login", link: '/login'},
 ]
 
-//Buttons for Society Page
+/**
+ * Buttons for Society Page
+ * @type {menuitem[]}
+ */
 export const societyNav = [
     {name: "Home", link: '/'},
     {name: "About Us", link: '/about'},
@@ -19,7 +33,10 @@ export const societyNav = [
     {name: "Login", link: '/login'},
 ]
 
-//List of societies and links
+/**
+ * List of societies and links
+ * @type {menuitem[]}
+ */
 export const societies = [
     {name: "Computer Society", link: '/society/cs'},
     {name: "Com Soc", link: '/society/comsoc'},
@@ -29,7 +46,10 @@ export const societies = [
     {name: "RAS", link: '/society/ras'},
 ]
 
-// List of affinities and links
+/**
+ * List of affinities and links
+ * @type {menuitem[]}
+ */
 export const affinities = [
     {name: "SIGHT", link:'/affinity/sight'},
     {name: "WIE", link:'/affinity/wie'}

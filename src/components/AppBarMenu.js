@@ -114,6 +114,7 @@ export default function AppBarMenu(props){
                 aria-haspopup="true"
                 onClick={handleToggle} 
                 className={`${classes.button} ${classes.hiddenMed}`}
+                disableTouchRipple
                 >
                     {props.name}
             </Button>

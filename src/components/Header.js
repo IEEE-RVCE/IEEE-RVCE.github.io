@@ -234,11 +234,11 @@ export default function Header(props) {
                                 <Buttons/>
                             </div>
                             
-                            <div className={classes.brand}>
+                            {/* <div className={classes.brand}>
                                 <a href='https://www.ieee.org/' target='_blank' rel='noopener noreferrer'>
                                     <img src={darkMode?images.logos.ieee_white:images.logos.ieee_blue_png} height="60px" style={{float:"right", marginRight: "3%", paddingTop: '10px', paddingBottom: '10px'}} alt="IEEE logo"/>
                                 </a>
-                            </div>
+                            </div> */}
                             <IconButton
                                 onClick={handleDrawerToggle(true)}
                                 className={classes.menuButton}
