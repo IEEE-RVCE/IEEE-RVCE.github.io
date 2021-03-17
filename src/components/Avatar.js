@@ -15,10 +15,6 @@ const useStyles = makeStyles((theme) => {
       margin: "auto",
       textAlign: "center"
     },
-    name: {
-      // fontWeight: "lighter",
-    },
-    textOpts:{...theme.textOpts},
     large: {
       width: theme.spacing(15),
       height: theme.spacing(15),
@@ -44,11 +40,11 @@ export default function AvatarCard(props) {
         />
         <br />
         <ThemeProvider theme={theme}>
-          <Typography className={classes.name} variant="h5">
+          <Typography variant="h5">
             {props.name}
           </Typography>
         </ThemeProvider>
-        <Typography className={`${classes.post} ${classes.textOpts}`} variant="h6">
+        <Typography variant="h6" color='primary'>
           {props.position}
         </Typography>
       </CardContent>
