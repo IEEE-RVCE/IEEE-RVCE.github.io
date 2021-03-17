@@ -1,28 +1,31 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import {Card, CardContent, Avatar, Typography}  from "@material-ui/core";
+import { Card, CardContent, Avatar, Typography } from "@material-ui/core";
 import { createMuiTheme, responsiveFontSizes, ThemeProvider } from '@material-ui/core/styles';
 
-let theme = createMuiTheme();
-theme = responsiveFontSizes(theme);
-const useStyles = makeStyles((theme) => ({
-  root: {
-    height: '100%',
-    padding: theme.spacing(2)
-  },
-  content: {
-    margin: "auto",
-    textAlign: "center"
-  },
-  name: {
-    fontWeight: "bold",
-  },
-  large: {
-    width: theme.spacing(15),
-    height: theme.spacing(15),
-    margin: "auto"
-  },
-}));
+const theme = responsiveFontSizes(createMuiTheme());
+const useStyles = makeStyles((theme) => {
+  console.log(theme)
+  return {
+    root: {
+      height: '100%',
+      padding: theme.spacing(2)
+    },
+    content: {
+      margin: "auto",
+      textAlign: "center"
+    },
+    name: {
+      // fontWeight: "lighter",
+    },
+    textOpts:{...theme.textOpts},
+    large: {
+      width: theme.spacing(15),
+      height: theme.spacing(15),
+      margin: "auto"
+    },
+  }
+});
 
 /**
  * Avatar card
@@ -30,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
  */
 export default function AvatarCard(props) {
   const classes = useStyles();
+  console.log('I',classes)
   return (
     <Card className={classes.root}>
       <CardContent className={classes.content}>
@@ -44,7 +48,7 @@ export default function AvatarCard(props) {
             {props.name}
           </Typography>
         </ThemeProvider>
-        <Typography className={classes.post} variant="h6">
+        <Typography className={`${classes.post} ${classes.textOpts}`} variant="h6">
           {props.position}
         </Typography>
       </CardContent>

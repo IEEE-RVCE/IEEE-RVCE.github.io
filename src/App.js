@@ -67,6 +67,9 @@ export default function App() {
           textDecoration: 'underline',
       }
     },
+    textOpts:{
+      color: prefersDarkMode? '#bbbbbb':'#00629B',
+    },
     fab: {
       position: 'fixed',
       bottom: 32,
