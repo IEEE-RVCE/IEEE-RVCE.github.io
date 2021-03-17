@@ -7,7 +7,6 @@ let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
     height: '100%',
     padding: theme.spacing(2)
   },
@@ -17,11 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
   name: {
     fontWeight: "bold",
-    // fontFamily: "Formata"
   },
-  // post: {
-  //   fontFamily: "Cambria"
-  // },
   large: {
     width: theme.spacing(15),
     height: theme.spacing(15),
@@ -29,9 +24,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+/**
+ * Avatar card
+ * @param {{name:string,src:string,position:string}} props 
+ */
 export default function AvatarCard(props) {
   const classes = useStyles();
-
   return (
     <Card className={classes.root}>
       <CardContent className={classes.content}>
