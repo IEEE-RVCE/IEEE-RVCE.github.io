@@ -49,9 +49,9 @@ export default function HomePage(props) {
                 </Paper> */}
                 <Divider />
 
-                <Typography variant='h3'>
+                <Typography variant='h4'>
                     Executive Committee
-                    </Typography>
+                </Typography>
                 <br />
                 <Grid container spacing={2} justify='space-evenly'>
                     {
