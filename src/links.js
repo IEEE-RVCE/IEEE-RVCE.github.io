@@ -58,6 +58,10 @@ export const affinities = [
 //Hostname link for API requests
 export const hostname = "https://play.kekvrose.me";
 
+
+export const whatWeDo = "As members of a larger technical community, IEEE RVCE aims to connect future engineers and researchers with industry experts and top academicians. We provide a platform for students to stay updated with today's research through webinars and technical talks by eminent professors and professionals. We also arrange workshops and Industrial visits that help students upgrade their skills to stay relevant in today's global market.";
+
+
 //Image source links
 const imagePath = '/assets/images';
 export const images= {
