@@ -95,10 +95,7 @@ export default function RASSocietyPage(props) {
                         Executive Committee
                     </Typography>
                     <br />
-                    <Typography variant='body1'>
-                        Coming soon...     
-                    </Typography>
-                    <Grid hidden container spacing={2} justify='center'>
+                    <Grid container spacing={2} justify='center'>
                         {
                             execom.ras.map((member) => (
                                 <Grid item xs={12} md={4}>

@@ -190,7 +190,11 @@ export const execom = {
         {name: 'Sunidhi Salwadgi', position: 'Treasurer', image: imagePath + '/execom/wie/sunidhi.jpg'},
     ],
     ras: [
-
+        {name: 'Dr. Geetha K S', position: 'Faculty Advisor', image: imagePath + '/execom/ras/geetha_maam.jpg'},
+        {name: 'Naman A Menezes', position: 'Chair', image: imagePath + '/execom/ras/naman.jpg'},
+        {name: 'Rahul Pinny', position: 'Vice Chair', image: imagePath + '/execom/ras/pinny.jpg'},
+        {name: 'Ambu Karthik', position: 'Secretary', image: imagePath + '/execom/ras/ambu.jpg'},
+        {name: 'Rithwik Jayanth', position: 'Treasurer', image: imagePath + '/execom/ras/rithwik.jpg'},
     ],
     sight: [
 
