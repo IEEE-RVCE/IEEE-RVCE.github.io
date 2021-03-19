@@ -1,10 +1,10 @@
 import React from 'react';
-import {Container, Typography, Paper, Grid} from '@material-ui/core';
+import {Container, Typography, Paper, Grid, Accordion, AccordionSummary, AccordionDetails} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import {Link} from 'react-router-dom';
 import EventsCalendar from '../components/Calendar';
 import Avatar from '../components/Avatar';
-import {execom} from '../links';
+import {execom, alumni} from '../links';
 
 const useStyles = makeStyles((theme) => ({
     root: theme.root,
@@ -62,6 +62,40 @@ export default function HomePage(props) {
                     </Grid>
                 </Paper>
                 <br/>
+                {
+                    (Object.keys(alumni.main).length!==0) && 
+                    (
+                        <>   
+                            <Paper className={classes.paper}>
+                                <Typography variant='h3'>
+                                    Alumni
+                                </Typography>
+                                <br />
+                                {
+                                    Object.keys(alumni.main).map((batch) => (
+                                        <Accordion>
+                                            <AccordionSummary>
+                                                <Typography>{batch}</Typography>    
+                                            </AccordionSummary>
+                                            <AccordionDetails>
+                                                <Grid container spacing={2} justify='center'>
+                                                    {
+                                                        alumni.main[batch].map((member) => (
+                                                            <Grid item xs={12} md={4}>
+                                                                <Avatar name={member.name} position={member.position} src={member.image}/>
+                                                            </Grid>
+                                                        ))
+                                                    }
+                                                </Grid>
+                                            </AccordionDetails>
+                                        </Accordion>
+                                    ))
+                                }
+                            </Paper>
+                            <br/>
+                        </>
+                    )
+                }
                 <Paper className={classes.paper}>
                     <Typography variant='h3'>
                         Upcoming Events

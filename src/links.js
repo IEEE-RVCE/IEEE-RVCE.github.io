@@ -196,3 +196,69 @@ export const execom = {
 
     ],
 }
+
+//Alumni execom
+export const alumni = {
+    main: {
+        '2019-2020': [
+            {name: 'Dr. M Uttara Kumari', position: 'Branch Counselor', image: imagePath + '/alumni/2019-2020/main/muk_maam.jpg'},
+            {name: 'SJ Ruthvik', position: 'Chair', image: imagePath + '/alumni/2019-2020/main/ruthvik.jpg'},
+            {name: 'Srinivas Prabhu', position: 'Vice Chair', image: imagePath + '/alumni/2019-2020/main/srini.jpg'},
+            {name: 'Deekshith Nayak', position: 'Secretary', image: imagePath + '/alumni/2019-2020/main/deekshith.jpg'},
+            {name: 'Prajwal S Telkar', position: 'Treasurer', image: imagePath + '/alumni/2019-2020/main/prajwal.jpg'},
+            {name: 'Siddarth Sai Amruth Yetikuri', position: 'Editor in Chief', image: imagePath + '/alumni/2019-2020/main/sidsai.jpg'},
+        ],
+    },
+    aps: {
+        '2019-2020': [
+            {name: 'Dr. Mahesh A', position: 'Faculty Advisor', image: imagePath + '/alumni/2019-2020/aps/mahesh_sir.jpg'},
+            {name: 'Rahul Chikkodi', position: 'Chair', image: imagePath + '/alumni/2019-2020/aps/rahul.jpg'},
+            {name: 'Pratap Vangol', position: 'Secretary', image: imagePath + '/alumni/2019-2020/aps/pratap.jpg'},
+        ],
+    },
+    compsoc: {
+        '2019-2020': [
+            {name: 'Risha Dassi', position: 'Chair', image: imagePath + '/alumni/2019-2020/compsoc/risha.jpg'},
+            {name: 'Nischal J', position: 'Vice Chair', image: imagePath + '/alumni/2019-2020/compsoc/nischal.jpg'},
+            {name: 'Nikitha Srikanth', position: 'Secretary', image: imagePath + '/alumni/2019-2020/compsoc/niks.jpg'},
+            {name: 'Chirag Bapat', position: 'Treasurer', image: imagePath + '/alumni/2019-2020/compsoc/chirag.jpg'},
+        ],
+    },
+    comsoc: {
+        '2019-2020': [
+            {name: 'Kashish Malhotra', position: 'Chair', image: imagePath + '/alumni/2019-2020/comsoc/kashish.jpg'},
+            {name: 'Nandesh Goudar', position: 'Vice Chair', image: imagePath + '/alumni/2019-2020/comsoc/nandesh.jpg'},
+            {name: 'Saraansh Agarwal', position: 'Secretary', image: imagePath + '/alumni/2019-2020/comsoc/saraansh.jpg'},
+        ],
+    },
+    pes: {
+        '2019-2020': [
+            {name: 'Amith S Kumar', position: 'Chair', image: imagePath + '/alumni/2019-2020/pes/amith.jpg'},
+            {name: 'Deeraj DS', position: 'Vice Chair', image: imagePath + '/alumni/2019-2020/pes/deeraj.jpg'},
+            {name: 'Hariharasudhan J', position: 'Secretary', image: imagePath + '/alumni/2019-2020/pes/hari.jpg'},
+            {name: 'Shirish Kumar', position: 'Treasurer', image: imagePath + '/alumni/2019-2020/pes/shirish.jpg'},
+        ],
+    },
+    sps: {
+        '2019-2020': [
+            {name: 'Prof. K Nagamani', position: 'Faculty Advisor', image: imagePath + '/alumni/2019-2020/sps/nagamani_maam.jpg'},
+            {name: 'Niranjan DR', position: 'Chair', image: imagePath + '/alumni/2019-2020/sps/niranjan.jpg'},
+            {name: 'R Vibha Narayan', position: 'Vice Chair', image: imagePath + '/alumni/2019-2020/sps/vibha.jpg'},
+        ],
+    },
+    wie: {
+        '2019-2020': [
+            {name: 'Dr. Usha Rani K R', position: 'Faculty Advisor', image: imagePath + '/alumni/2019-2020/wie/usha_maam.jpg'},
+            {name: 'Aisiri HR', position: 'Chair', image: imagePath + '/alumni/2019-2020/wie/aisiri.png'},
+            {name: 'Raghavi R', position: 'Vice Chair', image: imagePath + '/alumni/2019-2020/wie/raghavi.jpg'},
+            {name: 'Sreelakshmi', position: 'Secretary', image: imagePath + '/alumni/2019-2020/wie/sreelakshmi.png'},
+            {name: 'Sunidhi Salwadgi', position: 'Treasurer', image: imagePath + '/alumni/2019-2020/wie/sunidhi.jpg'},
+        ],
+    },
+    ras: {
+
+    },
+    sight: {
+
+    },
+}
