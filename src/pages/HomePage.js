@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Paper, Grid,Divider } from '@material-ui/core';
+import { Container, Typography, Paper, Grid,Divider, CssBaseline } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import EventsCalendar from '../components/Calendar';
@@ -22,8 +22,9 @@ export default function HomePage(props) {
 
     return (
         <div className={classes.root}>
+            <CssBaseline></CssBaseline>
+            <FrontBox />
             <Container className={classes.container}>
-                <FrontBox />
                 {/* <Paper className={classes.paper}>
                     <Typography variant='h3'>
                         Vision

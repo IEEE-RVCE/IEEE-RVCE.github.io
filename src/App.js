@@ -111,7 +111,6 @@ export default function App() {
       backgroundSize: 'contain',
     },
     page: {
-      paddingTop: 96,
       paddingBottom: 64,
     },
     eventcard: {
