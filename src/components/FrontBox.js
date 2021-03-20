@@ -1,5 +1,6 @@
 import { Box, Grid, makeStyles, Typography, Button } from '@material-ui/core';
 import React from 'react';
+import {images} from '../links';
 
 const useStyles = makeStyles(theme => ({
     bigbutton: {
@@ -12,6 +13,14 @@ const useStyles = makeStyles(theme => ({
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
+    },
+    logoimage:{
+        maxHeight:'12vh',
+        maxWidth:'100%'
+        
+    },
+    logoImageSmall:{
+        width:'8rem'
     }
 }));
 export default function FrontBox() {
@@ -19,9 +28,21 @@ export default function FrontBox() {
     return (
         <>
             <Box className={classes.bigbadBackground}>
-                <Grid container style={{ padding: '6rem' }} alignContent='center' justify='center'>
+                <Grid container style={{ padding: '2rem' }} alignContent='center' justify='center'>
                     <Grid item>
-                        <Typography variant='h4' align='center'>IEEE RVCE</Typography>
+                        {/* <Grid container direction='row' alignContent='center' justify='center'>
+                            
+                            {/* <Grid item>
+                                <Typography style={{display:'block'}} variant='h4' align='baseline'>IEEE RVCE</Typography>
+                            </Grid> 
+                        </Grid> */}
+                        <Box display={{ xs: 'none', sm: 'block' }}>
+                        <img className={classes.logoimage} src={images.logos.ieee_rvce_new_white_big} alt='logo' />
+                        </Box>
+                        <Box display={{ xs: 'block', sm: 'none' }}>
+                        <img className={classes.logoImageSmall} src={images.logos.ieee_rvce_new_white} alt='logo' />
+                        </Box>
+
                         <br /><br />
                         <Typography variant='body2' align='center'>Hello there</Typography>
 

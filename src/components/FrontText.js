@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography } from '@material-ui/core';
+import { Grid, Typography ,Box} from '@material-ui/core';
 import { whatWeDo } from '../links';
 import {makeStyles} from '@material-ui/core/styles'
 
@@ -12,7 +12,7 @@ export default function FrontText() {
     const classes = useStyles();
     return (
         <>
-            <Grid className={classes.less} container spacing={6} justify='space-around' >
+            <Grid className={classes.less} container  justify='space-around' >
                 <Grid item sm={12} md={6}>
                     <Typography variant='h4'>What we do</Typography><br />
 
@@ -20,11 +20,11 @@ export default function FrontText() {
 
                 </Grid>
                 <Grid item sm={12} md={3}>
-                    Hiuee
+                    <Box>Hiuee</Box>
                 </Grid>
             </Grid>
             <br />
-            <Grid className={classes.less} container spacing={10} justify='space-around'>
+            <Grid className={classes.less} container justify='space-around'>
                 <Grid item sm={12} md={3}>
                     Hiuee
                 </Grid>
