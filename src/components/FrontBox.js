@@ -1,6 +1,5 @@
-import { Box, Grid, makeStyles, Typography, Button, Card, CardContent } from '@material-ui/core';
+import { Box, Grid, makeStyles, Typography, Button } from '@material-ui/core';
 import React from 'react';
-import { whatWeDo } from '../links';
 
 const useStyles = makeStyles(theme => ({
     bigbutton: {
@@ -38,24 +37,6 @@ export default function FrontBox() {
                 <br />
             </Box>
             <br />
-
-            <Grid container >
-                <Grid item sm={12} md={6}>
-                    {/* <Card variant='outlined'> */}
-                        {/* <CardContent> */}
-                            <Typography variant='h4'>What we do</Typography><br />
-
-                            <Typography variant='body1'>{whatWeDo}</Typography>
-                        {/* </CardContent> */}
-                    {/* </Card> */}
-                </Grid>
-            </Grid>
-            <br />
-            <Grid container >
-                <Typography variant='h4'>Achievements</Typography>
-                <Typography variant='body1'>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32</Typography>
-
-            </Grid>
         </>
     );
 }

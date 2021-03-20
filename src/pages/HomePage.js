@@ -1,9 +1,10 @@
 import React from 'react';
-import { Container, Typography, Paper, Grid,Divider, CssBaseline } from '@material-ui/core';
+import { Container, Typography, Paper, Grid, Divider, CssBaseline } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import EventsCalendar from '../components/Calendar';
 import Avatar from '../components/Avatar';
+import FrontText from '../components/FrontText';
 import { execom } from '../links';
 import FrontBox from '../components/FrontBox';
 
@@ -15,6 +16,10 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(4)
     },
     link: theme.link,
+    divider: {
+        marginTop: '2rem',
+        marginBottom: '2rem'
+    }
 }))
 
 export default function HomePage(props) {
@@ -25,6 +30,7 @@ export default function HomePage(props) {
             <CssBaseline></CssBaseline>
             <FrontBox />
             <Container className={classes.container}>
+                <FrontText />
                 {/* <Paper className={classes.paper}>
                     <Typography variant='h3'>
                         Vision
@@ -48,22 +54,27 @@ export default function HomePage(props) {
                         We also arrange workshops and Industrial visits that help students upgrade their skills to stay relevant in today's global market.
                     </Typography>
                 </Paper> */}
-                <Divider />
+                <Divider className={classes.divider} />
 
                 <Typography variant='h4'>
                     Executive Committee
                 </Typography>
                 <br />
-                <Grid container spacing={2} justify='space-evenly'>
-                    {
-                        execom.main.map((member) => (
-                            <Grid item xs={12} sm={6} md={4} lg={3}>
-                                <Avatar name={member.name} position={member.position} src={member.image} />
-                            </Grid>
-                        ))
-                    }
-                </Grid>
-                
+                <Container maxWidth="md">
+
+                    <Grid container spacing={3} justify='space-evenly'>
+                        {/* <Grid container item xs={12} sm={6} md={4} lg={3}> */}
+                        {
+                            execom.main.map((member) => (
+                                <Grid item xs={12} sm={6} md={4} lg={4}>
+                                    <Avatar name={member.name} position={member.position} src={member.image} />
+                                </Grid>
+                            ))
+                        }
+                        {/* </Grid> */}
+                    </Grid>
+                </Container>
+
                 <br />
                 <Paper className={classes.paper}>
                     <Typography variant='h3'>
