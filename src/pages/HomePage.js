@@ -62,7 +62,7 @@ export default function HomePage(props) {
                 <br />
                 <Container maxWidth="md">
 
-                    <Grid container spacing={3} justify='space-evenly'>
+                    <Grid container  justify='space-evenly'>
                         {/* <Grid container item xs={12} sm={6} md={4} lg={3}> */}
                         {
                             execom.main.map((member) => (

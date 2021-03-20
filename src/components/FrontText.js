@@ -16,7 +16,7 @@ export default function FrontText() {
                 <Grid item sm={12} md={6}>
                     <Typography variant='h4'>What we do</Typography><br />
 
-                    <Typography variant='body1'>{whatWeDo}</Typography>
+                    <Typography variant='body1' align='justify'>{whatWeDo}</Typography>
 
                 </Grid>
                 <Grid item sm={12} md={3}>
