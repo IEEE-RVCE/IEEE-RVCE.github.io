@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Paper, Grid, Divider, CssBaseline } from '@material-ui/core';
+import { Container, Typography, Paper, Grid, Divider, CssBaseline, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import EventsCalendar from '../components/Calendar';
@@ -7,7 +7,8 @@ import Avatar from '../components/Avatar';
 import FrontText from '../components/FrontText';
 import { execom } from '../links';
 import FrontBox from '../components/FrontBox';
-
+import SpacyDivider from '../components/SpacyDivider';
+import GiveMeABreak from '../components/GiveMeABreak';
 const useStyles = makeStyles((theme) => ({
     root: theme.root,
     container: theme.page,
@@ -16,10 +17,6 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(4)
     },
     link: theme.link,
-    divider: {
-        marginTop: '2rem',
-        marginBottom: '2rem'
-    }
 }))
 
 export default function HomePage(props) {
@@ -29,6 +26,7 @@ export default function HomePage(props) {
         <div className={classes.root}>
             <CssBaseline></CssBaseline>
             <FrontBox />
+            <GiveMeABreak num={5} />
             <Container className={classes.container}>
                 <FrontText />
                 {/* <Paper className={classes.paper}>
@@ -54,9 +52,9 @@ export default function HomePage(props) {
                         We also arrange workshops and Industrial visits that help students upgrade their skills to stay relevant in today's global market.
                     </Typography>
                 </Paper> */}
-                <Divider className={classes.divider} />
+                <SpacyDivider num={2}/>
 
-                <Typography variant='h4'>
+                <Typography variant='h4' align='center'>
                     Executive Committee
                 </Typography>
                 <br />
@@ -75,18 +73,21 @@ export default function HomePage(props) {
                     </Grid>
                 </Container>
 
-                <br />
-                <Paper className={classes.paper}>
-                    <Typography variant='h3'>
+                <SpacyDivider num={2}/>
+                <Box >
+                    <Typography variant='h4' align='center'>
                         Upcoming Events
                     </Typography>
                     <br />
-                    <EventsCalendar
-                        toolbar={false}
-                        defaultView="agenda"
-                    />
-                    <Link to='/calendar' className={classes.link}>Click here to view full calendar</Link>
-                </Paper>
+                    <Container maxWidth='md'>
+
+                        <EventsCalendar
+                            toolbar={false}
+                            defaultView="agenda"
+                        />
+                        <Link to='/calendar' className={classes.link}>Click here to view full calendar</Link>
+                    </Container>
+                </Box>
                 <br />
             </Container>
         </div>
