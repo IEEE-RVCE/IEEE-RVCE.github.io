@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Paper, Grid, Divider, CssBaseline, Box } from '@material-ui/core';
+import { Container, Typography, Grid,  CssBaseline, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import EventsCalendar from '../components/Calendar';

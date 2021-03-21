@@ -1,7 +1,7 @@
-import { Box, Grid, makeStyles, Typography, Button } from '@material-ui/core';
+import { Box, Grid, makeStyles,  Button } from '@material-ui/core';
 import React, { useState, useRef, useEffect } from 'react';
 import { images } from '../links';
-import * as THREE from 'three';
+// import * as THREE from 'three';
 import GLOBE from 'vanta/dist/vanta.globe.min.js'
 const useStyles = makeStyles(theme => ({
     bigbutton: {
