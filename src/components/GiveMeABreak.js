@@ -7,5 +7,5 @@ import React from 'react';
  */
 export default function GiveMeABreak(props) {
     const { num } = props;
-    return <>{new Array(num).fill(0).map(e => <br />)}</>;
+    return <>{new Array(num).fill(0).map((e,i) => <br key={i} />)}</>;
 }

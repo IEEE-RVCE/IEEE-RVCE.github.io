@@ -6,6 +6,9 @@ import {makeStyles} from '@material-ui/core/styles'
 const useStyles = makeStyles(theme=>({
     less:{
         padding:'1rem'
+    },
+    smallImage:{
+        borderRadius:'.25rem'
     }
 }))
 export default function FrontText() {
@@ -20,18 +23,19 @@ export default function FrontText() {
 
                 </Grid>
                 <Grid item sm={12} md={4}>
-                    <Box><img src={fp_image_1} alt='no-alt-pls' width='100%'></img></Box>
+                    <Box><img className={classes.smallImage} src={fp_image_1} alt='no-alt-pls' width='100%'></img></Box>
                 </Grid>
             </Grid>
             <br />
             <Grid className={classes.less} direction='row-reverse' container justify='space-around' alignItems='center' spacing={2}>
                 <Grid item sm={12} md={6}>
                     <Typography variant='h4'>Achievements</Typography>
+                    <br />
                     <Typography variant='body1'>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32</Typography>
 
                 </Grid>
                 <Grid item sm={12} md={4}>
-                <Box><img src={fp_image_1} alt='no-alt-pls' width='100%'></img></Box>
+                <Box><img className={classes.smallImage} src={fp_image_1} alt='no-alt-pls' width='100%'></img></Box>
 
                 </Grid>
                 
