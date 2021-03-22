@@ -3,7 +3,7 @@ import {Divider} from '@material-ui/core';
 import GiveMeABreak from './GiveMeABreak';
 
 /**
- * 
+ * Spaced out divider
  * @param {{num:number}} props 
  * @returns 
  */

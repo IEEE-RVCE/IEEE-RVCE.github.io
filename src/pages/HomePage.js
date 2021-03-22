@@ -26,34 +26,9 @@ export default function HomePage(props) {
         <div className={classes.root}>
             <CssBaseline></CssBaseline>
             <FrontBox />
-            {/* <GiveMeABreak num={5} /> */}
             <Container className={classes.container}>
                 <FrontText />
-                {/* <Paper className={classes.paper}>
-                    <Typography variant='h3'>
-                        Vision
-                    </Typography>
-                    <br />
-                    <Typography variant='body1'>
-                        IEEE RVCE will be instrumental in facilitating the global outreach of IEEE
-                        by providing a platform for students to connect with professionals worldwide
-                        and develop their technical expertise, thus making a positive impact on the society
-                    </Typography>
-                </Paper>
-                <br />
-                <Paper className={classes.paper}>
-                    <Typography variant='h3'>
-                        What we do
-                    </Typography>
-                    <br />
-                    <Typography variant='body1'>
-                        As members of a larger technical community,  IEEE RVCE aims to connect future engineers and researchers with industry experts and top academicians.
-                        We provide a platform for students to stay updated with today's research through webinars and technical talks by eminent professors and professionals.
-                        We also arrange workshops and Industrial visits that help students upgrade their skills to stay relevant in today's global market.
-                    </Typography>
-                </Paper> */}
                 <SpacyDivider num={2}/>
-
                 <Typography variant='h4' align='center'>
                     Executive Committee
                 </Typography>

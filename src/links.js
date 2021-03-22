@@ -1,4 +1,5 @@
 //@ts-check
+import {imagePath,hostname} from './data/misc'
 // Edit this list and the navs shall change accordingly
 
 
@@ -55,15 +56,8 @@ export const affinities = [
     {name: "WIE", link:'/affinity/wie'}
 ]
 
-//Hostname link for API requests
-export const hostname = "https://play.kekvrose.me";
 
 
-export const whatWeDo = "As members of a larger technical community, IEEE RVCE aims to connect future engineers and researchers with industry experts and top academicians. We provide a platform for students to stay updated with today's research through webinars and technical talks by eminent professors and professionals. We also arrange workshops and Industrial visits that help students upgrade their skills to stay relevant in today's global market.";
-
-
-//Image source links
-const imagePath = '/assets/images';
 export const images= {
     membership: {
         benefits: imagePath + '/membership/Benefits.jpeg',
@@ -137,12 +131,7 @@ export const images= {
     }
 }
 
-export const fp_images = {
-    wwedo: imagePath + '/fp/IMG_20200222_095939.jpg',
-    
-};
-
-//Map of socs and affs with ecat
+/** Map of socs and affs with ecat */
 export const ecats = {
     compsoc: 1,
     comsoc: 2,
@@ -205,3 +194,7 @@ export const execom = {
 
     ],
 }
+
+export {achievements as FPAchievementImages, whatWeDo as FPWhatWeDoImages} from './data/FrontPage/Carousels'
+export {whatWeDoText,achievementsText } from './data/FrontPage/Text';
+export {imagePath,hostname};
