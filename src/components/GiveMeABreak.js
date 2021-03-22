@@ -2,7 +2,7 @@
 import React from 'react';
 
 /**
- * 
+ * Produce a number of br tags
  * @param {{num:number}} props 
  */
 export default function GiveMeABreak(props) {

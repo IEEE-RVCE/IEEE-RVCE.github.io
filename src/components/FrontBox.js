@@ -1,19 +1,21 @@
 import { Box, Grid, makeStyles,  Button } from '@material-ui/core';
 import React, { useState, useRef, useEffect } from 'react';
 import { images } from '../links';
-// import * as THREE from 'three';
+import {Link} from 'react-router-dom';
 import GLOBE from 'vanta/dist/vanta.globe.min.js'
+import GiveMeABreak from './GiveMeABreak';
+
+
 const useStyles = makeStyles(theme => ({
     bigbutton: {
         padding: '.6rem 1.2rem',
     },
+    noUnderline:{
+        textDecoration: 'none'
+    },
     bigbadBackground: {
         paddingTop: '25vh',
         height: '100vh',
-        // backgroundImage: 'url(assets/images/devs/Chirag_Bapat.jpg)',
-        // backgroundSize: 'cover',
-        // backgroundPosition: 'center',
-        // backgroundRepeat: 'no-repeat'
     },
     bigbutton1:{
         background:`linear-gradient( -45deg, #fe8c00 30%, #f83600 90%)`,
@@ -26,12 +28,16 @@ const useStyles = makeStyles(theme => ({
     logoimage: {
         maxHeight: '12vh',
         maxWidth: '100%'
-
     },
     logoImageSmall: {
         width: '8rem'
     }
 }));
+
+/**
+ * Front big welcome box. Presents a Vanta background
+ * @returns 
+ */
 export default function FrontBox() {
     const [vantaEffect, setVantaEffect] = useState(0)
     const myRef = useRef(null)
@@ -63,12 +69,6 @@ export default function FrontBox() {
             <Box className={classes.bigbadBackground}  ref={myRef}>
                 <Grid container style={{ padding: '2rem' }} alignContent='center' justify='center'>
                     <Grid item>
-                        {/* <Grid container direction='row' alignContent='center' justify='center'>
-                            
-                            {/* <Grid item>
-                                <Typography style={{display:'block'}} variant='h4' align='baseline'>IEEE RVCE</Typography>
-                            </Grid> 
-                        </Grid> */}
                         <Box display={{ xs: 'none', sm: 'block' }}>
                             <img className={classes.logoimage} src={images.logos.ieee_rvce_new_white_big} alt='logo' />
                         </Box>
@@ -76,25 +76,22 @@ export default function FrontBox() {
                             <img className={classes.logoImageSmall} src={images.logos.ieee_rvce_new_white} alt='logo' />
                         </Box>
 
-                        <br /><br />
-                        {/* <Typography variant='body2' align='center'>Hello there</Typography> */}
-
+                        <GiveMeABreak num={2}/>
                     </Grid>
                 </Grid>
                 <br />
 
-                {/* <Container maxWidth='sm'>
-                <Button className={classes.bigbutton} variant='outlined' size='large'>Something</Button>
-                <Button className={classes.bigbutton} variant='contained' color="primary" size='large'>Join US</Button>
-
-                </Container> */}
                 <Grid container alignItems='center' justify='center'>
                     <Grid item  >
-                        <Button style={{ margin: '1rem' }} className={`${classes.bigbutton} ${classes.bigbutton1}`} variant='contained' size='large'>About Us</Button>
+                        <Link to='/about' className={classes.noUnderline}>
+                            <Button style={{ margin: '1rem' }} className={`${classes.bigbutton} ${classes.bigbutton1}`} variant='contained' size='large'>About Us</Button>
+                        </Link>
 
                     </Grid>
                     <Grid item >
+                    <Link to='/events' className={classes.noUnderline}>
                         <Button style={{ margin: '1rem' }} className={`${classes.bigbutton} ${classes.bigbutton2}`} variant='contained' color="primary" size='large'>Events</Button>
+                    </Link>
                     </Grid>
                 </Grid>
                 <br />

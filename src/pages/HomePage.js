@@ -8,7 +8,7 @@ import FrontText from '../components/FrontText';
 import { execom } from '../links';
 import FrontBox from '../components/FrontBox';
 import SpacyDivider from '../components/SpacyDivider';
-import GiveMeABreak from '../components/GiveMeABreak';
+// import GiveMeABreak from '../components/GiveMeABreak';
 const useStyles = makeStyles((theme) => ({
     root: theme.root,
     container: theme.page,

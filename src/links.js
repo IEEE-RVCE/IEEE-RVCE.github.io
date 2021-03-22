@@ -137,7 +137,10 @@ export const images= {
     }
 }
 
-export const fp_image_1 = imagePath + '/fp/IMG_20200222_095939.jpg'
+export const fp_images = {
+    wwedo: imagePath + '/fp/IMG_20200222_095939.jpg',
+    
+};
 
 //Map of socs and affs with ecat
 export const ecats = {

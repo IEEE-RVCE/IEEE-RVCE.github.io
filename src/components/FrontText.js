@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Typography ,Box} from '@material-ui/core';
-import { fp_image_1, whatWeDo } from '../links';
+import { fp_images, whatWeDo } from '../links';
 import {makeStyles} from '@material-ui/core/styles'
 
 const useStyles = makeStyles(theme=>({
@@ -12,6 +12,7 @@ const useStyles = makeStyles(theme=>({
     }
 }))
 export default function FrontText() {
+    const {wwedo:fp_image_1} = fp_images;
     const classes = useStyles();
     return (
         <>
