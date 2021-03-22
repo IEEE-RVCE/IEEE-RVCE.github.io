@@ -26,7 +26,7 @@ export default function HomePage(props) {
         <div className={classes.root}>
             <CssBaseline></CssBaseline>
             <FrontBox />
-            <GiveMeABreak num={5} />
+            {/* <GiveMeABreak num={5} /> */}
             <Container className={classes.container}>
                 <FrontText />
                 {/* <Paper className={classes.paper}>
