@@ -1,7 +1,8 @@
 import React from 'react';
 import { Grid, Typography ,Box} from '@material-ui/core';
-import { achievementsText, FPAchievementImages, whatWeDoText,FPWhatWeDoImages, } from '../links';
+import { FPAchievementImages, whatWeDoText,FPWhatWeDoImages, } from '../links';
 import {makeStyles} from '@material-ui/core/styles'
+import Achievements from './Achievements';
 
 const useStyles = makeStyles(theme=>({
     less:{
@@ -33,7 +34,7 @@ export default function FrontText() {
                 <Grid item sm={12} md={6}>
                     <Typography variant='h4'>Achievements</Typography>
                     <br />
-                    <Typography variant='body1'>{achievementsText}</Typography>
+                    <Typography variant='body1'><Achievements /></Typography>
 
                 </Grid>
                 <Grid item sm={12} md={4}>
