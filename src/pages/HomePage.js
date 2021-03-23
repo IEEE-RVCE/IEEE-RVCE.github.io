@@ -4,7 +4,8 @@ import {makeStyles} from '@material-ui/core/styles';
 import {Link} from 'react-router-dom';
 import EventsCalendar from '../components/Calendar';
 import Avatar from '../components/Avatar';
-import {execom} from '../links';
+import {execom, alumni} from '../links';
+import AlumniAccordions from '../components/AlumniAccordions';
 
 const useStyles = makeStyles((theme) => ({
     root: theme.root,
@@ -62,6 +63,7 @@ export default function HomePage(props) {
                     </Grid>
                 </Paper>
                 <br/>
+                <AlumniAccordions members={alumni.main}/>
                 <Paper className={classes.paper}>
                     <Typography variant='h3'>
                         Upcoming Events
