@@ -1,8 +1,8 @@
 //@ts-check
-import {  imgify  } from '../misc'
+import { imgify } from '../misc'
 
 /**
- * @typedef {{img:string}[]} imagebase
+ * @typedef {{src:string}[]} imagebase
  */
 
 /**
@@ -10,15 +10,15 @@ import {  imgify  } from '../misc'
  * @type {imagebase}
  */
 export const achievements = [
-    { img: imgify`fp/achievements/IMG_8449.JPG` },
-    { img: imgify`fp/achievements/IMG_8450.JPG` },
-    { img: imgify`fp/achievements/IMG_8451.JPG` },
-    { img: imgify`fp/achievements/IMG_8470.JPG` },
-    { img: imgify`fp/achievements/IMG_8471.JPG` },
-    { img: imgify`fp/achievements/IMG_8473.JPG` },
-    { img: imgify`fp/achievements/IMG_8500.JPG` },
-    { img: imgify`fp/achievements/IMG_8501.JPG` },
-    { img: imgify`fp/achievements/IMG_8502.JPG` },
+    { src: imgify`fp/achievements/IMG_8449.JPG` },
+    { src: imgify`fp/achievements/IMG_8450.JPG` },
+    { src: imgify`fp/achievements/IMG_8451.JPG` },
+    { src: imgify`fp/achievements/IMG_8470.JPG` },
+    { src: imgify`fp/achievements/IMG_8471.JPG` },
+    { src: imgify`fp/achievements/IMG_8473.JPG` },
+    { src: imgify`fp/achievements/IMG_8500.JPG` },
+    { src: imgify`fp/achievements/IMG_8501.JPG` },
+    { src: imgify`fp/achievements/IMG_8502.JPG` },
 ]
 
 
@@ -27,5 +27,6 @@ export const achievements = [
  * @type {imagebase}
  */
 export const whatWeDo = [
-    { img: imgify`fp/IMG_20200222_095939.jpg` }
-]
+    { src: imgify`fp/whoweare/IMG_20200222_095939.jpg` },
+    { src: imgify`fp/whoweare/IMG_20200222_173629.jpg` }
+];
