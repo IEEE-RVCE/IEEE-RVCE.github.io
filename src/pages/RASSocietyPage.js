@@ -53,6 +53,8 @@ export default function RASSocietyPage(props) {
                         in order to instil technological skills, teamwork, and leadership, by engaging them in exhilarating mentor-based activities that 
                         develop engineering skills, inspire innovation, encourage creativity and promote well-rounded life skills such as self-confidence, 
                         communication and leadership.
+                        To inculcate the skill of design and creativity in members through developing hardware and actual prototypes leading to 
+                        groundbreaking research in the field of Robotics and Automation.
                     </Typography>
                 </Paper>
                 <br />
