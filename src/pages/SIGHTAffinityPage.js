@@ -5,7 +5,8 @@ import {Link} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '../components/Avatar';
 import EventCard from '../components/EventCard';
-import {hostname, ecats, images, execom} from '../links';
+import {hostname, ecats, images, execom, alumni} from '../links';
+import AlumniAccordions from '../components/AlumniAccordions';
 
 const useStyles = makeStyles((theme) => ({
     root: theme.root,
@@ -108,6 +109,8 @@ export default function SIGHTAffinityPage(props) {
                         }
                     </Grid>
                 </Paper>
+                <br/>
+                <AlumniAccordions members={alumni.sight}/>
                 <br/>
             </Container>
         </div>

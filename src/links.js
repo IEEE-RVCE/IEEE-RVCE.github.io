@@ -149,31 +149,35 @@ export const ecats = {
 export const execom = {
     main: [
         {name: 'Dr. M Uttara Kumari', position: 'Branch Counselor', image: imagePath + '/execom/main/muk_maam.jpg'},
-        {name: 'SJ Ruthvik', position: 'Chair', image: imagePath + '/execom/main/ruthvik.jpg'},
-        {name: 'Srinivas Prabhu', position: 'Vice Chair', image: imagePath + '/execom/main/srini.jpg'},
-        {name: 'Deekshith Nayak', position: 'Secretary', image: imagePath + '/execom/main/deekshith.jpg'},
-        {name: 'Prajwal S Telkar', position: 'Treasurer', image: imagePath + '/execom/main/prajwal.jpg'},
-        {name: 'Siddarth Sai Amruth Yetikuri', position: 'Editor in Chief', image: imagePath + '/execom/main/sidsai.jpg'},
+        {name: 'Risha Dassi', position: 'Chair', image: imagePath + '/execom/main/risha.jpg'},
+        {name: 'Kashish Malhotra', position: 'Vice Chair', image: imagePath + '/execom/main/kashish.jpg'},
+        {name: 'Deeraj DS', position: 'Secretary', image: imagePath + '/execom/main/deeraj.jpg'},
+        {name: 'Chirag Bapat', position: 'Treasurer', image: imagePath + '/execom/main/chirag.jpg'},
+        {name: 'Atreya Bain', position: 'Webmaster', image: imagePath + '/execom/main/atreya.png'},
+        {name: 'Saraansh Agarwal', position: 'Editor in Chief', image: imagePath + '/execom/main/saraansh.jpg'},
     ],
     aps: [
         {name: 'Dr. Mahesh A', position: 'Faculty Advisor', image: imagePath + '/execom/aps/mahesh_sir.jpg'},
         {name: 'Rahul Chikkodi', position: 'Chair', image: imagePath + '/execom/aps/rahul.jpg'},
+        {name: 'Aravind Anant Bhat', position: 'Vice Chair', image: imagePath + '/execom/aps/aravind.jpg'},
         {name: 'Pratap Vangol', position: 'Secretary', image: imagePath + '/execom/aps/pratap.jpg'},
+        {name: 'Rohini G Bhatkoorse', position: 'Treasurer', image: imagePath + '/execom/aps/rohini.jpg'},
     ],
     compsoc: [
-        {name: 'Risha Dassi', position: 'Chair', image: imagePath + '/execom/compsoc/risha.jpg'},
-        {name: 'Nischal J', position: 'Vice Chair', image: imagePath + '/execom/compsoc/nischal.jpg'},
-        {name: 'Nikitha Srikanth', position: 'Secretary', image: imagePath + '/execom/compsoc/niks.jpg'},
-        {name: 'Chirag Bapat', position: 'Treasurer', image: imagePath + '/execom/compsoc/chirag.jpg'},
+        {name: 'Dr. Ashok Kumar AR', position: 'Faculty Advisor', image: imagePath + '/execom/compsoc/ashok_sir.jpg'},
+        {name: 'Akshara Udupa', position: 'Chair', image: imagePath + '/execom/compsoc/akshara.jpg'},
+        {name: 'Vishal M', position: 'Vice Chair', image: imagePath + '/execom/compsoc/vishal.jpg'},
+        {name: 'Shashank Dhavalla', position: 'Secretary', image: imagePath + '/execom/compsoc/shashank.jpg'},
+        {name: 'Namya LG', position: 'Treasurer', image: imagePath + '/execom/compsoc/namya.jpg'},
     ],
     comsoc: [
-        {name: 'Kashish Malhotra', position: 'Chair', image: imagePath + '/execom/comsoc/kashish.jpg'},
-        {name: 'Nandesh Goudar', position: 'Vice Chair', image: imagePath + '/execom/comsoc/nandesh.jpg'},
+        {name: 'Dr. Shushrutha KS', position: 'Faculty Advisor', image: imagePath + '/execom/comsoc/shushrutha_sir.jpg'},
+        {name: 'Anushka Subramaniam', position: 'Chair', image: imagePath + '/execom/comsoc/anushka.png'},
         {name: 'Saraansh Agarwal', position: 'Secretary', image: imagePath + '/execom/comsoc/saraansh.jpg'},
     ],
     pes: [
-        {name: 'Amith S Kumar', position: 'Chair', image: imagePath + '/execom/pes/amith.jpg'},
-        {name: 'Deeraj DS', position: 'Vice Chair', image: imagePath + '/execom/pes/deeraj.jpg'},
+        {name: 'Prof. SG Srivani', position: 'Faculty Advisor', image: imagePath + '/execom/pes/srivani_maam.jpg'},
+        {name: 'Shreyas Sharma', position: 'Chair', image: imagePath + '/execom/pes/shreyas.jpg'},
         {name: 'Hariharasudhan J', position: 'Secretary', image: imagePath + '/execom/pes/hari.jpg'},
         {name: 'Shirish Kumar', position: 'Treasurer', image: imagePath + '/execom/pes/shirish.jpg'},
     ],
@@ -181,13 +185,12 @@ export const execom = {
         {name: 'Prof. K Nagamani', position: 'Faculty Advisor', image: imagePath + '/execom/sps/nagamani_maam.jpg'},
         {name: 'Niranjan DR', position: 'Chair', image: imagePath + '/execom/sps/niranjan.jpg'},
         {name: 'R Vibha Narayan', position: 'Vice Chair', image: imagePath + '/execom/sps/vibha.jpg'},
+        {name: 'Saksham Sharma', position: 'Treasurer', image: imagePath + '/execom/sps/saksham.jpg'},
     ],
     wie: [
         {name: 'Dr. Usha Rani K R', position: 'Faculty Advisor', image: imagePath + '/execom/wie/usha_maam.jpg'},
-        {name: 'Aisiri HR', position: 'Chair', image: imagePath + '/execom/wie/aisiri.png'},
-        {name: 'Raghavi R', position: 'Vice Chair', image: imagePath + '/execom/wie/raghavi.jpg'},
-        {name: 'Sreelakshmi', position: 'Secretary', image: imagePath + '/execom/wie/sreelakshmi.png'},
-        {name: 'Sunidhi Salwadgi', position: 'Treasurer', image: imagePath + '/execom/wie/sunidhi.jpg'},
+        {name: 'Sreelakshmi', position: 'Chair', image: imagePath + '/execom/wie/sreelakshmi.png'},
+        {name: 'Sunidhi Salwadgi', position: 'Secretary', image: imagePath + '/execom/wie/sunidhi.jpg'},
     ],
     ras: [
         {name: 'Dr. Geetha K S', position: 'Faculty Advisor', image: imagePath + '/execom/ras/geetha_maam.jpg'},
@@ -199,4 +202,79 @@ export const execom = {
     sight: [
 
     ],
+}
+
+//Alumni execom
+export const alumni = {
+    main: {
+        '2019-2020': [
+            {name: 'Dr. M Uttara Kumari', position: 'Branch Counselor', image: imagePath + '/alumni/2019-2020/main/muk_maam.jpg'},
+            {name: 'SJ Ruthvik', position: 'Chair', image: imagePath + '/alumni/2019-2020/main/ruthvik.jpg'},
+            {name: 'Srinivas Prabhu', position: 'Vice Chair', image: imagePath + '/alumni/2019-2020/main/srini.jpg'},
+            {name: 'Deekshith Nayak', position: 'Secretary', image: imagePath + '/alumni/2019-2020/main/deekshith.jpg'},
+            {name: 'Prajwal S Telkar', position: 'Treasurer', image: imagePath + '/alumni/2019-2020/main/prajwal.jpg'},
+            {name: 'Siddarth Sai Amruth Yetikuri', position: 'Editor in Chief', image: imagePath + '/alumni/2019-2020/main/sidsai.jpg'},
+        ],
+        '2017-2018': [
+            {name: 'Dr. M Uttara Kumari', position: 'Branch Counselor', image: imagePath + '/alumni/2017-2018/main/muk_maam.jpg'},
+            {name: 'PVS Rohith', position: 'Chair', image: imagePath + '/alumni/2017-2018/main/rohith.jpg'},
+            {name: 'Aditya Madhavan', position: 'Vice Chair', image: imagePath + '/alumni/2017-2018/main/aditya.jpg'},
+            {name: 'Adithya Thonse', position: 'Secretary', image: imagePath + '/alumni/2017-2018/main/adithya.jpg'},
+            {name: 'Tejasrikumar Kori', position: 'Treasurer', image: imagePath + '/alumni/2017-2018/main/teja.jpg'},
+        ]
+    },
+    aps: {
+        '2019-2020': [
+            {name: 'Dr. Mahesh A', position: 'Faculty Advisor', image: imagePath + '/alumni/2019-2020/aps/mahesh_sir.jpg'},
+            {name: 'Rahul Chikkodi', position: 'Chair', image: imagePath + '/alumni/2019-2020/aps/rahul.jpg'},
+            {name: 'Pratap Vangol', position: 'Secretary', image: imagePath + '/alumni/2019-2020/aps/pratap.jpg'},
+        ],
+    },
+    compsoc: {
+        '2019-2020': [
+            {name: 'Risha Dassi', position: 'Chair', image: imagePath + '/alumni/2019-2020/compsoc/risha.jpg'},
+            {name: 'Nischal J', position: 'Vice Chair', image: imagePath + '/alumni/2019-2020/compsoc/nischal.jpg'},
+            {name: 'Nikitha Srikanth', position: 'Secretary', image: imagePath + '/alumni/2019-2020/compsoc/niks.jpg'},
+            {name: 'Chirag Bapat', position: 'Treasurer', image: imagePath + '/alumni/2019-2020/compsoc/chirag.jpg'},
+        ],
+    },
+    comsoc: {
+        '2019-2020': [
+            {name: 'Kashish Malhotra', position: 'Chair', image: imagePath + '/alumni/2019-2020/comsoc/kashish.jpg'},
+            {name: 'Nandesh Goudar', position: 'Vice Chair', image: imagePath + '/alumni/2019-2020/comsoc/nandesh.jpg'},
+            {name: 'Saraansh Agarwal', position: 'Secretary', image: imagePath + '/alumni/2019-2020/comsoc/saraansh.jpg'},
+        ],
+    },
+    pes: {
+        '2019-2020': [
+            {name: 'Amith S Kumar', position: 'Chair', image: imagePath + '/alumni/2019-2020/pes/amith.jpg'},
+            {name: 'Deeraj DS', position: 'Vice Chair', image: imagePath + '/alumni/2019-2020/pes/deeraj.jpg'},
+            {name: 'Hariharasudhan J', position: 'Secretary', image: imagePath + '/alumni/2019-2020/pes/hari.jpg'},
+            {name: 'Shirish Kumar', position: 'Treasurer', image: imagePath + '/alumni/2019-2020/pes/shirish.jpg'},
+        ],
+    },
+    sps: {
+        '2019-2020': [
+            {name: 'Prof. K Nagamani', position: 'Faculty Advisor', image: imagePath + '/alumni/2019-2020/sps/nagamani_maam.jpg'},
+            {name: 'Niranjan DR', position: 'Chair', image: imagePath + '/alumni/2019-2020/sps/niranjan.jpg'},
+            {name: 'R Vibha Narayan', position: 'Vice Chair', image: imagePath + '/alumni/2019-2020/sps/vibha.jpg'},
+            // {name: 'Rahul Ratnu Chavan', position: 'Secretary', image: imagePath + '/alumni/2019-2020/sps/rahulrc.jpg'},
+            // {name: 'Dhanush U', position: 'Treasurer', image: imagePath + '/alumni/2019-2020/sps/dhanush.jpg'},
+        ],
+    },
+    wie: {
+        '2019-2020': [
+            {name: 'Dr. Usha Rani K R', position: 'Faculty Advisor', image: imagePath + '/alumni/2019-2020/wie/usha_maam.jpg'},
+            {name: 'Aisiri HR', position: 'Chair', image: imagePath + '/alumni/2019-2020/wie/aisiri.png'},
+            {name: 'Raghavi R', position: 'Vice Chair', image: imagePath + '/alumni/2019-2020/wie/raghavi.jpg'},
+            {name: 'Sreelakshmi', position: 'Secretary', image: imagePath + '/alumni/2019-2020/wie/sreelakshmi.png'},
+            {name: 'Sunidhi Salwadgi', position: 'Treasurer', image: imagePath + '/alumni/2019-2020/wie/sunidhi.jpg'},
+        ],
+    },
+    ras: {
+
+    },
+    sight: {
+
+    },
 }
