@@ -49,7 +49,10 @@ export default function RASSocietyPage(props) {
                     </Typography>
                     <br/>
                     <Typography variant='body1'>
-                        Coming soon...
+                        To inspire and encourage students to use and enrich their imagination and engineering abilities through robotics and automation, 
+                        in order to instil technological skills, teamwork, and leadership, by engaging them in exhilarating mentor-based activities that 
+                        develop engineering skills, inspire innovation, encourage creativity and promote well-rounded life skills such as self-confidence, 
+                        communication and leadership.
                     </Typography>
                 </Paper>
                 <br />
@@ -59,7 +62,8 @@ export default function RASSocietyPage(props) {
                     </Typography>
                     <br/>
                     <Typography variant='body1'>
-                        Coming soon...     
+                        To conduct workshops, competitions, seminars and conferences under the banner of the chapter to inspire and educate on the importance 
+                        of robotics and automation, as well as, imbibing technical skills suited to recent technological developments in the field of robotics.    
                     </Typography>
                 </Paper>
                 <br />
