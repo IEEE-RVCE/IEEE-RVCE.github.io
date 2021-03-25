@@ -122,7 +122,7 @@ export default function App() {
   
   return (
     <ThemeProvider theme={theme}>
-      <div style={{...theme.background}}>
+      <div>
         <CssBaseline />
         <Header/>
 
