@@ -39,7 +39,6 @@ export default function AboutPage(props) {
                 </Paper>
                 <br/>
 
-                {/* FAQs */}
                 <Paper className={classes.paper}>
                     <Typography variant='h3'>
                         FAQ
