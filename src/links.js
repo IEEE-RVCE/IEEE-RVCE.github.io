@@ -194,7 +194,10 @@ export const execom = {
 
     ],
 }
-
+export const about ={
+    img1: imagePath + '/history/1.png',
+    img2: imagePath + '/history/2.png'
+}
 export {achievements as FPAchievementImages, whatWeDo as FPWhatWeDoImages} from './data/FrontPage/Carousels'
 export {whatWeDoText,achievementsText } from './data/FrontPage/Text';
 export {imagePath,hostname};
