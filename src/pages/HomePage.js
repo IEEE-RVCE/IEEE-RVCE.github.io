@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Grid,  CssBaseline, Box } from '@material-ui/core';
+import { Container, Typography, Grid, CssBaseline, Box, Button, TextField,InputLabel } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import EventsCalendar from '../components/Calendar';
@@ -17,6 +17,13 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(4)
     },
     link: theme.link,
+    textField: {
+        marginBottom:'10px',
+        width:'60vw',
+        [`& fieldset`]: {
+          borderRadius: '0.25rem',
+        },
+    }
 }))
 
 export default function HomePage(props) {
@@ -28,7 +35,7 @@ export default function HomePage(props) {
             <FrontBox />
             <Container className={classes.container}>
                 <FrontText />
-                <SpacyDivider num={2}/>
+                <SpacyDivider num={2} />
                 <Typography variant='h4' align='center'>
                     Executive Committee
                 </Typography>
@@ -48,7 +55,7 @@ export default function HomePage(props) {
                     </Grid>
                 </Container>
 
-                <SpacyDivider num={2}/>
+                <SpacyDivider num={2} />
                 <Box >
                     <Typography variant='h4' align='center'>
                         Upcoming Events
@@ -63,7 +70,37 @@ export default function HomePage(props) {
                         <Link to='/calendar' className={classes.link}>Click here to view full calendar</Link>
                     </Container>
                 </Box>
-                <br />
+            </Container>
+            
+            {/* contact form */}
+
+            <SpacyDivider num={2} />
+            <Container maxWidth='md'>
+            <Typography variant='h4' align='center'>
+                        Contact Us
+            </Typography>
+            <br/>
+            <Box align='center'>
+            <form
+                action="https://formspree.io/f/xjvjbrdz"
+                method="POST"
+                target='_blank'
+            >
+                {/* <InputLabel> */}
+                    {/* Your email:  */}
+                    <TextField type="text" name="_name" variant="outlined" className={classes.textField} label="Your name"/>
+                    <TextField type="email" name="_replyto" variant="outlined" className={classes.textField} label="Your email"/>
+                {/* </InputLabel> */}
+                <br/>
+                {/* <InputLabel> */}
+                        {/* Your message: */}
+                    <TextField name="message" variant="outlined" multiline className={classes.textField} label="Your message" rows={5}/>
+                {/* </InputLabel> */}
+                <br/>
+                <Button type="submit" variant="outlined" align='center' style={{marginBottom:"1%"}}>Send</Button>
+                <br/>
+            </form>
+            </Box>
             </Container>
         </div>
     )
