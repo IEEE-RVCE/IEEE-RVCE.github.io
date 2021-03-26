@@ -3,6 +3,7 @@ import { Grid, Typography ,Box} from '@material-ui/core';
 import { FPAchievementImages, whatWeDoText,FPWhatWeDoImages, } from '../links';
 import {makeStyles} from '@material-ui/core/styles'
 import Achievements from './Achievements';
+import HomeCarousel from './Carousel';
 
 const useStyles = makeStyles(theme=>({
     less:{
@@ -13,8 +14,6 @@ const useStyles = makeStyles(theme=>({
     }
 }))
 export default function FrontText() {
-    const [{img:fp_image_1}] = FPAchievementImages;
-    const [{img:fp_image_2}] = FPWhatWeDoImages;
     const classes = useStyles();
     return (
         <>
@@ -26,7 +25,9 @@ export default function FrontText() {
 
                 </Grid>
                 <Grid item sm={12} md={4}>
-                    <Box><img className={classes.smallImage} src={fp_image_1} alt='no-alt-pls' width='100%'></img></Box>
+                    <Box>
+                        <HomeCarousel images={FPWhatWeDoImages} />
+                    </Box>
                 </Grid>
             </Grid>
             <br />
@@ -38,7 +39,9 @@ export default function FrontText() {
 
                 </Grid>
                 <Grid item sm={12} md={4}>
-                <Box><img className={classes.smallImage} src={fp_image_2} alt='no-alt-pls' width='100%'></img></Box>
+                <Box>
+                    <HomeCarousel images={FPAchievementImages} />
+                </Box>
 
                 </Grid>
                 
