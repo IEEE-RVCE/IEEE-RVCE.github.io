@@ -78,6 +78,13 @@ export const images= {
         step51: imagePath + '/membership/Membership_5.1.jpeg',
         step52: imagePath + '/membership/Membership_5.2.jpeg',
         step61: imagePath + '/membership/Membership_6.1.png',
+        benefit1: imagePath + '/membership/Benefit1.png',
+        benefit2: imagePath + '/membership/Benefit2.png',
+        benefit3: imagePath + '/membership/Benefit3.png',
+        benefit4: imagePath + '/membership/Benefit4.png',
+        benefit5: imagePath + '/membership/Benefit5.png',
+        benefit6: imagePath + '/membership/Benefit6.png',
+        whatSBOffers: imagePath + '/membership/WhatSBOffers.png',
     },
     devs: {
         ambu: imagePath + '/devs/Ambu_Karthik.jpg',

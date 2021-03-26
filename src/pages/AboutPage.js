@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import {Typography, Paper, Container, List, ListItem, ListItemText} from "@material-ui/core";
+import AboutUsBox from '../components/AboutUsBox';
 
 const useStyles = makeStyles((theme) => ({
     root: theme.root,
@@ -15,6 +16,7 @@ export default function AboutPage(props) {
     const classes = useStyles();
     return(
         <div className={classes.root}>
+            <AboutUsBox/>
             <Container maxWidth='md' className={classes.container}>   
                 <Paper className={classes.paper}>
                     <Typography variant='h3'>
