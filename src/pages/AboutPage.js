@@ -12,6 +12,30 @@ const useStyles = makeStyles((theme) => ({
         ...theme.paper,
         padding: theme.spacing(4),
     },
+    typo:{
+        ...theme.typography,
+        variant:"body1",
+        fontSize:"1.1rem",
+        width:"60%",
+        [theme.breakpoints.down('md')]: {
+            width:"100%",
+        },
+    },
+    image:{
+        ...theme.img,
+        width:"40%",
+        height:"auto",
+        [theme.breakpoints.down('md')]: {
+            width:"100%",
+        },
+    },
+    history:{
+        display:"flex",
+        flexDirection:"row",
+        [theme.breakpoints.down('md')]: {
+            flexDirection:"column"
+        },
+    }
 }))
 
 export default function AboutPage(props) {
@@ -20,22 +44,23 @@ export default function AboutPage(props) {
         <div className={classes.root}>
             <AboutUsBox/>
             <Container maxWidth='md' className={classes.container}>   
-                <Paper className={classes.paper}>
+                <Paper className={classes.paper} >
                     <Typography variant='h3'>
                     History of IEEE RVCE
                     </Typography>
                     <br/>
-                    <Typography variant='body1'>
+                    <div className={classes.history}>
+                    <Typography variant='body1' className={classes.typo}>
                     IEEE RVCE Student Branch was started in 2017 and since then from having few members initially to having 200+ members now, we have shown immense growth in terms of membership and the quality of events. 
                     <br/>
-                        <img src={about.img1} style={{width:"35%"}} />
                     <br/>
-                    We have been successfully conducting workshops, seminars and shifted swiftly to webinars and online workshops during the pandemic because no matter what the circumstances, learning never stops.
+                        We have been successfully conducting workshops, seminars and shifted swiftly to webinars and online workshops during the pandemic because no matter what the circumstances, learning never stops.
                     <br/>
-                        <img src={about.img2} style={{width:"35%"}} />
                     <br/>
                     From encouraging our student members to take up projects that develop a research mindset to even building this website, we at IEEE RVCE have strived to help the members to gain practical skills to become better professionals.
                     </Typography>
+                    <img src={about.img2} className={classes.image}/>
+                    </div>
                 </Paper>
                 <br/>
 
