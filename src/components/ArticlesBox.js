@@ -1,4 +1,4 @@
-import { Box, Grid, makeStyles,  Button } from '@material-ui/core';
+import { Box, Grid, makeStyles } from '@material-ui/core';
 import React, { useState, useRef, useEffect } from 'react';
 import CELLS from 'vanta/dist/vanta.cells.min.js'
 import GiveMeABreak from './GiveMeABreak';
