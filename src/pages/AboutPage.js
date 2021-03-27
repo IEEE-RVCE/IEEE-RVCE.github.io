@@ -59,7 +59,7 @@ export default function AboutPage(props) {
                     <br/>
                     From encouraging our student members to take up projects that develop a research mindset to even building this website, we at IEEE RVCE have strived to help the members to gain practical skills to become better professionals.
                     </Typography>
-                    <img src={about.img2} className={classes.image}/>
+                    <img src={about.img2} className={classes.image} alt="image2"/>
                     </div>
                 </Paper>
                 <br/>
