@@ -5,7 +5,8 @@ import {Link} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '../components/Avatar';
 import EventCard from '../components/EventCard';
-import {hostname, ecats, images, execom} from '../links';
+import {hostname, ecats, images, execom, alumni} from '../links';
+import AlumniAccordions from '../components/AlumniAccordions';
 
 const useStyles = makeStyles((theme) => ({
     root: theme.root,
@@ -48,7 +49,12 @@ export default function RASSocietyPage(props) {
                     </Typography>
                     <br/>
                     <Typography variant='body1'>
-                        Coming soon...
+                        To inspire and encourage students to use and enrich their imagination and engineering abilities through robotics and automation, 
+                        in order to instil technological skills, teamwork, and leadership, by engaging them in exhilarating mentor-based activities that 
+                        develop engineering skills, inspire innovation, encourage creativity and promote well-rounded life skills such as self-confidence, 
+                        communication and leadership.
+                        To inculcate the skill of design and creativity in members through developing hardware and actual prototypes leading to 
+                        groundbreaking research in the field of Robotics and Automation.
                     </Typography>
                 </Paper>
                 <br />
@@ -58,7 +64,8 @@ export default function RASSocietyPage(props) {
                     </Typography>
                     <br/>
                     <Typography variant='body1'>
-                        Coming soon...     
+                        To conduct workshops, competitions, seminars and conferences under the banner of the chapter to inspire and educate on the importance 
+                        of robotics and automation, as well as, imbibing technical skills suited to recent technological developments in the field of robotics.    
                     </Typography>
                 </Paper>
                 <br />
@@ -95,10 +102,7 @@ export default function RASSocietyPage(props) {
                         Executive Committee
                     </Typography>
                     <br />
-                    <Typography variant='body1'>
-                        Coming soon...     
-                    </Typography>
-                    <Grid hidden container spacing={2} justify='center'>
+                    <Grid container spacing={2} justify='center'>
                         {
                             execom.ras.map((member) => (
                                 <Grid item xs={12} md={4}>
@@ -108,6 +112,8 @@ export default function RASSocietyPage(props) {
                         }
                     </Grid>
                 </Paper>
+                <br/>
+                <AlumniAccordions members={alumni.ras}/>
                 <br/>
             </Container>
         </div>

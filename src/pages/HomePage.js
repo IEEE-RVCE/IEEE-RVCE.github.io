@@ -5,10 +5,11 @@ import { Link } from 'react-router-dom';
 import EventsCalendar from '../components/Calendar';
 import Avatar from '../components/Avatar';
 import FrontText from '../components/FrontText';
-import { execom } from '../links';
+import { execom, alumni } from '../links';
 import FrontBox from '../components/FrontBox';
 import SpacyDivider from '../components/SpacyDivider';
-// import GiveMeABreak from '../components/GiveMeABreak';
+import AlumniAccordions from '../components/AlumniAccordions';
+
 const useStyles = makeStyles((theme) => ({
     root: theme.root,
     container: theme.page,
@@ -55,6 +56,8 @@ export default function HomePage(props) {
                     </Grid>
                 </Container>
 
+                <SpacyDivider num={2} />
+                <AlumniAccordions members={alumni.main}/>
                 <SpacyDivider num={2} />
                 <Box >
                     <Typography variant='h4' align='center'>
