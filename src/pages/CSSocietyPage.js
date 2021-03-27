@@ -1,11 +1,12 @@
 import React,{useState,useEffect} from 'react';
 import axios from 'axios';
-import { Container, Grid, Typography, Paper, Accordion, AccordionDetails, AccordionSummary } from '@material-ui/core';
+import { Container, Grid, Typography, Paper} from '@material-ui/core';
 import {Link} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '../components/Avatar';
 import EventCard from '../components/EventCard';
-import {hostname, ecats, images, execom} from '../links';
+import {hostname, ecats, images, execom, alumni} from '../links';
+import AlumniAccordions from '../components/AlumniAccordions';
 
 const useStyles = makeStyles((theme) => ({
     root: theme.root,
@@ -112,45 +113,7 @@ export default function CSSocietyPage(props) {
                     </Grid>
                 </Paper>
                 <br/>
-                <Paper className={classes.paper}>
-                    <Typography variant='h3'>
-                        Miscellaneous
-                    </Typography>
-                    <br/>
-                    <Accordion>
-                        <AccordionSummary>
-                            <Typography>Conferences</Typography>    
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography>
-                                This is the collapsible content. It can be any element or React component you like.
-                                It can even be another Collapsible component. Check out the next section!
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion>
-                    <Accordion>
-                        <AccordionSummary>
-                            <Typography>Competitions</Typography>    
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography>
-                                This is the collapsible content. It can be any element or React component you like.
-                                It can even be another Collapsible component. Check out the next section!
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion>
-                    <Accordion>
-                        <AccordionSummary>
-                            <Typography>Certifications</Typography>    
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography>
-                                This is the collapsible content. It can be any element or React component you like.
-                                It can even be another Collapsible component. Check out the next section!
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion>
-                </Paper>
+                <AlumniAccordions members={alumni.compsoc} />
                 <br/>
             </Container>
         </div>
