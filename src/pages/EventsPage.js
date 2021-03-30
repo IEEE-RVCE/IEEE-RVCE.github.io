@@ -8,10 +8,11 @@ import {Skeleton} from '@material-ui/lab';
 import { Add } from '@material-ui/icons';
 import { AddEventDialog } from '../components/AddEventDialog';
 import * as queryString from 'query-string';
+import EventsBox from '../components/EventsBox';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        ...theme.page,
+        // ...theme.page,
         ...theme.root,
         textAlign: 'center',
         alignContent: 'center',
@@ -105,6 +106,7 @@ export default function EventPage(props) {
     }, [ecat]);
     return (
             <div className={classes.root}>
+                <EventsBox/>
                 <Container maxWidth='lg'>
                     <div className={classes.searchBars}>
                         <div className={classes.bar} style={{ float: "right", display: "flex", flexDirection: 'row', }}>

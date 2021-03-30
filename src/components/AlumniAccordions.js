@@ -20,7 +20,7 @@ export default function AlumniAccordions(props) {
                 (
                     <>   
                         <Paper className={classes.paper}>
-                            <Typography variant='h3'>
+                            <Typography variant='h4'>
                                 Alumni
                             </Typography>
                             <br />

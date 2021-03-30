@@ -1,4 +1,5 @@
 //@ts-check
+import {imagePath,hostname} from './data/misc'
 // Edit this list and the navs shall change accordingly
 
 
@@ -55,11 +56,8 @@ export const affinities = [
     {name: "WIE", link:'/affinity/wie'}
 ]
 
-//Hostname link for API requests
-export const hostname = "https://play.kekvrose.me";
 
-//Image source links
-const imagePath = '/assets/images';
+
 export const images= {
     membership: {
         benefits: imagePath + '/membership/Benefits.jpeg',
@@ -80,6 +78,13 @@ export const images= {
         step51: imagePath + '/membership/Membership_5.1.jpeg',
         step52: imagePath + '/membership/Membership_5.2.jpeg',
         step61: imagePath + '/membership/Membership_6.1.png',
+        benefit1: imagePath + '/membership/Benefit1.png',
+        benefit2: imagePath + '/membership/Benefit2.png',
+        benefit3: imagePath + '/membership/Benefit3.png',
+        benefit4: imagePath + '/membership/Benefit4.png',
+        benefit5: imagePath + '/membership/Benefit5.png',
+        benefit6: imagePath + '/membership/Benefit6.png',
+        whatSBOffers: imagePath + '/membership/WhatSBOffers.png',
     },
     devs: {
         ambu: imagePath + '/devs/Ambu_Karthik.jpg',
@@ -133,7 +138,7 @@ export const images= {
     }
 }
 
-//Map of socs and affs with ecat
+/** Map of socs and affs with ecat */
 export const ecats = {
     compsoc: 1,
     comsoc: 2,
@@ -203,6 +208,7 @@ export const execom = {
 
     ],
 }
+
 
 //Alumni execom
 export const alumni = {
@@ -278,3 +284,12 @@ export const alumni = {
 
     },
 }
+
+
+export const about ={
+    img1: imagePath + '/history/1.png',
+    img2: imagePath + '/history/2.png'
+}
+export {achievements as FPAchievementImages, whatWeDo as FPWhatWeDoImages} from './data/FrontPage/Carousels'
+export {whatWeDoText,achievementsText } from './data/FrontPage/Text';
+export {imagePath,hostname};
