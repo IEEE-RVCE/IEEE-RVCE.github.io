@@ -1,10 +1,13 @@
 import React from 'react';
-import {Container, Typography, Paper, Grid} from '@material-ui/core';
-import {makeStyles} from '@material-ui/core/styles';
-import {Link} from 'react-router-dom';
+import { Container, Typography, Grid, CssBaseline, Box, Button, TextField, } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 import EventsCalendar from '../components/Calendar';
 import Avatar from '../components/Avatar';
-import {execom, alumni} from '../links';
+import FrontText from '../components/FrontText';
+import { execom, alumni } from '../links';
+import FrontBox from '../components/FrontBox';
+import SpacyDivider from '../components/SpacyDivider';
 import AlumniAccordions from '../components/AlumniAccordions';
 
 const useStyles = makeStyles((theme) => ({
@@ -15,67 +18,92 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(4)
     },
     link: theme.link,
+    textField: {
+        marginBottom:'10px',
+        width:'60vw',
+        [`& fieldset`]: {
+          borderRadius: '0.25rem',
+        },
+    }
 }))
 
 export default function HomePage(props) {
     const classes = useStyles();
 
-    return(
+    return (
         <div className={classes.root}>
-            <Container maxWidth="lg" className={classes.container}>   
-                <Paper className={classes.paper}>     
-                    <Typography variant='h3'>
-                        Vision
-                    </Typography>
-                    <br/>
-                    <Typography variant='body1'>
-                    IEEE RVCE will be instrumental in facilitating the global outreach of IEEE 
-                    by providing a platform for students to connect with professionals worldwide 
-                    and develop their technical expertise, thus making a positive impact on the society
-                    </Typography>
-                </Paper>
-                <br/>
-                <Paper className={classes.paper}> 
-                    <Typography variant='h3'>
-                        What we do
-                    </Typography>
-                    <br/>
-                    <Typography variant='body1'>
-                        As members of a larger technical community,  IEEE RVCE aims to connect future engineers and researchers with industry experts and top academicians. 
-                        We provide a platform for students to stay updated with today's research through webinars and technical talks by eminent professors and professionals. 
-                        We also arrange workshops and Industrial visits that help students upgrade their skills to stay relevant in today's global market.
-                    </Typography>
-                </Paper>
-                <br/>
-                <Paper className={classes.paper}>
-                    <Typography variant='h3'>
-                        Executive Committee
-                    </Typography>
-                    <br />
-                    <Grid container spacing={2} justify='center'>
+            <CssBaseline></CssBaseline>
+            <FrontBox />
+            <Container className={classes.container}>
+                <FrontText />
+                <SpacyDivider num={2} />
+                <Typography variant='h4' align='center'>
+                    Executive Committee
+                </Typography>
+                <br />
+                <Container maxWidth="md">
+
+                    <Grid container spacing={3} justify='space-evenly'>
+                        {/* <Grid container item xs={12} sm={6} md={4} lg={3}> */}
                         {
                             execom.main.map((member) => (
-                                <Grid item xs={12} md={4}>
-                                    <Avatar name={member.name} position={member.position} src={member.image}/>
+                                <Grid item xs={12} sm={6} md={4} lg={4}>
+                                    <Avatar name={member.name} position={member.position} src={member.image} />
                                 </Grid>
                             ))
                         }
+                        {/* </Grid> */}
                     </Grid>
-                </Paper>
-                <br/>
+                </Container>
+
+                <SpacyDivider num={2} />
                 <AlumniAccordions members={alumni.main}/>
-                <Paper className={classes.paper}>
-                    <Typography variant='h3'>
+                <SpacyDivider num={2} />
+                <Box >
+                    <Typography variant='h4' align='center'>
                         Upcoming Events
                     </Typography>
-                    <br/>
-                    <EventsCalendar
-                        toolbar={false}
-                        defaultView="agenda"
-                    />
-                    <Link to='/calendar' className={classes.link}>Click here to view full calendar</Link>
-                </Paper>
+                    <br />
+                    <Container maxWidth='md'>
+
+                        <EventsCalendar
+                            toolbar={false}
+                            defaultView="agenda"
+                        />
+                        <Link to='/calendar' className={classes.link}>Click here to view full calendar</Link>
+                    </Container>
+                </Box>
+            </Container>
+            
+            {/* contact form */}
+
+            <SpacyDivider num={2} />
+            <Container maxWidth='md'>
+            <Typography variant='h4' align='center'>
+                        Contact Us
+            </Typography>
+            <br/>
+            <Box align='center'>
+            <form
+                action="https://formspree.io/f/xjvjbrdz"
+                method="POST"
+                target='_blank'
+            >
+                {/* <InputLabel> */}
+                    {/* Your email:  */}
+                    <TextField type="text" name="_name" variant="outlined" className={classes.textField} label="Your name"/>
+                    <TextField type="email" name="_replyto" variant="outlined" className={classes.textField} label="Your email"/>
+                {/* </InputLabel> */}
                 <br/>
+                {/* <InputLabel> */}
+                        {/* Your message: */}
+                    <TextField name="message" variant="outlined" multiline className={classes.textField} label="Your message" rows={5}/>
+                {/* </InputLabel> */}
+                <br/>
+                <Button type="submit" variant="outlined" align='center' style={{marginBottom:"1%"}}>Send</Button>
+                <br/>
+            </form>
+            </Box>
             </Container>
         </div>
     )

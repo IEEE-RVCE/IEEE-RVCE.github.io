@@ -8,11 +8,12 @@ import * as queryString from 'query-string';
 import axios from 'axios';
 import {AddArticleDialog} from '../components/AddArticleDialog';
 import ArticleCard from '../components/ArticleCard';
+import ArticlesBox from '../components/ArticlesBox';
 
 const useStyles = makeStyles(theme => ({
     root: {
         ...theme.root,
-        ...theme.page,
+        // ...theme.page,
     },
     filter: {
         display: 'block',
@@ -106,7 +107,9 @@ export default function ArticlesPage(props) {
 
     return(
         <div className={classes.root}>
+            <ArticlesBox/>
             <div className={classes.filter}>
+            
                 <div className={classes.bar} style={{ float: "right", display: "flex", flexDirection: 'row', marginRight: '15%', }}>
                     <FormControl>
                         <TextField

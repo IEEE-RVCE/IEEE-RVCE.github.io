@@ -1,9 +1,10 @@
 import React from 'react';
-import {createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
+import { createMuiTheme, ThemeProvider, } from '@material-ui/core/styles';
 // import useMediaQuery from '@material-ui/core/useMediaQuery';
-import {CssBaseline, Fab, Tooltip} from '@material-ui/core';
-import {Brightness3, BrightnessHigh} from '@material-ui/icons';
-import {Route, Switch} from 'react-router-dom';
+import { grey} from '@material-ui/core/colors'
+import { CssBaseline, Fab, Tooltip } from '@material-ui/core';
+import { Brightness3, BrightnessHigh } from '@material-ui/icons';
+import { Route, Switch } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import SignInPage from './pages/SignInPage';
@@ -27,44 +28,54 @@ import ArticlesPage from './pages/ArticlesPage';
 import RegisterAttendeePage from './pages/RegisterAttendeePage';
 import ArticlePage from './pages/ArticlePage';
 // import NotFoundPage from './pages/NotFoundPage';
-import {images} from './links';
+// import {images} from './links';
 
 export default function App() {
 
   // const tempMedia = useMediaQuery('(prefers-color-scheme: dark)');
-  if(localStorage.getItem('isSetByUser') === null)
+  if (localStorage.getItem('isSetByUser') === null)
     localStorage.setItem('darkMode', true)
   const prefersDarkMode = localStorage.getItem('darkMode') === 'true'
 
   const theme = createMuiTheme({
     palette: {
-      type: prefersDarkMode ? 'dark' : 'light'
+      type: prefersDarkMode ? 'dark' : 'light',
+      primary: prefersDarkMode ? grey : { main: '#00629B' },
+      success:{
+        main: prefersDarkMode?'#658D1B':'#78BE20'
+      },
+      error: {
+        main: '#861F41'
+      },
+      contrastThreshold: 3,
     },
     typography: {
-      fontFamily: 'Open Sans, sans-serif',
+      fontFamily: ['Open Sans', 'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto', 'sans-serif'],
     },
     appbar: {
-      backgroundColor: prefersDarkMode?'#222':"#FFF"
+      backgroundColor: prefersDarkMode ? '#222' : "#FFF"
     },
-    button: prefersDarkMode?{
+    button: prefersDarkMode ? {
       // border: '1px solid #bbbbbb',
       borderRadius: '.1rem',
       color: '#eee ',
       marginRight: 16,
-    }:
-    {
-      // border: '1px solid #00629B',
-      color: '#00629B',
-      marginRight: 16,
-    },
-    buttonBigText:{
-      fontSize:'15rem'
+    } :
+      {
+        // border: '1px solid #00629B',
+        color: '#00629B',
+        marginRight: 16,
+      },
+    buttonBigText: {
+      fontSize: '15rem'
     },
     link: {
       textDecoration: 'none',
-      color: prefersDarkMode? '#bbbbbb':'#00629B',
+      color: prefersDarkMode ? '#bbbbbb' : '#00629B',
       '&:hover': {
-          textDecoration: 'underline',
+        textDecoration: 'underline',
       }
     },
     fab: {
@@ -72,45 +83,45 @@ export default function App() {
       bottom: 32,
       right: 32,
       zIndex: 100,
-      color: prefersDarkMode?'#111':'#eee',
-      backgroundColor: prefersDarkMode?'#eee':'#222',
+      color: prefersDarkMode ? '#111' : '#eee',
+      backgroundColor: prefersDarkMode ? '#eee' : '#222',
       '&:hover': {
-        backgroundColor: prefersDarkMode?'#eee':'#222'
+        backgroundColor: prefersDarkMode ? '#eee' : '#222'
       }
     },
-    paper: prefersDarkMode?{
+    paper: prefersDarkMode ? {
       backgroundColor: '#222',
-    }:
-    {
-      backgroundColor: '#fefefe',
-    },
+    } :
+      {
+        backgroundColor: '#fefefe',
+      },
     mainColor: {
-      backgroundColor: prefersDarkMode ? "#111":"#eee",
+      backgroundColor: prefersDarkMode ? "#111" : "#eee",
     },
     backgroundBlend: {
-      backgroundColor: prefersDarkMode ? '#000':"#fff",
+      backgroundColor: prefersDarkMode ? '#000' : "#fff",
     },
     root: {
       minHeight: 800,
     },
     background: {
-      backgroundColor: prefersDarkMode ? "#111":"#eee",
-      backgroundImage: prefersDarkMode ? `url(${images.landing.mainBlack})`: `url(${images.landing.mainWhite})`,
+      backgroundColor: prefersDarkMode ? "#111" : "#eee",
+      // backgroundImage: prefersDarkMode ? `url(${images.landing.mainBlack})`: `url(${images.landing.mainWhite})`,
       backgroundPositionX: 'center',
       backgroundSize: 'contain',
     },
     page: {
-      paddingTop: 96,
+      paddingTop: 72,
       paddingBottom: 64,
     },
     eventcard: {
-      backgroundColor: prefersDarkMode?'#444':'#fff',
+      backgroundColor: prefersDarkMode ? '#444' : '#fff',
     },
     grid: {
       margin: 'auto',
     },
     transbg: {
-      backgroundColor: prefersDarkMode?'#0a0a0aee':'#fefefeee',
+      backgroundColor: prefersDarkMode ? '#0a0a0aee' : '#fefefeee',
     }
   });
 
@@ -119,91 +130,91 @@ export default function App() {
     localStorage.setItem('isSetByUser', true)
     window.location.reload()
   }
-  
+
   return (
     <ThemeProvider theme={theme}>
-      <div>
+      <div style={{ ...theme.background }}>
         <CssBaseline />
-        <Header/>
+        <Header />
 
         <Route exact path='/'>
-          <HomePage/>
+          <HomePage />
         </Route>
         <Route path='/about'>
-          <AboutPage/>
+          <AboutPage />
         </Route>
         <Route path='/login'>
-          <SignInPage/>
+          <SignInPage />
         </Route>
         <Route path='/devs'>
-          <DevelopersPage/>
+          <DevelopersPage />
         </Route>
         <Route path='/society/cs'>
-          <CSSocietyPage/>
+          <CSSocietyPage />
         </Route>
         <Route path='/society/aps'>
-          <APSSocietyPage/>
+          <APSSocietyPage />
         </Route>
         <Route path='/society/comsoc'>
-          <COMSOCSocietyPage/>
+          <COMSOCSocietyPage />
         </Route>
         <Route path='/society/pes'>
-          <PESSocietyPage/>
+          <PESSocietyPage />
         </Route>
         <Route path='/society/ras'>
-          <RASSocietyPage/>
+          <RASSocietyPage />
         </Route>
         <Route path='/society/sps'>
-          <SPSSocietyPage/>
+          <SPSSocietyPage />
         </Route>
         <Route path='/affinity/wie'>
-          <WIEAffinityPage/>
+          <WIEAffinityPage />
         </Route>
         <Route path='/affinity/sight'>
-          <SIGHTAffinityPage/>
+          <SIGHTAffinityPage />
         </Route>
         <Route path='/calendar'>
-          <CalendarPage/>
+          <CalendarPage />
         </Route>
 
         <Switch>
           <Route path='/events/:eid'>
-            <EventPage/>
+            <EventPage />
           </Route>
-          <Route path='/events' component={EventsPage}/>
+          <Route path='/events' component={EventsPage} />
         </Switch>
 
         <Switch>
           <Route path='/membership/:step'>
-            <MembershipPage/>
+            <MembershipPage />
           </Route>
           <Route path='/membership'>
-            <MembershipPage/>
+            <MembershipPage />
           </Route>
         </Switch>
 
         <Switch>
-          <Route path='/gallery' component={GalleryPage}/>
+          <Route path='/gallery' component={GalleryPage} />
         </Switch>
 
         <Switch>
           <Route path='/articles/:arid'>
-            <ArticlePage/>
+            <ArticlePage />
           </Route>
-          <Route path='/articles' component={ArticlesPage}/>
+          <Route path='/articles' component={ArticlesPage} />
         </Switch>
 
         <Route path='/register'>
-          <RegisterAttendeePage/>
+          <RegisterAttendeePage />
         </Route>
 
-        <Tooltip title={prefersDarkMode? 'Switch to light theme': 'Switch to dark theme'} aria-label='themeSwitcherTooltip'>
-          <Fab onClick={changeTheme} aria-label='themeSwitcher' style={{...theme.fab}}>
-              {prefersDarkMode?<BrightnessHigh/>:<Brightness3 style={{transform: 'rotate(150deg)'}}/>}
+        <Tooltip title={prefersDarkMode ? 'Switch to light theme' : 'Switch to dark theme'} aria-label='themeSwitcherTooltip'>
+          <Fab onClick={changeTheme} aria-label='themeSwitcher' style={{ ...theme.fab }}>
+            {prefersDarkMode ? <BrightnessHigh /> : <Brightness3 style={{ transform: 'rotate(150deg)' }} />}
           </Fab>
         </Tooltip>
-        <Footer/>
-      </div>  
+        <Footer />
+      </div>
     </ThemeProvider>
   );
 }
