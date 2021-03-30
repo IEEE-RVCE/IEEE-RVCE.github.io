@@ -67,7 +67,7 @@ export default function Header(props) {
         navs: {
             [theme.breakpoints.up('md')]: {
                 display: 'block',
-                visibility: (transparent<0.75 && (matchAffinity || matchSociety))?'hidden':'visible',
+                // visibility: (transparent<0.75 && (matchAffinity || matchSociety))?'hidden':'visible',
             },
             display: 'none',
         },

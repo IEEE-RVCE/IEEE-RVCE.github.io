@@ -9,7 +9,8 @@ const useStyles = makeStyles((theme) => {
   return {
     root: {
       height: '100%',
-      padding: theme.spacing(2)
+      padding: theme.spacing(2),
+      backgroundColor: '#00000000',
     },
     content: {
       margin: "auto",
@@ -31,7 +32,7 @@ export default function AvatarCard(props) {
   const classes = useStyles();
   console.log('I',classes)
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} elevation={0}>
       <CardContent className={classes.content}>
         <Avatar
           alt={props.name}
