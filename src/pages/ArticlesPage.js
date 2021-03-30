@@ -9,6 +9,7 @@ import axios from 'axios';
 import {AddArticleDialog} from '../components/AddArticleDialog';
 import ArticleCard from '../components/ArticleCard';
 import ArticlesBox from '../components/ArticlesBox';
+import GiveMeABreak from '../components/GiveMeABreak';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -197,6 +198,9 @@ export default function ArticlesPage(props) {
                 edit={false} 
                 aria-label="add-article-dialog"
             />
+            <GiveMeABreak/>
+            <GiveMeABreak/>
+            <GiveMeABreak/>
         </div>
     )
 }

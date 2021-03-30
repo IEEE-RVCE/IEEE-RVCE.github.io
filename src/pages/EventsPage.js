@@ -9,6 +9,7 @@ import { Add } from '@material-ui/icons';
 import { AddEventDialog } from '../components/AddEventDialog';
 import * as queryString from 'query-string';
 import EventsBox from '../components/EventsBox';
+import GiveMeABreak from '../components/GiveMeABreak';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -190,6 +191,7 @@ export default function EventPage(props) {
                     </>
                 )
             }
+            <GiveMeABreak/>
         </div>
     );
 }
