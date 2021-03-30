@@ -52,7 +52,7 @@ export const societies = [
  * @type {menuitem[]}
  */
 export const affinities = [
-    {name: "SIGHT", link:'/affinity/sight'},
+    // {name: "SIGHT", link:'/affinity/sight'},
     {name: "WIE", link:'/affinity/wie'}
 ]
 
