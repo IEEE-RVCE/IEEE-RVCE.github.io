@@ -327,6 +327,8 @@ export default function MembershipPage() {
                                     </HashLink>
                             </Paper>
                             <GiveMeABreak/>
+                            <GiveMeABreak/>
+                            <GiveMeABreak/>
                         </Container>
                     </>
                 )

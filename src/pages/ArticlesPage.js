@@ -149,7 +149,7 @@ export default function ArticlesPage(props) {
                 </div>
             </div>
             <Container maxWidth='md'>
-                <Typography variant='h4' style={{textAlign: 'center'}}><b>Articles</b></Typography>
+                {/* <Typography variant='h4' style={{textAlign: 'center'}}><b>Articles</b></Typography> */}
                 <br/>
                 {
                     (Array.isArray(list) && list.length!==0)?(
