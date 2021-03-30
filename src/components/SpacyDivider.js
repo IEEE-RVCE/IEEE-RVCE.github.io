@@ -10,5 +10,5 @@ import GiveMeABreak from './GiveMeABreak';
 export default function SpacyDivider(props){
     let num = props.num??1;
 
-    return (<><GiveMeABreak num={num}/><Divider /><GiveMeABreak num={num}/></>)
+    return (<><GiveMeABreak num={num}/><Divider style={{backgroundColor: props.color}}/><GiveMeABreak num={num}/></>)
 }

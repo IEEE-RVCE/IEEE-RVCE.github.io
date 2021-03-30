@@ -2,11 +2,18 @@ import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import {Paper, Typography, Accordion, AccordionSummary, AccordionDetails, Grid} from '@material-ui/core';
 import Avatar from './Avatar';
+import GiveMeABreak from './GiveMeABreak';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
         ...theme.paper,
         padding: theme.spacing(4),
+        backgroundColor: '#00000000',
+    },
+    accordion: {
+        borderLeft: '1px solid #12c48c',
+        borderBottom: '2px solid #12c48c',
+        backgroundColor: '#00000000',
     }
 }))
 
@@ -19,14 +26,14 @@ export default function AlumniAccordions(props) {
                 (Object.keys(members).length!==0) && 
                 (
                     <>   
-                        <Paper className={classes.paper}>
-                            <Typography variant='h4'>
+                        <Paper className={classes.paper} elevation={0}>
+                            <Typography variant='h4' align='center'>
                                 Alumni
                             </Typography>
-                            <br />
+                            <GiveMeABreak num={2}/>
                             {
                                 Object.keys(members).map((batch) => (
-                                    <Accordion>
+                                    <Accordion className={classes.accordion}>
                                         <AccordionSummary>
                                             <Typography>{batch}</Typography>    
                                         </AccordionSummary>

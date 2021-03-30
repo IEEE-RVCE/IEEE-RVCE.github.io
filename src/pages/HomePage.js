@@ -9,6 +9,7 @@ import { execom, alumni } from '../links';
 import FrontBox from '../components/FrontBox';
 import SpacyDivider from '../components/SpacyDivider';
 import AlumniAccordions from '../components/AlumniAccordions';
+import GiveMeABreak from '../components/GiveMeABreak';
 
 const useStyles = makeStyles((theme) => ({
     root: theme.root,
@@ -24,6 +25,11 @@ const useStyles = makeStyles((theme) => ({
         [`& fieldset`]: {
           borderRadius: '0.25rem',
         },
+    },
+    '@global': {
+        '.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline': {
+            borderColor: '#12c48c',
+        }
     }
 }))
 
@@ -36,7 +42,7 @@ export default function HomePage(props) {
             <FrontBox />
             <Container className={classes.container}>
                 <FrontText />
-                <SpacyDivider num={2} />
+                <SpacyDivider num={2} className={classes.divider}/>
                 <Typography variant='h4' align='center'>
                     Executive Committee
                 </Typography>
@@ -56,9 +62,9 @@ export default function HomePage(props) {
                     </Grid>
                 </Container>
 
-                <SpacyDivider num={2} />
+                <SpacyDivider num={2} color='#12c48c'/>
                 <AlumniAccordions members={alumni.main}/>
-                <SpacyDivider num={2} />
+                <SpacyDivider num={2} color='#12c48c'/>
                 <Box >
                     <Typography variant='h4' align='center'>
                         Upcoming Events
@@ -77,34 +83,35 @@ export default function HomePage(props) {
             
             {/* contact form */}
 
-            <SpacyDivider num={2} />
-            <Container maxWidth='md'>
-            <Typography variant='h4' align='center'>
-                        Contact Us
-            </Typography>
-            <br/>
-            <Box align='center'>
-            <form
-                action="https://formspree.io/f/xjvjbrdz"
-                method="POST"
-                target='_blank'
-            >
-                {/* <InputLabel> */}
-                    {/* Your email:  */}
-                    <TextField type="text" name="_name" variant="outlined" className={classes.textField} label="Your name"/>
-                    <TextField type="email" name="_replyto" variant="outlined" className={classes.textField} label="Your email"/>
-                {/* </InputLabel> */}
+            <Container>
+                <SpacyDivider num={2} color='#12c48c'/>
+                <Typography variant='h4' align='center'>
+                            Contact Us
+                </Typography>
                 <br/>
-                {/* <InputLabel> */}
-                        {/* Your message: */}
-                    <TextField name="message" variant="outlined" multiline className={classes.textField} label="Your message" rows={5}/>
-                {/* </InputLabel> */}
-                <br/>
-                <Button type="submit" variant="outlined" align='center' style={{marginBottom:"1%"}}>Send</Button>
-                <br/>
-            </form>
-            </Box>
+                <Box align='center'>
+                    <form
+                        action="https://formspree.io/f/xjvjbrdz"
+                        method="POST"
+                        target='_blank'
+                    >
+                        {/* <InputLabel> */}
+                            {/* Your email:  */}
+                            <TextField type="text" name="_name" variant="outlined" className={classes.textField} label="Your name"/>
+                            <TextField type="email" name="_replyto" variant="outlined" className={classes.textField} label="Your email"/>
+                        {/* </InputLabel> */}
+                        <br/>
+                        {/* <InputLabel> */}
+                                {/* Your message: */}
+                            <TextField name="message" variant="outlined" multiline className={classes.textField} label="Your message" rows={5}/>
+                        {/* </InputLabel> */}
+                        <br/>
+                        <Button type="submit" align='center' style={{marginBottom:"1%"}}>Send</Button>
+                        <br/>
+                    </form>
+                </Box>
             </Container>
+            <GiveMeABreak num={2}/>
         </div>
     )
 }

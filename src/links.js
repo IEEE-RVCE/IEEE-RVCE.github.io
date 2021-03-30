@@ -40,11 +40,11 @@ export const societyNav = [
  */
 export const societies = [
     {name: "Computer Society", link: '/society/cs'},
-    {name: "Com Soc", link: '/society/comsoc'},
-    {name: "PES", link: '/society/pes'},
-    {name: "SPS", link: '/society/sps'},
-    {name: "APS", link: '/society/aps'},
-    {name: "RAS", link: '/society/ras'},
+    {name: "Communications Society", link: '/society/comsoc'},
+    {name: "Power and Energy Society", link: '/society/pes'},
+    {name: "Signal Processing Society", link: '/society/sps'},
+    {name: "Antenna Propagation Society", link: '/society/aps'},
+    {name: "Robotics and Automation Society", link: '/society/ras'},
 ]
 
 /**
@@ -52,8 +52,8 @@ export const societies = [
  * @type {menuitem[]}
  */
 export const affinities = [
-    {name: "SIGHT", link:'/affinity/sight'},
-    {name: "WIE", link:'/affinity/wie'}
+    // {name: "Special Interest Group for Humanitarian Technology", link:'/affinity/sight'},
+    {name: "Women in Engineering", link:'/affinity/wie'}
 ]
 
 
@@ -200,8 +200,8 @@ export const execom = {
     ras: [
         {name: 'Dr. Geetha K S', position: 'Faculty Advisor', image: imagePath + '/execom/ras/geetha_maam.jpg'},
         {name: 'Naman A Menezes', position: 'Chair', image: imagePath + '/execom/ras/naman.jpg'},
-        {name: 'Rahul Pinny', position: 'Vice Chair', image: imagePath + '/execom/ras/pinny.jpg'},
-        {name: 'Ambu Karthik', position: 'Secretary', image: imagePath + '/execom/ras/ambu.jpg'},
+        {name: 'Ambu Karthik', position: 'Vice Chair', image: imagePath + '/execom/ras/ambu.jpg'},
+        {name: 'Rahul Pinny', position: 'Secretary', image: imagePath + '/execom/ras/pinny.jpg'},
         {name: 'Rithwik Jayanth', position: 'Treasurer', image: imagePath + '/execom/ras/rithwik.jpg'},
     ],
     sight: [
