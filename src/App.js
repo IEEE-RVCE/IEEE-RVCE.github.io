@@ -90,7 +90,8 @@ export default function App() {
       }
     },
     paper: prefersDarkMode ? {
-      backgroundColor: '#222',
+      backgroundColor: '#00000000',
+      boxShadow: '0px 0px 0px 0px #00000000',
     } :
       {
         backgroundColor: '#fefefe',

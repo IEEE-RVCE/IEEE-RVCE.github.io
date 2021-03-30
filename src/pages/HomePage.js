@@ -42,7 +42,7 @@ export default function HomePage(props) {
             <FrontBox />
             <Container className={classes.container}>
                 <FrontText />
-                <SpacyDivider num={2} className={classes.divider}/>
+                <SpacyDivider num={2} color="#12c48c"/>
                 <Typography variant='h4' align='center'>
                     Executive Committee
                 </Typography>
@@ -63,7 +63,7 @@ export default function HomePage(props) {
                 </Container>
 
                 <SpacyDivider num={2} color='#12c48c'/>
-                <AlumniAccordions members={alumni.main}/>
+                <AlumniAccordions members={alumni.main} color="#12c48c"/>
                 <SpacyDivider num={2} color='#12c48c'/>
                 <Box >
                     <Typography variant='h4' align='center'>

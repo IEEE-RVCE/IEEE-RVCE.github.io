@@ -10,16 +10,12 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(4),
         backgroundColor: '#00000000',
     },
-    accordion: {
-        borderLeft: '1px solid #12c48c',
-        borderBottom: '2px solid #12c48c',
-        backgroundColor: '#00000000',
-    }
 }))
 
 export default function AlumniAccordions(props) {
     const {members} = props;
     const classes = useStyles();
+    let color = props.color??'#222222';
     return (
         <>
             {
@@ -33,7 +29,12 @@ export default function AlumniAccordions(props) {
                             <GiveMeABreak num={2}/>
                             {
                                 Object.keys(members).map((batch) => (
-                                    <Accordion className={classes.accordion}>
+                                    <Accordion style={{
+                                        borderLeft: '1px solid '+color,
+                                        borderBottom: '2px solid '+color,
+                                        backgroundColor: '#00000000',
+                                        boxShadow: '0px 0px 0px 0px #00000000',
+                                    }}>
                                         <AccordionSummary>
                                             <Typography>{batch}</Typography>    
                                         </AccordionSummary>

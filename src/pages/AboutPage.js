@@ -4,6 +4,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import {about} from '../links';
 import {Typography, Paper, Container, List, ListItem, ListItemText,Accordion, AccordionDetails, AccordionSummary} from "@material-ui/core";
 import AboutUsBox from '../components/AboutUsBox';
+import SpacyDivider from '../components/SpacyDivider';
+import GiveMeABreak from '../components/GiveMeABreak';
 
 const useStyles = makeStyles((theme) => ({
     root: theme.root,
@@ -63,12 +65,12 @@ export default function AboutPage(props) {
                     </div>
                 </Paper>
                 <br/>
-
+                <SpacyDivider color='rgb(7 22 218)' height={2}/>
                 <Paper className={classes.paper}>
                     <Typography variant='h3'>
-                        FAQ
+                        Frequently Asked Questions
                     </Typography>
-                    <br/>
+                    <GiveMeABreak num={2}/>
                     <Accordion style={{backgroundColor:'#424242'}}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                             <Typography>1. What is IEEE?</Typography>    
