@@ -6,6 +6,6 @@ export const achievementsText = [
     "Best Teacher Award-2020: Mahesh Appajappa ",
     "Branch Counselors of Nov-Dec 2020: Dr. Ashok Kumar A R",
     "Best Researcher Award-2020: Dr.Shylashree N",
-    "Outstanding Student Volunteer Award-2020: Ruthvik SJ",
-    "Best SAC Volunteer Award-2020: Ruthvik SJ",
+    "Outstanding Student Volunteer Award-2020: S J Ruthvik",
+    "Best SAC Volunteer Award-2020: S J Ruthvik",
 ];
