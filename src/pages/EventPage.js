@@ -148,8 +148,8 @@ export default function EventPage() {
                     <Grid container spacing={3} justify='center'>
                         <Grid xs={12} md={6}>
                             <div className={classes.griditem}>
-                                <Typography variant='h5'>
-                                    <b>Description:</b> {event.details}
+                                <Typography variant='h6'>
+                                    <b>Description:</b> <br/><br/><span style={{display:"block", textAlign:"justify"}}>{event.details}</span>
                                 </Typography>
                                 <br/>
                                 <Typography variant='h6'>
@@ -163,6 +163,11 @@ export default function EventPage() {
                                     <b>Fee:</b> <br/>IEEE Member: {event.feeyes} <br/>Non-IEEE Member: {event.feeno}
                                 </Typography>
                                 <br/>
+                                <br/>
+                                <Typography variant='h5'><b>Speakers:</b></Typography>
+                                <br/>
+                                {event.hosts.map((host) => (<Typography variant='h6'><b>{host.name}</b></Typography>))}
+                                <br/>
                                 <Typography variant='h5'>
                                     Register for the event <a className={classes.link} href={event.reglink} target='_blank' rel='noopener noreferrer'>here</a>
                                 </Typography>
@@ -175,11 +180,11 @@ export default function EventPage() {
                         </Grid>
                     </Grid>
                     <br/>
-                    {
+                    {/* {
                         Array.isArray(event.hosts) && event.hosts.length!==0 &&(
                             <>
                                 <br/>
-                                <Typography variant='h4' className={classes.header}><b>Speakers:</b></Typography>
+                                <Typography variant='h4'><b>Speakers:</b></Typography>
                                 <br/>
                                 <br/>
                                 <Grid container spacing={3} justify='center'>
@@ -210,7 +215,7 @@ export default function EventPage() {
                                 <br/>
                             </>
                         )
-                    }
+                    } */}
                 </Container>
                 <AddEventDialog 
                     open={dialog} 
