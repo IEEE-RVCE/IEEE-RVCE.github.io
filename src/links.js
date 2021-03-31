@@ -158,7 +158,7 @@ export const execom = {
         {name: 'Kashish Malhotra', position: 'Vice Chair', image: imagePath + '/execom/main/kashish.jpg'},
         {name: 'Deeraj DS', position: 'Secretary', image: imagePath + '/execom/main/deeraj.jpg'},
         {name: 'Chirag Bapat', position: 'Treasurer', image: imagePath + '/execom/main/chirag.jpg'},
-        {name: 'Atreya Bain', position: 'Webmaster', image: imagePath + '/execom/main/atreya.png'},
+        {name: 'Atreya Bain', position: 'Webmaster', image: imagePath + '/execom/main/atreya.jpg'},
         {name: 'Saraansh Agarwal', position: 'Editor in Chief', image: imagePath + '/execom/main/saraansh.jpg'},
     ],
     aps: [
@@ -177,7 +177,7 @@ export const execom = {
     ],
     comsoc: [
         {name: 'Dr. Shushrutha KS', position: 'Faculty Advisor', image: imagePath + '/execom/comsoc/shushrutha_sir.jpg'},
-        {name: 'Anushka Subramaniam', position: 'Chair', image: imagePath + '/execom/comsoc/anushka.png'},
+        {name: 'Anushka Subramaniam', position: 'Chair', image: imagePath + '/execom/comsoc/anushka.jpg'},
         {name: 'Saraansh Agarwal', position: 'Secretary', image: imagePath + '/execom/comsoc/saraansh.jpg'},
     ],
     pes: [
@@ -194,7 +194,7 @@ export const execom = {
     ],
     wie: [
         {name: 'Dr. Usha Rani K R', position: 'Faculty Advisor', image: imagePath + '/execom/wie/usha_maam.jpg'},
-        {name: 'Sreelakshmi', position: 'Chair', image: imagePath + '/execom/wie/sreelakshmi.png'},
+        {name: 'Sreelakshmi', position: 'Chair', image: imagePath + '/execom/wie/sreelakshmi.jpg'},
         {name: 'Sunidhi Salwadgi', position: 'Secretary', image: imagePath + '/execom/wie/sunidhi.jpg'},
     ],
     ras: [
@@ -271,9 +271,9 @@ export const alumni = {
     wie: {
         '2020': [
             {name: 'Dr. Usha Rani K R', position: 'Faculty Advisor', image: imagePath + '/alumni/2020/wie/usha_maam.jpg'},
-            {name: 'Aisiri HR', position: 'Chair', image: imagePath + '/alumni/2020/wie/aisiri.png'},
+            {name: 'Aisiri HR', position: 'Chair', image: imagePath + '/alumni/2020/wie/aisiri.jpg'},
             {name: 'Raghavi R', position: 'Vice Chair', image: imagePath + '/alumni/2020/wie/raghavi.jpg'},
-            {name: 'Sreelakshmi', position: 'Secretary', image: imagePath + '/alumni/2020/wie/sreelakshmi.png'},
+            {name: 'Sreelakshmi', position: 'Secretary', image: imagePath + '/alumni/2020/wie/sreelakshmi.jpg'},
             {name: 'Sunidhi Salwadgi', position: 'Treasurer', image: imagePath + '/alumni/2020/wie/sunidhi.jpg'},
         ],
     },
