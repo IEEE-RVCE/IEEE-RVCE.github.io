@@ -7,6 +7,7 @@ import Avatar from '../components/Avatar';
 import EventCard from '../components/EventCard';
 import {hostname, ecats, images, execom, alumni} from '../links';
 import AlumniAccordions from '../components/AlumniAccordions';
+import SpacyDivider from '../components/SpacyDivider';
 
 const useStyles = makeStyles((theme) => ({
     root: theme.root,
@@ -52,7 +53,7 @@ export default function PESSocietyPage(props) {
                         To inclulcate scientific and engineering knowledge in Power and Energy sector for the betterment of the society along with professional development of the members.
                     </Typography>
                 </Paper>
-                <br />
+                <SpacyDivider color="rgb(53 176 232)"/>
                 <Paper className={classes.paper}>
                     <Typography variant='h3'>
                         Mission
@@ -67,7 +68,7 @@ export default function PESSocietyPage(props) {
                         </ul>
                     </Typography>
                 </Paper>
-                <br />
+                <SpacyDivider color="rgb(53 176 232)"/>
                 {
                     events.length!==0 && (
                         <>
@@ -92,7 +93,7 @@ export default function PESSocietyPage(props) {
                                     )
                                 }
                             </Paper>
-                            <br />
+                            <SpacyDivider color="rgb(53 176 232)"/>
                         </>
                     )
                 }
@@ -111,8 +112,7 @@ export default function PESSocietyPage(props) {
                         }
                     </Grid>
                 </Paper>
-                <br/>
-                <AlumniAccordions members={alumni.pes}/>
+                <AlumniAccordions members={alumni.pes} color="rgb(53 176 232)"/>
                 <br/>
             </Container>
         </div>

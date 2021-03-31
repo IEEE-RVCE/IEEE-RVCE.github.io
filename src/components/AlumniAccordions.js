@@ -3,6 +3,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import {Paper, Typography, Accordion, AccordionSummary, AccordionDetails, Grid} from '@material-ui/core';
 import Avatar from './Avatar';
 import GiveMeABreak from './GiveMeABreak';
+import SpacyDivider from './SpacyDivider';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -22,6 +23,7 @@ export default function AlumniAccordions(props) {
                 (Object.keys(members).length!==0) && 
                 (
                     <>   
+                        <SpacyDivider color={color}/>
                         <Paper className={classes.paper} elevation={0}>
                             <Typography variant='h4' align='center'>
                                 Alumni

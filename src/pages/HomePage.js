@@ -62,7 +62,6 @@ export default function HomePage(props) {
                     </Grid>
                 </Container>
 
-                <SpacyDivider num={2} color='#12c48c'/>
                 <AlumniAccordions members={alumni.main} color="#12c48c"/>
                 <SpacyDivider num={2} color='#12c48c'/>
                 <Box >

@@ -7,6 +7,7 @@ import Avatar from '../components/Avatar';
 import EventCard from '../components/EventCard';
 import {hostname, ecats, images, execom, alumni} from '../links';
 import AlumniAccordions from '../components/AlumniAccordions';
+import SpacyDivider from '../components/SpacyDivider';
 
 const useStyles = makeStyles((theme) => ({
     root: theme.root,
@@ -52,7 +53,7 @@ export default function SPSSocietyPage(props) {
                     To aid student researchers in the field of signal processing by providing them a platform to be aware of the latest developments in the field through IEEE resources and to also provide arenas for development of projects and prototypes based on intensive research. 
                     </Typography>
                 </Paper>
-                <br />
+                <SpacyDivider color="rgb(153 221 227)"/>
                 <Paper className={classes.paper}>
                     <Typography variant='h3'>
                         Mission
@@ -62,7 +63,7 @@ export default function SPSSocietyPage(props) {
                         To conduct workshops, webinars and conferences under the banner of the chapter to propagate the importance and recent developments in the field of signal processings, and to create a collaborative research environment in the field.
                     </Typography>
                 </Paper>
-                <br />
+                <SpacyDivider color="rgb(153 221 227)"/>
                 {
                     events.length!==0 && (
                         <>
@@ -87,7 +88,7 @@ export default function SPSSocietyPage(props) {
                                     )
                                 }
                             </Paper>
-                            <br />
+                            <SpacyDivider color="rgb(153 221 227)"/>
                         </>
                     )
                 }
@@ -106,8 +107,7 @@ export default function SPSSocietyPage(props) {
                         }
                     </Grid>
                 </Paper>
-                <br/>
-                <AlumniAccordions members={alumni.sps}/>
+                <AlumniAccordions members={alumni.sps} color="rgb(153 221 227)"/>
                 <br/>
             </Container>
         </div>

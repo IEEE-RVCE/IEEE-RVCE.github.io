@@ -7,6 +7,7 @@ import EventCard from '../components/EventCard';
 import {hostname, ecats, images, execom, alumni} from '../links';
 import {Link} from 'react-router-dom';
 import AlumniAccordions from '../components/AlumniAccordions';
+import SpacyDivider from '../components/SpacyDivider';
 
 const useStyles = makeStyles((theme) => ({
     root: theme.root,
@@ -52,7 +53,7 @@ export default function COMSOCSocietyPage(props) {
                         To get the students community interested in Communication and networking together and help in developing the society by conducting research, education, invitation, projects and implementation of new ideas provided by the members of this Society.
                     </Typography>
                 </Paper>
-                <br />
+                <SpacyDivider color="rgb(61 144 142)"/>
                 <Paper className={classes.paper}>
                     <Typography variant='h3'>
                         Mission
@@ -64,7 +65,7 @@ export default function COMSOCSocietyPage(props) {
                         The society provides a platform to exchange ideas amongst the members and experts in both academia and industry. 
                     </Typography>
                 </Paper>
-                <br />
+                <SpacyDivider color="rgb(61 144 142)"/>
                 {
                     events.length!==0 && (
                         <>
@@ -89,7 +90,7 @@ export default function COMSOCSocietyPage(props) {
                                     )
                                 }
                             </Paper>
-                            <br />
+                            <SpacyDivider color="rgb(61 144 142)"/>
                         </>
                     )
                 }
@@ -108,8 +109,7 @@ export default function COMSOCSocietyPage(props) {
                         }
                     </Grid>
                 </Paper>
-                <br/>
-                <AlumniAccordions members={alumni.comsoc}/>
+                <AlumniAccordions members={alumni.comsoc} color="rgb(61 144 142)"/>
                 <br/>
             </Container>
         </div>

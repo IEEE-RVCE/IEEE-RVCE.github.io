@@ -7,6 +7,7 @@ import Avatar from '../components/Avatar';
 import EventCard from '../components/EventCard';
 import {hostname, ecats, images, execom, alumni} from '../links';
 import AlumniAccordions from '../components/AlumniAccordions';
+import SpacyDivider from '../components/SpacyDivider';
 
 const useStyles = makeStyles((theme) => ({
     root: theme.root,
@@ -57,7 +58,7 @@ export default function RASSocietyPage(props) {
                         groundbreaking research in the field of Robotics and Automation.
                     </Typography>
                 </Paper>
-                <br />
+                <SpacyDivider color="rgb(12 104 171)"/>
                 <Paper className={classes.paper}>
                     <Typography variant='h3'>
                         Mission
@@ -68,7 +69,7 @@ export default function RASSocietyPage(props) {
                         of robotics and automation, as well as, imbibing technical skills suited to recent technological developments in the field of robotics.    
                     </Typography>
                 </Paper>
-                <br />
+                <SpacyDivider color="rgb(12 104 171)"/>
                 {
                     events.length!==0 && (
                         <>
@@ -93,7 +94,7 @@ export default function RASSocietyPage(props) {
                                     )
                                 }
                             </Paper>
-                            <br />
+                            <SpacyDivider color="rgb(12 104 171)"/>
                         </>
                     )
                 }
@@ -112,8 +113,7 @@ export default function RASSocietyPage(props) {
                         }
                     </Grid>
                 </Paper>
-                <br/>
-                <AlumniAccordions members={alumni.ras}/>
+                <AlumniAccordions members={alumni.ras} color="rgb(12 104 171)"/>
                 <br/>
             </Container>
         </div>

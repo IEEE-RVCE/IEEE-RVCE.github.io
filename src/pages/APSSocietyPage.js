@@ -7,6 +7,7 @@ import Avatar from '../components/Avatar';
 import EventCard from '../components/EventCard';
 import {hostname, ecats, images, execom, alumni} from '../links';
 import AlumniAccordions from '../components/AlumniAccordions';
+import SpacyDivider from '../components/SpacyDivider';
 
 const useStyles = makeStyles((theme) => ({
     root: theme.root,
@@ -52,7 +53,7 @@ export default function APSSocietyPage(props) {
                         To instil excellent and broadly accessible concepts and ideals of the Antennas and Propagation domain empowering the professional development of its members and the society.
                     </Typography>
                 </Paper>
-                <br />
+                <SpacyDivider color="rgb(110 110 193)"/>
                 <Paper className={classes.paper}>
                     <Typography variant='h3'>
                         Mission
@@ -68,7 +69,7 @@ export default function APSSocietyPage(props) {
                         </ul>
                     </Typography>
                 </Paper>
-                <br />
+                <SpacyDivider color="rgb(110 110 193)"/>
                 {
                     events.length!==0 && (
                         <>
@@ -93,7 +94,7 @@ export default function APSSocietyPage(props) {
                                     )
                                 }
                             </Paper>
-                            <br />
+                            <SpacyDivider color="rgb(110 110 193)"/>
                         </>
                     )
                 }
@@ -112,8 +113,7 @@ export default function APSSocietyPage(props) {
                         }
                     </Grid>
                 </Paper>
-                <br/>
-                <AlumniAccordions members={alumni.aps}/>
+                <AlumniAccordions members={alumni.aps} color="rgb(110 110 193)"/>
                 <br/>
             </Container>
         </div>

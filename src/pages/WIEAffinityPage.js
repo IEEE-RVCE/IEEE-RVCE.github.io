@@ -7,6 +7,7 @@ import Avatar from '../components/Avatar';
 import EventCard from '../components/EventCard';
 import {hostname, ecats, images, execom, alumni} from '../links';
 import AlumniAccordions from '../components/AlumniAccordions';
+import SpacyDivider from '../components/SpacyDivider';
 
 const useStyles = makeStyles((theme) => ({
     root: theme.root,
@@ -52,7 +53,7 @@ export default function WIEAffinityPage(props) {
                     To be a key for empowering women through professional education integrated with values and character in order to face the global competition in the new era of technology.
                     </Typography>
                 </Paper>
-                <br />
+                <SpacyDivider color="rgb(128 58 120)"/>
                 <Paper className={classes.paper}>
                     <Typography variant='h3'>
                         Mission
@@ -62,7 +63,7 @@ export default function WIEAffinityPage(props) {
                     Diversity of thoughts, perspectives, and culture are needed as much in Engineering as in any other field. Surround yourself with people who support you and get involved in technology.
                     </Typography>
                 </Paper>
-                <br />
+                <SpacyDivider color="rgb(128 58 120)"/>
                 {
                     events.length!==0 && (
                         <>
@@ -87,7 +88,7 @@ export default function WIEAffinityPage(props) {
                                     )
                                 }
                             </Paper>
-                            <br />
+                            <SpacyDivider color="rgb(128 58 120)"/>
                         </>
                     )
                 }
@@ -106,8 +107,7 @@ export default function WIEAffinityPage(props) {
                         }
                     </Grid>
                 </Paper>
-                <br/>
-                <AlumniAccordions members={alumni.wie}/>
+                <AlumniAccordions members={alumni.wie} color="rgb(128 58 120)"/>
                 <br/>
             </Container>
         </div>

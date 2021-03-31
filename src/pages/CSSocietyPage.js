@@ -7,6 +7,7 @@ import Avatar from '../components/Avatar';
 import EventCard from '../components/EventCard';
 import {hostname, ecats, images, execom, alumni} from '../links';
 import AlumniAccordions from '../components/AlumniAccordions';
+import SpacyDivider from '../components/SpacyDivider';
 
 const useStyles = makeStyles((theme) => ({
     root: theme.root,
@@ -53,7 +54,7 @@ export default function CSSocietyPage(props) {
                         To impart knowledge pertaining to Computer Science and create a culture of continuous learning and innovation through research, development and experimentation while persevering to develop technology for the betterment of humanity and ensuring harmony within the community.
                     </Typography>
                 </Paper>
-                <br />
+                <SpacyDivider color="rgb(80 161 99)"/>
                 <Paper className={classes.paper}>
                     <Typography variant='h3'>
                         Mission
@@ -68,7 +69,7 @@ export default function CSSocietyPage(props) {
                         </ul>
                     </Typography>
                 </Paper>
-                <br />
+                <SpacyDivider color="rgb(80 161 99)"/>
                 {
                     events.length!==0 && (
                         <>
@@ -93,7 +94,7 @@ export default function CSSocietyPage(props) {
                                     )
                                 }
                             </Paper>
-                            <br />
+                            <SpacyDivider color="rgb(80 161 99)"/>
                         </>
                     )
                 }
@@ -112,8 +113,7 @@ export default function CSSocietyPage(props) {
                         }
                     </Grid>
                 </Paper>
-                <br/>
-                <AlumniAccordions members={alumni.compsoc} />
+                <AlumniAccordions members={alumni.compsoc} color="rgb(80 161 99)"/>
                 <br/>
             </Container>
         </div>
