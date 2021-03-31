@@ -10,15 +10,14 @@ import { imgify } from '../misc'
  * @type {imagebase}
  */
 export const achievements = [
-    { src: imgify`fp/achievements/IMG_8449.JPG` },
-    { src: imgify`fp/achievements/IMG_8450.JPG` },
-    { src: imgify`fp/achievements/IMG_8451.JPG` },
-    { src: imgify`fp/achievements/IMG_8470.JPG` },
-    { src: imgify`fp/achievements/IMG_8471.JPG` },
-    { src: imgify`fp/achievements/IMG_8473.JPG` },
-    { src: imgify`fp/achievements/IMG_8500.JPG` },
-    { src: imgify`fp/achievements/IMG_8501.JPG` },
-    { src: imgify`fp/achievements/IMG_8502.JPG` },
+    { src: imgify`fp/achievements/1.JPG` },
+    { src: imgify`fp/achievements/2.JPG` },
+    { src: imgify`fp/achievements/3.JPG` },
+    { src: imgify`fp/achievements/4.JPG` },
+    { src: imgify`fp/achievements/5.JPG` },
+    { src: imgify`fp/achievements/6.JPG` },
+    { src: imgify`fp/achievements/7.JPG` },
+    { src: imgify`fp/achievements/8.JPG` },
 ]
 
 
