@@ -65,7 +65,7 @@ export default function EventCard(props) {
       <Card title={props.event.ename} className={classes.root} onDoubleClick={() => window.location.href = window.location.href + '/' + props.event.eid}>
         <CardHeader
           title={props.event.ename}
-          subheader={eventTimes.start.toString().slice(0,24) + " to " + eventTimes.end.toString().slice(0,24)}
+          subheader={eventTimes.start.toString().slice(4,15) + " to " + eventTimes.end.toString().slice(4,15)}
           titleTypographyProps={{
             noWrap: true,
           }}

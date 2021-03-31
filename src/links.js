@@ -158,7 +158,7 @@ export const execom = {
         {name: 'Kashish Malhotra', position: 'Vice Chair', image: imagePath + '/execom/main/kashish.jpg'},
         {name: 'Deeraj DS', position: 'Secretary', image: imagePath + '/execom/main/deeraj.jpg'},
         {name: 'Chirag Bapat', position: 'Treasurer', image: imagePath + '/execom/main/chirag.jpg'},
-        {name: 'Atreya Bain', position: 'Webmaster', image: imagePath + '/execom/main/atreya.jpg'},
+        {name: 'Atreya Bain', position: 'Webmaster', image: imagePath + '/execom/main/atreya.png'},
         {name: 'Saraansh Agarwal', position: 'Editor in Chief', image: imagePath + '/execom/main/saraansh.jpg'},
     ],
     aps: [
