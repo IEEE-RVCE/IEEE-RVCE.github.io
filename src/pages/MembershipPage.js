@@ -260,7 +260,14 @@ export default function MembershipPage() {
                 return (
                     <Container align='center'>
                         <Typography className={classes.instructions}>Congratulations! You are now an IEEE RVCE member!</Typography>
-                        <Button onClick={handleReset}>Go back to Membership Page</Button>
+                        <img src="/assets/images/history/3.png" alt="Congratulations!"/>
+                        <Button 
+                            style={{ margin: '1rem', width: "50%", color:"black"}} 
+                            className={`${classes.bigbutton} ${classes.bigbutton2} ${classes.button}`} 
+                            onClick={handleReset}
+                        >
+                            Go back to Membership Page
+                        </Button>
                     </Container>
                 )
             default:
@@ -363,7 +370,7 @@ export default function MembershipPage() {
             {
                 start &&
                 (
-                    <Container className={classes.steps} id="steps" style={{ marginTop: "5%" }}>
+                    <Container className={classes.steps} id="steps" style={{ marginTop: "60px" }}>
                         <Typography className={classes.heading} variant='h4'><b>{steps[activeStep]}</b></Typography>
                         <Typography className={classes.content}>{getStepContent(activeStep)}</Typography>
                         <Container maxWidth='lg'>
