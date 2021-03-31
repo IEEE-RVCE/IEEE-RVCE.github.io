@@ -9,6 +9,7 @@ import { Add } from '@material-ui/icons';
 import { AddEventDialog } from '../components/AddEventDialog';
 import * as queryString from 'query-string';
 import EventsBox from '../components/EventsBox';
+import GiveMeABreak from '../components/GiveMeABreak';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -146,7 +147,7 @@ export default function EventPage(props) {
                             </FormControl>
                         </div>
                     </div>
-                    <Typography variant='h4' style={{textAlign: 'center'}}><b>Events</b></Typography>
+                    {/* <Typography variant='h4' style={{textAlign: 'center'}}><b>Events</b></Typography> */}
                     <br/>
                     {
                         (Array.isArray(list) && list.length!==0)?(
@@ -190,6 +191,9 @@ export default function EventPage(props) {
                     </>
                 )
             }
+            <GiveMeABreak/>
+            <GiveMeABreak/>
+            <GiveMeABreak/>
         </div>
     );
 }

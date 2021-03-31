@@ -9,6 +9,7 @@ import axios from 'axios';
 import {AddArticleDialog} from '../components/AddArticleDialog';
 import ArticleCard from '../components/ArticleCard';
 import ArticlesBox from '../components/ArticlesBox';
+import GiveMeABreak from '../components/GiveMeABreak';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -148,7 +149,7 @@ export default function ArticlesPage(props) {
                 </div>
             </div>
             <Container maxWidth='md'>
-                <Typography variant='h4' style={{textAlign: 'center'}}><b>Articles</b></Typography>
+                {/* <Typography variant='h4' style={{textAlign: 'center'}}><b>Articles</b></Typography> */}
                 <br/>
                 {
                     (Array.isArray(list) && list.length!==0)?(
@@ -197,6 +198,9 @@ export default function ArticlesPage(props) {
                 edit={false} 
                 aria-label="add-article-dialog"
             />
+            <GiveMeABreak/>
+            <GiveMeABreak/>
+            <GiveMeABreak/>
         </div>
     )
 }

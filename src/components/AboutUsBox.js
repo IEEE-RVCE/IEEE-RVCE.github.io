@@ -66,11 +66,15 @@ export default function AboutUsBox() {
             <Box className={classes.bigbadBackground} ref={myRef}>
                 <Grid container style={{ padding: '2rem' }} alignContent='center' justify='center'>
                     <Grid item>
-                        <h1>
-                            <strong style={{ color: "white", fontFamily:"Montserrat", fontSize:"4rem" }}>
-                                About Us
-                        </strong>
-                        </h1>
+                        
+                    <Box>
+                            <h1>
+                                <strong style={{ color: "white", fontFamily: "Montserrat", fontSize: "4rem" }}>
+                                    About Us
+                                </strong>
+                            </h1>
+                        </Box>
+                        
 
                         <GiveMeABreak num={2} />
                     </Grid>
