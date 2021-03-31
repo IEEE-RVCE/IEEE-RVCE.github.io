@@ -57,7 +57,7 @@ export default function ArticleCard(props) {
       <Card className={classes.root} onDoubleClick={() => window.location.href = window.location.href + '/' + props.event.eid}>
         <CardHeader
           title={props.article.title}
-          subheader={new Date(props.article.adate).toString().slice(0,24)}
+          subheader={props.article.author}
           titleTypographyProps={{
             noWrap: true,
           }}
