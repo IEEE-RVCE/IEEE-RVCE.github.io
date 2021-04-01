@@ -166,7 +166,7 @@ export default function EventPage() {
                                 <br/>
                                 <Typography variant='h5'><b>Speakers:</b></Typography>
                                 <br/>
-                                {event.hosts.map((host) => (<Typography variant='h6'><b>{host.name}</b></Typography>))}
+                                {event.hosts.map((host) => (<Typography variant='h6'>{host.name}</Typography>))}
                                 <br/>
                                 <Typography variant='h5'>
                                     Register for the event <a className={classes.link} href={event.reglink} target='_blank' rel='noopener noreferrer'>here</a>

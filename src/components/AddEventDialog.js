@@ -197,7 +197,7 @@ export const AddEventDialog = (props) => {
                             }}
                         />
                     </div>
-                    <div className={classes.fields}>
+                    {/* <div className={classes.fields}>
                         <TextField
                             id="pubstart"
                             label="Publicity start time"
@@ -224,7 +224,7 @@ export const AddEventDialog = (props) => {
                                 shrink: true
                             }}
                         />
-                    </div>
+                    </div> */}
                     <div className={classes.fields}>
                         <TextField
                             id="details"
@@ -395,7 +395,7 @@ export const AddEventDialog = (props) => {
                                             }}
                                         />
                                     </div>
-                                    <div className={classes.fields}>
+                                    {/* <div className={classes.fields}>
                                         <TextField
                                             id={"piclink"+ Number(i+1)}
                                             label={"Host " + Number(i+1) + " picture link"}
@@ -416,8 +416,8 @@ export const AddEventDialog = (props) => {
                                                 shrink: true
                                             }}
                                         />
-                                    </div>
-                                    <div className={classes.fields}>
+                                    </div> */}
+                                    {/* <div className={classes.fields}>
                                         <TextField
                                             id={"details"+ Number(i+1)}
                                             label={"Host " + Number(i+1) + " details"}
@@ -439,7 +439,7 @@ export const AddEventDialog = (props) => {
                                                 shrink: true
                                             }}
                                         />
-                                    </div>
+                                    </div> */}
                                 </>
                             )
                         })

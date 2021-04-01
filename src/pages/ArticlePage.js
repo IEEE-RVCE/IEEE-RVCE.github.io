@@ -138,6 +138,8 @@ export default function ArticlePage() {
                 (
                     <div className={classes.root}>
                         <Container maxWidth='md' fluid className={classes.container}>
+                            <Typography variant='h3'>{article.title}</Typography>
+                            <Typography variant='h6'>- {article.author}</Typography>
                             <Paper className={classes.paper}>
                                 <EditArticle readOnly={true} edit={false} editorContent={article.content} />
                             </Paper>
