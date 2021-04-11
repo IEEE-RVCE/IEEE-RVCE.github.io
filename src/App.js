@@ -25,7 +25,7 @@ import EventsPage from './pages/EventsPage';
 import EventPage from './pages/EventPage';
 import GalleryPage from './pages/GalleryPage';
 import ArticlesPage from './pages/ArticlesPage';
-import RegisterAttendeePage from './pages/RegisterAttendeePage';
+// import RegisterAttendeePage from './pages/RegisterAttendeePage';
 import ArticlePage from './pages/ArticlePage';
 // import NotFoundPage from './pages/NotFoundPage';
 // import {images} from './links';
