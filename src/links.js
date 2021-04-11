@@ -43,7 +43,7 @@ export const societies = [
     {name: "Communications Society", link: '/society/comsoc'},
     {name: "Power and Energy Society", link: '/society/pes'},
     {name: "Signal Processing Society", link: '/society/sps'},
-    {name: "Antenna Propagation Society", link: '/society/aps'},
+    {name: "Antennas and Propagation Society", link: '/society/aps'},
     {name: "Robotics and Automation Society", link: '/society/ras'},
 ]
 
