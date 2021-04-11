@@ -205,9 +205,9 @@ export default function App() {
           <Route path='/articles' component={ArticlesPage} />
         </Switch>
 
-        <Route path='/register'>
+        {/* <Route path='/register'>
           <RegisterAttendeePage />
-        </Route>
+        </Route> */}
 
         <Tooltip title={prefersDarkMode ? 'Switch to light theme' : 'Switch to dark theme'} aria-label='themeSwitcherTooltip'>
           <Fab disabled onClick={changeTheme} aria-label='themeSwitcher' style={{ ...theme.fab, visibility: 'hidden' }}>
