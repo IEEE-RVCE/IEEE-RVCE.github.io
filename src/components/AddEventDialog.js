@@ -279,6 +279,7 @@ export const AddEventDialog = (props) => {
                                 value={values.ecat}
                                 onChange={handleChange('ecat')}
                             >
+                                <MenuItem value={ecats.main}>Main IEEE</MenuItem>
                                 <MenuItem value={ecats.compsoc}>Computer Society</MenuItem>
                                 <MenuItem value={ecats.comsoc}>Communication Society</MenuItem>
                                 <MenuItem value={ecats.aps}>Antenna Propogation Society</MenuItem>

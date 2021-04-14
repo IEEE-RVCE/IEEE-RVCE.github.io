@@ -144,6 +144,7 @@ export const images= {
 
 /** Map of socs and affs with ecat */
 export const ecats = {
+    main: 0,
     compsoc: 1,
     comsoc: 2,
     pes: 3,

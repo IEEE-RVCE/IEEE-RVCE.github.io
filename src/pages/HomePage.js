@@ -1,15 +1,17 @@
-import React from 'react';
-import { Container, Typography, Grid, CssBaseline, Box, Button, TextField, } from '@material-ui/core';
+import React, {useState, useEffect} from 'react';
+import { Container, Typography, Grid, CssBaseline, Box, Button, TextField, Paper,} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import EventsCalendar from '../components/Calendar';
 import Avatar from '../components/Avatar';
 import FrontText from '../components/FrontText';
-import { execom, alumni } from '../links';
+import { execom, alumni, ecats, hostname } from '../links';
 import FrontBox from '../components/FrontBox';
 import SpacyDivider from '../components/SpacyDivider';
 import AlumniAccordions from '../components/AlumniAccordions';
 import GiveMeABreak from '../components/GiveMeABreak';
+import EventCard from '../components/EventCard';
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
     root: theme.root,
@@ -35,7 +37,14 @@ const useStyles = makeStyles((theme) => ({
 
 export default function HomePage(props) {
     const classes = useStyles();
+    const [events, setEvents] = useState([]);
 
+    useEffect(() => {
+        axios.get(hostname+'/api/event/cat/' + ecats.main)
+            .then(response => {
+                setEvents(response.data.events)
+            });
+    }, []);
     return (
         <div className={classes.root}>
             <CssBaseline></CssBaseline>
@@ -64,6 +73,34 @@ export default function HomePage(props) {
 
                 <AlumniAccordions members={alumni.main} color="#12c48c"/>
                 <SpacyDivider num={2} color='#12c48c'/>
+                {
+                    events.length!==0 && (
+                        <div hidden>
+                            <Paper className={classes.paper}>
+                                <Typography variant='h3'>
+                                    Events
+                                </Typography><br />
+                                <Grid container spacing={2} justify='center'>
+                                    {
+                                        events.slice(0,3).map((item) => {
+                                            return(
+                                            <Grid item xs={12} md={4}>
+                                                <EventCard event={item}/>
+                                            </Grid>
+                                            )
+                                        })
+                                    }
+                                </Grid><br />
+                                {
+                                    events.length>=4 && (
+                                        <Link to={"/events?ecat=" + ecats.main} className={classes.link}>Click here for more events</Link>
+                                    )
+                                }
+                            </Paper>
+                            <SpacyDivider color='#12c48c'/>
+                        </div>
+                    )
+                }
                 <Box >
                     <Typography variant='h4' align='center'>
                         Upcoming Events
