@@ -184,6 +184,7 @@ export const execom = {
         {name: 'Dr. Shushrutha KS', position: 'Faculty Advisor', image: imagePath + '/execom/comsoc/shushrutha_sir.jpg'},
         {name: 'Anushka Subramaniam', position: 'Chair', image: imagePath + '/execom/comsoc/anushka.jpg'},
         {name: 'Saraansh Agarwal', position: 'Secretary', image: imagePath + '/execom/comsoc/saraansh.jpg'},
+        {name: 'Shreehitha MU', position: 'Treasurer', image: imagePath + '/execom/comsoc/shreehitha.jpg'},
     ],
     pes: [
         {name: 'Prof. SG Srivani', position: 'Faculty Advisor', image: imagePath + '/execom/pes/srivani_maam.jpg'},
