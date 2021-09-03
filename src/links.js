@@ -57,7 +57,9 @@ export const affinities = [
 ]
 
 
-
+/**
+ * Miscellaneous images
+ */
 export const images= {
     membership: {
         benefits: imagePath + '/membership/Benefits.jpeg',
@@ -155,7 +157,7 @@ export const ecats = {
     sight: 8
 }
 
-//Execom details
+/** Execom details */
 export const execom = {
     main: [
         {name: 'Dr. M Uttara Kumari', position: 'Branch Counselor', image: imagePath + '/execom/main/muk_maam.jpg'},
@@ -216,7 +218,10 @@ export const execom = {
 }
 
 
-//Alumni execom
+
+/** Alumni execom. 
+ * _image_ is optional, placeholder will be added in automatically
+ */
 export const alumni = {
     main: {
         '2020': [
@@ -226,6 +231,15 @@ export const alumni = {
             {name: 'Deekshith Nayak', position: 'Secretary', image: imagePath + '/alumni/2020/main/deekshith.jpg'},
             {name: 'Prajwal S Telkar', position: 'Treasurer', image: imagePath + '/alumni/2020/main/prajwal.jpg'},
             {name: 'Siddarth Sai Amruth Yetikuri', position: 'Editor in Chief', image: imagePath + '/alumni/2020/main/sidsai.jpg'},
+        ],
+        '2019':[
+            {name: 'Dr. M Uttara Kumari', position: 'Branch Counselor', image: imagePath + '/alumni/2020/main/muk_maam.jpg'},
+            {name: 'Akshathaa Vydula', position: 'Chair', image: imagePath + '/alumni/2019/main/akonakon.png'},
+            {name: 'Disha Hegde', position: 'Vice Chair'},
+            {name: 'Mujavar Mohammad Ashtaq', position: 'Secretary'},
+            {name: 'Varun Elango', position: 'Treasurer'},
+            {name: 'Shravan Sridhar', position: 'Webmaster'},
+            {name: 'Varun T Naik',position:'Publicity Head'}
         ],
         '2018': [
             {name: 'Dr. M Uttara Kumari', position: 'Branch Counselor', image: imagePath + '/alumni/2018/main/muk_maam.jpg'},
@@ -256,6 +270,10 @@ export const alumni = {
             {name: 'Nandesh Goudar', position: 'Vice Chair', image: imagePath + '/alumni/2020/comsoc/nandesh.jpg'},
             {name: 'Saraansh Agarwal', position: 'Secretary', image: imagePath + '/alumni/2020/comsoc/saraansh.jpg'},
         ],
+        '2019':[
+            {name: 'Trilok Girish', position: 'Chair'},
+
+        ]
     },
     pes: {
         '2020': [
@@ -264,6 +282,16 @@ export const alumni = {
             {name: 'Hariharasudhan J', position: 'Secretary', image: imagePath + '/alumni/2020/pes/hari.jpg'},
             {name: 'Shirish Kumar', position: 'Treasurer', image: imagePath + '/alumni/2020/pes/shirish.jpg'},
         ],
+        '2019':[
+            {name: 'Shravan Sridhar', position: 'Chair'},
+            {name: 'Aayush Mohanty', position: 'Vice Chair'},
+            {name: 'Anand Raj', position: 'Secretary'},
+
+            {name: 'Shresth Rahul', position: 'Treasurer'},
+            {name: 'Anvit Garg', position: 'Webmaster'},
+            
+
+        ]
     },
     sps: {
         '2020': [
@@ -282,6 +310,10 @@ export const alumni = {
             {name: 'Sreelakshmi', position: 'Secretary', image: imagePath + '/alumni/2020/wie/sreelakshmi.jpg'},
             {name: 'Sunidhi Salwadgi', position: 'Treasurer', image: imagePath + '/alumni/2020/wie/sunidhi.jpg'},
         ],
+        '2019':[
+            {name: 'Disha Gulur', position: 'Chair'},
+            {name: 'Shravanti K Ramesh', position: 'Vice Chair'},
+        ]
     },
     ras: {
 
