@@ -56,6 +56,35 @@ export const affinities = [
     {name: "Women in Engineering", link:'/affinity/wie'}
 ]
 
+export const exchangeRate=73;
+
+/**
+ * Membership costs. Cost is by default 0, notes by default is taken as empty.
+ * @type {{name:string,cost?:number,notes?:string}[]}
+ */
+export const costs = [
+    {
+        name:'Student Membership',
+        cost:27,
+        notes:'FUTURE50 (50% off)'
+    },
+    {
+        name:'Antennas and Propagation Society(APS)',cost:8
+    },
+    
+    {name:'Communications Society',cost:1},
+    {name:'Computer Society',cost:8},
+
+    {name:'Power & Energy Society',cost:18},
+
+    {name:'Robotics and Automation',cost:5},
+    {name:'Signal Processing Society',cost:20},
+
+
+
+    {name:'SIGHT'},
+    {name:'WIE'}
+]
 
 /**
  * Miscellaneous images

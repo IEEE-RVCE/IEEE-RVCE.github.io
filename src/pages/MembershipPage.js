@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Container, Typography, Button, MobileStepper, Paper, Grid } from '@material-ui/core';
-import { images } from '../links';
+import { Container, Typography, Button, MobileStepper, Paper, Grid, Table, TableContainer,TableHead, TableCell, TableBody, TableRow } from '@material-ui/core';
+import { costs, images } from '../links';
 import { useParams } from 'react-router-dom';
 import MembershipBox from '../components/MembershipBox';
 import { HashLink } from 'react-router-hash-link';
 import GiveMeABreak from '../components/GiveMeABreak';
 import SpacyDivider from '../components/SpacyDivider';
 import {isMobileOnly} from 'react-device-detect';
+import CostFragment from '../components/CostFragment';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -289,8 +290,8 @@ export default function MembershipPage() {
                             <Paper className={classes.paper} style={{backgroundColor: 'transparent'}}> 
                                 <Typography variant='h3'>
                                     Why Join IEEE?
-                            </Typography>
-                                <br /><br />
+                                </Typography>
+                                <GiveMeABreak num={2} />
 
                                 <Grid container spacing={4} justify='center'>
                                     <Grid item xs={12} md={4} align='center'>
@@ -335,34 +336,56 @@ export default function MembershipPage() {
                             <SpacyDivider color="#3be52e"/>
                             <Paper className={classes.paper} style={{backgroundColor: 'transparent'}}>
                             <Typography variant='h3'>
-                                    What does the SB have to offer?
+                                What does the SB have to offer?
                             </Typography>
                                 <br/>
                                 <div className={classes.history}>
-                                <img src={images.membership.whatSBOffers} className={classes.image} alt="image2"/>
-                                <Typography variant='body1' className={classes.typo}>
-                                <ul>
-                                                    <li>Opportunities to network on a local level</li>
-                                                    <li>Receive support for hosting professional awareness programs</li>
-                                                    <li>Obtain funding for events, projects, and activities</li>
-                                                    <li>Develop projects and obtain sponsorship based on your IEEE affiliation</li>
-                                                    <li>Connect with other like minded student groups to advance the IEEE mission</li>
-                                                </ul>
-                                </Typography>
-                                
+                                    <img src={images.membership.whatSBOffers} className={classes.image} alt="image2"/>
+                                    <Typography variant='body1' className={classes.typo}>
+                                        <ul>
+                                            <li>Opportunities to network on a local level</li>
+                                            <li>Receive support for hosting professional awareness programs</li>
+                                            <li>Obtain funding for events, projects, and activities</li>
+                                            <li>Develop projects and obtain sponsorship based on your IEEE affiliation</li>
+                                            <li>Connect with other like minded student groups to advance the IEEE mission</li>
+                                        </ul>
+                                    </Typography>
                                 </div>
                             </Paper>
                             <br />
-                           
+                            <SpacyDivider color="#3be52e"/>
+                            <Typography variant='h3'>
+                                What do the membership costs look like?
+                            </Typography>
+                            <Container maxWidth="md">
+                                <TableContainer component={Paper} className={classes.paper} md={6}>
+                                    <Table>
+                                        <TableHead>
+                                            <TableRow>
+                                                <TableCell>Name</TableCell>
+                                                <TableCell>Cost</TableCell>
+                                                <TableCell>Discounts</TableCell>
+                                            </TableRow>
+                                        </TableHead>
+                                        <TableBody>
+                                            {costs.map(e=>{
+                                                return (<TableRow>
+                                                    <TableCell>{e.name}</TableCell>
+                                                    <CostFragment cost={e.cost}/>
+                                                    <TableCell>{e.notes??''}</TableCell>
+                                                </TableRow>)
+                                            })}
+                                        </TableBody>
+                                    </Table>
+                                </TableContainer>
+                            </Container>
                             <Paper className={classes.paper1} id="beamember" align='center' style={{backgroundColor: 'transparent'}}>
                                     <HashLink smooth to="#steps" style={{textDecoration:"none"}}>
                                         <Button style={{ margin: '1rem', width: "50%", color:"black"}} className={`${classes.bigbutton} ${classes.bigbutton2} ${classes.button}`} onClick={() => { setStart(true); window.location.href = window.location.href + '/1' }} variant='contained' color="primary" size='large'>Become A Member</Button>
                                         {/* <Button size='large' className={classes.button} style={{ margin: "auto", color: "white", backgroundColor: "green" }} onClick={() => { setStart(true); window.location.href = window.location.href + '/1' }}>Become a member now!! </Button> */}
                                     </HashLink>
                             </Paper>
-                            <GiveMeABreak/>
-                            <GiveMeABreak/>
-                            <GiveMeABreak/>
+                            <GiveMeABreak num={3}/>
                         </Container>
                     </>
                 )
