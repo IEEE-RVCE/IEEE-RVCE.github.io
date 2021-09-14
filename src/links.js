@@ -60,12 +60,13 @@ export const exchangeRate=73;
 
 /**
  * Membership costs. Cost is by default 0, notes by default is taken as empty.
- * @type {{name:string,cost?:number,notes?:string}[]}
+ * @type {{name:string,cost?:number,discountedCost?:number,notes?:string}[]}
  */
 export const costs = [
     {
         name:'Student Membership',
         cost:27,
+        discountedCost:(27/2),
         notes:'FUTURE50 (50% off)'
     },
     {

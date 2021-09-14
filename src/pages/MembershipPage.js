@@ -371,7 +371,8 @@ export default function MembershipPage() {
                                             {costs.map(e=>{
                                                 return (<TableRow>
                                                     <TableCell>{e.name}</TableCell>
-                                                    <CostFragment cost={e.cost}/>
+                                                    {/* This passes in the object as props - be careful */}
+                                                    <CostFragment {...e}/>
                                                     <TableCell>{e.notes??''}</TableCell>
                                                 </TableRow>)
                                             })}
