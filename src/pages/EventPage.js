@@ -257,7 +257,7 @@ export default function EventPage() {
         )
         :
         (
-            <div classes={(classes.loadingBar,classes.root)}>
+            <div classes={(`${classes.loadingBar} ${classes.root}`)}>
                 {error?(<Typography variant='h3' style={{textAlign: 'center', paddingTop: '20%', paddingBottom: '20%'}}><b>No such event</b></Typography>):(<LinearProgress/>)}
             </div>
         )

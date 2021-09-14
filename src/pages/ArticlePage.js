@@ -180,7 +180,7 @@ export default function ArticlePage() {
                 )
                 :
                 (
-                    <div classes={(classes.loadingBar,classes.root)}>
+                    <div classes={`${classes.loadingBar} ${classes.root}`}>
                         {error?(<Typography variant='h3' style={{textAlign: 'center', paddingTop: '20%', paddingBottom: '20%'}}><b>No such article</b></Typography>):(<LinearProgress/>)}
                     </div>
                 )
