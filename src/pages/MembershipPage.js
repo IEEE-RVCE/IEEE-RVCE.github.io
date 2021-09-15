@@ -135,7 +135,7 @@ export default function MembershipPage() {
             case 0:
                 return (
                     <Container align='center'>Provide all required information like Name, Email ID and password to create an IEEE account:&nbsp;
-                        <a className={classes.link} href="https://www.ieee.org/profile/public/createwebaccount/showCreateAccount.html?url=https%3A%2F%2Fwww.ieee.org%2F ">Register here</a>
+                        <a className={classes.link} target="_blank" rel="noreferrer" href="https://www.ieee.org/profile/public/createwebaccount/showCreateAccount.html?url=https%3A%2F%2Fwww.ieee.org%2F ">Register here</a>
                         <br /><GiveMeABreak/>
                         <img src={images.membership.step111} alt="step1.1" className={classes.snapshot} style={{marginRight: "2%"}} />
                         <img src={images.membership.step122} alt="step1.2" className={classes.snapshot} />
@@ -146,7 +146,7 @@ export default function MembershipPage() {
             case 1:
                 return (
                     <Container align='center'>
-                        Click <a className={classes.link} href="http://www.ieee.org/go/join_student">here</a> and sign in (if asked) with the credentials of the account you created in Step 1.
+                        Click <a className={classes.link} href="http://www.ieee.org/go/join_student" target="_blank" rel="noreferrer">here</a> and sign in (if asked) with the credentials of the account you created in Step 1.
                         <br /><GiveMeABreak/>
                         <img src={images.membership.step21} alt="step2.1" className={classes.snapshot} /><br />
                     </Container>
@@ -209,7 +209,7 @@ export default function MembershipPage() {
                     <Container align='center'>
                         <div style={{paddingRight: "10%", paddingLeft: "10%"}}>
                         On the top-right corner of the page, you will find a drop-down list under your Profile Name. Select My Account and in the directed page select Manage Personal Profile tab as shown in the images below.<br/>
-                        Check the document <a className={classes.link} href="http://bit.ly/IEEE_Promotional_Codes">here</a> for promotional codes that are applicable for your membership and do use those to get discounts wherever applicable.<br/>
+                        Check the document <a className={classes.link} href="http://bit.ly/IEEE_Promotional_Codes" target="_blank" rel="noreferrer">here</a> for promotional codes that are applicable for your membership and do use those to get discounts wherever applicable.<br/>
                             <GiveMeABreak/>Make a note of the following details: <br/>
                              User Name (Full name) <br/>
                              Member/Customer Number.
@@ -254,7 +254,7 @@ export default function MembershipPage() {
                             Loading…
                     </iframe>
                         <br />
-                        <a className={classes.link} href="https://forms.gle/15tyVvxLZrkAr4CGA">You may also click on this to open the form</a>
+                        <a className={classes.link} href="https://forms.gle/15tyVvxLZrkAr4CGA" target="_blank" rel="noreferrer">You may also click on this to open the form</a>
                     </Container>
                 );
             case 6:
