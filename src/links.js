@@ -1,5 +1,5 @@
 //@ts-check
-import {imagePath,hostname} from './data/misc'
+import {imagePath,hostname, imgify} from './data/misc'
 // Edit this list and the navs shall change accordingly
 
 
@@ -355,8 +355,8 @@ export const alumni = {
 
 
 export const about ={
-    img1: imagePath + '/history/1.png',
-    img2: imagePath + '/history/2.png'
+    img1:  imgify`history/1.png`,
+    img2: imgify`history/2.png`
 }
 export {achievements as FPAchievementImages, whatWeDo as FPWhatWeDoImages} from './data/FrontPage/Carousels'
 export {whatWeDoText,achievementsText } from './data/FrontPage/Text';

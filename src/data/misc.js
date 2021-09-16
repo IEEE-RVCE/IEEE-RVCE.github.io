@@ -1,4 +1,4 @@
-// import {imagePath} from '../links'
+//@ts-check
 /** Hostname link for API requests */
 export const hostname = "https://play.kekvrose.me";
 /** Image source links */
