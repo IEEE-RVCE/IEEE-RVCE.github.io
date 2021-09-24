@@ -1,7 +1,7 @@
 //@ts-check
 import { TableCell } from "@material-ui/core";
 import { useState } from "react";
-import { exchangeRate } from "../links";
+import { exchangeRate } from "../data/membershipCosts";
 
 /**
  * Cost Fragment
@@ -15,13 +15,14 @@ export default function CostFragment({ cost, discountedCost }) {
   const [isDollars, setIsDollars] = useState(false);
 
   return (
-    <TableCell
+    <TableCell title="Click to toggle currency"
       onClick={() => setIsDollars(!isDollars)}
       style={{ userSelect: "none" }}
+      
       align="right"
     >
       {isNotDiscounted ? (
-        <span>
+        <span >
           {isDollars ? "$" + costsNumber : "₹" + costsNumber * exchangeRate}
         </span>
       ) : (
