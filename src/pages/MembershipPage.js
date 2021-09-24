@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Container, Typography, Button, MobileStepper, Paper, Grid, Table, TableContainer,TableHead, TableCell, TableBody, TableRow } from '@material-ui/core';
 import {  images } from '../links';
 import {costs} from '../data/membershipCosts'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import MembershipBox from '../components/MembershipBox';
 import { HashLink } from 'react-router-hash-link';
 import GiveMeABreak from '../components/GiveMeABreak';
@@ -137,10 +137,11 @@ export default function MembershipPage() {
                 return (
                     <Container align='center'>Provide all required information like Name, Email ID and password to create an IEEE account:&nbsp;
                         <a className={classes.link} target="_blank" rel="noreferrer" href="https://www.ieee.org/profile/public/createwebaccount/showCreateAccount.html?url=https%3A%2F%2Fwww.ieee.org%2F ">Register here</a>
-                        <br /><GiveMeABreak/>
+                        <GiveMeABreak />(If you're ready registered, you can skip this step)
+                        <GiveMeABreak num={2}/>
                         <img src={images.membership.step111} alt="step1.1" className={classes.snapshot} style={{marginRight: "2%"}} />
                         <img src={images.membership.step122} alt="step1.2" className={classes.snapshot} />
-                        <br /><GiveMeABreak/>
+                        <GiveMeABreak num={2}/>
                     PS: You merely have an IEEE account and are not an IEEE Member yet.
                     </Container>
                 );
@@ -273,7 +274,7 @@ export default function MembershipPage() {
                     </Container>
                 )
             default:
-                return 'Unknown stepIndex';
+                return <Container align='center'><Typography className={classes.instructions}>Unknown stepIndex</Typography></Container>;
         }
     }
 
@@ -369,14 +370,14 @@ export default function MembershipPage() {
                                             </TableRow>
                                         </TableHead>
                                         <TableBody>
-                                            {costs.map(e=>{
-                                                return (<TableRow>
+                                            {costs.map(e=>(
+                                                 <TableRow>
                                                     <TableCell>{e.name}</TableCell>
                                                     {/* This passes in the object as props - be careful */}
                                                     <CostFragment {...e}/>
                                                     <TableCell>{e.notes??''}</TableCell>
-                                                </TableRow>)
-                                            })}
+                                                </TableRow>
+                                            ))}
                                         </TableBody>
                                     </Table>
                                 </TableContainer>
