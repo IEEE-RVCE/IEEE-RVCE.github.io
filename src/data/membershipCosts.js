@@ -19,7 +19,7 @@ export const costs = [
     },
 
     { name: 'Communications Society', cost: 1 },
-    { name: 'Computer Society', cost: 8 ,discountedCost:4,notes:'CS202150 (50% off)'},
+    { name: 'Computer Society', cost: 8 ,discountedCost:4,notes:'FUTURE50CS (50% off)'},
 
     { name: 'Power & Energy Society (PES)', cost: 18 ,discountedCost:0},
 
