@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Container, Typography, Button, MobileStepper, Paper, Grid, Table, TableContainer,TableHead, TableCell, TableBody, TableRow } from '@material-ui/core';
 import {  images } from '../links';
 import {costs} from '../data/membershipCosts'
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import MembershipBox from '../components/MembershipBox';
 import { HashLink } from 'react-router-hash-link';
 import GiveMeABreak from '../components/GiveMeABreak';
