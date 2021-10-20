@@ -1,6 +1,6 @@
 //@ts-check
 import { TableCell } from "@material-ui/core";
-import { useState } from "react";
+import React,{ useState } from "react";
 import { exchangeRate } from "../data/membershipCosts";
 
 /**

@@ -230,15 +230,16 @@ export const alumni = {
             {name: 'Deekshith Nayak', position: 'Secretary', image: imagePath + '/alumni/2020/main/deekshith.jpg'},
             {name: 'Prajwal S Telkar', position: 'Treasurer', image: imagePath + '/alumni/2020/main/prajwal.jpg'},
             {name: 'Siddarth Sai Amruth Yetikuri', position: 'Editor in Chief', image: imagePath + '/alumni/2020/main/sidsai.jpg'},
+            {name: 'Nagesh B', position: 'MDC Chair', image: imagePath + '/alumni/2020/main/nagesh.jpeg'}
         ],
         '2019':[
             {name: 'Dr. M Uttara Kumari', position: 'Branch Counselor', image: imagePath + '/alumni/2020/main/muk_maam.jpg'},
             {name: 'Akshathaa Vydula', position: 'Chair', image: imagePath + '/alumni/2019/main/akonakon.png'},
             {name: 'Disha Hegde', position: 'Vice Chair'},
-            {name: 'Mujavar Mohammad Ashtaq', position: 'Secretary'},
+            {name: 'Mujavar Mohammad Ashtaq', position: 'Secretary', image: imagePath + '/alumni/2019/main/ashtaq.jpeg'},
             {name: 'Varun Elango', position: 'Treasurer'},
             {name: 'Shravan Sridhar', position: 'Webmaster'},
-            {name: 'Varun T Naik',position:'Publicity Head'}
+            {name: 'Varun T Naik',position:'Publicity Head', image: imagePath + '/alumni/2019/main/varunt.jpeg'}
         ],
         '2018': [
             {name: 'Dr. M Uttara Kumari', position: 'Branch Counselor', image: imagePath + '/alumni/2018/main/muk_maam.jpg'},
