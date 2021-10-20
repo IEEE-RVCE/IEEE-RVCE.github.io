@@ -230,7 +230,7 @@ export const alumni = {
             {name: 'Deekshith Nayak', position: 'Secretary', image: imagePath + '/alumni/2020/main/deekshith.jpg'},
             {name: 'Prajwal S Telkar', position: 'Treasurer', image: imagePath + '/alumni/2020/main/prajwal.jpg'},
             {name: 'Siddarth Sai Amruth Yetikuri', position: 'Editor in Chief', image: imagePath + '/alumni/2020/main/sidsai.jpg'},
-            {name: 'Nagesh B', position: 'MDC Chair', image: imagePath + '/alumni/2020/main/nagesh.jpeg'}
+            {name: 'Nagesh B', position: 'MDC Chair'}
         ],
         '2019':[
             {name: 'Dr. M Uttara Kumari', position: 'Branch Counselor', image: imagePath + '/alumni/2020/main/muk_maam.jpg'},
