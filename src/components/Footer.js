@@ -21,7 +21,9 @@ const useStyles = makeStyles((theme) => ({
         color: '#bbbbbb',
         margin: 'auto',
         textAlign: 'center',
-        paddingBottom: 20
+        paddingBottom: 20,
+        paddingLeft: 5,
+        paddingRight: 5
     },
     link: {
         textDecoration: 'none',
