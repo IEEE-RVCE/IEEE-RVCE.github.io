@@ -35,7 +35,11 @@ export default function SPSSocietyPage(props) {
     useEffect(() => {
         axios.get(hostname+'/api/event/cat/' + ecats.sps)
             .then(response => {
-                setEvents(response.data.events)
+                setEvents(
+                  response.data.events.sort((a, b) => {
+                    return new Date(b.eventstart) - new Date(a.eventstart);
+                  })
+                );
             });
     }, []);
 

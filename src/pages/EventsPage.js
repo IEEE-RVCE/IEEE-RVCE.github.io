@@ -117,18 +117,19 @@ export default function EventPage(props) {
           : hostname + "/api/event"
       )
       .then((response) => {
-        setEvents(response.data.events);
+        // Event Sorted on basis of Event Start Date; (if anyone has a better idea, let's goooo!)
+        setEvents(
+          response.data.events.sort((a, b) => {
+            return new Date(b.eventstart) - new Date(a.eventstart);
+          })
+        );
         setList(response.data.events);
       })
       .then(() => {
         setLoading(false);
       });
   }, [ecat]);
-
-  // Event Sorted on basis of Event Start Date; (if anyone has a better idea, let's goooo!)
-  list.sort(function (a, b) {
-    return new Date(b.eventstart) - new Date(a.eventstart);
-  });
+  
   return (
     <div className={classes.root}>
       <EventsBox />
