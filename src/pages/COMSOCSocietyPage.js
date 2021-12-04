@@ -35,7 +35,11 @@ export default function COMSOCSocietyPage(props) {
     useEffect(() => {
         axios.get(hostname+'/api/event/cat/' + ecats.comsoc)
             .then(response => {
-                setEvents(response.data.events)
+                setEvents(
+                  response.data.events.sort((a, b) => {
+                    return new Date(b.eventstart) - new Date(a.eventstart);
+                  })
+                );
             });
     }, []);
 

@@ -35,7 +35,11 @@ export default function RASSocietyPage(props) {
     useEffect(() => {
         axios.get(hostname+'/api/event/cat/' + ecats.ras)
             .then(response => {
-                setEvents(response.data.events)
+               setEvents(
+                 response.data.events.sort((a, b) => {
+                   return new Date(b.eventstart) - new Date(a.eventstart);
+                 })
+               );
             });
     }, []);
 
