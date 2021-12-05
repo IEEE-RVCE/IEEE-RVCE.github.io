@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
 export default function EventCard(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-
+  const [imgLink, setImgLink] = React.useState(props.event.smallposterlink);
   const eventTimes = {
     start: new Date(props.event.eventstart),
     end: new Date(props.event.eventend),
@@ -62,6 +62,25 @@ export default function EventCard(props) {
 
     setOpen(false);
   };
+
+  // Image Verification Stufff, better ideas than this, come on lesgoo !!
+
+  const doesImageExist = (url) =>
+    new Promise((resolve) => {
+      const img = new Image();
+
+      img.src = url;
+      img.onload = () => resolve(true);
+      img.onerror = () => resolve(false);
+    });
+
+  const joke = "No Image Available";
+
+  doesImageExist(props.event.smallposterlink).then((result) => {
+    if (!result) {
+      setImgLink(`https://fakeimg.pl/350x200/?text=${joke}&font_size=50`);
+    }
+  });
 
   return (
     <>
@@ -85,7 +104,7 @@ export default function EventCard(props) {
         />
         <CardMedia
           className={classes.media}
-          image={props.event.smallposterlink}
+          image={imgLink}
           title={props.event.ename}
         />
         <CardContent>

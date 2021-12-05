@@ -43,10 +43,6 @@ export default function CSSocietyPage(props) {
     });
   }, []);
 
-  //   events.sort(function (a, b) {
-  //     return new Date(b.eventstart) - new Date(a.eventstart);
-  //   });
-
   return (
     <div className={classes.root}>
       <img
