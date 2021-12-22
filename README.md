@@ -6,18 +6,17 @@ Development site of only frontend
 
 1) Clone the github repository
 
-        git clone https://github.com/IEEE-RVCE/IEEE-RVCE.github.io
+        git clone https://github.com/IEEE-RVCE/IEEE-RVCE.github.io ieee-rvce.github.io
 
-2) Rename the cloned folder to `ieee-rvce.github.io` so npm doesn't reject the package
-3) Install all the dependencies in the folder by running the below command in the folder
+2) Install all the dependencies in the folder by running the below command in the folder
 
         npm install package.json
 
-4) Start localhost server by running the below after install
+3) Start localhost server by running the below after install
 
         npm start
 
-5) A window should open shortly with the web app running
+4) A window should open shortly with the web app running
 
 ## The workflow
 
