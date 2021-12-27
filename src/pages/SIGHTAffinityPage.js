@@ -14,6 +14,7 @@ import Avatar from "../components/Avatar";
 import EventCard from "../components/EventCard";
 import { hostname, ecats, images, execom, alumni } from "../links";
 import AlumniAccordions from "../components/AlumniAccordions";
+import SpacyDivider from "../components/SpacyDivider";
 
 const useStyles = makeStyles((theme) => ({
   root: theme.root,
@@ -66,6 +67,8 @@ export default function SIGHTAffinityPage(props) {
             sustainable development.
           </Typography>
         </Paper>
+        <SpacyDivider color="rgb(61 144 142)" />
+
         <br />
         <Paper className={classes.paper}>
           <Typography variant="h3">Mission</Typography>
@@ -93,6 +96,7 @@ export default function SIGHTAffinityPage(props) {
             </List>
           </Typography>
         </Paper>
+        <SpacyDivider color="rgb(61 144 142)" />
         <br />
         {events.length !== 0 && (
           <>
