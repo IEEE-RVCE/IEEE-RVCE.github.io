@@ -74,7 +74,7 @@ jobs:
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
 
-deploy:
+  deploy:
     # Ensure test job passes before deploying
     needs: test
     runs-on: ubuntu-latest
