@@ -52,7 +52,7 @@ export const societies = [
  */
 export const affinities = [
   {
-    name: "Special Interest Group for Humanitarian Technology",
+    name: "Special Interest Group on Humanitarian Technology",
     link: "/affinity/sight",
   },
   { name: "Women in Engineering", link: "/affinity/wie" },
