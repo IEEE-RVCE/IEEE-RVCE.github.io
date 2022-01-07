@@ -367,11 +367,11 @@ export const execom = {
       position: "Faculty Advisor",
       image: imagePath + "/execom/sight/usha_maam.jpg",
     },
-    {
-      name: "Deeraj D S",
-      position: "Chair",
-      image: imagePath + "/execom/sight/deeraj.jpg",
-    },
+    // {
+    //   name: "Deeraj D S",
+    //   position: "Chair",
+    //   image: imagePath + "/execom/sight/deeraj.jpg",
+    // },
   ],
 };
 
