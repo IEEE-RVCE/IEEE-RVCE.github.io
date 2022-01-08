@@ -18,7 +18,7 @@ import { images } from "../links";
 import { costs } from "../data/membershipCosts";
 import { useParams } from "react-router-dom";
 import MembershipBox from "../components/MembershipBox";
-import { HashLink } from "react-router-hash-link";
+// import { HashLink } from "react-router-hash-link";
 import GiveMeABreak from "../components/GiveMeABreak";
 import SpacyDivider from "../components/SpacyDivider";
 import { isMobileOnly } from "react-device-detect";
@@ -139,12 +139,12 @@ export default function MembershipPage() {
       window.location.origin + "/#/membership/" + activeStep;
   };
 
-  const handleReset = () => {
-    setActiveStep(0);
-    setStart(false);
-    window.location.href = window.location.origin + "/#/membership/";
-    window.location.reload();
-  };
+  // const handleReset = () => {
+  //   setActiveStep(0);
+  //   setStart(false);
+  //   window.location.href = window.location.origin + "/#/membership/";
+  //   window.location.reload();
+  // };
 
   const getStepContent = (stepIndex) => {
     // switch (stepIndex) {
