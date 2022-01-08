@@ -52,7 +52,7 @@ export const societies = [
  */
 export const affinities = [
   {
-    name: "Special Interest Group for Humanitarian Technology",
+    name: "Special Interest Group on Humanitarian Technology",
     link: "/affinity/sight",
   },
   { name: "Women in Engineering", link: "/affinity/wie" },
@@ -367,11 +367,11 @@ export const execom = {
       position: "Faculty Advisor",
       image: imagePath + "/execom/sight/usha_maam.jpg",
     },
-    {
-      name: "Deeraj D S",
-      position: "Chair",
-      image: imagePath + "/execom/sight/deeraj.jpg",
-    },
+    // {
+    //   name: "Deeraj D S",
+    //   position: "Chair",
+    //   image: imagePath + "/execom/sight/deeraj.jpg",
+    // },
   ],
 };
 
