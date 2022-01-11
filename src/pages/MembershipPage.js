@@ -17,7 +17,7 @@ import {
 import { images } from "../links";
 import { costs } from "../data/membershipCosts";
 // import { useParams } from "react-router-dom";
-// import MembershipBox from "../components/MembershipBox";
+import MembershipBox from "../components/MembershipBox";
 // import { HashLink } from "react-router-hash-link";
 import GiveMeABreak from "../components/GiveMeABreak";
 import SpacyDivider from "../components/SpacyDivider";
@@ -322,7 +322,7 @@ export default function MembershipPage() {
 
   return (
     <div className={classes.root}>
-      {/* {!start && <MembershipBox />} */}
+     <MembershipBox />
       {(
         <>
           <Container maxWidth="lg" style={{ display: "grid" }}>
