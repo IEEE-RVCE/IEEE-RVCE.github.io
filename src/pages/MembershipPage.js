@@ -106,7 +106,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MembershipPage() {
   const classes = useStyles();
-  const start = React.useState(false);
+  // const start = React.useState(false);
   // const [activeStep, setActiveStep] = React.useState(0);
   // let { step } = useParams();
   // useEffect(() => {
