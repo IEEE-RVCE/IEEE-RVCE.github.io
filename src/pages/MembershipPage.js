@@ -115,29 +115,29 @@ export default function MembershipPage() {
       setActiveStep(Number(step) - 1);
     }
   }, [step]);
-  const steps = [
-    "Step 1: Create an account on IEEE website ",
-    "Step 2: Applying for student membership",
-    "Step 3: Filling out Personal details",
-    "Step 4: Member Profile details",
-    "Step 5: Payment",
-    "Step 6: Filling the Google form",
-    "Done!",
-  ];
+  // const steps = [
+  //   "Step 1: Create an account on IEEE website ",
+  //   "Step 2: Applying for student membership",
+  //   "Step 3: Filling out Personal details",
+  //   "Step 4: Member Profile details",
+  //   "Step 5: Payment",
+  //   "Step 6: Filling the Google form",
+  //   "Done!",
+  // ];
 
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    window.scrollTo(0, 0);
-    window.location.href =
-      window.location.origin + "/#/membership/" + (activeStep + 2);
-  };
+  // const handleNext = () => {
+  //   setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  //   window.scrollTo(0, 0);
+  //   window.location.href =
+  //     window.location.origin + "/#/membership/" + (activeStep + 2);
+  // };
 
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-    window.scrollTo(0, 0);
-    window.location.href =
-      window.location.origin + "/#/membership/" + activeStep;
-  };
+  // const handleBack = () => {
+  //   setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  //   window.scrollTo(0, 0);
+  //   window.location.href =
+  //     window.location.origin + "/#/membership/" + activeStep;
+  // };
 
   // const handleReset = () => {
   //   setActiveStep(0);
@@ -146,183 +146,183 @@ export default function MembershipPage() {
   //   window.location.reload();
   // };
 
-  const getStepContent = (stepIndex) => {
-    // switch (stepIndex) {
-    //     case 0:
-    //         return (
-    //             <Container align='center'>Provide all required information like Name, Email ID and password to create an IEEE account:&nbsp;
-    //                 <a className={classes.link} target="_blank" rel="noreferrer" href="https://www.ieee.org/profile/public/createwebaccount/showCreateAccount.html?url=https%3A%2F%2Fwww.ieee.org%2F ">Register here</a>
-    //                 <GiveMeABreak />(If you're ready registered, you can skip this step)
-    //                 <GiveMeABreak num={2}/>
-    //                 <img src={images.membership.step111} alt="step1.1" className={classes.snapshot} style={{marginRight: "2%"}} />
-    //                 <img src={images.membership.step122} alt="step1.2" className={classes.snapshot} />
-    //                 <GiveMeABreak num={2}/>
-    //             PS: You merely have an IEEE account and are not an IEEE Member yet.
-    //             </Container>
-    //         );
-    //     case 1:
-    //         return (
-    //             <Container align='center'>
-    //                 Click <a className={classes.link} href="http://www.ieee.org/go/join_student" target="_blank" rel="noreferrer">here</a> and sign in (if asked) with the credentials of the account you created in Step 1.
-    //                 <br /><GiveMeABreak/>
-    //                 <img src={images.membership.step21} alt="step2.1" className={classes.snapshot} /><br />
-    //             </Container>
-    //         );
-    //     case 2:
-    //         return (
-    //             <Container >
-    //                 <b style={{paddingLeft:!(isMobileOnly)?"14%":""}}>A. Contact and Profile Information: </b>
-    //             Fill all the required information accurately.<br /> <GiveMeABreak/>
-    //                 <Container align='center'>
-    //                     <img src={images.membership.step31} alt="step3.1" className={classes.snapshot} />
-    //                 </Container>
+  // const getStepContent = (stepIndex) => {
+  //   switch (stepIndex) {
+  //       case 0:
+  //           return (
+  //               <Container align='center'>Provide all required information like Name, Email ID and password to create an IEEE account:&nbsp;
+  //                   <a className={classes.link} target="_blank" rel="noreferrer" href="https://www.ieee.org/profile/public/createwebaccount/showCreateAccount.html?url=https%3A%2F%2Fwww.ieee.org%2F ">Register here</a>
+  //                   <GiveMeABreak />(If you're ready registered, you can skip this step)
+  //                   <GiveMeABreak num={2}/>
+  //                   <img src={images.membership.step111} alt="step1.1" className={classes.snapshot} style={{marginRight: "2%"}} />
+  //                   <img src={images.membership.step122} alt="step1.2" className={classes.snapshot} />
+  //                   <GiveMeABreak num={2}/>
+  //               PS: You merely have an IEEE account and are not an IEEE Member yet.
+  //               </Container>
+  //           );
+  //       case 1:
+  //           return (
+  //               <Container align='center'>
+  //                   Click <a className={classes.link} href="http://www.ieee.org/go/join_student" target="_blank" rel="noreferrer">here</a> and sign in (if asked) with the credentials of the account you created in Step 1.
+  //                   <br /><GiveMeABreak/>
+  //                   <img src={images.membership.step21} alt="step2.1" className={classes.snapshot} /><br />
+  //               </Container>
+  //           );
+  //       case 2:
+  //           return (
+  //               <Container >
+  //                   <b style={{paddingLeft:!(isMobileOnly)?"14%":""}}>A. Contact and Profile Information: </b>
+  //               Fill all the required information accurately.<br /> <GiveMeABreak/>
+  //                   <Container align='center'>
+  //                       <img src={images.membership.step31} alt="step3.1" className={classes.snapshot} />
+  //                   </Container>
 
-    //                 <br /><GiveMeABreak/>
-    //                 <b style={{paddingLeft:!(isMobileOnly)?"14%":""}}>B. Professional and educational information :</b><br/>
-    //             {/* Select - I am a student option.<br />
-    //             University / college: Rashtreeya Vidyalaya College of Engineering<br />
-    //             Select Undergraduate<br />
-    //             Under Degree, choose Bachelor of Engineering<br />
-    //             Under Academic Program select your Respective Branch / Department.<br />
-    //             Scroll down to fill out the other required details.<br /><GiveMeABreak/> */}
-    //             <Container align='left' style={{paddingLeft:!(isMobileOnly)?"20%":""}}><GiveMeABreak/>
-    //             Select Checkbox:			I am a student option.<br/>
-    //             University/college:	 		Rashtreeya Vidyalaya College of Engineering<br/>
-    //             Select Checkbox:	 		Undergraduate<br/>
-    //             Degree (dropdown):			Bachelor of Engineering<br/>
-    //             Academic Program (dropdown): 	Select your Respective Branch / Department.<br/><br/>
-    //             </Container>
-    //             <Container align='center'>
-    //                 <img src={images.membership.step33} alt="step3.2" className={classes.snapshot} /><br /><GiveMeABreak/>
-    //             </Container>
-    //             <Container align='center'>
-    //                 For the question 'were you referred by another IEEE member'<br />
-    //                 Fill out the following details <br />
-    //                 Referring member name: Risha Dassi<br />
-    //                 Referring IEEE member number: 96195458<br /><GiveMeABreak/>
-    //                 <img src={images.membership.step34} alt="step3.4" className={classes.snapshot} /><br /><GiveMeABreak/>
-    //             </Container>
-    //                 <b style={{paddingLeft:!(isMobileOnly)?"14%":""}}>C. Click on Proceed to Check Out</b><GiveMeABreak/>
-    //                 <br />
-    //                 <Container align='center'>
-    //                 <div style={{paddingRight: !(isMobileOnly)?"10%":"", paddingLeft:!(isMobileOnly)?"10%":""}}>
-    //                 It should lead you to the IEEE Checkout page and it will show "My Cart" details.<br />
-    //                 On the right side you will find a box with a heading "Questions" under which you will find the Cart Number. Make a note of the Cart Number and the Total Order Amount.<br /><GiveMeABreak/>
-    //                     </div>
+  //                   <br /><GiveMeABreak/>
+  //                   <b style={{paddingLeft:!(isMobileOnly)?"14%":""}}>B. Professional and educational information :</b><br/>
+  //               {/* Select - I am a student option.<br />
+  //               University / college: Rashtreeya Vidyalaya College of Engineering<br />
+  //               Select Undergraduate<br />
+  //               Under Degree, choose Bachelor of Engineering<br />
+  //               Under Academic Program select your Respective Branch / Department.<br />
+  //               Scroll down to fill out the other required details.<br /><GiveMeABreak/> */}
+  //               <Container align='left' style={{paddingLeft:!(isMobileOnly)?"20%":""}}><GiveMeABreak/>
+  //               Select Checkbox:			I am a student option.<br/>
+  //               University/college:	 		Rashtreeya Vidyalaya College of Engineering<br/>
+  //               Select Checkbox:	 		Undergraduate<br/>
+  //               Degree (dropdown):			Bachelor of Engineering<br/>
+  //               Academic Program (dropdown): 	Select your Respective Branch / Department.<br/><br/>
+  //               </Container>
+  //               <Container align='center'>
+  //                   <img src={images.membership.step33} alt="step3.2" className={classes.snapshot} /><br /><GiveMeABreak/>
+  //               </Container>
+  //               <Container align='center'>
+  //                   For the question 'were you referred by another IEEE member'<br />
+  //                   Fill out the following details <br />
+  //                   Referring member name: Risha Dassi<br />
+  //                   Referring IEEE member number: 96195458<br /><GiveMeABreak/>
+  //                   <img src={images.membership.step34} alt="step3.4" className={classes.snapshot} /><br /><GiveMeABreak/>
+  //               </Container>
+  //                   <b style={{paddingLeft:!(isMobileOnly)?"14%":""}}>C. Click on Proceed to Check Out</b><GiveMeABreak/>
+  //                   <br />
+  //                   <Container align='center'>
+  //                   <div style={{paddingRight: !(isMobileOnly)?"10%":"", paddingLeft:!(isMobileOnly)?"10%":""}}>
+  //                   It should lead you to the IEEE Checkout page and it will show "My Cart" details.<br />
+  //                   On the right side you will find a box with a heading "Questions" under which you will find the Cart Number. Make a note of the Cart Number and the Total Order Amount.<br /><GiveMeABreak/>
+  //                       </div>
 
-    //                     <img src={images.membership.step36} alt="step3.6" className={classes.snapshot} style={{marginRight: "2%"}}/>
-    //                     <img src={images.membership.step37} alt="step3.7" className={classes.snapshot} /><br /><GiveMeABreak/>
-    //                 Agree to the Terms and Conditions.<br />
+  //                       <img src={images.membership.step36} alt="step3.6" className={classes.snapshot} style={{marginRight: "2%"}}/>
+  //                       <img src={images.membership.step37} alt="step3.7" className={classes.snapshot} /><br /><GiveMeABreak/>
+  //                   Agree to the Terms and Conditions.<br />
 
-    //                     <b>DO NOT SELECT ANY PAYMENT METHODS.<br />
-    //                 DO NOT MAKE THE PAYMENT BY YOURSELVES.<br />
-    //                 (PLEASE ENSURE ONLY THE REQUIRED ITEMS ARE IN CART)</b>
-    //                 </Container>
+  //                       <b>DO NOT SELECT ANY PAYMENT METHODS.<br />
+  //                   DO NOT MAKE THE PAYMENT BY YOURSELVES.<br />
+  //                   (PLEASE ENSURE ONLY THE REQUIRED ITEMS ARE IN CART)</b>
+  //                   </Container>
 
-    //             </Container>
-    //         );
-    //     case 3:
-    //         return (
-    //             <Container align='center'>
-    //                 <div style={{paddingRight: "10%", paddingLeft: "10%"}}>
-    //                 On the top-right corner of the page, you will find a drop-down list under your Profile Name. Select My Account and in the directed page select Manage Personal Profile tab as shown in the images below.<br/>
-    //                 Check the document <a className={classes.link} href="http://bit.ly/IEEE_Promotional_Codes" target="_blank" rel="noreferrer">here</a> for promotional codes that are applicable for your membership and do use those to get discounts wherever applicable.<br/>
-    //                     <GiveMeABreak/>Make a note of the following details: <br/>
-    //                      User Name (Full name) <br/>
-    //                      Member/Customer Number.
-    //                     <br /><GiveMeABreak/>
-    //                 </div>
+  //               </Container>
+  //           );
+  //       case 3:
+  //           return (
+  //               <Container align='center'>
+  //                   <div style={{paddingRight: "10%", paddingLeft: "10%"}}>
+  //                   On the top-right corner of the page, you will find a drop-down list under your Profile Name. Select My Account and in the directed page select Manage Personal Profile tab as shown in the images below.<br/>
+  //                   Check the document <a className={classes.link} href="http://bit.ly/IEEE_Promotional_Codes" target="_blank" rel="noreferrer">here</a> for promotional codes that are applicable for your membership and do use those to get discounts wherever applicable.<br/>
+  //                       <GiveMeABreak/>Make a note of the following details: <br/>
+  //                        User Name (Full name) <br/>
+  //                        Member/Customer Number.
+  //                       <br /><GiveMeABreak/>
+  //                   </div>
 
-    //                 <img src={images.membership.step41} alt="step4.1" className={classes.snapshot}  style={{marginRight: "2%"}}  />
-    //                 <img src={images.membership.step42} alt="step4.2" className={classes.snapshot} /><br /><GiveMeABreak/>
-    //                 <img src={images.membership.step43} alt="step4.3" className={classes.snapshot} /><br /><GiveMeABreak/>
-    //             </Container>
-    //         );
-    //     case 4:
-    //         return (
-    //             <Container align='center'>
-    //                 After this step payment can be done either online or by cash.<br />
-    //             For online payment:<br />
-    //                 <b>UPI : bapatchirag@oksbi </b>
-    //             Or
-    //                 <b> GPAY TO : +91 80880 65605</b><br />
-    //              Format of Message accompanying payment: <br/>
-    //                 Name- IEEE + List of societies (for which you have taken membership)<br/><br/>
-    //             For cash payment contact <b>Chirag Bapat : +91 80880 65605.</b><GiveMeABreak/><GiveMeABreak/>
-    //             After successful payment send a screenshot of the payment on WhatsApp to:<br />
-    //                 <b>Chirag Bapat: +91 80880 65605</b><br /><GiveMeABreak/>
-    //                 <img src={images.membership.step511} alt="step5.1" className={classes.snapshot} style={{ width: !(isMobileOnly)?"30%":"", marginRight: !(isMobileOnly)?"5%":"" }} />
-    //                 <img src={images.membership.step522} alt="step5.2" className={classes.snapshot} style={{ width: !(isMobileOnly)?"30%":"" }}/>
-    //             </Container>
-    //         );
-    //     case 5:
-    // return (
-    //     <Container align='center'>
-    //         After you have completed the above 6 steps, fill out this Google Form:<br />
-    //         <iframe
-    //             src="https://docs.google.com/forms/d/e/1FAIpQLScW15eooiK6_UlnZvQ34EdSVTyWfcK5h7RSTQf32mRDp9ozDw/viewform?embedded=true"
-    //             width="100%"
-    //             height="640"
-    //             title="Registration form"
-    //             frameborder="0"
-    //             marginheight="0"
-    //             marginwidth="0"
-    //             margin="auto">
-    //             Loading…
-    //     </iframe>
-    //         <br />
-    //         <a className={classes.link} href="https://forms.gle/15tyVvxLZrkAr4CGA" target="_blank" rel="noreferrer">You may also click on this to open the form</a>
-    //     </Container>
-    // );
-    //     case 6:
-    //         return (
-    //             <Container align='center'>
-    //                 <Typography className={classes.instructions}>Congratulations! You are now an IEEE RVCE member!</Typography>
-    //                 <img src="/assets/images/history/3.png" alt="Congratulations!"/>
-    //                 <Button
-    //                     style={{ margin: '1rem', width: "50%", color:"black"}}
-    //                     className={`${classes.bigbutton} ${classes.bigbutton2} ${classes.button}`}
-    //                     onClick={handleReset}
-    //                 >
-    //                     Go back to Membership Page
-    //                 </Button>
-    //             </Container>
-    //         )
-    //     default:
-    //         return <Container align='center'><Typography className={classes.instructions}>Unknown stepIndex</Typography></Container>;
-    // }
-    return (
-      <Container align="center">
-        Fill out this Google Form to complete your membership:
-        <br />
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLScW15eooiK6_UlnZvQ34EdSVTyWfcK5h7RSTQf32mRDp9ozDw/viewform?embedded=true"
-          width="100%"
-          height="640"
-          title="Registration form"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          margin="auto"
-        >
-          Loading…
-        </iframe>
-        <br />
-        <a
-          className={classes.link}
-          href="https://forms.gle/15tyVvxLZrkAr4CGA"
-          target="_blank"
-          rel="noreferrer"
-        >
-          You may also click on this to open the form
-        </a>
-      </Container>
-    );
-  };
+  //                   <img src={images.membership.step41} alt="step4.1" className={classes.snapshot}  style={{marginRight: "2%"}}  />
+  //                   <img src={images.membership.step42} alt="step4.2" className={classes.snapshot} /><br /><GiveMeABreak/>
+  //                   <img src={images.membership.step43} alt="step4.3" className={classes.snapshot} /><br /><GiveMeABreak/>
+  //               </Container>
+  //           );
+  //       case 4:
+  //           return (
+  //               <Container align='center'>
+  //                   After this step payment can be done either online or by cash.<br />
+  //               For online payment:<br />
+  //                   <b>UPI : bapatchirag@oksbi </b>
+  //               Or
+  //                   <b> GPAY TO : +91 80880 65605</b><br />
+  //                Format of Message accompanying payment: <br/>
+  //                   Name- IEEE + List of societies (for which you have taken membership)<br/><br/>
+  //               For cash payment contact <b>Chirag Bapat : +91 80880 65605.</b><GiveMeABreak/><GiveMeABreak/>
+  //               After successful payment send a screenshot of the payment on WhatsApp to:<br />
+  //                   <b>Chirag Bapat: +91 80880 65605</b><br /><GiveMeABreak/>
+  //                   <img src={images.membership.step511} alt="step5.1" className={classes.snapshot} style={{ width: !(isMobileOnly)?"30%":"", marginRight: !(isMobileOnly)?"5%":"" }} />
+  //                   <img src={images.membership.step522} alt="step5.2" className={classes.snapshot} style={{ width: !(isMobileOnly)?"30%":"" }}/>
+  //               </Container>
+  //           );
+  //       case 5:
+  //   return (
+  //       <Container align='center'>
+  //           After you have completed the above 6 steps, fill out this Google Form:<br />
+  //           <iframe
+  //               src="https://docs.google.com/forms/d/e/1FAIpQLScW15eooiK6_UlnZvQ34EdSVTyWfcK5h7RSTQf32mRDp9ozDw/viewform?embedded=true"
+  //               width="100%"
+  //               height="640"
+  //               title="Registration form"
+  //               frameborder="0"
+  //               marginheight="0"
+  //               marginwidth="0"
+  //               margin="auto">
+  //               Loading…
+  //       </iframe>
+  //           <br />
+  //           <a className={classes.link} href="https://forms.gle/15tyVvxLZrkAr4CGA" target="_blank" rel="noreferrer">You may also click on this to open the form</a>
+  //       </Container>
+  //   );
+  //       case 6:
+  //           return (
+  //               <Container align='center'>
+  //                   <Typography className={classes.instructions}>Congratulations! You are now an IEEE RVCE member!</Typography>
+  //                   <img src="/assets/images/history/3.png" alt="Congratulations!"/>
+  //                   <Button
+  //                       style={{ margin: '1rem', width: "50%", color:"black"}}
+  //                       className={`${classes.bigbutton} ${classes.bigbutton2} ${classes.button}`}
+  //                       onClick={handleReset}
+  //                   >
+  //                       Go back to Membership Page
+  //                   </Button>
+  //               </Container>
+  //           )
+  //       default:
+  //           return <Container align='center'><Typography className={classes.instructions}>Unknown stepIndex</Typography></Container>;
+  //   }
+  //   return (
+  //     <Container align="center">
+  //       Fill out this Google Form to complete your membership:
+  //       <br />
+  //       <iframe
+  //         src="https://docs.google.com/forms/d/e/1FAIpQLScW15eooiK6_UlnZvQ34EdSVTyWfcK5h7RSTQf32mRDp9ozDw/viewform?embedded=true"
+  //         width="100%"
+  //         height="640"
+  //         title="Registration form"
+  //         frameborder="0"
+  //         marginheight="0"
+  //         marginwidth="0"
+  //         margin="auto"
+  //       >
+  //         Loading…
+  //       </iframe>
+  //       <br />
+  //       <a
+  //         className={classes.link}
+  //         href="https://forms.gle/15tyVvxLZrkAr4CGA"
+  //         target="_blank"
+  //         rel="noreferrer"
+  //       >
+  //         You may also click on this to open the form
+  //       </a>
+  //     </Container>
+  //   );
+  // };
 
   return (
     <div className={classes.root}>
-      {!start && <MembershipBox />}
+      {/* {!start && <MembershipBox />} */}
       {!start && (
         <>
           <Container maxWidth="lg" style={{ display: "grid" }}>
@@ -548,7 +548,7 @@ export default function MembershipPage() {
           </Container>
         </>
       )}
-      {start && (
+      {/* {start && (
         <Container
           className={classes.steps}
           id="steps"
@@ -588,7 +588,7 @@ export default function MembershipPage() {
             />
           </Container>
         </Container>
-      )}
+      )} */}
     </div>
   );
 }
