@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Container,
   Typography,
   Button,
-  MobileStepper,
+  // MobileStepper,
   Paper,
   Grid,
   Table,
@@ -16,8 +16,8 @@ import {
 } from "@material-ui/core";
 import { images } from "../links";
 import { costs } from "../data/membershipCosts";
-import { useParams } from "react-router-dom";
-import MembershipBox from "../components/MembershipBox";
+// import { useParams } from "react-router-dom";
+// import MembershipBox from "../components/MembershipBox";
 // import { HashLink } from "react-router-hash-link";
 import GiveMeABreak from "../components/GiveMeABreak";
 import SpacyDivider from "../components/SpacyDivider";
@@ -106,15 +106,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MembershipPage() {
   const classes = useStyles();
-  const [start, setStart] = React.useState(false);
-  const [activeStep, setActiveStep] = React.useState(0);
-  let { step } = useParams();
-  useEffect(() => {
-    if (step !== undefined) {
-      setStart(true);
-      setActiveStep(Number(step) - 1);
-    }
-  }, [step]);
+  const start = React.useState(false);
+  // const [activeStep, setActiveStep] = React.useState(0);
+  // let { step } = useParams();
+  // useEffect(() => {
+  //   if (step !== undefined) {
+  //     setStart(true);
+  //     setActiveStep(Number(step) - 1);
+  //   }
+  // }, [step]);
   // const steps = [
   //   "Step 1: Create an account on IEEE website ",
   //   "Step 2: Applying for student membership",
