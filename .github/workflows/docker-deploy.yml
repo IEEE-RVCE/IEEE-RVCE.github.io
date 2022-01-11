@@ -78,6 +78,7 @@ jobs:
     # Ensure test job passes before deploying
     needs: test
     runs-on: ubuntu-latest
+    if: github.event_name == 'push'
 
     strategy:
       matrix:
