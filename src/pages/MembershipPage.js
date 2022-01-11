@@ -322,7 +322,7 @@ export default function MembershipPage() {
 
   return (
     <div className={classes.root}>
-      {/* {!start && <MembershipBox />} */}
+      <MembershipBox />
       {(
         <>
           <Container maxWidth="lg" style={{ display: "grid" }}>
