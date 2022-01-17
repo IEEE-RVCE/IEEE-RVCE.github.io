@@ -106,6 +106,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MembershipPage() {
   const classes = useStyles();
+  // const start = React.useState(false);
   // const [activeStep, setActiveStep] = React.useState(0);
   // let { step } = useParams();
   // useEffect(() => {
@@ -321,6 +322,18 @@ export default function MembershipPage() {
 
   return (
     <div className={classes.root}>
+     <MembershipBox />
+      {(
+        <>
+          <Container maxWidth="lg" style={{ display: "grid" }}>
+            <div id="whyjoinieee"></div>
+            <br />
+            <Paper
+              className={classes.paper}
+              style={{ backgroundColor: "transparent" }}
+            >
+              <Typography variant="h3">Why Join IEEE?</Typography>
+              <GiveMeABreak num={2} />
       <MembershipBox />
       {/* {start && ( */}
       <>
@@ -333,7 +346,6 @@ export default function MembershipPage() {
           >
             <Typography variant="h3">Why Join IEEE?</Typography>
             <GiveMeABreak num={2} />
-
             <Grid container spacing={4} justify="center">
               <Grid item xs={12} md={4} align="center">
                 <div>
