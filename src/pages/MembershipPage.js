@@ -334,174 +334,179 @@ export default function MembershipPage() {
             >
               <Typography variant="h3">Why Join IEEE?</Typography>
               <GiveMeABreak num={2} />
-
-              <Grid container spacing={4} justify="center">
-                <Grid item xs={12} md={4} align="center">
-                  <div>
-                    <img
-                      src={images.membership.benefit1}
-                      alt="benefit"
-                      style={{ width: "40%", height: "40%" }}
-                    />
-                    <p style={{ fontSize: "1.2rem" }}>
-                      <b>Staying Technically Relevant: </b>Be aware of the new
-                      and changing technologies by getting access to the recent
-                      journals, publications and conferences
-                    </p>
-                  </div>
-                </Grid>
-                <Grid item xs={12} md={4} align="center">
-                  <div>
-                    <img
-                      src={images.membership.benefit2}
-                      alt="benefit"
-                      style={{ width: "40%", height: "40%" }}
-                    />
-                    <p style={{ fontSize: "1.2rem" }}>
-                      <b>Career Resources and Recognition: </b>Leadership is a
-                      skill that must be crafted over time. Keep your career
-                      moving in the right direction with IEEE career benefits
-                      and resources.
-                    </p>
-                  </div>
-                </Grid>
-                <Grid item xs={12} md={4} align="center">
-                  <div style={{ justifyContent: "center" }}>
-                    <img
-                      src={images.membership.benefit3}
-                      alt="benefit"
-                      style={{ width: "40%", height: "40%" }}
-                    />
-                    <p style={{ fontSize: "1.2rem" }}>
-                      <b>Professional Networking: </b>With other IEEE members
-                      who share similar interests, you can build a network
-                      revolving around your profession, industry or projects.
-                    </p>
-                  </div>
-                </Grid>
-                <Grid item xs={12} md={4} align="center">
-                  <div>
-                    <img
-                      src={images.membership.benefit4}
-                      alt="benefit"
-                      style={{ width: "40%", height: "40%" }}
-                    />
-                    <p style={{ fontSize: "1.2rem" }}>
-                      <b>IEEE Chapters: </b> Engage with others through
-                      informative technical meetings
-                    </p>
-                  </div>
-                </Grid>
-                <Grid item xs={12} md={4} align="center">
-                  <div>
-                    <img
-                      src={images.membership.benefit5}
-                      alt="benefit"
-                      style={{ width: "40%", height: "40%" }}
-                    />
-                    <p style={{ fontSize: "1.2rem" }}>
-                      <b>Member discounts:</b> IEEE Member Discounts offer
-                      substantial cost savings on a variety of products and
-                      services as a benefit of IEEE membership. These include
-                      IEEE books and eBooks, journals and articles, conferences
-                      and proceedings, standards, society memberships etc..{" "}
-                    </p>
-                  </div>
-                </Grid>
-                <Grid item xs={12} md={4} align="center">
-                  <div>
-                    <img
-                      src={images.membership.benefit6}
-                      alt="benefit"
-                      style={{ width: "40%", height: "40%" }}
-                    />
-                    <p style={{ fontSize: "1.2rem" }}>
-                      <b>Global benefits finder: </b> To uncover IEEE member
-                      benefits that are most relevant to you, you may use the
-                      Global Benefits finder which will render a list of key
-                      IEEE member benefits that can help you accelerate your
-                      career plans and help you grow as a technology
-                      professional.
-                    </p>
-                  </div>
-                </Grid>
+      <MembershipBox />
+      {/* {start && ( */}
+      <>
+        <Container maxWidth="lg" style={{ display: "grid" }}>
+          <div id="whyjoinieee"></div>
+          <br />
+          <Paper
+            className={classes.paper}
+            style={{ backgroundColor: "transparent" }}
+          >
+            <Typography variant="h3">Why Join IEEE?</Typography>
+            <GiveMeABreak num={2} />
+            <Grid container spacing={4} justify="center">
+              <Grid item xs={12} md={4} align="center">
+                <div>
+                  <img
+                    src={images.membership.benefit1}
+                    alt="benefit"
+                    style={{ width: "40%", height: "40%" }}
+                  />
+                  <p style={{ fontSize: "1.2rem" }}>
+                    <b>Staying Technically Relevant: </b>Be aware of the new and
+                    changing technologies by getting access to the recent
+                    journals, publications and conferences
+                  </p>
+                </div>
               </Grid>
-            </Paper>
-            <br />
-            <SpacyDivider color="#3be52e" />
-            <Paper
-              className={classes.paper}
-              style={{ backgroundColor: "transparent" }}
-            >
-              <Typography variant="h3">
-                What does the SB have to offer?
-              </Typography>
-              <br />
-              <div className={classes.history}>
-                <img
-                  src={images.membership.whatSBOffers}
-                  className={classes.image}
-                  alt="image2"
-                />
-                <Typography variant="body1" className={classes.typo}>
-                  <ul>
-                    <li>Opportunities to network on a local level</li>
-                    <li>
-                      Receive support for hosting professional awareness
-                      programs
-                    </li>
-                    <li>Obtain funding for events, projects, and activities</li>
-                    <li>
-                      Develop projects and obtain sponsorship based on your IEEE
-                      affiliation
-                    </li>
-                    <li>
-                      Connect with other like minded student groups to advance
-                      the IEEE mission
-                    </li>
-                  </ul>
-                </Typography>
-              </div>
-            </Paper>
-            <br />
-            <SpacyDivider color="#3be52e" />
+              <Grid item xs={12} md={4} align="center">
+                <div>
+                  <img
+                    src={images.membership.benefit2}
+                    alt="benefit"
+                    style={{ width: "40%", height: "40%" }}
+                  />
+                  <p style={{ fontSize: "1.2rem" }}>
+                    <b>Career Resources and Recognition: </b>Leadership is a
+                    skill that must be crafted over time. Keep your career
+                    moving in the right direction with IEEE career benefits and
+                    resources.
+                  </p>
+                </div>
+              </Grid>
+              <Grid item xs={12} md={4} align="center">
+                <div style={{ justifyContent: "center" }}>
+                  <img
+                    src={images.membership.benefit3}
+                    alt="benefit"
+                    style={{ width: "40%", height: "40%" }}
+                  />
+                  <p style={{ fontSize: "1.2rem" }}>
+                    <b>Professional Networking: </b>With other IEEE members who
+                    share similar interests, you can build a network revolving
+                    around your profession, industry or projects.
+                  </p>
+                </div>
+              </Grid>
+              <Grid item xs={12} md={4} align="center">
+                <div>
+                  <img
+                    src={images.membership.benefit4}
+                    alt="benefit"
+                    style={{ width: "40%", height: "40%" }}
+                  />
+                  <p style={{ fontSize: "1.2rem" }}>
+                    <b>IEEE Chapters: </b> Engage with others through
+                    informative technical meetings
+                  </p>
+                </div>
+              </Grid>
+              <Grid item xs={12} md={4} align="center">
+                <div>
+                  <img
+                    src={images.membership.benefit5}
+                    alt="benefit"
+                    style={{ width: "40%", height: "40%" }}
+                  />
+                  <p style={{ fontSize: "1.2rem" }}>
+                    <b>Member discounts:</b> IEEE Member Discounts offer
+                    substantial cost savings on a variety of products and
+                    services as a benefit of IEEE membership. These include IEEE
+                    books and eBooks, journals and articles, conferences and
+                    proceedings, standards, society memberships etc..{" "}
+                  </p>
+                </div>
+              </Grid>
+              <Grid item xs={12} md={4} align="center">
+                <div>
+                  <img
+                    src={images.membership.benefit6}
+                    alt="benefit"
+                    style={{ width: "40%", height: "40%" }}
+                  />
+                  <p style={{ fontSize: "1.2rem" }}>
+                    <b>Global benefits finder: </b> To uncover IEEE member
+                    benefits that are most relevant to you, you may use the
+                    Global Benefits finder which will render a list of key IEEE
+                    member benefits that can help you accelerate your career
+                    plans and help you grow as a technology professional.
+                  </p>
+                </div>
+              </Grid>
+            </Grid>
+          </Paper>
+          <br />
+          <SpacyDivider color="#3be52e" />
+          <Paper
+            className={classes.paper}
+            style={{ backgroundColor: "transparent" }}
+          >
             <Typography variant="h3">
-              What do the membership costs look like?
+              What does the SB have to offer?
             </Typography>
-            <Container maxWidth="md">
-              <TableContainer
-                component={Paper}
-                className={classes.paper}
-                md={6}
-              >
-                <Table>
-                  <TableHead>
+            <br />
+            <div className={classes.history}>
+              <img
+                src={images.membership.whatSBOffers}
+                className={classes.image}
+                alt="image2"
+              />
+              <Typography variant="body1" className={classes.typo}>
+                <ul>
+                  <li>Opportunities to network on a local level</li>
+                  <li>
+                    Receive support for hosting professional awareness programs
+                  </li>
+                  <li>Obtain funding for events, projects, and activities</li>
+                  <li>
+                    Develop projects and obtain sponsorship based on your IEEE
+                    affiliation
+                  </li>
+                  <li>
+                    Connect with other like minded student groups to advance the
+                    IEEE mission
+                  </li>
+                </ul>
+              </Typography>
+            </div>
+          </Paper>
+          <br />
+          <SpacyDivider color="#3be52e" />
+          <Typography variant="h3">
+            What do the membership costs look like?
+          </Typography>
+          <Container maxWidth="md">
+            <TableContainer component={Paper} className={classes.paper} md={6}>
+              <Table>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Name</TableCell>
+                    <TableCell>Cost</TableCell>
+                    <TableCell>Discounts</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {costs.map((e) => (
                     <TableRow>
-                      <TableCell>Name</TableCell>
-                      <TableCell>Cost</TableCell>
-                      <TableCell>Discounts</TableCell>
+                      <TableCell>{e.name}</TableCell>
+                      {/* This passes in the object as props - be careful */}
+                      <CostFragment {...e} />
+                      <TableCell>{e.notes ?? ""}</TableCell>
                     </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {costs.map((e) => (
-                      <TableRow>
-                        <TableCell>{e.name}</TableCell>
-                        {/* This passes in the object as props - be careful */}
-                        <CostFragment {...e} />
-                        <TableCell>{e.notes ?? ""}</TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </TableContainer>
-            </Container>
-            <Paper
-              className={classes.paper1}
-              id="beamember"
-              align="center"
-              style={{ backgroundColor: "transparent" }}
-            >
-              {/* <HashLink smooth to="#steps" style={{ textDecoration: "none" }}>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Container>
+          <Paper
+            className={classes.paper1}
+            id="beamember"
+            align="center"
+            style={{ backgroundColor: "transparent" }}
+          >
+            {/* <HashLink smooth to="#steps" style={{ textDecoration: "none" }}>
                 <Button
                   style={{ margin: "1rem", width: "50%", color: "black" }}
                   className={`${classes.bigbutton} ${classes.bigbutton2} ${classes.button}`}
@@ -516,38 +521,38 @@ export default function MembershipPage() {
                   Become A Member
                 </Button>
               </HashLink> */}
-              {/* <Button size='large' className={classes.button} style={{ margin: "auto", color: "white", backgroundColor: "green" }} onClick={() => { setStart(true); window.location.href = window.location.href + '/1' }}>Become a member now!! </Button> */}
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSc1UBQ4YyoYTbdzuCwRWRGIHX0BMaLtB9tuL1YiMn_pekZ3YA/viewform?usp=sf_link"
-                target="_blank"
-                rel="noreferrer"
+            {/* <Button size='large' className={classes.button} style={{ margin: "auto", color: "white", backgroundColor: "green" }} onClick={() => { setStart(true); window.location.href = window.location.href + '/1' }}>Become a member now!! </Button> */}
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSc1UBQ4YyoYTbdzuCwRWRGIHX0BMaLtB9tuL1YiMn_pekZ3YA/viewform?usp=sf_link"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Button
+                style={{
+                  margin: "1rem",
+                  width: "50%",
+                  color: "black",
+                  textDecoration: "none",
+                  underline: "none",
+                }}
+                className={`${classes.bigbutton} ${classes.bigbutton2} ${classes.button}`}
+                //   onClick={() => {
+                //     setStart(true);
+                //     window.location.href = window.location.href + "/1";
+                //   }}
+                variant="contained"
+                color="primary"
+                size="large"
               >
-                <Button
-                  style={{
-                    margin: "1rem",
-                    width: "50%",
-                    color: "black",
-                    textDecoration: "none",
-                    underline: "none",
-                  }}
-                  className={`${classes.bigbutton} ${classes.bigbutton2} ${classes.button}`}
-                  //   onClick={() => {
-                  //     setStart(true);
-                  //     window.location.href = window.location.href + "/1";
-                  //   }}
-                  variant="contained"
-                  color="primary"
-                  size="large"
-                >
-                  Become A Member
-                </Button>
-              </a>
-              {/* <Button size='large' className={classes.button} style={{ margin: "auto", color: "white", backgroundColor: "green" }} onClick={() => { setStart(true); window.location.href = window.location.href + '/1' }}>Become a member now!! </Button> */}
-            </Paper>
-            <GiveMeABreak num={3} />
-          </Container>
-        </>
-      )}
+                Become A Member
+              </Button>
+            </a>
+            {/* <Button size='large' className={classes.button} style={{ margin: "auto", color: "white", backgroundColor: "green" }} onClick={() => { setStart(true); window.location.href = window.location.href + '/1' }}>Become a member now!! </Button> */}
+          </Paper>
+          <GiveMeABreak num={3} />
+        </Container>
+      </>
+      {/* )} */}
       {/* {start && (
         <Container
           className={classes.steps}
