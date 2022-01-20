@@ -322,8 +322,8 @@ export default function MembershipPage() {
 
   return (
     <div className={classes.root}>
-     <MembershipBox />
-      {(
+      <MembershipBox />
+      {
         <>
           <Container maxWidth="lg" style={{ display: "grid" }}>
             <div id="whyjoinieee"></div>
@@ -547,7 +547,7 @@ export default function MembershipPage() {
             <GiveMeABreak num={3} />
           </Container>
         </>
-      )}
+      }
       {/* {start && (
         <Container
           className={classes.steps}

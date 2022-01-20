@@ -258,7 +258,7 @@ export const execom = {
       image: imagePath + "/execom/comsoc/shushrutha_sir.jpg",
     },
     {
-      name: "Anushka Subramaniam",
+      name: "Anushka Subramanian",
       position: "Chair",
       image: imagePath + "/execom/comsoc/anushka.jpg",
     },
