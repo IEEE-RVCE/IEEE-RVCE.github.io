@@ -380,6 +380,43 @@ export const execom = {
  */
 export const alumni = {
   main: {
+    2021: [
+      {
+        name: "Dr. M Uttara Kumari",
+        position: "Branch Counselor",
+        image: imagePath + "/execom/main/muk_maam.jpg",
+      },
+      {
+        name: "Risha Dassi",
+        position: "Chair",
+        image: imagePath + "/alumni/2021/main/risha.jpg",
+      },
+      {
+        name: "Kashish Malhotra",
+        position: "Vice Chair",
+        image: imagePath + "/execom/main/kashish.jpg",
+      },
+      {
+        name: "Deeraj DS",
+        position: "Secretary",
+        image: imagePath + "/execom/main/deeraj.jpg",
+      },
+      {
+        name: "Chirag Bapat",
+        position: "Treasurer",
+        image: imagePath + "/execom/main/chirag.jpg",
+      },
+      {
+        name: "Atreya Bain",
+        position: "Webmaster",
+        image: imagePath + "/execom/main/atreya.png",
+      },
+      {
+        name: "Saraansh Agarwal",
+        position: "Editor in Chief",
+        image: imagePath + "/execom/main/saraansh.jpg",
+      },
+    ],
     2020: [
       {
         name: "Dr. M Uttara Kumari",
