@@ -164,7 +164,7 @@ export const execom = {
     {
       name: "Dr. Mahesh A",
       position: "Branch Counselor",
-      image: imagePath + "/execom/main/mah_sir.jpg",
+      image: imagePath + "/execom/main/mahesh_sir.jpg",
     },
     {
       name: "Shashank Dhavala",
@@ -172,12 +172,12 @@ export const execom = {
       image: imagePath + "/execom/main/shashank.jpeg",
     },
     {
-      name: "Anushka Subramaniam",
+      name: "Anushka Subramanian",
       position: "Vice Chair",
       image: imagePath + "/execom/main/anushka.jpg",
     },
     {
-      name: "Jahnavi Urs",
+      name: "Janhavi Urs",
       position: "Secretary",
       image: imagePath + "/execom/main/jahnavi.jpg",
     },
@@ -189,7 +189,7 @@ export const execom = {
     {
       name: "Prajwal P",
       position: "Webmaster",
-      image: imagePath + "/execom/main/prajwal.png",
+      image: imagePath + "/execom/main/prajwal.PNG",
     },
   ],
   aps: [
