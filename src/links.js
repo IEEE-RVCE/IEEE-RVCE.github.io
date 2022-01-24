@@ -162,39 +162,34 @@ export const ecats = {
 export const execom = {
   main: [
     {
-      name: "Dr. M Uttara Kumari",
+      name: "Dr. Mahesh A",
       position: "Branch Counselor",
-      image: imagePath + "/execom/main/muk_maam.jpg",
+      image: imagePath + "/execom/main/mahesh_sir.jpg",
     },
     {
-      name: "Risha Dassi",
+      name: "Shashank Dhavala",
       position: "Chair",
-      image: imagePath + "/execom/main/risha.jpg",
+      image: imagePath + "/execom/main/shashank.jpeg",
     },
     {
-      name: "Kashish Malhotra",
+      name: "Anushka Subramanian",
       position: "Vice Chair",
-      image: imagePath + "/execom/main/kashish.jpg",
+      image: imagePath + "/execom/main/anushka.jpg",
     },
     {
-      name: "Deeraj DS",
+      name: "Janhavi Urs",
       position: "Secretary",
-      image: imagePath + "/execom/main/deeraj.jpg",
+      image: imagePath + "/execom/main/jahnavi.jpg",
     },
     {
-      name: "Chirag Bapat",
+      name: "Vivek Kumar",
       position: "Treasurer",
-      image: imagePath + "/execom/main/chirag.jpg",
+      image: imagePath + "/execom/main/vivek.jpg",
     },
     {
-      name: "Atreya Bain",
+      name: "Prajwal P",
       position: "Webmaster",
-      image: imagePath + "/execom/main/atreya.png",
-    },
-    {
-      name: "Saraansh Agarwal",
-      position: "Editor in Chief",
-      image: imagePath + "/execom/main/saraansh.jpg",
+      image: imagePath + "/execom/main/prajwal.PNG",
     },
   ],
   aps: [
@@ -380,6 +375,43 @@ export const execom = {
  */
 export const alumni = {
   main: {
+    2021: [
+      {
+        name: "Dr. M Uttara Kumari",
+        position: "Branch Counselor",
+        image: imagePath + "/alumni/2021/main/muk_maam.jpg",
+      },
+      {
+        name: "Risha Dassi",
+        position: "Chair",
+        image: imagePath + "/alumni/2021/main/risha.jpg",
+      },
+      {
+        name: "Kashish Malhotra",
+        position: "Vice Chair",
+        image: imagePath + "/alumni/2021/main/kashish.jpg",
+      },
+      {
+        name: "Deeraj DS",
+        position: "Secretary",
+        image: imagePath + "/alumni/2021/main/deeraj.jpg",
+      },
+      {
+        name: "Chirag Bapat",
+        position: "Treasurer",
+        image: imagePath + "/alumni/2021/main/chirag.jpg",
+      },
+      {
+        name: "Atreya Bain",
+        position: "Webmaster",
+        image: imagePath + "/alumni/2021/main/atreya.png",
+      },
+      {
+        name: "Saraansh Agarwal",
+        position: "Editor in Chief",
+        image: imagePath + "/alumni/2021/main/saraansh.jpg",
+      },
+    ],
     2020: [
       {
         name: "Dr. M Uttara Kumari",
