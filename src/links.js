@@ -177,7 +177,7 @@ export const execom = {
       image: imagePath + "/execom/main/anushka.jpg",
     },
     {
-      name: "Janhavi Urs",
+      name: "Jahnavi Urs",
       position: "Secretary",
       image: imagePath + "/execom/main/jahnavi.jpg",
     },
