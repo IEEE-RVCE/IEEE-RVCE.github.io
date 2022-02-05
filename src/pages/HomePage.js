@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useInView } from "react-intersection-observer";
+
 import {
   Container,
   Typography,
@@ -47,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
 export default function HomePage(props) {
   const classes = useStyles();
   const [events, setEvents] = useState([]);
+  const { ref: myRef, inView: myElementIsVisible } = useInView();
 
   useEffect(() => {
     axios.get(hostname + "/api/event/cat/" + ecats.main).then((response) => {
@@ -73,10 +76,16 @@ export default function HomePage(props) {
               console.log("Came here ");
             }}
           >
-            {/**
+            <div ref={myRef}>
+              {/**
                       ! Take Proper Permissions from Chair and Vice Chair for more details check the Confetti component
                        */}
-            <Confetti />
+              {myElementIsVisible ? (
+                <>
+                  <Confetti />
+                </>
+              ) : null}
+            </div>
             {/* <Grid container item xs={12} sm={6} md={4} lg={3}> */}
             {execom.main.map((member) => (
               <Grid item xs={12} sm={6} md={4} lg={4}>
