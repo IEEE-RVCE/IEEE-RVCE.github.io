@@ -221,7 +221,7 @@ export const execom = {
       image: imagePath + "/execom/compsoc/ashok_sir.jpg",
     },
     {
-      name: "Shubaprada K",
+      name: "Shubhaprada K P",
       position: "Chair",
       image: imagePath + "/execom/compsoc/ShubhaPrada.jpeg",
     },
@@ -359,12 +359,12 @@ export const execom = {
     },
     {
       name: "Neha N",
-      position: "Chair",
+      position: "Secretary",
       image: imagePath + "/execom/sight/neha.jpeg",
     },
     {
       name: "Nisarga V",
-      position: "Chair",
+      position: "Treasurer",
       image: imagePath + "/execom/sight/Nisarga.jpg",
     },
   ],
