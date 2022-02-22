@@ -18,14 +18,14 @@ export const costs = [
         
     },
 
+    {name:'Circuits and Systems (CAS)', cost:11},
+    
     { name: 'Communications Society', cost: 1 },
     
     { name: 'Computer Society', cost: 8 ,discountedCost:4,notes:'CS202250 (50% off)'},
 
     { name: 'Power & Energy Society (PES)', cost: 15 ,discountedCost:0,notes:'Free for first year!'},
-    
-    {name:'Circuits and Systems (CAS)', cost:11},
-    
+        
     { name: 'Robotics and Automation (RAS)', cost: 5 },
     
     { name: 'Signal Processing Society (SPS)', cost: 11, },
