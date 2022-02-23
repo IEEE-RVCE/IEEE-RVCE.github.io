@@ -90,11 +90,8 @@ export default function EventPage() {
   }, [eid]);
 
   const eventTimes = {
-    // we should subtract the timezone offset from the event times -530hrs
-    start: new Date(
-      new Date(event.eventstart).getTime() - 5.5 * 60 * 60 * 1000
-    ),
-    end: new Date(new Date(event.eventend).getTime() - 5.5 * 60 * 60 * 1000),
+    start: new Date(event.eventstart),
+    end: new Date(event.eventend),
   };
 
   const deleteEvent = () => {
