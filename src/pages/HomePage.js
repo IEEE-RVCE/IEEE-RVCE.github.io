@@ -68,14 +68,7 @@ export default function HomePage(props) {
         </Typography>
         <br />
         <Container maxWidth="md">
-          <Grid
-            container
-            spacing={3}
-            justify="space-evenly"
-            onScroll={() => {
-              console.log("Came here ");
-            }}
-          >
+          <Grid container spacing={3} justify="space-evenly">
             <div ref={myRef}>
               {/**
                       ! Take Proper Permissions from Chair and Vice Chair for more details check the Confetti component
