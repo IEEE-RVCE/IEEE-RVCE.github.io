@@ -22,7 +22,7 @@
     "react-responsive-carousel": "^3.2.16",
     "react-router-dom": "^5.2.0",
     "react-router-hash-link": "^2.4.0",
-    "react-scripts": "^4.0.3",
+    "react-scripts": "^5.0.1",
     "three": "^0.126.1",
     "vanta": "^0.5.21"
   },
