@@ -20,7 +20,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { ecats, hostname } from "../links";
 import Alert from "@material-ui/lab/Alert";
-
+import { CircularProgress } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     position: "absolute",
@@ -72,7 +72,7 @@ export const AddEventDialog = (props) => {
     hosts: [],
     keywords: "",
   });
-
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     if (props.data !== undefined) {
       setValues({
@@ -100,8 +100,10 @@ export const AddEventDialog = (props) => {
         smallposterlink: res.data.data.display_url,
         largeposterlink: res.data.data.display_url,
       });
+      setLoading((v) => !v);
     } catch (err) {
       console.log(err);
+      setLoading((v) => !v);
     }
   };
 
@@ -340,35 +342,44 @@ export const AddEventDialog = (props) => {
               </Select>
             </FormControl>
           </div>
-          <div className={classes.fields}>
-            <Button variant="contained" component="label">
-              Upload Poster File
-              <input
-                type="file"
-                hidden
-                onChange={async (e) => {
-                  const file = e.target.files[0];
-                  await handleFileInput(file);
-                }}
-              />
-            </Button>
-            {values.smallposterlink !== "" ? (
-              <div
-                style={{
-                  padding: "10px",
-                }}
-              >
-                <img
-                  src={values.smallposterlink}
-                  alt="smallposter"
-                  width="100"
-                  height="100"
+          {!loading ? (
+            <div className={classes.fields}>
+              <Button variant="contained" component="label">
+                Upload Poster File
+                <input
+                  type="file"
+                  hidden
+                  onChange={async (e) => {
+                    setLoading((v) => !v);
+                    const file = e.target.files[0];
+                    await handleFileInput(file);
+                  }}
                 />
-              </div>
-            ) : (
-              <></>
-            )}
-            {/* <TextField
+              </Button>
+              {values.smallposterlink !== "" ? (
+                <div
+                  style={{
+                    padding: "10px",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <img
+                    src={values.smallposterlink}
+                    alt="smallposter"
+                    width="100"
+                    height="100"
+                  />
+                </div>
+              ) : null}
+            </div>
+          ) : (
+            <div className={classes.fields}>
+              <CircularProgress />
+            </div>
+          )}
+
+          {/* <TextField
               id="smallposterlink"
               label="Small poster link"
               type="text"
@@ -380,7 +391,6 @@ export const AddEventDialog = (props) => {
                 shrink: true,
               }}
             /> */}
-          </div>
           {/* <div className={classes.fields}>
             <Button variant="contained" component="label">
               Upload Large Poster File
