@@ -1,5 +1,5 @@
 import React from "react";
-import { SbachievementsText, MemAchivementText } from "../data/FrontPage/Text";
+import { SbachievementsText } from "../data/FrontPage/Text";
 
 /**
  * Display a list of achievements
