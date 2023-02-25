@@ -1,14 +1,14 @@
 import React from "react";
-import { SbachievementsText } from "../data/FrontPage/Text";
+import { MemAchivementText } from "../data/FrontPage/Text";
 
 /**
  * Display a list of achievements
  * @returns
  */
-export default function Achievements() {
+export default function AchievementsMem() {
   return (
     <ul>
-      {SbachievementsText.map((e) => (
+      {MemAchivementText.map((e) => (
         <li key={e}>{e}</li>
       ))}
     </ul>

@@ -836,5 +836,5 @@ export {
 	achievements as FPAchievementImages,
 	whatWeDo as FPWhatWeDoImages,
 } from "./data/FrontPage/Carousels";
-export { whatWeDoText, achievementsText } from "./data/FrontPage/Text";
+export { whatWeDoText, SbachievementsText } from "./data/FrontPage/Text";
 export { imagePath, hostname };
