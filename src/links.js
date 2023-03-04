@@ -169,44 +169,49 @@ export const execom = {
 			image: imagePath + '/execom/main/mahesh_sir.jpg',
 		},
 		{
-			name: 'Shashank Dhavala',
+			name: 'Dhanush Prabhakar ',
 			position: 'Chair',
 			image: imagePath + '/execom/main/shashank.jpeg',
 		},
 		{
-			name: 'Anushka Subramanian',
+			name: 'Ritesh Gandhi',
 			position: 'Vice Chair',
 			image: imagePath + '/execom/main/anushka.jpg',
 		},
 		{
-			name: 'Jahnavi Urs',
+			name: 'Nisarga V',
 			position: 'Secretary',
 			image: imagePath + '/execom/main/jahnavi.jpg',
 		},
 		{
-			name: 'Vivek Kumar',
+			name: 'Lathangi N',
 			position: 'Treasurer',
 			image: imagePath + '/execom/main/vivek.jpg',
 		},
 		{
-			name: 'Prajwal P',
+			name: 'Mayur S Chittaragi',
 			position: 'Webmaster',
 			image: imagePath + '/execom/main/prajwal.PNG',
+		},
+		{
+			name: 'Adarsh V',
+			position: 'Social Media Head',
+			image: imagePath + '/execom/main/adarsh.jpg', //to be changed
 		},
 	],
 	aps: [
 		{
-			name: 'Dr. Mahesh A',
+			name: 'Dr. Shanthi',
 			position: 'Faculty Advisor',
 			image: imagePath + '/execom/aps/mahesh_sir.jpg',
 		},
 		{
-			name: 'Narsepalli Pradyumna',
+			name: 'Amogh G',
 			position: 'Chair',
 			image: imagePath + '/execom/aps/pradumyna.jpeg',
 		},
 		{
-			name: 'Amogh G',
+			name: 'Anusha Khot',
 			position: 'Secretary',
 			image: imagePath + '/execom/aps/Amough.jpeg',
 		},
@@ -223,29 +228,34 @@ export const execom = {
 			image: imagePath + '/execom/compsoc/ashok_sir.jpg',
 		},
 		{
-			name: 'Shubhaprada K P',
+			name: 'Prajwal M Pawar',
 			position: 'Chair',
 			image: imagePath + '/execom/compsoc/ShubhaPrada.jpeg',
 		},
 		{
-			name: 'Prajwal P',
+			name: 'Likhith ',
 			position: 'Vice Chair',
 			image: imagePath + '/execom/compsoc/prajwal.PNG',
 		},
 		{
-			name: 'Malavika Hariprasad ',
-			position: 'Secretary',
+			name: 'Jayanth C',
+			position: 'Joint Secretary',
 			image: imagePath + '/execom/compsoc/Malavika_HariPrasad.jpg',
 		},
 		{
-			name: 'Sonia Singh B',
+			name: 'Sneha P.M',
+			position: 'Joint Secretary',
+			image: imagePath + '/execom/compsoc/Malavika_HariPrasad.jpg',
+		},
+		{
+			name: 'Joshua Elias Alva',
 			position: 'Treasurer',
 			image: imagePath + '/execom/compsoc/Sonia_Singh.jpeg',
 		},
 	],
 	comsoc: [
 		{
-			name: 'Dr. Shushrutha KS',
+			name: 'Dr. Jayanthi',
 			position: 'Faculty Advisor',
 			image: imagePath + '/execom/comsoc/shushrutha_sir.jpg',
 		},
@@ -255,12 +265,12 @@ export const execom = {
 			image: imagePath + '/execom/comsoc/Shamanth_S_Bhat.jpg',
 		},
 		{
-			name: 'Dhanush Prabhakar',
+			name: 'Pradyumna S Athreya ',
 			position: 'Secretary',
 			image: imagePath + '/execom/comsoc/Dhanush.jpeg',
 		},
 		{
-			name: 'Shreehitha MU',
+			name: 'Chethan S Badiger ',
 			position: 'Treasurer',
 			image: imagePath + '/execom/comsoc/shreehitha.jpg',
 		},
@@ -272,12 +282,17 @@ export const execom = {
 			image: imagePath + '/execom/pes/srivani_maam.jpg',
 		},
 		{
-			name: 'Vansh Nandwana',
+			name: 'Punith R C',
 			position: 'Chair',
 			image: imagePath + '/execom/pes/Vansh_Nandwan.jpeg',
 		},
 		{
-			name: 'Aviral Srivastava',
+			name: 'Pragya Singh',
+			position: 'Secretary',
+			image: imagePath + '/execom/pes/Aviral_Shrivastav.jpeg',
+		},
+		{
+			name: 'Nitin S',
 			position: 'Treasurer',
 			image: imagePath + '/execom/pes/Aviral_Shrivastav.jpeg',
 		},
@@ -289,61 +304,61 @@ export const execom = {
 			image: imagePath + '/execom/sps/nagamani_maam.jpg',
 		},
 		{
-			name: 'Avaneeth Anil',
+			name: 'Chirag C Rao ',
 			position: 'Chair',
 			image: imagePath + '/execom/sps/Avaneeth_Anil.jpeg',
 		},
 		{
-			name: 'Atul Sai',
-			position: 'Vice Chair',
+			name: 'Mustafa Chikhliwala',
+			position: 'Secretary',
 			image: imagePath + '/execom/sps/Atul_Sai.jpeg',
 		},
 		{
-			name: 'Ananya Dhulipala',
+			name: 'Rajeev Singh ',
 			position: 'Treasurer',
 			image: imagePath + '/execom/sps/Ananya_D.jpeg',
 		},
 	],
 	wie: [
 		{
-			name: 'Dr. Usha Rani K R',
+			name: 'Prof Deepika',
 			position: 'Faculty Advisor',
 			image: imagePath + '/execom/wie/usha_maam.jpg',
 		},
 		{
-			name: 'Anagha Anand',
+			name: 'Jahnavi M Math',
 			position: 'Chair',
 			image: imagePath + '/execom/wie/Anagha_Anand.jpeg',
 		},
 		{
-			name: 'Neha N',
+			name: 'Omisha Singh',
 			position: 'Secretary',
 			image: imagePath + '/execom/wie/neha.jpeg',
 		},
 		{
-			name: 'Nisarga V',
+			name: 'Gohitha Maheshwari J',
 			position: 'Treasurer',
 			image: imagePath + '/execom/wie/Nisarga.jpg',
 		},
 	],
 	ras: [
 		{
-			name: 'Dr. Geetha K S',
+			name: 'Dr. Abhay Deshpande',
 			position: 'Faculty Advisor',
 			image: imagePath + '/execom/ras/geetha_maam.jpg',
 		},
 		{
-			name: 'Saksham Sharma',
+			name: 'Shreya Sakri',
 			position: 'Chair',
 			image: imagePath + '/execom/ras/saksham.jpg',
 		},
 		{
-			name: 'Shreya Sakri',
+			name: 'S Lingeshwara',
 			position: 'Secretary',
 			image: imagePath + '/execom/ras/shreya_sakri.jpeg',
 		},
 		{
-			name: 'Suraj Ponnanna K C',
+			name: 'S Vedram',
 			position: 'Treasurer',
 			image: imagePath + '/execom/ras/suraj.jpeg',
 		},
@@ -355,17 +370,61 @@ export const execom = {
 			image: imagePath + '/execom/sight/usha_maam.jpg',
 		},
 		{
-			name: 'Samhitha S',
+			name: 'Lalith K',
 			position: 'Chair',
 			image: imagePath + '/execom/sight/samhitha.jpg',
 		},
 		{
-			name: 'Neha N',
+			name: 'Nandan Chebbi',
 			position: 'Secretary',
 			image: imagePath + '/execom/sight/neha.jpeg',
 		},
 		{
-			name: 'Nisarga V',
+			name: 'Neha P',
+			position: 'Treasurer',
+			image: imagePath + '/execom/sight/Nisarga.jpg',
+		},
+	],
+	cas: [
+		{
+			name: 'Dr. Shylashree.N ',
+			position: 'Faculty Advisor',
+			image: imagePath + '/execom/sight/usha_maam.jpg',
+		},
+		{
+			name: 'Akash Kotagi',
+			position: 'Chair',
+			image: imagePath + '/execom/sight/samhitha.jpg',
+		},
+		{
+			name: 'Sanjana Carol',
+			position: 'Secretary',
+			image: imagePath + '/execom/sight/neha.jpeg',
+		},
+		{
+			name: 'Sai Surya Sreekar Mulukutla',
+			position: 'Treasurer',
+			image: imagePath + '/execom/sight/Nisarga.jpg',
+		},
+	],
+	sc: [
+		{
+			name: 'Dr. Veena Divya K',
+			position: 'Faculty Advisor',
+			image: imagePath + '/execom/sight/usha_maam.jpg',
+		},
+		{
+			name: 'Rakshan R Kulkarni ',
+			position: 'Chair',
+			image: imagePath + '/execom/sight/samhitha.jpg',
+		},
+		{
+			name: 'Soundarya Desai',
+			position: 'Secretary',
+			image: imagePath + '/execom/sight/neha.jpeg',
+		},
+		{
+			name: 'Akansha Singh',
 			position: 'Treasurer',
 			image: imagePath + '/execom/sight/Nisarga.jpg',
 		},
