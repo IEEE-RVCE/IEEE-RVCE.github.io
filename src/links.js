@@ -262,7 +262,7 @@ export const execom = {
 		{
 			name: 'Shamanth S Bhat',
 			position: 'Chair',
-			image: imagePath + '/execom/comsoc/shamanth_s_bhat.jpg',
+			image: imagePath + '/execom/comsoc/Shamanth_S_Bhat.jpg',
 		},
 		{
 			name: 'Pradyumna S Athreya ',
