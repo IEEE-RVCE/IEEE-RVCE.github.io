@@ -33,7 +33,7 @@ export default function CASSocietyPage(props) {
 	const [events, setEvents] = useState([]);
 
 	useEffect(() => {
-		axios.get(hostname + "/api/event/cat/" + ecats.sps).then((response) => {
+		axios.get(hostname + "/api/event/cat/" + ecats.cas).then((response) => {
 			setEvents(
 				response.data.events.sort((a, b) => {
 					return new Date(b.eventstart) - new Date(a.eventstart);
@@ -45,7 +45,7 @@ export default function CASSocietyPage(props) {
 	return (
 		<div className={classes.root}>
 			<img
-				src={images.landing.sps}
+				src={images.landing.sps} //to be changed
 				id="soclanding"
 				alt="Signal Processing Society"
 				style={{ maxHeight: "100vh", width: "100%" }}
@@ -104,7 +104,7 @@ export default function CASSocietyPage(props) {
 							<br />
 							{events.length >= 4 && (
 								<Link
-									to={"/events?ecat=" + ecats.sps}
+									to={"/events?ecat=" + ecats.cas}
 									className={classes.link}
 								>
 									Click here for more events
@@ -118,7 +118,7 @@ export default function CASSocietyPage(props) {
 					<Typography variant="h3">Executive Committee</Typography>
 					<br />
 					<Grid container spacing={2} justify="center">
-						{execom.sps.map((member) => (
+						{execom.cas.map((member) => (
 							<Grid item xs={12} md={4}>
 								<Avatar
 									name={member.name}
@@ -130,7 +130,7 @@ export default function CASSocietyPage(props) {
 					</Grid>
 				</Paper>
 				<AlumniAccordions
-					members={alumni.sps}
+					members={alumni.cas}
 					color="rgb(153 221 227)"
 				/>
 				<br />

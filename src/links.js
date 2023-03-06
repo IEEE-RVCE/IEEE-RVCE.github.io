@@ -44,6 +44,8 @@ export const societies = [
 	{ name: 'Signal Processing Society', link: '/society/sps' },
 	{ name: 'Antennas and Propagation Society', link: '/society/aps' },
 	{ name: 'Robotics and Automation Society', link: '/society/ras' },
+	{ name: 'Circuits and Systems Society', link: '/society/cas' },
+	{ name: 'Sensor Council', link: '/society/sc' },
 ];
 
 /**
@@ -158,6 +160,8 @@ export const ecats = {
 	ras: 6,
 	wie: 7,
 	sight: 8,
+	cas: 9,
+	sc: 10,
 };
 
 /** Execom details */
@@ -387,7 +391,7 @@ export const execom = {
 	],
 	cas: [
 		{
-			name: 'Dr. Shylashree.N ',//needs to be updated
+			name: 'Dr. Shylashree.N ', //needs to be updated
 			position: 'Faculty Advisor',
 			image: imagePath + '/execom/sight/usha_maam.jpg',
 		},
@@ -679,7 +683,8 @@ export const alumni = {
 			{
 				name: 'Malavika Hariprasad ',
 				position: 'Secretary',
-				image: imagePath + '/alumni/2022/compsoc/Malavika_HariPrasad.jpg',
+				image:
+					imagePath + '/alumni/2022/compsoc/Malavika_HariPrasad.jpg',
 			},
 			{
 				name: 'Sonia Singh B',
@@ -1096,33 +1101,31 @@ export const alumni = {
 			{
 				name: 'Dr. Shylashree N',
 				position: 'Faculty Advisor',
-				image: imagePath + '/alumni/2021/sight/usha_maam.jpg', //to be updated
+				image: imagePath + '/alumni/2022/cas/dr_shylashree.jpeg', //to be updated
 			},
 			{
 				name: 'Keerthana Ramesh ',
 				position: 'Chair',
-				image: imagePath + '/alumni/2021/sight/usha_maam.jpg',
+				image: imagePath + '/alumni/2022/cas/keerthana.jpeg',
 			},
 			{
 				name: 'Sriniketh S S',
 				position: 'Vice Chair',
-				image: imagePath + '/alumni/2021/sight/usha_maam.jpg',
+				image: imagePath + '/alumni/2022/cas/sriniketh.jpg',
 			},
 			{
 				name: 'Akash Kotagi',
 				position: 'Secretary',
-				image: imagePath + '/alumni/2021/sight/usha_maam.jpg',
+				image: imagePath + '/alumni/2022/cas/akash.jpeg',
 			},
 			{
 				name: 'Ritesh Gandhi',
 				position: 'Treasurer',
-				image: imagePath + '/alumni/2021/sight/usha_maam.jpg',
+				image: imagePath + '/execom/main/ritesh.jpeg',
 			},
 		],
 	},
-	cs: {
-		2022: [], //to be added
-	},
+	sc: {},
 };
 
 export const about = {

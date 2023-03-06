@@ -33,7 +33,7 @@ export default function SCSocietyPage(props) {
 	const [events, setEvents] = useState([]);
 
 	useEffect(() => {
-		axios.get(hostname + "/api/event/cat/" + ecats.sps).then((response) => {
+		axios.get(hostname + "/api/event/cat/" + ecats.sc).then((response) => {
 			setEvents(
 				response.data.events.sort((a, b) => {
 					return new Date(b.eventstart) - new Date(a.eventstart);
@@ -45,7 +45,7 @@ export default function SCSocietyPage(props) {
 	return (
 		<div className={classes.root}>
 			<img
-				src={images.landing.sps}
+				src={images.landing.sps}//to be changed
 				id="soclanding"
 				alt="Sensors Council"
 				style={{ maxHeight: "100vh", width: "100%" }}
@@ -107,7 +107,7 @@ export default function SCSocietyPage(props) {
 							<br />
 							{events.length >= 4 && (
 								<Link
-									to={"/events?ecat=" + ecats.sps}
+									to={"/events?ecat=" + ecats.sc}
 									className={classes.link}
 								>
 									Click here for more events
@@ -121,7 +121,7 @@ export default function SCSocietyPage(props) {
 					<Typography variant="h3">Executive Committee</Typography>
 					<br />
 					<Grid container spacing={2} justify="center">
-						{execom.sps.map((member) => (
+						{execom.sc.map((member) => (
 							<Grid item xs={12} md={4}>
 								<Avatar
 									name={member.name}
@@ -133,7 +133,7 @@ export default function SCSocietyPage(props) {
 					</Grid>
 				</Paper>
 				<AlumniAccordions
-					members={alumni.sps}
+					members={alumni.sc}
 					color="rgb(153 221 227)"
 				/>
 				<br />
