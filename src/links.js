@@ -414,7 +414,7 @@ export const execom = {
     {
       name: "Rakshan R Kulkarni ",
       position: "Chair",
-      image: imagePath + "/execom/sensorscouncil/rakshan_kulkarni.HEIC",
+      image: imagePath + "/execom/sensorscouncil/rakshan_kulkarni.jpg",
     },
     {
       name: "Soundarya Desai",
