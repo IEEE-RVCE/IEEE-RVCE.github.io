@@ -395,7 +395,7 @@ export const execom = {
 		{
 			name: 'Dr. Shylashree.N ', //needs to be updated
 			position: 'Faculty Advisor',
-			image: imagePath + '/execom/sight/usha_maam.jpg',
+			image: imagePath + '/execom/cas/dr_shylashree.jpeg',
 		},
 		{
 			name: 'Akash Kotagi',
