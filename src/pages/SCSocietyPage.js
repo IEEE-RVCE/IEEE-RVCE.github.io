@@ -45,7 +45,7 @@ export default function SCSocietyPage(props) {
 	return (
 		<div className={classes.root}>
 			<img
-				src={images.landing.sps}//to be changed
+				src={images.landing.sc}
 				id="soclanding"
 				alt="Sensors Council"
 				style={{ maxHeight: "100vh", width: "100%" }}

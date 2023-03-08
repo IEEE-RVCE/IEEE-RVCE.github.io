@@ -146,6 +146,8 @@ export const images = {
 		wie: imagePath + '/landing/wie.png',
 		mainBlack: imagePath + '/landing/MainBlack.png',
 		mainWhite: imagePath + '/landing/MainWhite.png',
+		cas: imagePath + '/landing/cas.png',
+		sc: imagePath + '/landing/sc.png',
 	},
 };
 

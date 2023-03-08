@@ -45,7 +45,7 @@ export default function CASSocietyPage(props) {
 	return (
 		<div className={classes.root}>
 			<img
-				src={images.landing.sps} //to be changed
+				src={images.landing.cas} 
 				id="soclanding"
 				alt="Signal Processing Society"
 				style={{ maxHeight: "100vh", width: "100%" }}
