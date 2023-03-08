@@ -1,5 +1,5 @@
 //@ts-check
-import { imagePath, hostname, imgify } from "./data/misc";
+import { imagePath, hostname, imgify } from './data/misc';
 // Edit this list and the navs shall change accordingly
 
 /**
@@ -11,14 +11,14 @@ import { imagePath, hostname, imgify } from "./data/misc";
  * @type {(menuitem|isMenuItem)[]}
  */
 export const navs = [
-  { name: "Home", link: "/" },
-  { name: "About Us", link: "/about" },
-  { name: "Events", link: "/events" },
-  { name: "Societies", isMenu: true },
-  { name: "Affinities", isMenu: true },
-  { name: "Membership", link: "/membership" },
-  { name: "Articles", link: "/articles" },
-  { name: "Login", link: "/login" },
+	{ name: 'Home', link: '/' },
+	{ name: 'About Us', link: '/about' },
+	{ name: 'Events', link: '/events' },
+	{ name: 'Societies', isMenu: true },
+	{ name: 'Affinities', isMenu: true },
+	{ name: 'Membership', link: '/membership' },
+	{ name: 'Articles', link: '/articles' },
+	{ name: 'Login', link: '/login' },
 ];
 
 /**
@@ -26,11 +26,11 @@ export const navs = [
  * @type {menuitem[]}
  */
 export const societyNav = [
-  { name: "Home", link: "/" },
-  { name: "About Us", link: "/about" },
-  { name: "Events", link: "/event" },
-  { name: "Exec Com", link: "/society" },
-  { name: "Login", link: "/login" },
+	{ name: 'Home', link: '/' },
+	{ name: 'About Us', link: '/about' },
+	{ name: 'Events', link: '/event' },
+	{ name: 'Exec Com', link: '/society' },
+	{ name: 'Login', link: '/login' },
 ];
 
 /**
@@ -38,12 +38,14 @@ export const societyNav = [
  * @type {menuitem[]}
  */
 export const societies = [
-  { name: "Computer Society", link: "/society/cs" },
-  { name: "Communications Society", link: "/society/comsoc" },
-  { name: "Power and Energy Society", link: "/society/pes" },
-  { name: "Signal Processing Society", link: "/society/sps" },
-  { name: "Antennas and Propagation Society", link: "/society/aps" },
-  { name: "Robotics and Automation Society", link: "/society/ras" },
+	{ name: 'Computer Society', link: '/society/cs' },
+	{ name: 'Communications Society', link: '/society/comsoc' },
+	{ name: 'Power and Energy Society', link: '/society/pes' },
+	{ name: 'Signal Processing Society', link: '/society/sps' },
+	{ name: 'Antennas and Propagation Society', link: '/society/aps' },
+	{ name: 'Robotics and Automation Society', link: '/society/ras' },
+	{ name: 'Circuits and Systems Society', link: '/society/cas' },
+	{ name: 'Sensor Council', link: '/society/sc' },
 ];
 
 /**
@@ -51,111 +53,117 @@ export const societies = [
  * @type {menuitem[]}
  */
 export const affinities = [
-  {
-    name: "Special Interest Group on Humanitarian Technology",
-    link: "/affinity/sight",
-  },
-  { name: "Women in Engineering", link: "/affinity/wie" },
+	{
+		name: 'Special Interest Group on Humanitarian Technology',
+		link: '/affinity/sight',
+	},
+	{ name: 'Women in Engineering', link: '/affinity/wie' },
 ];
 
 /**
  * Miscellaneous images
  */
 export const images = {
-  membership: {
-    benefits: imagePath + "/membership/Benefits.jpeg",
-    whyjoin: imagePath + "/membership/whyjoin.jpeg",
-    step11: imagePath + "/membership/Membership_1.1.png",
-    step12: imagePath + "/membership/Membership_1.2.png",
-    step21: imagePath + "/membership/Membership_2.1.png",
-    step31: imagePath + "/membership/Membership_3.1.png",
-    step32: imagePath + "/membership/Membership_3.2.png",
-    step33: imagePath + "/membership/Membership_3.3.png",
-    step34: imagePath + "/membership/Membership_3.4.png",
-    step35: imagePath + "/membership/Membership_3.5.png",
-    step36: imagePath + "/membership/Membership_3.6.png",
-    step37: imagePath + "/membership/Membership_3.7.png",
-    step41: imagePath + "/membership/Membership_4.1.png",
-    step42: imagePath + "/membership/Membership_4.2.png",
-    step43: imagePath + "/membership/Membership_4.3.png",
-    step51: imagePath + "/membership/Membership_5.1.jpeg",
-    step52: imagePath + "/membership/Membership_5.2.jpeg",
-    step61: imagePath + "/membership/Membership_6.1.png",
-    benefit1: imagePath + "/membership/Benefit1.png",
-    benefit2: imagePath + "/membership/Benefit2.png",
-    benefit3: imagePath + "/membership/Benefit3.png",
-    benefit4: imagePath + "/membership/Benefit4.png",
-    benefit5: imagePath + "/membership/Benefit5.png",
-    benefit6: imagePath + "/membership/Benefit6.png",
-    whatSBOffers: imagePath + "/membership/WhatSBOffers.png",
-    step111: imagePath + "/membership/Membership_1.11.png",
-    step122: imagePath + "/membership/Membership_1.22.png",
-    step511: imagePath + "/membership/Membership_5.11.jpg",
-    step522: imagePath + "/membership/Membership_5.22.jpg",
-  },
-  devs: {
-    ambu: imagePath + "/devs/Ambu_Karthik.jpg",
-    bain: imagePath + "/devs/Atreya_Bain.png",
-    chirag: imagePath + "/devs/Chirag_Bapat.jpg",
-    risha: imagePath + "/devs/Risha_Dassi.jpg",
-    vishal: imagePath + "/devs/Vishal_M.jpeg",
-    akshara: imagePath + "/devs/Akshara_Udupa.jpg",
-  },
-  logos: {
-    ieee_aps: imagePath + "/logos/ieee_APS.png",
-    ieee_black: imagePath + "/logos/ieee_black.png",
-    ieee_blue_jpg: imagePath + "/logos/ieee_blue.jpg",
-    ieee_bng: imagePath + "/logos/ieee_bng.png",
-    ieee_blue_png: imagePath + "/logos/ieee_blue.png",
-    ieee_compsoc_black: imagePath + "/logos/ieee_computer_black.png",
-    ieee_compsoc_color: imagePath + "/logos/ieee_computer_color.png",
-    ieee_compsoc_white: imagePath + "/logos/ieee_computer_white.png",
-    ieee_pes: imagePath + "/logos/ieee_pes.jpg",
-    ieee_rvce_new_black: imagePath + "/logos/ieee_rvce_new_black.png",
-    ieee_rvce_new_black_big: imagePath + "/logos/ieee_rvce_new_black_big.png",
-    ieee_rvce_new_blue: imagePath + "/logos/ieee_rvce_new_blue.png",
-    ieee_rvce_new_blue_big: imagePath + "/logos/ieee_rvce_new_blue_big.png",
-    ieee_rvce_new_white: imagePath + "/logos/ieee_rvce_new_white.png",
-    ieee_rvce_new_white_big: imagePath + "/logos/ieee_rvce_new_white_big.png",
-    ieee_rvce_black: imagePath + "/logos/ieee_rvce_black.png",
-    ieee_rvce_white: imagePath + "/logos/ieee_rvce_white.png",
-    ieee_rvce_jpg: imagePath + "/logos/ieee_rvce.jpg",
-    ieee_sight: imagePath + "/logos/ieee_sight.png",
-    ieee_sps: imagePath + "/logos/ieee_sps.jpg",
-    ieee_tag_black: imagePath + "/logos/ieee_tag_black.png",
-    ieee_tag_blue: imagePath + "/logos/ieee_tag_blue.png",
-    ieee_tag_white: imagePath + "/logos/ieee_tag_white.png",
-    ieee_white: imagePath + "/logos/ieee_white.png",
-    ieee_wie: imagePath + "/logos/ieee_wie.png",
-    rv_caption: imagePath + "/logos/rv_caption.png",
-    rv_letter_footer: imagePath + "/logos/rv_letter_footer.png",
-    rvce: imagePath + "/logos/rvce_logo.png",
-  },
-  landing: {
-    aps: imagePath + "/landing/aps.png",
-    compsoc: imagePath + "/landing/compsoc.png",
-    comsoc: imagePath + "/landing/comsoc.png",
-    pes: imagePath + "/landing/pes.png",
-    ras: imagePath + "/landing/ras.png",
-    sight: imagePath + "/landing/sight.png",
-    sps: imagePath + "/landing/sps.png",
-    wie: imagePath + "/landing/wie.png",
-    mainBlack: imagePath + "/landing/MainBlack.png",
-    mainWhite: imagePath + "/landing/MainWhite.png",
-  },
+	membership: {
+		benefits: imagePath + '/membership/Benefits.jpeg',
+		whyjoin: imagePath + '/membership/whyjoin.jpeg',
+		step11: imagePath + '/membership/Membership_1.1.png',
+		step12: imagePath + '/membership/Membership_1.2.png',
+		step21: imagePath + '/membership/Membership_2.1.png',
+		step31: imagePath + '/membership/Membership_3.1.png',
+		step32: imagePath + '/membership/Membership_3.2.png',
+		step33: imagePath + '/membership/Membership_3.3.png',
+		step34: imagePath + '/membership/Membership_3.4.png',
+		step35: imagePath + '/membership/Membership_3.5.png',
+		step36: imagePath + '/membership/Membership_3.6.png',
+		step37: imagePath + '/membership/Membership_3.7.png',
+		step41: imagePath + '/membership/Membership_4.1.png',
+		step42: imagePath + '/membership/Membership_4.2.png',
+		step43: imagePath + '/membership/Membership_4.3.png',
+		step51: imagePath + '/membership/Membership_5.1.jpeg',
+		step52: imagePath + '/membership/Membership_5.2.jpeg',
+		step61: imagePath + '/membership/Membership_6.1.png',
+		benefit1: imagePath + '/membership/Benefit1.png',
+		benefit2: imagePath + '/membership/Benefit2.png',
+		benefit3: imagePath + '/membership/Benefit3.png',
+		benefit4: imagePath + '/membership/Benefit4.png',
+		benefit5: imagePath + '/membership/Benefit5.png',
+		benefit6: imagePath + '/membership/Benefit6.png',
+		whatSBOffers: imagePath + '/membership/WhatSBOffers.png',
+		step111: imagePath + '/membership/Membership_1.11.png',
+		step122: imagePath + '/membership/Membership_1.22.png',
+		step511: imagePath + '/membership/Membership_5.11.jpg',
+		step522: imagePath + '/membership/Membership_5.22.jpg',
+	},
+	devs: {
+		ambu: imagePath + '/devs/Ambu_Karthik.jpg',
+		bain: imagePath + '/devs/Atreya_Bain.png',
+		chirag: imagePath + '/devs/Chirag_Bapat.jpg',
+		risha: imagePath + '/devs/Risha_Dassi.jpg',
+		vishal: imagePath + '/devs/Vishal_M.jpeg',
+		akshara: imagePath + '/devs/Akshara_Udupa.jpg',
+	},
+	logos: {
+		ieee_aps: imagePath + '/logos/ieee_APS.png',
+		ieee_black: imagePath + '/logos/ieee_black.png',
+		ieee_blue_jpg: imagePath + '/logos/ieee_blue.jpg',
+		ieee_bng: imagePath + '/logos/ieee_bng.png',
+		ieee_blue_png: imagePath + '/logos/ieee_blue.png',
+		ieee_compsoc_black: imagePath + '/logos/ieee_computer_black.png',
+		ieee_compsoc_color: imagePath + '/logos/ieee_computer_color.png',
+		ieee_compsoc_white: imagePath + '/logos/ieee_computer_white.png',
+		ieee_pes: imagePath + '/logos/ieee_pes.jpg',
+		ieee_rvce_new_black: imagePath + '/logos/ieee_rvce_new_black.png',
+		ieee_rvce_new_black_big:
+			imagePath + '/logos/ieee_rvce_new_black_big.png',
+		ieee_rvce_new_blue: imagePath + '/logos/ieee_rvce_new_blue.png',
+		ieee_rvce_new_blue_big: imagePath + '/logos/ieee_rvce_new_blue_big.png',
+		ieee_rvce_new_white: imagePath + '/logos/ieee_rvce_new_white.png',
+		ieee_rvce_new_white_big:
+			imagePath + '/logos/ieee_rvce_new_white_big.png',
+		ieee_rvce_black: imagePath + '/logos/ieee_rvce_black.png',
+		ieee_rvce_white: imagePath + '/logos/ieee_rvce_white.png',
+		ieee_rvce_jpg: imagePath + '/logos/ieee_rvce.jpg',
+		ieee_sight: imagePath + '/logos/ieee_sight.png',
+		ieee_sps: imagePath + '/logos/ieee_sps.jpg',
+		ieee_tag_black: imagePath + '/logos/ieee_tag_black.png',
+		ieee_tag_blue: imagePath + '/logos/ieee_tag_blue.png',
+		ieee_tag_white: imagePath + '/logos/ieee_tag_white.png',
+		ieee_white: imagePath + '/logos/ieee_white.png',
+		ieee_wie: imagePath + '/logos/ieee_wie.png',
+		rv_caption: imagePath + '/logos/rv_caption.png',
+		rv_letter_footer: imagePath + '/logos/rv_letter_footer.png',
+		rvce: imagePath + '/logos/rvce_logo.png',
+	},
+	landing: {
+		aps: imagePath + '/landing/aps.png',
+		compsoc: imagePath + '/landing/compsoc.png',
+		comsoc: imagePath + '/landing/comsoc.png',
+		pes: imagePath + '/landing/pes.png',
+		ras: imagePath + '/landing/ras.png',
+		sight: imagePath + '/landing/sight.png',
+		sps: imagePath + '/landing/sps.png',
+		wie: imagePath + '/landing/wie.png',
+		mainBlack: imagePath + '/landing/MainBlack.png',
+		mainWhite: imagePath + '/landing/MainWhite.png',
+		cas: imagePath + '/landing/cas.png',
+		sc: imagePath + '/landing/sc.png',
+	},
 };
 
 /** Map of socs and affs with ecat */
 export const ecats = {
-  main: 0,
-  compsoc: 1,
-  comsoc: 2,
-  pes: 3,
-  aps: 4,
-  sps: 5,
-  ras: 6,
-  wie: 7,
-  sight: 8,
+	main: 0,
+	compsoc: 1,
+	comsoc: 2,
+	pes: 3,
+	aps: 4,
+	sps: 5,
+	ras: 6,
+	wie: 7,
+	sight: 8,
+	cas: 9,
+	sc: 10,
 };
 
 /** Execom details */
@@ -1124,12 +1132,12 @@ export const alumni = {
 };
 
 export const about = {
-  img1: imgify`history/1.png`,
-  img2: imgify`history/2.png`,
+	img1: imgify`history/1.png`,
+	img2: imgify`history/2.png`,
 };
 export {
-  achievements as FPAchievementImages,
-  whatWeDo as FPWhatWeDoImages,
-} from "./data/FrontPage/Carousels";
-export { whatWeDoText, SbachievementsText } from "./data/FrontPage/Text";
+	achievements as FPAchievementImages,
+	whatWeDo as FPWhatWeDoImages,
+} from './data/FrontPage/Carousels';
+export { whatWeDoText, SbachievementsText } from './data/FrontPage/Text';
 export { imagePath, hostname };
