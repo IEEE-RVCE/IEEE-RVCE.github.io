@@ -49,7 +49,7 @@ export default function FrontText() {
         spacing={2}
       >
         <Grid item sm={12} md={6}>
-          <Typography variant="h4">Awards Recived by Student Branch</Typography>
+          <Typography variant="h4">Awards Received by Student Branch</Typography>
           <br />
           <Typography variant="body1">
             <Achievements />
@@ -74,7 +74,7 @@ export default function FrontText() {
             </Box>
           </Grid>
           <Grid item sm={12} md={4}>
-            <Typography variant="h4">Awards Recived by Members</Typography>
+            <Typography variant="h4">Awards Received by Members</Typography>
             <br />
             <Typography variant="body1">
               <AchievementsMem />
