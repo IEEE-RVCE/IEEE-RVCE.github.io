@@ -167,51 +167,56 @@ export const execom = {
       image: imagePath + "/execom/main/mahesh_sir.jpg",
     },
     {
-      name: "Shashank Dhavala",
+      name: "Dhanush Prabhakar ",
       position: "Chair",
-      image: imagePath + "/execom/main/shashank.jpeg",
+      image: imagePath + "/execom/main/dhanush_prabhakar.jpg",
     },
     {
-      name: "Anushka Subramanian",
+      name: "Ritesh Gandhi",
       position: "Vice Chair",
-      image: imagePath + "/execom/main/anushka.jpg",
+      image: imagePath + "/execom/main/ritesh.jpeg",
     },
     {
-      name: "Jahnavi Urs",
+      name: "Nisarga V",
       position: "Secretary",
-      image: imagePath + "/execom/main/jahnavi.jpg",
+      image: imagePath + "/execom/main/nisarga.jpg",
     },
     {
-      name: "Vivek Kumar",
+      name: "Lathangi N",
       position: "Treasurer",
-      image: imagePath + "/execom/main/vivek.jpg",
+      image: imagePath + "/execom/main/lathangi_n.jpg",
     },
     {
-      name: "Prajwal P",
+      name: "Mayur S Chittaragi",
       position: "Webmaster",
-      image: imagePath + "/execom/main/prajwal.PNG",
+      image: imagePath + "/execom/main/mayur_s_chittaragi.jpg",
+    },
+    {
+      name: "Adarsh V",
+      position: "Social Media Head",
+      image: imagePath + "/execom/socialMedia/adarsh.jpeg", //to be changed
     },
   ],
   aps: [
     {
-      name: "Dr. Mahesh A",
+      name: "Dr. Shanthi",
       position: "Faculty Advisor",
-      image: imagePath + "/execom/aps/mahesh_sir.jpg",
-    },
-    {
-      name: "Narsepalli Pradyumna",
-      position: "Chair",
-      image: imagePath + "/execom/aps/pradumyna.jpeg",
+      image: imagePath + "/execom/aps/shanthi_maam.jpg",
     },
     {
       name: "Amogh G",
+      position: "Chair",
+      image: imagePath + "/execom/aps/amogh_g.jpg",
+    },
+    {
+      name: "Anusha Khot",
       position: "Secretary",
-      image: imagePath + "/execom/aps/Amough.jpeg",
+      image: imagePath + "/execom/aps/anusha_k.jpeg",
     },
     {
       name: "Dheeraj G",
       position: "Treasurer",
-      image: imagePath + "/execom/aps/Dheeraj.jpeg",
+      image: imagePath + "/execom/aps/dheeraj.jpg",
     },
   ],
   compsoc: [
@@ -221,31 +226,36 @@ export const execom = {
       image: imagePath + "/execom/compsoc/ashok_sir.jpg",
     },
     {
-      name: "Shubhaprada K P",
+      name: "Prajwal M Pawar",
       position: "Chair",
-      image: imagePath + "/execom/compsoc/ShubhaPrada.jpeg",
+      image: imagePath + "/execom/compsoc/prajwal_pawar.jpg",
     },
     {
-      name: "Prajwal P",
+      name: "Likhith ",
       position: "Vice Chair",
-      image: imagePath + "/execom/compsoc/prajwal.PNG",
+      image: imagePath + "/execom/compsoc/likhith.jpg",
     },
     {
-      name: "Malavika Hariprasad ",
-      position: "Secretary",
-      image: imagePath + "/execom/compsoc/Malavika_HariPrasad.jpg",
+      name: "Jayanth C",
+      position: "Joint Secretary",
+      image: imagePath + "/execom/compsoc/jayanth_c.jpg",
     },
     {
-      name: "Sonia Singh B",
+      name: "Sneha P.M",
+      position: "Joint Secretary",
+      image: imagePath + "/execom/compsoc/sneha_p_m.jpg",
+    },
+    {
+      name: "Joshua Elias Alva",
       position: "Treasurer",
-      image: imagePath + "/execom/compsoc/Sonia_Singh.jpeg",
+      image: imagePath + "/execom/compsoc/joshua.jpg",
     },
   ],
   comsoc: [
     {
-      name: "Dr. Shushrutha KS",
+      name: "Dr. Jayanthi",
       position: "Faculty Advisor",
-      image: imagePath + "/execom/comsoc/shushrutha_sir.jpg",
+      image: imagePath + "/execom/comsoc/p_n_jayanti.jpg",
     },
     {
       name: "Shamanth S Bhat",
@@ -253,14 +263,14 @@ export const execom = {
       image: imagePath + "/execom/comsoc/Shamanth_S_Bhat.jpg",
     },
     {
-      name: "Dhanush Prabhakar",
+      name: "Pradyumna S Athreya ",
       position: "Secretary",
-      image: imagePath + "/execom/comsoc/Dhanush.jpeg",
+      image: imagePath + "/execom/comsoc/pradyumna_s_athreya.jpg",
     },
     {
-      name: "Shreehitha MU",
+      name: "Chethan S Badiger ",
       position: "Treasurer",
-      image: imagePath + "/execom/comsoc/shreehitha.jpg",
+      image: imagePath + "/execom/comsoc/chethan_badiger.jpg",
     },
   ],
   pes: [
@@ -270,14 +280,19 @@ export const execom = {
       image: imagePath + "/execom/pes/srivani_maam.jpg",
     },
     {
-      name: "Vansh Nandwana",
+      name: "Punith R C",
       position: "Chair",
-      image: imagePath + "/execom/pes/Vansh_Nandwan.jpeg",
+      image: imagePath + "/execom/pes/punith_r_c.JPG",
     },
     {
-      name: "Aviral Srivastava",
+      name: "Pragya Singh",
+      position: "Secretary",
+      image: imagePath + "/execom/pes/pragya_singh.png",
+    },
+    {
+      name: "Nitin S",
       position: "Treasurer",
-      image: imagePath + "/execom/pes/Aviral_Shrivastav.jpeg",
+      image: imagePath + "/execom/pes/nitin_s.jpg",
     },
   ],
   sps: [
@@ -287,63 +302,63 @@ export const execom = {
       image: imagePath + "/execom/sps/nagamani_maam.jpg",
     },
     {
-      name: "Avaneeth Anil",
+      name: "Chirag C Rao ",
       position: "Chair",
-      image: imagePath + "/execom/sps/Avaneeth_Anil.jpeg",
+      image: imagePath + "/execom/sps/chirag_c_rao.jpg",
     },
     {
-      name: "Atul Sai",
-      position: "Vice Chair",
-      image: imagePath + "/execom/sps/Atul_Sai.jpeg",
+      name: "Mustafa Chikhliwala",
+      position: "Secretary",
+      image: imagePath + "/execom/sps/mustafa_chikhliwala.jpg",
     },
     {
-      name: "Ananya Dhulipala",
+      name: "Rajeev Singh ",
       position: "Treasurer",
-      image: imagePath + "/execom/sps/Ananya_D.jpeg",
+      image: imagePath + "/execom/sps/rajeev_singh.jpg",
     },
   ],
   wie: [
     {
-      name: "Dr. Usha Rani K R",
+      name: "Prof Deepika",
       position: "Faculty Advisor",
-      image: imagePath + "/execom/wie/usha_maam.jpg",
+      image: imagePath + "/execom/wie/deepika_maam.jpg",
     },
     {
-      name: "Anagha Anand",
+      name: "Jahnavi M Math",
       position: "Chair",
-      image: imagePath + "/execom/wie/Anagha_Anand.jpeg",
+      image: imagePath + "/execom/wie/jahnavi_m_math.jpg",
     },
     {
-      name: "Neha N",
+      name: "Omisha Singh",
       position: "Secretary",
-      image: imagePath + "/execom/wie/neha.jpeg",
+      image: imagePath + "/execom/wie/omisha_singh.jpg",
     },
     {
-      name: "Nisarga V",
+      name: "Gohitha Maheshwari J",
       position: "Treasurer",
-      image: imagePath + "/execom/wie/Nisarga.jpg",
+      image: imagePath + "/execom/wie/gohitha_maheshwari.jpg",
     },
   ],
   ras: [
     {
-      name: "Dr. Geetha K S",
+      name: "Dr. Abhay Deshpande",
       position: "Faculty Advisor",
-      image: imagePath + "/execom/ras/geetha_maam.jpg",
-    },
-    {
-      name: "Saksham Sharma",
-      position: "Chair",
-      image: imagePath + "/execom/ras/saksham.jpg",
+      image: imagePath + "/execom/ras/abhay_a_deshpande.jpg",
     },
     {
       name: "Shreya Sakri",
-      position: "Secretary",
+      position: "Chair",
       image: imagePath + "/execom/ras/shreya_sakri.jpeg",
     },
     {
-      name: "Suraj Ponnanna K C",
+      name: "S Lingeshwara",
+      position: "Secretary",
+      image: imagePath + "/execom/ras/s_lingeshwara.jpg",
+    },
+    {
+      name: "S Vedram",
       position: "Treasurer",
-      image: imagePath + "/execom/ras/suraj.jpeg",
+      image: imagePath + "/execom/ras/s_vedram.png",
     },
   ],
   sight: [
@@ -353,19 +368,63 @@ export const execom = {
       image: imagePath + "/execom/sight/usha_maam.jpg",
     },
     {
-      name: "Samhitha S",
+      name: "Lalith K",
       position: "Chair",
-      image: imagePath + "/execom/sight/samhitha.jpg",
+      image: imagePath + "/execom/sight/lalith_kishore.jpg",
     },
     {
-      name: "Neha N",
+      name: "Nandan Chebbi",
       position: "Secretary",
-      image: imagePath + "/execom/sight/neha.jpeg",
+      image: imagePath + "/execom/sight/nandan_chebbi.jpg",
     },
     {
-      name: "Nisarga V",
+      name: "Neha P",
       position: "Treasurer",
-      image: imagePath + "/execom/sight/Nisarga.jpg",
+      image: imagePath + "/execom/sight/neha_p.jpg",
+    },
+  ],
+  cas: [
+    {
+      name: "Dr. Shylashree.N ", //needs to be updated
+      position: "Faculty Advisor",
+      image: imagePath + "/execom/sight/usha_maam.jpg",
+    },
+    {
+      name: "Akash Kotagi",
+      position: "Chair",
+      image: imagePath + "/execom/cas/akash_kotagi.jpg",
+    },
+    {
+      name: "Sanjana Carol",
+      position: "Secretary",
+      image: imagePath + "/execom/cas/sanjana_carol.jpg",
+    },
+    {
+      name: "Sai Surya Sreekar Mulukutla",
+      position: "Treasurer",
+      image: imagePath + "/execom/cas/sreekar_mulukutla.jpg",
+    },
+  ],
+  sc: [
+    {
+      name: "Dr. Veena Divya K",
+      position: "Faculty Advisor",
+      image: imagePath + "/execom/sensorscouncil/veena_maam.jpg",
+    },
+    {
+      name: "Rakshan R Kulkarni ",
+      position: "Chair",
+      image: imagePath + "/execom/sensorscouncil/rakshan_kulkarni.jpg",
+    },
+    {
+      name: "Soundarya Desai",
+      position: "Secretary",
+      image: imagePath + "/execom/sensorscouncil/soundarya_desai.jpg",
+    },
+    {
+      name: "Akansha Singh",
+      position: "Treasurer",
+      image: imagePath + "/execom/sensorscouncil/akansha_singh.jpg",
     },
   ],
 };
@@ -375,6 +434,38 @@ export const execom = {
  */
 export const alumni = {
   main: {
+    2022: [
+      {
+        name: "Dr. Mahesh A",
+        position: "Branch Counselor",
+        image: imagePath + "/alumni/2022/main/mahesh_sir.jpg",
+      },
+      {
+        name: "Shashank Dhavala",
+        position: "Chair",
+        image: imagePath + "/alumni/2022/main/shashank.jpeg",
+      },
+      {
+        name: "Anushka Subramanian",
+        position: "Vice Chair",
+        image: imagePath + "/alumni/2022/main/anushka.jpg",
+      },
+      {
+        name: "Jahnavi Urs",
+        position: "Secretary",
+        image: imagePath + "/alumni/2022/main/jahnavi.jpg",
+      },
+      {
+        name: "Vivek Kumar",
+        position: "Treasurer",
+        image: imagePath + "/alumni/2022/main/vivek.jpg",
+      },
+      {
+        name: "Prajwal P",
+        position: "Webmaster",
+        image: imagePath + "/alumni/2022/main/prajwal.PNG",
+      },
+    ],
     2021: [
       {
         name: "Dr. M Uttara Kumari",
@@ -499,6 +590,28 @@ export const alumni = {
     ],
   },
   aps: {
+    2022: [
+      {
+        name: "Dr. Mahesh A",
+        position: "Faculty Advisor",
+        image: imagePath + "/alumni/2022/aps/mahesh_sir.jpg",
+      },
+      {
+        name: "Narsepalli Pradyumna",
+        position: "Chair",
+        image: imagePath + "/alumni/2022/aps/pradumyna.jpeg",
+      },
+      {
+        name: "Amogh G",
+        position: "Secretary",
+        image: imagePath + "/alumni/2022/aps/Amough.jpeg",
+      },
+      {
+        name: "Dheeraj G",
+        position: "Treasurer",
+        image: imagePath + "/alumni/2022/aps/Dheeraj.jpeg",
+      },
+    ],
     2021: [
       {
         name: "Dr. Mahesh A",
@@ -545,6 +658,33 @@ export const alumni = {
     ],
   },
   compsoc: {
+    2022: [
+      {
+        name: "Dr. Ashok Kumar AR",
+        position: "Faculty Advisor",
+        image: imagePath + "/alumni/2022/compsoc/ashok_sir.jpg",
+      },
+      {
+        name: "Shubhaprada K P",
+        position: "Chair",
+        image: imagePath + "/alumni/2022/compsoc/ShubhaPrada.jpeg",
+      },
+      {
+        name: "Prajwal P",
+        position: "Vice Chair",
+        image: imagePath + "/alumni/2022/compsoc/prajwal.PNG",
+      },
+      {
+        name: "Malavika Hariprasad ",
+        position: "Secretary",
+        image: imagePath + "/alumni/2022/compsoc/Malavika_HariPrasad.jpg",
+      },
+      {
+        name: "Sonia Singh B",
+        position: "Treasurer",
+        image: imagePath + "/alumni/2022/compsoc/Sonia_Singh.jpeg",
+      },
+    ],
     2021: [
       {
         name: "Dr. Ashok Kumar AR",
@@ -596,6 +736,28 @@ export const alumni = {
     ],
   },
   comsoc: {
+    2022: [
+      {
+        name: "Dr. Shushrutha KS",
+        position: "Faculty Advisor",
+        image: imagePath + "/alumni/2022/comsoc/shushrutha_sir.jpg",
+      },
+      {
+        name: "Shamanth S Bhat",
+        position: "Chair",
+        image: imagePath + "/alumni/2022/comsoc/Shamanth_S_Bhat.jpg",
+      },
+      {
+        name: "Dhanush Prabhakar",
+        position: "Secretary",
+        image: imagePath + "/alumni/2022/comsoc/Dhanush.jpeg",
+      },
+      {
+        name: "Shreehitha MU",
+        position: "Treasurer",
+        image: imagePath + "/alumni/2022/comsoc/shreehitha.jpg",
+      },
+    ],
     2021: [
       {
         name: "Dr. Shushrutha KS",
@@ -638,6 +800,23 @@ export const alumni = {
     2019: [{ name: "Trilok Girish", position: "Chair" }],
   },
   pes: {
+    2022: [
+      {
+        name: "Prof. SG Srivani",
+        position: "Faculty Advisor",
+        image: imagePath + "/alumni/2022/pes/srivani_maam.jpg",
+      },
+      {
+        name: "Vansh Nandwana",
+        position: "Chair",
+        image: imagePath + "/alumni/2022/pes/Vansh_Nandwan.jpeg",
+      },
+      {
+        name: "Aviral Srivastava",
+        position: "Treasurer",
+        image: imagePath + "/alumni/2022/pes/Aviral_Shrivastav.jpeg",
+      },
+    ],
     2021: [
       {
         name: "Prof. SG Srivani",
@@ -692,6 +871,28 @@ export const alumni = {
     ],
   },
   sps: {
+    2022: [
+      {
+        name: "Prof. K Nagamani",
+        position: "Faculty Advisor",
+        image: imagePath + "/alumni/2022/sps/nagamani_maam.jpg",
+      },
+      {
+        name: "Avaneeth Anil",
+        position: "Chair",
+        image: imagePath + "/alumni/2022/sps/Avaneeth_Anil.jpeg",
+      },
+      {
+        name: "Atul Sai",
+        position: "Vice Chair",
+        image: imagePath + "/alumni/2022/sps/Atul_Sai.jpeg",
+      },
+      {
+        name: "Ananya Dhulipala",
+        position: "Treasurer",
+        image: imagePath + "/alumni/2022/sps/Ananya_D.jpeg",
+      },
+    ],
     2021: [
       {
         name: "Prof. K Nagamani",
@@ -735,6 +936,28 @@ export const alumni = {
     ],
   },
   wie: {
+    2022: [
+      {
+        name: "Dr. Usha Rani K R",
+        position: "Faculty Advisor",
+        image: imagePath + "/alumni/2022/wie/usha_maam.jpg",
+      },
+      {
+        name: "Anagha Anand",
+        position: "Chair",
+        image: imagePath + "/alumni/2022/wie/Anagha_Anand.jpeg",
+      },
+      {
+        name: "Neha N",
+        position: "Secretary",
+        image: imagePath + "/alumni/2022/wie/neha.jpeg",
+      },
+      {
+        name: "Nisarga V",
+        position: "Treasurer",
+        image: imagePath + "/alumni/2022/wie/Nisarga.jpg",
+      },
+    ],
     2021: [
       {
         name: "Dr. Usha Rani K R",
@@ -785,6 +1008,28 @@ export const alumni = {
     ],
   },
   ras: {
+    2022: [
+      {
+        name: "Dr. Geetha K S",
+        position: "Faculty Advisor",
+        image: imagePath + "/alumni/2022/ras/geetha_maam.jpg",
+      },
+      {
+        name: "Saksham Sharma",
+        position: "Chair",
+        image: imagePath + "/alumni/2022/ras/saksham.jpg",
+      },
+      {
+        name: "Shreya Sakri",
+        position: "Secretary",
+        image: imagePath + "/alumni/2022/ras/shreya_sakri.jpeg",
+      },
+      {
+        name: "Suraj Ponnanna K C",
+        position: "Treasurer",
+        image: imagePath + "/alumni/2022/ras/suraj.jpeg",
+      },
+    ],
     2021: [
       {
         name: "Dr. Geetha K S",
@@ -814,6 +1059,28 @@ export const alumni = {
     ],
   },
   sight: {
+    2022: [
+      {
+        name: "Dr Usha J",
+        position: "Faculty Advisor",
+        image: imagePath + "/alumni/2022/sight/usha_maam.jpg",
+      },
+      {
+        name: "Samhitha S",
+        position: "Chair",
+        image: imagePath + "/alumni/2022/sight/samhitha.jpg",
+      },
+      {
+        name: "Neha N",
+        position: "Secretary",
+        image: imagePath + "/alumni/2022/sight/neha.jpeg",
+      },
+      {
+        name: "Nisarga V",
+        position: "Treasurer",
+        image: imagePath + "/alumni/2022/sight/Nisarga.jpg",
+      },
+    ],
     2021: [
       {
         name: "Dr Usha J",
@@ -821,6 +1088,38 @@ export const alumni = {
         image: imagePath + "/alumni/2021/sight/usha_maam.jpg",
       },
     ],
+  },
+  cas: {
+    2022: [
+      {
+        name: "Dr. Shylashree N",
+        position: "Faculty Advisor",
+        image: imagePath + "/alumni/2021/sight/usha_maam.jpg", //to be updated
+      },
+      {
+        name: "Keerthana Ramesh ",
+        position: "Chair",
+        image: imagePath + "/alumni/2021/sight/usha_maam.jpg",
+      },
+      {
+        name: "Sriniketh S S",
+        position: "Vice Chair",
+        image: imagePath + "/alumni/2021/sight/usha_maam.jpg",
+      },
+      {
+        name: "Akash Kotagi",
+        position: "Secretary",
+        image: imagePath + "/alumni/2021/sight/usha_maam.jpg",
+      },
+      {
+        name: "Ritesh Gandhi",
+        position: "Treasurer",
+        image: imagePath + "/alumni/2021/sight/usha_maam.jpg",
+      },
+    ],
+  },
+  cs: {
+    2022: [], //to be added
   },
 };
 
