@@ -1,29 +1,29 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Card, CardContent, Avatar, Typography } from "@material-ui/core";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { Card, CardContent, Avatar, Typography } from '@material-ui/core';
 import {
   createTheme,
   responsiveFontSizes,
   ThemeProvider,
-} from "@material-ui/core/styles";
+} from '@material-ui/core/styles';
 
 const theme = responsiveFontSizes(createTheme());
-const useStyles = makeStyles((theme) => {
+const useStyles = makeStyles(theme => {
   console.log(theme);
   return {
     root: {
-      height: "100%",
+      height: '100%',
       padding: theme.spacing(2),
-      backgroundColor: "#00000000",
+      backgroundColor: '#00000000',
     },
     content: {
-      margin: "auto",
-      textAlign: "center",
+      margin: 'auto',
+      textAlign: 'center',
     },
     large: {
       width: theme.spacing(15),
       height: theme.spacing(15),
-      margin: "auto",
+      margin: 'auto',
     },
   };
 });
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => {
  */
 export default function AvatarCard(props) {
   const classes = useStyles();
-  console.log("I", classes);
+  console.log('I', classes);
   return (
     <Card className={classes.root} elevation={0}>
       <CardContent className={classes.content}>

@@ -1,4 +1,4 @@
-import * as queryString from "query-string";
+import * as queryString from 'query-string';
 
 import {
   Button,
@@ -12,34 +12,34 @@ import {
   TextField,
   Tooltip,
   Typography,
-} from "@material-ui/core";
-import React, { useEffect, useState } from "react";
-import { ecats, hostname } from "../links";
+} from '@material-ui/core';
+import React, { useEffect, useState } from 'react';
+import { ecats, hostname } from '../links';
 
-import { Add } from "@material-ui/icons";
-import { AddArticleDialog } from "../components/AddArticleDialog";
-import ArticleCard from "../components/ArticleCard";
-import ArticlesBox from "../components/ArticlesBox";
-import GiveMeABreak from "../components/GiveMeABreak";
-import { Skeleton } from "@material-ui/lab";
-import axios from "axios";
-import { makeStyles } from "@material-ui/core/styles";
+import { Add } from '@material-ui/icons';
+import { AddArticleDialog } from '../components/AddArticleDialog';
+import ArticleCard from '../components/ArticleCard';
+import ArticlesBox from '../components/ArticlesBox';
+import GiveMeABreak from '../components/GiveMeABreak';
+import { Skeleton } from '@material-ui/lab';
+import axios from 'axios';
+import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     ...theme.root,
     // ...theme.page,
   },
   filter: {
-    display: "block",
-    [theme.breakpoints.down("sm")]: {
-      display: "none",
+    display: 'block',
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
     },
   },
   button: {
     ...theme.button,
-    display: "flex",
-    flexDirection: "row",
+    display: 'flex',
+    flexDirection: 'row',
   },
   fab: {
     ...theme.fab,
@@ -50,31 +50,31 @@ const useStyles = makeStyles((theme) => ({
   },
   bigbutton1: {
     background: `linear-gradient( -45deg, #fe8c00 30%, #f83600 90%)`,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   bigbutton2: {
     background: `linear-gradient( 45deg, #fe8c00 30%, #f83600 90%)`,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
 }));
 
 export default function ArticlesPage(props) {
   const classes = useStyles();
-  let loggedIn = localStorage.getItem("isAuthenticated") === "true";
+  let loggedIn = localStorage.getItem('isAuthenticated') === 'true';
   const { ecat } = queryString.parse(props.location.search);
 
   const [articles, setArticles] = useState([]);
   const [list, setList] = useState([
-    { hi: "these" },
-    { dont: "mean" },
-    { anything: "they" },
-    { help: "skeletons" },
+    { hi: 'these' },
+    { dont: 'mean' },
+    { anything: 'they' },
+    { help: 'skeletons' },
   ]);
 
   //search text
-  const [text, setText] = React.useState("");
+  const [text, setText] = React.useState('');
   //Keyword search
-  const handleSearch = (event) => {
+  const handleSearch = event => {
     setText(event.target.value);
   };
 
@@ -82,7 +82,7 @@ export default function ArticlesPage(props) {
     var updatedList = articles;
     if (articles) {
       updatedList = articles.filter(function (item) {
-        if (text === "") return articles;
+        if (text === '') return articles;
         return (
           item.keywords.toLowerCase().search(text.toLowerCase()) !== -1 ||
           item.title.toLowerCase().search(text.toLowerCase()) !== -1
@@ -97,12 +97,12 @@ export default function ArticlesPage(props) {
   //Society names for dropdown filter
   const [category, setCategory] = useState(ecat !== undefined ? ecat : 0);
   //Society filter
-  const handleFilter = (event) => {
+  const handleFilter = event => {
     setCategory(event.target.value);
     window.location.href =
       event.target.value !== 0
-        ? window.location.origin + "/#/articles?ecat=" + event.target.value
-        : window.location.origin + "/#/articles";
+        ? window.location.origin + '/#/articles?ecat=' + event.target.value
+        : window.location.origin + '/#/articles';
   };
 
   //Loading skeletons
@@ -114,10 +114,10 @@ export default function ArticlesPage(props) {
     axios
       .get(
         ecat !== undefined
-          ? hostname + "/api/article/cat/" + ecat
-          : hostname + "/api/article"
+          ? hostname + '/api/article/cat/' + ecat
+          : hostname + '/api/article'
       )
-      .then((response) => {
+      .then(response => {
         setArticles(response.data.articles);
         setList(response.data.articles);
       })
@@ -146,10 +146,10 @@ export default function ArticlesPage(props) {
         <div
           className={classes.bar}
           style={{
-            float: "right",
-            display: "flex",
-            flexDirection: "row",
-            marginRight: "15%",
+            float: 'right',
+            display: 'flex',
+            flexDirection: 'row',
+            marginRight: '15%',
           }}
         >
           <FormControl>
@@ -168,11 +168,11 @@ export default function ArticlesPage(props) {
         <div
           className={classes.bar}
           style={{
-            float: "left",
-            display: "flex",
-            flexDirection: "row-reverse",
-            marginLeft: "15%",
-            textAlign: "center",
+            float: 'left',
+            display: 'flex',
+            flexDirection: 'row-reverse',
+            marginLeft: '15%',
+            textAlign: 'center',
           }}
         >
           <FormControl>
@@ -182,33 +182,33 @@ export default function ArticlesPage(props) {
               id="ecat-search"
               value={category}
               onChange={handleFilter}
-              style={{ minWidth: "200px" }}
+              style={{ minWidth: '200px' }}
             >
-              <MenuItem key={"All"} value={0}>
+              <MenuItem key={'All'} value={0}>
                 All
               </MenuItem>
-              <MenuItem key={"CompSoc"} value={ecats.compsoc}>
+              <MenuItem key={'CompSoc'} value={ecats.compsoc}>
                 Computer Society
               </MenuItem>
-              <MenuItem key={"ComSoc"} value={ecats.comsoc}>
+              <MenuItem key={'ComSoc'} value={ecats.comsoc}>
                 Communication Society
               </MenuItem>
-              <MenuItem key={"APS"} value={ecats.aps}>
+              <MenuItem key={'APS'} value={ecats.aps}>
                 Antenna Propogation Society
               </MenuItem>
-              <MenuItem key={"SPS"} value={ecats.sps}>
+              <MenuItem key={'SPS'} value={ecats.sps}>
                 Signal Processing Society
               </MenuItem>
-              <MenuItem key={"PES"} value={ecats.pes}>
+              <MenuItem key={'PES'} value={ecats.pes}>
                 Power and Energy Society
               </MenuItem>
-              <MenuItem key={"RAS"} value={ecats.ras}>
+              <MenuItem key={'RAS'} value={ecats.ras}>
                 Robotic and Automation Society
               </MenuItem>
-              <MenuItem key={"SIGHT"} value={ecats.sight}>
+              <MenuItem key={'SIGHT'} value={ecats.sight}>
                 Special Interest Group on Humanitarian Technology
               </MenuItem>
-              <MenuItem key={"WIE"} value={ecats.wie}>
+              <MenuItem key={'WIE'} value={ecats.wie}>
                 Women in Engineering
               </MenuItem>
             </Select>
@@ -218,16 +218,16 @@ export default function ArticlesPage(props) {
       <Container maxWidth="md">
         <div
           style={{
-            display: "grid",
-            placeItems: "center",
+            display: 'grid',
+            placeItems: 'center',
           }}
         >
           <Button
             style={{
-              width: "50%",
-              color: "black",
-              textDecoration: "none",
-              underline: "none",
+              width: '50%',
+              color: 'black',
+              textDecoration: 'none',
+              underline: 'none',
             }}
             className={`${classes.bigbutton} ${classes.bigbutton2} ${classes.button}`}
             variant="contained"
@@ -237,8 +237,8 @@ export default function ArticlesPage(props) {
             <a
               href="http://www.tinyurl.com/ieeervceblog"
               style={{
-                textDecoration: "none",
-                color: "black",
+                textDecoration: 'none',
+                color: 'black',
               }}
             >
               Submit a blog entry
@@ -274,7 +274,7 @@ export default function ArticlesPage(props) {
             })}
           </Grid>
         ) : (
-          <Typography variant="h5" style={{ textAlign: "center" }}>
+          <Typography variant="h5" style={{ textAlign: 'center' }}>
             Coming soon...
           </Typography>
         )}

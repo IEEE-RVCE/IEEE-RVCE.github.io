@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import {
   Container,
   Grid,
@@ -7,16 +7,16 @@ import {
   Paper,
   List,
   ListItem,
-} from "@material-ui/core";
-import { Link } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
-import Avatar from "../components/Avatar";
-import EventCard from "../components/EventCard";
-import { hostname, ecats, images, execom, alumni } from "../links";
-import AlumniAccordions from "../components/AlumniAccordions";
-import SpacyDivider from "../components/SpacyDivider";
+} from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
+import Avatar from '../components/Avatar';
+import EventCard from '../components/EventCard';
+import { hostname, ecats, images, execom, alumni } from '../links';
+import AlumniAccordions from '../components/AlumniAccordions';
+import SpacyDivider from '../components/SpacyDivider';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: theme.root,
   container: theme.page,
   paper: {
@@ -25,11 +25,11 @@ const useStyles = makeStyles((theme) => ({
   },
   link: {
     ...theme.link,
-    float: "right",
-    textDecoration: "none",
+    float: 'right',
+    textDecoration: 'none',
   },
   carousel: {
-    margin: "auto",
+    margin: 'auto',
     paddingTop: theme.spacing(4),
   },
 }));
@@ -40,7 +40,7 @@ export default function SIGHTAffinityPage(props) {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    axios.get(hostname + "/api/event/cat/" + ecats.sight).then((response) => {
+    axios.get(hostname + '/api/event/cat/' + ecats.sight).then(response => {
       setEvents(
         response.data.events.sort((a, b) => {
           return new Date(b.eventstart) - new Date(a.eventstart);
@@ -55,7 +55,7 @@ export default function SIGHTAffinityPage(props) {
         src={images.landing.sight}
         id="soclanding"
         alt="Special Interest Group in Humanitarian Technology"
-        style={{ maxHeight: "100vh", width: "100%" }}
+        style={{ maxHeight: '100vh', width: '100%' }}
       />
       <Container maxWidth="md">
         <br />
@@ -78,7 +78,7 @@ export default function SIGHTAffinityPage(props) {
               <ListItem>
                 <Typography variant="body1">
                   - Develop solutions for challenges faced by undeserved
-                  communities.{" "}
+                  communities.{' '}
                 </Typography>
               </ListItem>
               <ListItem>
@@ -104,7 +104,7 @@ export default function SIGHTAffinityPage(props) {
               <Typography variant="h3">Events</Typography>
               <br />
               <Grid container spacing={2} justify="center">
-                {events.slice(0, 3).map((item) => {
+                {events.slice(0, 3).map(item => {
                   return (
                     <Grid item xs={12} md={4}>
                       <EventCard event={item} />
@@ -115,7 +115,7 @@ export default function SIGHTAffinityPage(props) {
               <br />
               {events.length >= 4 && (
                 <Link
-                  to={"/events?ecat=" + ecats.sight}
+                  to={'/events?ecat=' + ecats.sight}
                   className={classes.link}
                 >
                   Click here for more events
@@ -129,7 +129,7 @@ export default function SIGHTAffinityPage(props) {
           <Typography variant="h3">Executive Committee</Typography>
           <br />
           <Grid hidden container spacing={2} justify="center">
-            {execom.sight.map((member) => (
+            {execom.sight.map(member => (
               <Grid item xs={12} md={4}>
                 <Avatar
                   name={member.name}

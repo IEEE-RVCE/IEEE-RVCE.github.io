@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Container, Grid, Typography, Paper } from "@material-ui/core";
-import { Link } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
-import Avatar from "../components/Avatar";
-import EventCard from "../components/EventCard";
-import { hostname, ecats, images, execom, alumni } from "../links";
-import AlumniAccordions from "../components/AlumniAccordions";
-import SpacyDivider from "../components/SpacyDivider";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Container, Grid, Typography, Paper } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
+import Avatar from '../components/Avatar';
+import EventCard from '../components/EventCard';
+import { hostname, ecats, images, execom, alumni } from '../links';
+import AlumniAccordions from '../components/AlumniAccordions';
+import SpacyDivider from '../components/SpacyDivider';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: theme.root,
   container: theme.page,
   paper: {
@@ -18,11 +18,11 @@ const useStyles = makeStyles((theme) => ({
   },
   link: {
     ...theme.link,
-    float: "right",
-    textDecoration: "none",
+    float: 'right',
+    textDecoration: 'none',
   },
   carousel: {
-    margin: "auto",
+    margin: 'auto',
     paddingTop: theme.spacing(4),
   },
   grid: theme.grid,
@@ -34,7 +34,7 @@ export default function CSSocietyPage(props) {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    axios.get(hostname + "/api/event/cat/" + ecats.compsoc).then((response) => {
+    axios.get(hostname + '/api/event/cat/' + ecats.compsoc).then(response => {
       setEvents(
         response.data.events.sort((a, b) => {
           return new Date(b.eventstart) - new Date(a.eventstart);
@@ -49,7 +49,7 @@ export default function CSSocietyPage(props) {
         src={images.landing.compsoc}
         id="soclanding"
         alt="Computer Society"
-        style={{ maxHeight: "100vh", width: "100%" }}
+        style={{ maxHeight: '100vh', width: '100%' }}
       />
       <Container maxWidth="md">
         <br />
@@ -95,7 +95,7 @@ export default function CSSocietyPage(props) {
               <Typography variant="h3">Events</Typography>
               <br />
               <Grid container spacing={2} justify="center">
-                {events.slice(0, 3).map((item) => {
+                {events.slice(0, 3).map(item => {
                   return (
                     <Grid item xs={12} md={4}>
                       <EventCard event={item} />
@@ -106,7 +106,7 @@ export default function CSSocietyPage(props) {
               <br />
               {events.length >= 4 && (
                 <Link
-                  to={"/events?ecat=" + ecats.compsoc}
+                  to={'/events?ecat=' + ecats.compsoc}
                   className={classes.link}
                 >
                   Click here for more events
@@ -120,7 +120,7 @@ export default function CSSocietyPage(props) {
           <Typography variant="h3">Executive Committee</Typography>
           <br />
           <Grid container spacing={2} justify="center">
-            {execom.compsoc.map((member) => (
+            {execom.compsoc.map(member => (
               <Grid item xs={12} md={4}>
                 <Avatar
                   name={member.name}

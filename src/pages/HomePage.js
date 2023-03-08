@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import React, { useState, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 import {
   Container,
@@ -10,38 +10,38 @@ import {
   Button,
   TextField,
   Paper,
-} from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
-import EventsCalendar from "../components/Calendar";
-import Avatar from "../components/Avatar";
-import FrontText from "../components/FrontText";
-import { execom, alumni, ecats, hostname } from "../links";
-import FrontBox from "../components/FrontBox";
-import SpacyDivider from "../components/SpacyDivider";
-import AlumniAccordions from "../components/AlumniAccordions";
-import GiveMeABreak from "../components/GiveMeABreak";
-import EventCard from "../components/EventCard";
-import axios from "axios";
-import Confetti from "../animations/Confettie";
-const useStyles = makeStyles((theme) => ({
-  root: theme.root,
-  container: theme.page,
-  paper: {
+} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
+import EventsCalendar from '../components/Calendar';
+import Avatar from '../components/Avatar';
+import FrontText from '../components/FrontText';
+import { execom, alumni, ecats, hostname } from '../links';
+import FrontBox from '../components/FrontBox';
+import SpacyDivider from '../components/SpacyDivider';
+import AlumniAccordions from '../components/AlumniAccordions';
+import GiveMeABreak from '../components/GiveMeABreak';
+import EventCard from '../components/EventCard';
+import axios from 'axios';
+import Confetti from '../animations/Confettie';
+const useStyles = makeStyles(theme => ({
+  'root': theme.root,
+  'container': theme.page,
+  'paper': {
     ...theme.paper,
     padding: theme.spacing(4),
   },
-  link: theme.link,
-  textField: {
-    marginBottom: "10px",
-    width: "60vw",
+  'link': theme.link,
+  'textField': {
+    marginBottom: '10px',
+    width: '60vw',
     [`& fieldset`]: {
-      borderRadius: "0.25rem",
+      borderRadius: '0.25rem',
     },
   },
-  "@global": {
-    ".MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
-      borderColor: "#12c48c",
+  '@global': {
+    '.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline': {
+      borderColor: '#12c48c',
     },
   },
 }));
@@ -52,7 +52,7 @@ export default function HomePage(props) {
   const { ref: myRef, inView: myElementIsVisible } = useInView();
 
   useEffect(() => {
-    axios.get(hostname + "/api/event/cat/" + ecats.main).then((response) => {
+    axios.get(hostname + '/api/event/cat/' + ecats.main).then(response => {
       setEvents(response.data.events);
     });
   }, []);
@@ -73,7 +73,7 @@ export default function HomePage(props) {
             spacing={3}
             justify="space-evenly"
             onScroll={() => {
-              console.log("Came here ");
+              console.log('Came here ');
             }}
           >
             <div ref={myRef}>
@@ -87,7 +87,7 @@ export default function HomePage(props) {
               ) : null}
             </div>
             {/* <Grid container item xs={12} sm={6} md={4} lg={3}> */}
-            {execom.main.map((member) => (
+            {execom.main.map(member => (
               <Grid item xs={12} sm={6} md={4} lg={4}>
                 <Avatar
                   name={member.name}
@@ -108,7 +108,7 @@ export default function HomePage(props) {
               <Typography variant="h3">Events</Typography>
               <br />
               <Grid container spacing={2} justify="center">
-                {events.slice(0, 3).map((item) => {
+                {events.slice(0, 3).map(item => {
                   return (
                     <Grid item xs={12} md={4}>
                       <EventCard event={item} />
@@ -119,7 +119,7 @@ export default function HomePage(props) {
               <br />
               {events.length >= 4 && (
                 <Link
-                  to={"/events?ecat=" + ecats.main}
+                  to={'/events?ecat=' + ecats.main}
                   className={classes.link}
                 >
                   Click here for more events
@@ -187,7 +187,7 @@ export default function HomePage(props) {
             />
             {/* </InputLabel> */}
             <br />
-            <Button type="submit" align="center" style={{ marginBottom: "1%" }}>
+            <Button type="submit" align="center" style={{ marginBottom: '1%' }}>
               Send
             </Button>
             <br />
