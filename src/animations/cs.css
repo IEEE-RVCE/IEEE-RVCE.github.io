@@ -1,10 +1,10 @@
-body{
+body {
   margin: 0;
   padding: 0;
-  background: #CCC !important;
+  background: #ccc !important;
 }
 
-.container{
+.container {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -12,30 +12,29 @@ body{
   min-width: 500px;
   margin: 0px;
 }
-.head{
+.head {
   width: 100%;
   text-align: center;
   font-family: 'Lato', sans-serif;
   padding-bottom: 20px;
   font-weight: normal;
   color: #222;
-  letter-spacing: 1px
+  letter-spacing: 1px;
 }
-.component{
+.component {
   float: left;
   margin: 10px;
   position: relative;
 }
 
-
-.PC{
+.PC {
   height: 100px;
   width: 40%;
   border: 5px solid #333;
   border-radius: 5px;
   position: relative;
 }
-.PC:before{
+.PC:before {
   content: '';
   width: 5px;
   height: 20px;
@@ -47,7 +46,7 @@ body{
   display: block;
   background: #333;
 }
-.PC:after{
+.PC:after {
   content: '';
   width: 40px;
   height: 0px;
@@ -60,17 +59,18 @@ body{
   border-radius: 3px;
 }
 
-.PC .flare{
+.PC .flare {
   width: 50px;
   height: 1px;
-  background: #AAA;
+  background: #aaa;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-.PC .flare:after, .PC .flare:before{
+.PC .flare:after,
+.PC .flare:before {
   content: '';
   width: 30px;
   height: 1px;
@@ -79,18 +79,16 @@ body{
   top: -5px;
   left: 50%;
   transform: translate(-50%, -50%);
-  
-} 
-.PC .flare:after{
+}
+.PC .flare:after {
   top: 6px;
 }
 
-
-.signals{
+.signals {
   width: 30%;
   height: 100px;
 }
-.signals .dot{
+.signals .dot {
   width: 10px;
   height: 10px;
   background: #444 !important;
@@ -104,28 +102,28 @@ body{
   animation: blink 0.3s ease-in infinite alternate;
 }
 
-.signals .first{
+.signals .first {
   margin-left: 0px;
 }
 
-.signals .second{
+.signals .second {
   margin-left: 30px;
   animation-delay: 0.1s;
 }
 
-.signals .third{
+.signals .third {
   margin-left: 60px;
   animation-delay: 0.2s;
 }
 
-.server{
+.server {
   width: 12%;
   height: 130px;
   border: 5px solid #333;
   border-radius: 5px;
-  position: relative
+  position: relative;
 }
-.server .slot{
+.server .slot {
   display: block;
   background: #444;
   width: 90%;
@@ -136,7 +134,7 @@ body{
   border-radius: 2px;
 }
 
-.server .button{
+.server .button {
   width: 6px;
   height: 6px;
   background: #444;
@@ -146,33 +144,37 @@ body{
   right: 20%;
   bottom: 5%;
 }
-.server .button:last-of-type{
+.server .button:last-of-type {
   height: 8px;
   width: 8px;
   right: 5%;
 }
 
-@keyframes blink{
-  from { opacity: 0 }
-  to { opacity: 1 }
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-@media only screen and (max-width: 500px){
-  .container{
+@media only screen and (max-width: 500px) {
+  .container {
     width: 100%;
-    min-width: 100%
+    min-width: 100%;
   }
-  .component{
+  .component {
     display: block;
     float: left;
     clear: both;
     left: 50%;
     transform: translateX(-50%);
   }
-  .signals{
+  .signals {
     transform: translateX(-50%) rotate(90deg);
   }
-  .server{
+  .server {
     width: 17%;
   }
 }
