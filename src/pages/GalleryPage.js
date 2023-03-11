@@ -49,7 +49,7 @@ const useStyles = makeStyles(theme => ({
     right: 100,
   },
   titleBar: {
-    background: 'linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, ' + 'rgba(0,0,0,0.1) 70%, rgba(0,0,0,0) 100%)',
+    background: 'linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0) 100%)',
   },
   bar: {
     ...theme.transbg,
