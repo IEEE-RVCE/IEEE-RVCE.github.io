@@ -1,4 +1,5 @@
 export const exchangeRate = 77;
+//Every Year IEEE decides a fixed doller exchange rate. This year(2023) it is 1 $= 77 rupees. we take it and convert it to INR.
 /**
  * Membership costs. Cost is by default 0, notes by default is taken as empty.
  * @type {{name:string,cost?:number,discountedCost?:number,notes?:string}[]}
