@@ -23,48 +23,51 @@ const useStyles = makeStyles(theme => ({
 export default function AlumniAccordions(props) {
   const { members } = props;
   const classes = useStyles();
-  let color = props.color ?? '#222222';
+  let color = props.color ?? "#222222";
   return (
     <>
-      {Object.keys(members).length !== 0 && (
-        <>
-          <SpacyDivider color={color} />
-          <Paper className={classes.paper} elevation={0}>
-            <Typography variant="h4" align="center">
-              Alumni
-            </Typography>
-            <GiveMeABreak num={2} />
-            {Object.keys(members).map(batch => (
-              <Accordion
-                style={{
-                  borderLeft: '1px solid ' + color,
-                  borderBottom: '2px solid ' + color,
-                  backgroundColor: '#00000000',
-                  boxShadow: '0px 0px 0px 0px #00000000',
-                }}
-              >
-                <AccordionSummary>
-                  <Typography>{batch}</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Grid container spacing={2} justify="center">
-                    {members[batch].map(member => (
-                      <Grid item xs={12} md={4}>
-                        <Avatar
-                          name={member.name}
-                          position={member.position}
-                          src={member.image}
-                        />
-                      </Grid>
-                    ))}
-                  </Grid>
-                </AccordionDetails>
-              </Accordion>
-            ))}
-          </Paper>
-          <br />
-        </>
-      )}
+      {
+        // Check if members is not empty
+        members !== undefined && Object.keys(members).length !== 0 && (
+          <>
+            <SpacyDivider color={color} />
+            <Paper className={classes.paper} elevation={0}>
+              <Typography variant="h4" align="center">
+                Alumni
+              </Typography>
+              <GiveMeABreak num={2} />
+              {Object.keys(members).map((batch) => (
+                <Accordion
+                  style={{
+                    borderLeft: "1px solid " + color,
+                    borderBottom: "2px solid " + color,
+                    backgroundColor: "#00000000",
+                    boxShadow: "0px 0px 0px 0px #00000000",
+                  }}
+                >
+                  <AccordionSummary>
+                    <Typography>{batch}</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Grid container spacing={2} justify="center">
+                      {members[batch].map((member) => (
+                        <Grid item xs={12} md={4}>
+                          <Avatar
+                            name={member.name}
+                            position={member.position}
+                            src={member.image}
+                          />
+                        </Grid>
+                      ))}
+                    </Grid>
+                  </AccordionDetails>
+                </Accordion>
+              ))}
+            </Paper>
+            <br />
+          </>
+        )
+      }
     </>
   );
 }

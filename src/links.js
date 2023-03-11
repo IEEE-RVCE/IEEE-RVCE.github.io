@@ -44,6 +44,8 @@ export const societies = [
   { name: 'Signal Processing Society', link: '/society/sps' },
   { name: 'Antennas and Propagation Society', link: '/society/aps' },
   { name: 'Robotics and Automation Society', link: '/society/ras' },
+  { name: "Circuits and Systems Society", link: "/society/cas" },
+  { name: "Sensor Council", link: "/society/sc" },
 ];
 
 /**
@@ -142,6 +144,8 @@ export const images = {
     wie: imagePath + '/landing/wie.png',
     mainBlack: imagePath + '/landing/MainBlack.png',
     mainWhite: imagePath + '/landing/MainWhite.png',
+    cas: imagePath + "/landing/cas.png",
+    sc: imagePath + "/landing/sc.png",
   },
 };
 
@@ -156,6 +160,8 @@ export const ecats = {
   ras: 6,
   wie: 7,
   sight: 8,
+  cas: 9,
+  sc: 10,
 };
 
 /** Execom details */
@@ -387,7 +393,7 @@ export const execom = {
     {
       name: 'Dr. Shylashree.N ', //needs to be updated
       position: 'Faculty Advisor',
-      image: imagePath + '/execom/sight/usha_maam.jpg',
+      image: imagePath + '/execom/cas/dr_shylashree.jpeg',
     },
     {
       name: 'Akash Kotagi',
@@ -1094,27 +1100,27 @@ export const alumni = {
       {
         name: 'Dr. Shylashree N',
         position: 'Faculty Advisor',
-        image: imagePath + '/alumni/2021/sight/usha_maam.jpg', //to be updated
+        image: imagePath + '/alumni/2022/cas/dr_shylashree.jpeg', //to be updated
       },
       {
         name: 'Keerthana Ramesh ',
         position: 'Chair',
-        image: imagePath + '/alumni/2021/sight/usha_maam.jpg',
+        image: imagePath + '/alumni/2022/cas/keerthana.jpeg',
       },
       {
         name: 'Sriniketh S S',
         position: 'Vice Chair',
-        image: imagePath + '/alumni/2021/sight/usha_maam.jpg',
+        image: imagePath + '/alumni/2022/cas/sriniketh.jpg',
       },
       {
         name: 'Akash Kotagi',
         position: 'Secretary',
-        image: imagePath + '/alumni/2021/sight/usha_maam.jpg',
+        image: imagePath + '/alumni/2022/cas/akash.jpeg',
       },
       {
         name: 'Ritesh Gandhi',
         position: 'Treasurer',
-        image: imagePath + '/alumni/2021/sight/usha_maam.jpg',
+        image: imagePath + '/alumni/2022/cas/ritesh.jpeg',
       },
     ],
   },
