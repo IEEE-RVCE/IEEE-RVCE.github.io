@@ -58,7 +58,7 @@ export default function SCSocietyPage(props) {
           <Typography variant="body1">
             To help members learn about Theory, Design and fabrication and
             applications of devices for sensing and transducing physical and
-            biological phenomena whil focusing on the electronics to create
+            biological phenomena while focusing on the electronics to create
             sensors and actuators.
           </Typography>
         </Paper>
