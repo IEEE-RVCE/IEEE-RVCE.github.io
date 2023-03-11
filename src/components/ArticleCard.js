@@ -42,9 +42,7 @@ export default function ArticleCard(props) {
   //Shows snackbar with message and copies link in '' for user
   const handleClick = () => {
     setOpen(true);
-    navigator.clipboard.writeText(
-      window.location.origin + '/#/articles/' + props.article.arid
-    );
+    navigator.clipboard.writeText(window.location.origin + '/#/articles/' + props.article.arid);
   };
 
   const handleClose = (event, reason) => {
@@ -59,9 +57,7 @@ export default function ArticleCard(props) {
     <>
       <Card
         className={classes.root}
-        onDoubleClick={() =>
-          (window.location.href = window.location.href + '/' + props.event.eid)
-        }
+        onDoubleClick={() => (window.location.href = window.location.href + '/' + props.event.eid)}
       >
         <CardHeader
           title={props.article.title}
@@ -71,12 +67,7 @@ export default function ArticleCard(props) {
           }}
         />
         <CardContent>
-          <Typography
-            variant="body2"
-            color="textSecondary"
-            component="p"
-            noWrap
-          >
+          <Typography variant="body2" color="textSecondary" component="p" noWrap>
             Keywords: {props.article.keywords}
           </Typography>
         </CardContent>
@@ -89,10 +80,7 @@ export default function ArticleCard(props) {
               Link Copied!
             </Alert>
           </Snackbar>
-          <Link
-            style={{ textDecoration: 'none' }}
-            to={'/articles/' + props.article.arid}
-          >
+          <Link style={{ textDecoration: 'none' }} to={'/articles/' + props.article.arid}>
             <Button size="small">Read More</Button>
           </Link>
         </CardActions>

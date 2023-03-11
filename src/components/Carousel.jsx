@@ -33,12 +33,7 @@ export default function HomeCarousel(props) {
       {props.images.map(img => {
         return (
           <div>
-            <img
-              className={classes.bordered}
-              width="100%"
-              alt=""
-              src={img.src}
-            />
+            <img className={classes.bordered} width="100%" alt="" src={img.src} />
           </div>
         );
       })}

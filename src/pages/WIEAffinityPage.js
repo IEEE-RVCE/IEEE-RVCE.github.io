@@ -56,9 +56,8 @@ export default function WIEAffinityPage(props) {
           <Typography variant="h3">Vision</Typography>
           <br />
           <Typography variant="body1">
-            To be a key for empowering women through professional education
-            integrated with values and character in order to face the global
-            competition in the new era of technology.
+            To be a key for empowering women through professional education integrated with values and character in
+            order to face the global competition in the new era of technology.
           </Typography>
         </Paper>
         <SpacyDivider color="rgb(128 58 120)" />
@@ -66,9 +65,8 @@ export default function WIEAffinityPage(props) {
           <Typography variant="h3">Mission</Typography>
           <br />
           <Typography variant="body1">
-            Diversity of thoughts, perspectives, and culture are needed as much
-            in Engineering as in any other field. Surround yourself with people
-            who support you and get involved in technology.
+            Diversity of thoughts, perspectives, and culture are needed as much in Engineering as in any other field.
+            Surround yourself with people who support you and get involved in technology.
           </Typography>
         </Paper>
         <SpacyDivider color="rgb(128 58 120)" />
@@ -102,11 +100,7 @@ export default function WIEAffinityPage(props) {
           <Grid container spacing={2} justify="center">
             {execom.wie.map(member => (
               <Grid item xs={12} md={4}>
-                <Avatar
-                  name={member.name}
-                  position={member.position}
-                  src={member.image}
-                />
+                <Avatar name={member.name} position={member.position} src={member.image} />
               </Grid>
             ))}
           </Grid>

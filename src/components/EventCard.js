@@ -50,9 +50,7 @@ export default function EventCard(props) {
   //Shows snackbar with message and copies link in '' for user
   const handleClick = () => {
     setOpen(true);
-    navigator.clipboard.writeText(
-      window.location.origin + '/#/events/' + props.event.eid
-    );
+    navigator.clipboard.writeText(window.location.origin + '/#/events/' + props.event.eid);
   };
 
   const handleClose = (event, reason) => {
@@ -87,33 +85,18 @@ export default function EventCard(props) {
       <Card
         title={props.event.ename}
         className={classes.root}
-        onDoubleClick={() =>
-          (window.location.href = window.location.href + '/' + props.event.eid)
-        }
+        onDoubleClick={() => (window.location.href = window.location.href + '/' + props.event.eid)}
       >
         <CardHeader
           title={props.event.ename}
-          subheader={
-            eventTimes.start.toString().slice(4, 15) +
-            ' to ' +
-            eventTimes.end.toString().slice(4, 15)
-          }
+          subheader={eventTimes.start.toString().slice(4, 15) + ' to ' + eventTimes.end.toString().slice(4, 15)}
           titleTypographyProps={{
             noWrap: true,
           }}
         />
-        <CardMedia
-          className={classes.media}
-          image={imgLink}
-          title={props.event.ename}
-        />
+        <CardMedia className={classes.media} image={imgLink} title={props.event.ename} />
         <CardContent>
-          <Typography
-            variant="body2"
-            color="textSecondary"
-            component="p"
-            noWrap
-          >
+          <Typography variant="body2" color="textSecondary" component="p" noWrap>
             Keywords: {props.event.keywords}
           </Typography>
         </CardContent>
@@ -126,10 +109,7 @@ export default function EventCard(props) {
               Link Copied!
             </Alert>
           </Snackbar>
-          <Link
-            style={{ textDecoration: 'none' }}
-            to={'/events/' + props.event.eid}
-          >
+          <Link style={{ textDecoration: 'none' }} to={'/events/' + props.event.eid}>
             <Button size="small">Read More</Button>
           </Link>
         </CardActions>

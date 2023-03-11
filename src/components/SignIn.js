@@ -209,45 +209,18 @@ export default function Signin() {
             />
           </div>
           <br />
-          <Snackbar
-            open={values.incorrectInfo}
-            autoHideDuration={6000}
-            onClose={handleClose('incorrectInfo')}
-          >
-            <Alert
-              elevation={6}
-              variant="filled"
-              onClose={handleClose('incorrectInfo')}
-              severity="error"
-            >
+          <Snackbar open={values.incorrectInfo} autoHideDuration={6000} onClose={handleClose('incorrectInfo')}>
+            <Alert elevation={6} variant="filled" onClose={handleClose('incorrectInfo')} severity="error">
               Incorrect Information entered
             </Alert>
           </Snackbar>
-          <Snackbar
-            open={values.authFail}
-            autoHideDuration={6000}
-            onClose={handleClose('authFail')}
-          >
-            <Alert
-              elevation={6}
-              variant="filled"
-              onClose={handleClose('authFail')}
-              severity="error"
-            >
+          <Snackbar open={values.authFail} autoHideDuration={6000} onClose={handleClose('authFail')}>
+            <Alert elevation={6} variant="filled" onClose={handleClose('authFail')} severity="error">
               Invalid username or password
             </Alert>
           </Snackbar>
-          <Snackbar
-            open={values.networkError}
-            autoHideDuration={6000}
-            onClose={handleClose('networkError')}
-          >
-            <Alert
-              elevation={6}
-              variant="filled"
-              onClose={handleClose('networkError')}
-              severity="error"
-            >
+          <Snackbar open={values.networkError} autoHideDuration={6000} onClose={handleClose('networkError')}>
+            <Alert elevation={6} variant="filled" onClose={handleClose('networkError')} severity="error">
               Failed connecting to server
             </Alert>
           </Snackbar>
@@ -255,11 +228,7 @@ export default function Signin() {
             <CircularProgress color="inherit" />
           </Backdrop>
           <div>
-            <Button
-              color="inherit"
-              className={classes.button}
-              onClick={onSubmitSignIn}
-            >
+            <Button color="inherit" className={classes.button} onClick={onSubmitSignIn}>
               Submit
             </Button>
           </div>

@@ -22,18 +22,12 @@ export default function CostFragment({ cost, discountedCost }) {
       align="right"
     >
       {isNotDiscounted ? (
-        <span>
-          {isDollars ? '$' + costsNumber : '₹' + costsNumber * exchangeRate}
-        </span>
+        <span>{isDollars ? '$' + costsNumber : '₹' + costsNumber * exchangeRate}</span>
       ) : (
         <>
-          <del>
-            {isDollars ? '$' + costsNumber : '₹' + costsNumber * exchangeRate}
-          </del>
+          <del>{isDollars ? '$' + costsNumber : '₹' + costsNumber * exchangeRate}</del>
           &nbsp;
-          {isDollars
-            ? '$' + discountedCost
-            : '₹' + discountedCost * exchangeRate}
+          {isDollars ? '$' + discountedCost : '₹' + discountedCost * exchangeRate}
         </>
       )}
     </TableCell>

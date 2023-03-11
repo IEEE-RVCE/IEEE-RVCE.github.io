@@ -1,11 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardContent, Avatar, Typography } from '@material-ui/core';
-import {
-  createTheme,
-  responsiveFontSizes,
-  ThemeProvider,
-} from '@material-ui/core/styles';
+import { createTheme, responsiveFontSizes, ThemeProvider } from '@material-ui/core/styles';
 
 const theme = responsiveFontSizes(createTheme());
 const useStyles = makeStyles(theme => {

@@ -23,12 +23,7 @@ export default function DevelopersPage() {
     <div className={classes.root}>
       <Container maxWidth="lg" className={classes.page}>
         <Paper className={classes.paper}>
-          <Grid
-            container
-            spacing={2}
-            justify="space-evenly"
-            className={classes.grid}
-          >
+          <Grid container spacing={2} justify="space-evenly" className={classes.grid}>
             <Grid item xs={12} md={4}>
               <Avatar src={images.devs.ambu} name="Ambu Karthik" />
             </Grid>

@@ -151,20 +151,10 @@ export const AddArticleDialog = props => {
     setMeta({ ...meta, [prop]: false });
   };
   return (
-    <Dialog
-      fullScreen
-      open={props.open}
-      onClose={props.onClose}
-      TransitionComponent={Transition}
-    >
+    <Dialog fullScreen open={props.open} onClose={props.onClose} TransitionComponent={Transition}>
       <AppBar className={classes.appBar}>
         <Toolbar>
-          <IconButton
-            edge="start"
-            color="inherit"
-            onClick={props.onClose}
-            aria-label="close"
-          >
+          <IconButton edge="start" color="inherit" onClick={props.onClose} aria-label="close">
             <Close />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
@@ -221,9 +211,7 @@ export const AddArticleDialog = props => {
           </div>
           <div className={classes.fields}>
             <FormControl variant="outlined" className={classes.formControl}>
-              <InputLabel id="ecat-select-label">
-                Society or Affinity
-              </InputLabel>
+              <InputLabel id="ecat-select-label">Society or Affinity</InputLabel>
               <Select
                 labelId="ecat-select-label"
                 id="ecat-select"
@@ -233,17 +221,11 @@ export const AddArticleDialog = props => {
               >
                 <MenuItem value={ecats.compsoc}>Computer Society</MenuItem>
                 <MenuItem value={ecats.comsoc}>Communication Society</MenuItem>
-                <MenuItem value={ecats.aps}>
-                  Antenna Propogation Society
-                </MenuItem>
+                <MenuItem value={ecats.aps}>Antenna Propogation Society</MenuItem>
                 <MenuItem value={ecats.sps}>Signal Processing Society</MenuItem>
                 <MenuItem value={ecats.pes}>Power and Energy Society</MenuItem>
-                <MenuItem value={ecats.ras}>
-                  Robotic and Automation Society
-                </MenuItem>
-                <MenuItem value={ecats.sight}>
-                  Special Interest Group on Humanitarian Technology
-                </MenuItem>
+                <MenuItem value={ecats.ras}>Robotic and Automation Society</MenuItem>
+                <MenuItem value={ecats.sight}>Special Interest Group on Humanitarian Technology</MenuItem>
                 <MenuItem value={ecats.wie}>Women in Engineering</MenuItem>
               </Select>
             </FormControl>
@@ -256,36 +238,14 @@ export const AddArticleDialog = props => {
           onChange={handleContentChange}
         />
       </div>
-      <Snackbar
-        open={meta.error}
-        autoHideDuration={6000}
-        onClose={handleClose('error')}
-      >
-        <Alert
-          elevation={6}
-          variant="filled"
-          onClose={handleClose('error')}
-          severity="error"
-        >
-          {props.edit
-            ? 'An error occurred while editing an article'
-            : 'An error occurred while adding article'}
+      <Snackbar open={meta.error} autoHideDuration={6000} onClose={handleClose('error')}>
+        <Alert elevation={6} variant="filled" onClose={handleClose('error')} severity="error">
+          {props.edit ? 'An error occurred while editing an article' : 'An error occurred while adding article'}
         </Alert>
       </Snackbar>
-      <Snackbar
-        open={meta.success}
-        autoHideDuration={6000}
-        onClose={handleClose('success')}
-      >
-        <Alert
-          elevation={6}
-          variant="filled"
-          onClose={handleClose('success')}
-          severity="success"
-        >
-          {props.edit
-            ? 'Article edited successfully'
-            : 'Article added successfully'}
+      <Snackbar open={meta.success} autoHideDuration={6000} onClose={handleClose('success')}>
+        <Alert elevation={6} variant="filled" onClose={handleClose('success')} severity="success">
+          {props.edit ? 'Article edited successfully' : 'Article added successfully'}
         </Alert>
       </Snackbar>
     </Dialog>

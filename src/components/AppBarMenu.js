@@ -82,11 +82,7 @@ export default function AppBarMenu(props) {
     let menuitems = props.items;
     let items = menuitems.map(item => {
       return (
-        <Link
-          to={item.link}
-          className={classes.menuitem}
-          key={item.name + item.link}
-        >
+        <Link to={item.link} className={classes.menuitem} key={item.name + item.link}>
           <MenuItem onClick={handleClose} key={item.name + item.link}>
             {item.name}
           </MenuItem>
@@ -106,12 +102,7 @@ export default function AppBarMenu(props) {
     let items = listitems.map(item => {
       return (
         <Link to={item.link} className={classes.menuitem}>
-          <ListItem
-            onClick={() => handleDrawer(false)}
-            button
-            key={item.name}
-            className={classes.nested}
-          >
+          <ListItem onClick={() => handleDrawer(false)} button key={item.name} className={classes.nested}>
             <ListItemText primary={item.name} />
           </ListItem>
         </Link>
@@ -151,11 +142,7 @@ export default function AppBarMenu(props) {
           <Grow {...TransitionProps} style={{ transformOrigin: 'center top' }}>
             <Paper>
               <ClickAwayListener onClickAway={handleClose}>
-                <MenuList
-                  autoFocusItem={menuOpen}
-                  id="menu-list-grow"
-                  onKeyDown={handleListKeyDown}
-                >
+                <MenuList autoFocusItem={menuOpen} id="menu-list-grow" onKeyDown={handleListKeyDown}>
                   <MenuItems items={props.items} />
                 </MenuList>
               </ClickAwayListener>
@@ -163,12 +150,7 @@ export default function AppBarMenu(props) {
           </Grow>
         )}
       </Popper>
-      <ListItem
-        button
-        key={props.name}
-        onClick={handleClick}
-        className={classes.list}
-      >
+      <ListItem button key={props.name} onClick={handleClick} className={classes.list}>
         <ListItemText primary={props.name} className={classes.menuitem} />
       </ListItem>
       <Collapse in={listOpen} timeout="auto" unmountOnExit>

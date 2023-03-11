@@ -56,16 +56,12 @@ export default function RASSocietyPage(props) {
           <Typography variant="h3">Vision</Typography>
           <br />
           <Typography variant="body1">
-            To inspire and encourage students to use and enrich their
-            imagination and engineering abilities through robotics and
-            automation, in order to instil technological skills, teamwork, and
-            leadership, by engaging them in exhilarating mentor-based activities
-            that develop engineering skills, inspire innovation, encourage
-            creativity and promote well-rounded life skills such as
-            self-confidence, communication and leadership. To inculcate the
-            skill of design and creativity in members through developing
-            hardware and actual prototypes leading to groundbreaking research in
-            the field of Robotics and Automation.
+            To inspire and encourage students to use and enrich their imagination and engineering abilities through
+            robotics and automation, in order to instil technological skills, teamwork, and leadership, by engaging them
+            in exhilarating mentor-based activities that develop engineering skills, inspire innovation, encourage
+            creativity and promote well-rounded life skills such as self-confidence, communication and leadership. To
+            inculcate the skill of design and creativity in members through developing hardware and actual prototypes
+            leading to groundbreaking research in the field of Robotics and Automation.
           </Typography>
         </Paper>
         <SpacyDivider color="rgb(12 104 171)" />
@@ -73,11 +69,9 @@ export default function RASSocietyPage(props) {
           <Typography variant="h3">Mission</Typography>
           <br />
           <Typography variant="body1">
-            To conduct workshops, competitions, seminars and conferences under
-            the banner of the chapter to inspire and educate on the importance
-            of robotics and automation, as well as, imbibing technical skills
-            suited to recent technological developments in the field of
-            robotics.
+            To conduct workshops, competitions, seminars and conferences under the banner of the chapter to inspire and
+            educate on the importance of robotics and automation, as well as, imbibing technical skills suited to recent
+            technological developments in the field of robotics.
           </Typography>
         </Paper>
         <SpacyDivider color="rgb(12 104 171)" />
@@ -111,11 +105,7 @@ export default function RASSocietyPage(props) {
           <Grid container spacing={2} justify="center">
             {execom.ras.map(member => (
               <Grid item xs={12} md={4}>
-                <Avatar
-                  name={member.name}
-                  position={member.position}
-                  src={member.image}
-                />
+                <Avatar name={member.name} position={member.position} src={member.image} />
               </Grid>
             ))}
           </Grid>

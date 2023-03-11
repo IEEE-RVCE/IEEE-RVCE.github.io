@@ -14,8 +14,8 @@ import CSSocietyPage from './pages/CSSocietyPage';
 import APSSocietyPage from './pages/APSSocietyPage';
 import RASSocietyPage from './pages/RASSocietyPage';
 import SPSSocietyPage from './pages/SPSSocietyPage';
-import CASSocietyPage from "./pages/CASSocietyPage";
-import SCSocietyPage from "./pages/SCSocietyPage";
+import CASSocietyPage from './pages/CASSocietyPage';
+import SCSocietyPage from './pages/SCSocietyPage';
 import PESSocietyPage from './pages/PESSocietyPage';
 import COMSOCSocietyPage from './pages/COMSOCSocietyPage';
 import WIEAffinityPage from './pages/WIEAffinityPage';
@@ -34,8 +34,7 @@ import ArticlePage from './pages/ArticlePage';
 
 export default function App() {
   // const tempMedia = useMediaQuery('(prefers-color-scheme: dark)');
-  if (localStorage.getItem('isSetByUser') === null)
-    localStorage.setItem('darkMode', true);
+  if (localStorage.getItem('isSetByUser') === null) localStorage.setItem('darkMode', true);
   const prefersDarkMode = localStorage.getItem('darkMode') === 'true';
 
   const theme = createTheme({
@@ -51,13 +50,7 @@ export default function App() {
       contrastThreshold: 3,
     },
     typography: {
-      fontFamily: [
-        'Open Sans',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        'sans-serif',
-      ],
+      fontFamily: ['Open Sans', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
     },
     appbar: {
       backgroundColor: prefersDarkMode ? '#222' : '#FFF',
@@ -139,106 +132,95 @@ export default function App() {
     window.location.reload();
   };
 
-	return (
-		<ThemeProvider theme={theme}>
-			<div style={{ ...theme.background }}>
-				<CssBaseline />
-				<Header />
+  return (
+    <ThemeProvider theme={theme}>
+      <div style={{ ...theme.background }}>
+        <CssBaseline />
+        <Header />
 
-				<Route exact path="/">
-					<HomePage />
-				</Route>
-				<Route path="/about">
-					<AboutPage />
-				</Route>
-				<Route path="/login">
-					<SignInPage />
-				</Route>
-				<Route path="/devs">
-					<DevelopersPage />
-				</Route>
-				<Route path="/society/cs">
-					<CSSocietyPage />
-				</Route>
-				<Route path="/society/aps">
-					<APSSocietyPage />
-				</Route>
-				<Route path="/society/comsoc">
-					<COMSOCSocietyPage />
-				</Route>
-				<Route path="/society/pes">
-					<PESSocietyPage />
-				</Route>
-				<Route path="/society/ras">
-					<RASSocietyPage />
-				</Route>
-				<Route path="/society/sps">
-					<SPSSocietyPage />
-				</Route>
-				<Route path="/society/cas">
-					<CASSocietyPage />
-				</Route>
-				<Route path="/society/sc">
-					<SCSocietyPage />
-				</Route>
-				<Route path="/affinity/wie">
-					<WIEAffinityPage />
-				</Route>
-				<Route path="/affinity/sight">
-					<SIGHTAffinityPage />
-				</Route>
-				<Route path="/calendar">
-					<CalendarPage />
-				</Route>
+        <Route exact path="/">
+          <HomePage />
+        </Route>
+        <Route path="/about">
+          <AboutPage />
+        </Route>
+        <Route path="/login">
+          <SignInPage />
+        </Route>
+        <Route path="/devs">
+          <DevelopersPage />
+        </Route>
+        <Route path="/society/cs">
+          <CSSocietyPage />
+        </Route>
+        <Route path="/society/aps">
+          <APSSocietyPage />
+        </Route>
+        <Route path="/society/comsoc">
+          <COMSOCSocietyPage />
+        </Route>
+        <Route path="/society/pes">
+          <PESSocietyPage />
+        </Route>
+        <Route path="/society/ras">
+          <RASSocietyPage />
+        </Route>
+        <Route path="/society/sps">
+          <SPSSocietyPage />
+        </Route>
+        <Route path="/society/cas">
+          <CASSocietyPage />
+        </Route>
+        <Route path="/society/sc">
+          <SCSocietyPage />
+        </Route>
+        <Route path="/affinity/wie">
+          <WIEAffinityPage />
+        </Route>
+        <Route path="/affinity/sight">
+          <SIGHTAffinityPage />
+        </Route>
+        <Route path="/calendar">
+          <CalendarPage />
+        </Route>
 
-				<Switch>
-					<Route path="/events/:eid">
-						<EventPage />
-					</Route>
-					<Route path="/events" component={EventsPage} />
-				</Switch>
+        <Switch>
+          <Route path="/events/:eid">
+            <EventPage />
+          </Route>
+          <Route path="/events" component={EventsPage} />
+        </Switch>
 
-				<Switch>
-					<Route path="/membership/:step">
-						<MembershipPage />
-					</Route>
-					<Route path="/membership">
-						<MembershipPage />
-					</Route>
-				</Switch>
+        <Switch>
+          <Route path="/membership/:step">
+            <MembershipPage />
+          </Route>
+          <Route path="/membership">
+            <MembershipPage />
+          </Route>
+        </Switch>
 
-				<Switch>
-					<Route path="/gallery" component={GalleryPage} />
-				</Switch>
+        <Switch>
+          <Route path="/gallery" component={GalleryPage} />
+        </Switch>
 
-				<Switch>
-					<Route path="/articles/:arid">
-						<ArticlePage />
-					</Route>
-					<Route path="/articles" component={ArticlesPage} />
-				</Switch>
+        <Switch>
+          <Route path="/articles/:arid">
+            <ArticlePage />
+          </Route>
+          <Route path="/articles" component={ArticlesPage} />
+        </Switch>
 
-				{/* <Route path='/register'>
+        {/* <Route path='/register'>
           <RegisterAttendeePage />
         </Route> */}
 
         <Tooltip
-          title={
-            prefersDarkMode ? 'Switch to light theme' : 'Switch to dark theme'
-          }
+          title={prefersDarkMode ? 'Switch to light theme' : 'Switch to dark theme'}
           aria-label="themeSwitcherTooltip"
         >
-          <Fab
-            disabled
-            onClick={changeTheme}
-            aria-label="themeSwitcher"
-            style={{ ...theme.fab, visibility: 'hidden' }}
-          >
-            {prefersDarkMode ? (
-              <BrightnessHigh />
-            ) : (
-              <Brightness3 style={{ transform: 'rotate(150deg)' }} />
-            )}
+          <Fab disabled onClick={changeTheme} aria-label="themeSwitcher" style={{ ...theme.fab, visibility: 'hidden' }}>
+            {prefersDarkMode ? <BrightnessHigh /> : <Brightness3 style={{ transform: 'rotate(150deg)' }} />}
           </Fab>
         </Tooltip>
         <Footer />

@@ -68,26 +68,13 @@ export default function FrontBox() {
   return (
     <>
       <Box className={classes.bigbadBackground} ref={myRef}>
-        <Grid
-          container
-          style={{ padding: '2rem' }}
-          alignContent="center"
-          justify="center"
-        >
+        <Grid container style={{ padding: '2rem' }} alignContent="center" justify="center">
           <Grid item>
             <Box display={{ xs: 'none', sm: 'block' }}>
-              <img
-                className={classes.logoimage}
-                src={images.logos.ieee_rvce_new_white_big}
-                alt="logo"
-              />
+              <img className={classes.logoimage} src={images.logos.ieee_rvce_new_white_big} alt="logo" />
             </Box>
             <Box display={{ xs: 'block', sm: 'none' }}>
-              <img
-                className={classes.logoImageSmall}
-                src={images.logos.ieee_rvce_new_white}
-                alt="logo"
-              />
+              <img className={classes.logoImageSmall} src={images.logos.ieee_rvce_new_white} alt="logo" />
             </Box>
 
             <GiveMeABreak num={2} />

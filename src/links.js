@@ -44,8 +44,8 @@ export const societies = [
   { name: 'Signal Processing Society', link: '/society/sps' },
   { name: 'Antennas and Propagation Society', link: '/society/aps' },
   { name: 'Robotics and Automation Society', link: '/society/ras' },
-  { name: "Circuits and Systems Society", link: "/society/cas" },
-  { name: "Sensor Council", link: "/society/sc" },
+  { name: 'Circuits and Systems Society', link: '/society/cas' },
+  { name: 'Sensor Council', link: '/society/sc' },
 ];
 
 /**
@@ -144,8 +144,8 @@ export const images = {
     wie: imagePath + '/landing/wie.png',
     mainBlack: imagePath + '/landing/MainBlack.png',
     mainWhite: imagePath + '/landing/MainWhite.png',
-    cas: imagePath + "/landing/cas.png",
-    sc: imagePath + "/landing/sc.png",
+    cas: imagePath + '/landing/cas.png',
+    sc: imagePath + '/landing/sc.png',
   },
 };
 
@@ -1133,9 +1133,6 @@ export const about = {
   img1: imgify`history/1.png`,
   img2: imgify`history/2.png`,
 };
-export {
-  achievements as FPAchievementImages,
-  whatWeDo as FPWhatWeDoImages,
-} from './data/FrontPage/Carousels';
+export { achievements as FPAchievementImages, whatWeDo as FPWhatWeDoImages } from './data/FrontPage/Carousels';
 export { whatWeDoText, SbachievementsText } from './data/FrontPage/Text';
 export { imagePath, hostname };

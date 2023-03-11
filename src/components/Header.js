@@ -20,9 +20,7 @@ import { navs, societies, affinities, images } from '../links';
 
 export default function Header(props) {
   // Get dark or light mode
-  const [darkMode, setDarkMode] = React.useState(
-    localStorage.getItem('darkMode') === 'true'
-  );
+  const [darkMode, setDarkMode] = React.useState(localStorage.getItem('darkMode') === 'true');
   const [transparent, setTransparent] = React.useState(0);
   const scrollY = useScrollPosition(120);
   const matchSociety = useRouteMatch('/society/');
@@ -37,8 +35,7 @@ export default function Header(props) {
     setTransparent(0);
     if (matchSociety || matchAffinity) {
       let landingImg = document.getElementById('soclanding');
-      if (scrollY / (0.8 * landingImg.scrollHeight) < 1)
-        setTransparent(scrollY / (0.8 * landingImg.scrollHeight));
+      if (scrollY / (0.8 * landingImg.scrollHeight) < 1) setTransparent(scrollY / (0.8 * landingImg.scrollHeight));
       else setTransparent(1);
     } else {
       if (scrollY < 20) {
@@ -100,8 +97,7 @@ export default function Header(props) {
       },
       display: 'block',
       color: darkMode ? '#eee' : '#00629b',
-      backgroundColor:
-        transparent !== 1 ? theme.transbg.backgroundColor : 'inherit',
+      backgroundColor: transparent !== 1 ? theme.transbg.backgroundColor : 'inherit',
       transition: 'backgroundColor 1s linear',
     },
   }));
@@ -177,11 +173,7 @@ export default function Header(props) {
 
   // Handles toggle of drawer
   const handleDrawerToggle = open => event => {
-    if (
-      event &&
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
-    ) {
+    if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
     setDrawer(open);
@@ -193,21 +185,9 @@ export default function Header(props) {
       <List>
         {navs.map(nav => {
           if (nav.name === 'Societies') {
-            return (
-              <AppBarMenu
-                drawerHandle={setDrawer}
-                name={nav.name}
-                items={societies}
-              />
-            );
+            return <AppBarMenu drawerHandle={setDrawer} name={nav.name} items={societies} />;
           } else if (nav.name === 'Affinities') {
-            return (
-              <AppBarMenu
-                drawerHandle={setDrawer}
-                name={nav.name}
-                items={affinities}
-              />
-            );
+            return <AppBarMenu drawerHandle={setDrawer} name={nav.name} items={affinities} />;
           } else if (nav.name === 'Login') {
             if (loggedin) {
               return (
@@ -221,11 +201,7 @@ export default function Header(props) {
           } else {
             return (
               <Link to={nav.link} className={classes.nav}>
-                <ListItem
-                  onClick={handleDrawerToggle(false)}
-                  button
-                  key={nav.name}
-                >
+                <ListItem onClick={handleDrawerToggle(false)} button key={nav.name}>
                   <ListItemText primary={nav.name} />
                 </ListItem>
               </Link>
@@ -245,11 +221,7 @@ export default function Header(props) {
             <div className={classes.brand}>
               <Link to="/">
                 <img
-                  src={
-                    darkMode
-                      ? images.logos.ieee_rvce_new_white
-                      : images.logos.ieee_rvce_new_blue
-                  }
+                  src={darkMode ? images.logos.ieee_rvce_new_white : images.logos.ieee_rvce_new_blue}
                   height="60px"
                   style={{ float: 'left' }}
                   alt="IEEE RVCE logo"
@@ -266,10 +238,7 @@ export default function Header(props) {
                                     <img src={darkMode?images.logos.ieee_white:images.logos.ieee_blue_png} height="60px" style={{float:"right", marginRight: "3%", paddingTop: '10px', paddingBottom: '10px'}} alt="IEEE logo"/>
                                 </a>
                             </div> */}
-            <IconButton
-              onClick={handleDrawerToggle(true)}
-              className={classes.menuButton}
-            >
+            <IconButton onClick={handleDrawerToggle(true)} className={classes.menuButton}>
               <MenuIcon />
             </IconButton>
           </Toolbar>

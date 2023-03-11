@@ -49,9 +49,7 @@ const useStyles = makeStyles(theme => ({
     right: 100,
   },
   titleBar: {
-    background:
-      'linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, ' +
-      'rgba(0,0,0,0.1) 70%, rgba(0,0,0,0) 100%)',
+    background: 'linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, ' + 'rgba(0,0,0,0.1) 70%, rgba(0,0,0,0) 100%)',
   },
   bar: {
     ...theme.transbg,
@@ -98,11 +96,7 @@ export default function GalleryPage(props) {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(
-        ecat !== undefined
-          ? hostname + '/api/gallery/cat/' + ecat
-          : hostname + '/api/gallery'
-      )
+      .get(ecat !== undefined ? hostname + '/api/gallery/cat/' + ecat : hostname + '/api/gallery')
       .then(response => {
         console.log(response.data.images);
         setTileData(response.data.images);
@@ -240,29 +234,18 @@ export default function GalleryPage(props) {
                 if (loading) {
                   return (
                     <GridListTile key={'skeleton' + index} cols={1}>
-                      <Skeleton
-                        animation="pulse"
-                        variant="rect"
-                        height={400}
-                        width={400}
-                      />
+                      <Skeleton animation="pulse" variant="rect" height={400} width={400} />
                     </GridListTile>
                   );
                 } else {
                   if (tileData.length >= 0) {
                     return (
-                      <GridListTile
-                        key={tile.image}
-                        cols={1}
-                        style={{ minHeight: 400, minWidth: 400 }}
-                      >
+                      <GridListTile key={tile.image} cols={1} style={{ minHeight: 400, minWidth: 400 }}>
                         <img
                           onClick={onTileClicked(index)}
                           style={{ objectFit: 'contain', width: '100%' }}
                           title={tile.alt}
-                          src={`data:image/png;base64,${Buffer(
-                            tile.image.data
-                          ).toString('base64')}`}
+                          src={`data:image/png;base64,${Buffer(tile.image.data).toString('base64')}`}
                           alt={tile.alt}
                         />
                         {loggedIn && (
@@ -270,16 +253,10 @@ export default function GalleryPage(props) {
                             titlePosition="top"
                             actionIcon={
                               <>
-                                <IconButton
-                                  aria-label={`delete ${tile.name}`}
-                                  onClick={handleDeleteImage(tile.iid)}
-                                >
+                                <IconButton aria-label={`delete ${tile.name}`} onClick={handleDeleteImage(tile.iid)}>
                                   <Delete />
                                 </IconButton>
-                                <IconButton
-                                  aria-label={`delete ${tile.name}`}
-                                  onClick={handleEditImage(index)}
-                                >
+                                <IconButton aria-label={`delete ${tile.name}`} onClick={handleEditImage(index)}>
                                   <Edit />
                                 </IconButton>
                               </>
@@ -308,16 +285,10 @@ export default function GalleryPage(props) {
         </div>
       </Container>
       {!loading && (
-        <Backdrop
-          className={classes.backdrop}
-          open={openBackdrop}
-          onClick={handleBackdropClose}
-        >
+        <Backdrop className={classes.backdrop} open={openBackdrop} onClick={handleBackdropClose}>
           {tileData !== undefined && tileData.length !== 0 && (
             <img
-              src={`data:image/png;base64,${Buffer(
-                tileData[iid].image.data
-              ).toString('base64')}`}
+              src={`data:image/png;base64,${Buffer(tileData[iid].image.data).toString('base64')}`}
               alt={tileData[iid].name}
               style={{
                 maxHeight: window.innerHeight * 0.9,
@@ -330,11 +301,7 @@ export default function GalleryPage(props) {
       {loggedIn && (
         <>
           <Tooltip title="Add image" aria-label="add-image-tooltip">
-            <Fab
-              onClick={handleDialogOpen}
-              aria-label="addImage"
-              className={classes.fab}
-            >
+            <Fab onClick={handleDialogOpen} aria-label="addImage" className={classes.fab}>
               <Add />
             </Fab>
           </Tooltip>

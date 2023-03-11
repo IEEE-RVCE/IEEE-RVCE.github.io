@@ -128,40 +128,21 @@ export const AddImageDialog = props => {
 
   return (
     <>
-      <Dialog
-        onClose={props.onClose}
-        open={props.open}
-        className={classes.root}
-      >
+      <Dialog onClose={props.onClose} open={props.open} className={classes.root}>
         <DialogTitle>Add image to gallery</DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            Add image details here to be shown in the gallery
-          </DialogContentText>
+          <DialogContentText>Add image details here to be shown in the gallery</DialogContentText>
           <div className={classes.fields}>
             <FormControl variant="outlined" className={classes.formControl}>
-              <InputLabel id="ecat-select-label">
-                Society or Affinity
-              </InputLabel>
-              <Select
-                labelId="ecat-select-label"
-                id="ecat-select"
-                value={values.ecat}
-                onChange={handleChange('ecat')}
-              >
+              <InputLabel id="ecat-select-label">Society or Affinity</InputLabel>
+              <Select labelId="ecat-select-label" id="ecat-select" value={values.ecat} onChange={handleChange('ecat')}>
                 <MenuItem value={ecats.compsoc}>Computer Society</MenuItem>
                 <MenuItem value={ecats.comsoc}>Communication Society</MenuItem>
-                <MenuItem value={ecats.aps}>
-                  Antenna Propogation Society
-                </MenuItem>
+                <MenuItem value={ecats.aps}>Antenna Propogation Society</MenuItem>
                 <MenuItem value={ecats.sps}>Signal Processing Society</MenuItem>
                 <MenuItem value={ecats.pes}>Power and Energy Society</MenuItem>
-                <MenuItem value={ecats.ras}>
-                  Robotic and Automation Society
-                </MenuItem>
-                <MenuItem value={ecats.sight}>
-                  Special Interest Group on Humanitarian Technology
-                </MenuItem>
+                <MenuItem value={ecats.ras}>Robotic and Automation Society</MenuItem>
+                <MenuItem value={ecats.sight}>Special Interest Group on Humanitarian Technology</MenuItem>
                 <MenuItem value={ecats.wie}>Women in Engineering</MenuItem>
               </Select>
             </FormControl>
@@ -214,36 +195,14 @@ export const AddImageDialog = props => {
           </Button>
         </DialogActions>
       </Dialog>
-      <Snackbar
-        open={meta.error}
-        autoHideDuration={6000}
-        onClose={handleClose('error')}
-      >
-        <Alert
-          elevation={6}
-          variant="filled"
-          onClose={handleClose('error')}
-          severity="error"
-        >
-          {props.edit
-            ? 'An error occurred while updating an image'
-            : 'An error occurred while adding image'}
+      <Snackbar open={meta.error} autoHideDuration={6000} onClose={handleClose('error')}>
+        <Alert elevation={6} variant="filled" onClose={handleClose('error')} severity="error">
+          {props.edit ? 'An error occurred while updating an image' : 'An error occurred while adding image'}
         </Alert>
       </Snackbar>
-      <Snackbar
-        open={meta.success}
-        autoHideDuration={6000}
-        onClose={handleClose('success')}
-      >
-        <Alert
-          elevation={6}
-          variant="filled"
-          onClose={handleClose('success')}
-          severity="success"
-        >
-          {props.edit
-            ? 'Image updated successfully'
-            : 'Image added successfully'}
+      <Snackbar open={meta.success} autoHideDuration={6000} onClose={handleClose('success')}>
+        <Alert elevation={6} variant="filled" onClose={handleClose('success')} severity="success">
+          {props.edit ? 'Image updated successfully' : 'Image added successfully'}
         </Alert>
       </Snackbar>
     </>

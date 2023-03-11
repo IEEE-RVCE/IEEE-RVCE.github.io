@@ -56,9 +56,8 @@ export default function APSSocietyPage(props) {
           <Typography variant="h3">Vision</Typography>
           <br />
           <Typography variant="body1">
-            To instil excellent and broadly accessible concepts and ideals of
-            the Antennas and Propagation domain empowering the professional
-            development of its members and the society.
+            To instil excellent and broadly accessible concepts and ideals of the Antennas and Propagation domain
+            empowering the professional development of its members and the society.
           </Typography>
         </Paper>
         <SpacyDivider color="rgb(110 110 193)" />
@@ -68,25 +67,23 @@ export default function APSSocietyPage(props) {
           <Typography variant="body1">
             <ul>
               <li>
-                To nurture the members of the society with relevant technical
-                knowledge with respect to the Antennas and Propagation Domain.
+                To nurture the members of the society with relevant technical knowledge with respect to the Antennas and
+                Propagation Domain.
               </li>
               <li>
-                To instil excellence in the domain of Antenna’s specifically
-                with regard to their analysis and design.
+                To instil excellence in the domain of Antenna’s specifically with regard to their analysis and design.
               </li>
               <li>
-                To provide an active platform for the members of the society to
-                exchange, challenge and encourage new ideas.
+                To provide an active platform for the members of the society to exchange, challenge and encourage new
+                ideas.
               </li>
               <li>
-                To ensure the members of the society imbibe skills relevant and
-                required by the society and actively contribute to the same.
+                To ensure the members of the society imbibe skills relevant and required by the society and actively
+                contribute to the same.
               </li>
               <li>
-                To guarantee the proficiency of the society members and to
-                ensure overall professional development by conducting Webinars,
-                Workshops and Distinguished lectures.
+                To guarantee the proficiency of the society members and to ensure overall professional development by
+                conducting Webinars, Workshops and Distinguished lectures.
               </li>
             </ul>
           </Typography>
@@ -122,11 +119,7 @@ export default function APSSocietyPage(props) {
           <Grid container spacing={2} justify="center">
             {execom.aps.map(member => (
               <Grid item xs={12} md={4}>
-                <Avatar
-                  name={member.name}
-                  position={member.position}
-                  src={member.image}
-                />
+                <Avatar name={member.name} position={member.position} src={member.image} />
               </Grid>
             ))}
           </Grid>

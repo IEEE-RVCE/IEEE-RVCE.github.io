@@ -1,12 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {
-  Typography,
-  Container,
-  Box,
-  Grid,
-  IconButton,
-} from '@material-ui/core';
+import { Typography, Container, Box, Grid, IconButton } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { Instagram, LinkedIn, EmailOutlined } from '@material-ui/icons';
 
@@ -94,29 +88,17 @@ export default function Footer(props) {
                 </Link>
               ))}
             </Grid>
-            <Grid
-              item
-              xs={12}
-              md={6}
-              lg={3}
-              key={4}
-              style={{ paddingRight: 60 }}
-            >
+            <Grid item xs={12} md={6} lg={3} key={4} style={{ paddingRight: 60 }}>
               <Typography className={classes.typography} variant="h6">
                 Address:
                 <br />
               </Typography>
               <Typography className={classes.body} variant="body1">
-                Mysore Road, RV Vidyanikethan Post, Bengaluru-560059, Karnataka,
-                India
+                Mysore Road, RV Vidyanikethan Post, Bengaluru-560059, Karnataka, India
                 <br />
               </Typography>
               <br />
-              <Grid
-                container
-                justify="space-between"
-                style={{ paddingRight: 60 }}
-              >
+              <Grid container justify="space-between" style={{ paddingRight: 60 }}>
                 <IconButton
                   href="https://instagram.com/ieee_rvce?igshid=1hbfgquvdu0yt"
                   target="_blank"

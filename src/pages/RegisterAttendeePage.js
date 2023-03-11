@@ -62,24 +62,13 @@ export default function RegisterAttendeePage(props) {
   };
 
   useEffect(() => {
-    axios
-      .get(
-        category !== 0
-          ? hostname + '/api/event/cat/' + category
-          : hostname + '/api/event'
-      )
-      .then(response => {
-        setEvents(response.data.events);
-      });
+    axios.get(category !== 0 ? hostname + '/api/event/cat/' + category : hostname + '/api/event').then(response => {
+      setEvents(response.data.events);
+    });
   }, [category]);
 
   const submitData = () => {
-    if (
-      name.length === 0 ||
-      email.length === 0 ||
-      eid === 0 ||
-      phNo.length < 10
-    ) {
+    if (name.length === 0 || email.length === 0 || eid === 0 || phNo.length < 10) {
       setRegRes({ ...regRes, dataErr: true });
       return;
     }
@@ -121,9 +110,7 @@ export default function RegisterAttendeePage(props) {
             Event Registration Form
           </Typography>
           <FormControl style={{ margin: '1%' }}>
-            <InputLabel id="ecat-search-label">
-              Select Society/Affinity
-            </InputLabel>
+            <InputLabel id="ecat-search-label">Select Society/Affinity</InputLabel>
             <Select
               labelId="ecat-search-label"
               id="ecat-search"
@@ -172,11 +159,7 @@ export default function RegisterAttendeePage(props) {
             >
               {events.map(function (item) {
                 return (
-                  <MenuItem
-                    key={item.ename}
-                    value={item.eid}
-                    style={{ minWidth: '300px', maxWidth: '400px' }}
-                  >
+                  <MenuItem key={item.ename} value={item.eid} style={{ minWidth: '300px', maxWidth: '400px' }}>
                     {item.ename}
                   </MenuItem>
                 );
@@ -219,16 +202,8 @@ export default function RegisterAttendeePage(props) {
                 value={String(isMem)}
                 onChange={e => setIsMem(e.target.value === 'true')}
               >
-                <FormControlLabel
-                  value="true"
-                  control={<Radio />}
-                  label="Yes"
-                />
-                <FormControlLabel
-                  value="false"
-                  control={<Radio />}
-                  label="No"
-                />
+                <FormControlLabel value="true" control={<Radio />} label="Yes" />
+                <FormControlLabel value="false" control={<Radio />} label="No" />
               </RadioGroup>
             </FormControl>
             <TextField
@@ -264,45 +239,18 @@ export default function RegisterAttendeePage(props) {
           </Button>
         </Paper>
       </Container>
-      <Snackbar
-        open={regRes.error}
-        autoHideDuration={6000}
-        onClose={handleClose('error')}
-      >
-        <Alert
-          elevation={6}
-          variant="filled"
-          onClose={handleClose('error')}
-          severity="error"
-        >
+      <Snackbar open={regRes.error} autoHideDuration={6000} onClose={handleClose('error')}>
+        <Alert elevation={6} variant="filled" onClose={handleClose('error')} severity="error">
           An error occurred while registering, please try again
         </Alert>
       </Snackbar>
-      <Snackbar
-        open={regRes.success}
-        autoHideDuration={6000}
-        onClose={handleClose('success')}
-      >
-        <Alert
-          elevation={6}
-          variant="filled"
-          onClose={handleClose('success')}
-          severity="success"
-        >
+      <Snackbar open={regRes.success} autoHideDuration={6000} onClose={handleClose('success')}>
+        <Alert elevation={6} variant="filled" onClose={handleClose('success')} severity="success">
           Successfully registered
         </Alert>
       </Snackbar>
-      <Snackbar
-        open={regRes.dataErr}
-        autoHideDuration={6000}
-        onClose={handleClose('dataErr')}
-      >
-        <Alert
-          elevation={6}
-          variant="filled"
-          onClose={handleClose('dataErr')}
-          severity="error"
-        >
+      <Snackbar open={regRes.dataErr} autoHideDuration={6000} onClose={handleClose('dataErr')}>
+        <Alert elevation={6} variant="filled" onClose={handleClose('dataErr')} severity="error">
           Please enter the required details!
         </Alert>
       </Snackbar>

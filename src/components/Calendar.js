@@ -35,18 +35,16 @@ export default class EventsCalendar extends React.Component {
       .get(hostname + '/api/event')
       .then(res => {
         let events = [];
-        res.data.events.forEach(
-          ({ ename: title, eventstart: start, eventend: end, eid }) => {
-            events.push({
-              title,
-              start,
-              end,
-              allDay: false,
-              resource: false,
-              eid,
-            });
-          }
-        );
+        res.data.events.forEach(({ ename: title, eventstart: start, eventend: end, eid }) => {
+          events.push({
+            title,
+            start,
+            end,
+            allDay: false,
+            resource: false,
+            eid,
+          });
+        });
         this.setState({ events: events });
       })
       .catch(err => {
@@ -86,26 +84,20 @@ export default class EventsCalendar extends React.Component {
           style={
             this.props.defaultView !== 'agenda'
               ? {
-                  height:
-                    this.state.height * (this.state.proportions.height / 100),
-                  width:
-                    this.state.width * (this.state.proportions.width / 100),
+                  height: this.state.height * (this.state.proportions.height / 100),
+                  width: this.state.width * (this.state.proportions.width / 100),
                   margin: 'auto',
                   maxWidth: this.props.maxHeight,
                   padding: 30,
                   borderRadius: 5,
                   boxShadow:
-                    localStorage.getItem('darkMode') === 'true'
-                      ? '0px 0px 5px 3px #222'
-                      : '0px 0px 5px 3px #ddd',
+                    localStorage.getItem('darkMode') === 'true' ? '0px 0px 5px 3px #222' : '0px 0px 5px 3px #ddd',
                   backgroundColor: '#fff',
                   color: '#000',
                 }
               : {
-                  height:
-                    this.state.height * (this.state.proportions.height / 100),
-                  width:
-                    this.state.width * (this.state.proportions.width / 100),
+                  height: this.state.height * (this.state.proportions.height / 100),
+                  width: this.state.width * (this.state.proportions.width / 100),
                   margin: 'auto',
                   maxWidth: this.props.maxHeight,
                 }
@@ -120,8 +112,7 @@ export default class EventsCalendar extends React.Component {
             startAccessor="start"
             endAccessor="end"
             onDoubleClickEvent={event => {
-              window.location.href =
-                window.location.origin + '/#/events/' + event.eid;
+              window.location.href = window.location.origin + '/#/events/' + event.eid;
             }}
             toolbar={this.props.toolbar}
           />

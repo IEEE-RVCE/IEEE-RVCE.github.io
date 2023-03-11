@@ -56,10 +56,9 @@ export default function SPSSocietyPage(props) {
           <Typography variant="h3">Vision</Typography>
           <br />
           <Typography variant="body1">
-            To aid student researchers in the field of signal processing by
-            providing them a platform to be aware of the latest developments in
-            the field through IEEE resources and to also provide arenas for
-            development of projects and prototypes based on intensive research.
+            To aid student researchers in the field of signal processing by providing them a platform to be aware of the
+            latest developments in the field through IEEE resources and to also provide arenas for development of
+            projects and prototypes based on intensive research.
           </Typography>
         </Paper>
         <SpacyDivider color="rgb(153 221 227)" />
@@ -67,10 +66,9 @@ export default function SPSSocietyPage(props) {
           <Typography variant="h3">Mission</Typography>
           <br />
           <Typography variant="body1">
-            To conduct workshops, webinars and conferences under the banner of
-            the chapter to propagate the importance and recent developments in
-            the field of signal processings, and to create a collaborative
-            research environment in the field.
+            To conduct workshops, webinars and conferences under the banner of the chapter to propagate the importance
+            and recent developments in the field of signal processings, and to create a collaborative research
+            environment in the field.
           </Typography>
         </Paper>
         <SpacyDivider color="rgb(153 221 227)" />
@@ -104,11 +102,7 @@ export default function SPSSocietyPage(props) {
           <Grid container spacing={2} justify="center">
             {execom.sps.map(member => (
               <Grid item xs={12} md={4}>
-                <Avatar
-                  name={member.name}
-                  position={member.position}
-                  src={member.image}
-                />
+                <Avatar name={member.name} position={member.position} src={member.image} />
               </Grid>
             ))}
           </Grid>

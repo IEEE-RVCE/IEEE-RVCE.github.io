@@ -57,11 +57,9 @@ export default function CSSocietyPage(props) {
           <Typography variant="h3">Vision</Typography>
           <br />
           <Typography variant="body1">
-            To impart knowledge pertaining to Computer Science and create a
-            culture of continuous learning and innovation through research,
-            development and experimentation while persevering to develop
-            technology for the betterment of humanity and ensuring harmony
-            within the community.
+            To impart knowledge pertaining to Computer Science and create a culture of continuous learning and
+            innovation through research, development and experimentation while persevering to develop technology for the
+            betterment of humanity and ensuring harmony within the community.
           </Typography>
         </Paper>
         <SpacyDivider color="rgb(80 161 99)" />
@@ -71,20 +69,15 @@ export default function CSSocietyPage(props) {
           <Typography variant="body1">
             <ul>
               <li>
-                To enable students to gain the skills needed to become
-                responsible professionals and be more aware of the upcoming
-                trends in computer science.
+                To enable students to gain the skills needed to become responsible professionals and be more aware of
+                the upcoming trends in computer science.
               </li>
               <li>To inculcate a mindset that makes students inquisitive</li>
               <li>
-                To imbibe a sense of responsibility towards the technical and
-                global community and fulfil the same by working towards building
-                a collaborative network of like-minded individuals
+                To imbibe a sense of responsibility towards the technical and global community and fulfil the same by
+                working towards building a collaborative network of like-minded individuals
               </li>
-              <li>
-                To apply observations and knowledge to community-driven
-                sustainable projects
-              </li>
+              <li>To apply observations and knowledge to community-driven sustainable projects</li>
             </ul>
           </Typography>
         </Paper>
@@ -105,10 +98,7 @@ export default function CSSocietyPage(props) {
               </Grid>
               <br />
               {events.length >= 4 && (
-                <Link
-                  to={'/events?ecat=' + ecats.compsoc}
-                  className={classes.link}
-                >
+                <Link to={'/events?ecat=' + ecats.compsoc} className={classes.link}>
                   Click here for more events
                 </Link>
               )}
@@ -122,11 +112,7 @@ export default function CSSocietyPage(props) {
           <Grid container spacing={2} justify="center">
             {execom.compsoc.map(member => (
               <Grid item xs={12} md={4}>
-                <Avatar
-                  name={member.name}
-                  position={member.position}
-                  src={member.image}
-                />
+                <Avatar name={member.name} position={member.position} src={member.image} />
               </Grid>
             ))}
           </Grid>

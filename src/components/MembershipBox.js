@@ -86,11 +86,7 @@ export default function MembershipBox() {
           </Grid>
           <Grid container alignItems="center" justify="center">
             <Grid item>
-              <HashLink
-                smooth
-                to="#whyjoinieee"
-                className={classes.noUnderline}
-              >
+              <HashLink smooth to="#whyjoinieee" className={classes.noUnderline}>
                 <Button
                   style={{ margin: '1rem' }}
                   className={`${classes.bigbutton} ${classes.bigbutton2}`}

@@ -111,11 +111,7 @@ export default function EventPage(props) {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(
-        ecat !== undefined
-          ? hostname + '/api/event/cat/' + ecat
-          : hostname + '/api/event'
-      )
+      .get(ecat !== undefined ? hostname + '/api/event/cat/' + ecat : hostname + '/api/event')
       .then(response => {
         // Event Sorted on basis of Event Start Date; (if anyone has a better idea, let's goooo!)
         setEvents(
@@ -135,10 +131,7 @@ export default function EventPage(props) {
       <EventsBox />
       <Container maxWidth="lg">
         <div className={classes.searchBars}>
-          <div
-            className={classes.bar}
-            style={{ float: 'right', display: 'flex', flexDirection: 'row' }}
-          >
+          <div className={classes.bar} style={{ float: 'right', display: 'flex', flexDirection: 'row' }}>
             <FormControl>
               <TextField
                 value={text}
@@ -203,13 +196,7 @@ export default function EventPage(props) {
         {/* <Typography variant='h4' style={{textAlign: 'center'}}><b>Events</b></Typography> */}
         <br />
         {Array.isArray(list) && list.length !== 0 ? (
-          <Grid
-            container
-            spacing={3}
-            direction="row"
-            alignItems="stretch"
-            className={classes.grid}
-          >
+          <Grid container spacing={3} direction="row" alignItems="stretch" className={classes.grid}>
             {list.map(function (item) {
               if (loading) {
                 return (
@@ -235,19 +222,11 @@ export default function EventPage(props) {
       {loggedIn && (
         <>
           <Tooltip title="Add event" aria-label="add-event-tooltip">
-            <Fab
-              onClick={handleDialogOpen}
-              aria-label="addEvent"
-              className={classes.fab}
-            >
+            <Fab onClick={handleDialogOpen} aria-label="addEvent" className={classes.fab}>
               <Add />
             </Fab>
           </Tooltip>
-          <AddEventDialog
-            onClose={handleDialogClose}
-            aria-label="add-event-dialog"
-            open={dialog}
-          />
+          <AddEventDialog onClose={handleDialogClose} aria-label="add-event-dialog" open={dialog} />
         </>
       )}
       <GiveMeABreak />

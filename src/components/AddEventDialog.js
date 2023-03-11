@@ -91,10 +91,7 @@ export const AddEventDialog = props => {
     const data = new FormData();
     data.append('image', file);
     try {
-      const res = await axios.post(
-        `https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_IMGBB_API_KEY}`,
-        data
-      );
+      const res = await axios.post(`https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_IMGBB_API_KEY}`, data);
       setValues({
         ...values,
         smallposterlink: res.data.data.display_url,
@@ -186,17 +183,12 @@ export const AddEventDialog = props => {
 
   return (
     <>
-      <Dialog
-        onClose={props.onClose}
-        open={props.open}
-        className={classes.root}
-      >
+      <Dialog onClose={props.onClose} open={props.open} className={classes.root}>
         <DialogTitle>Add event</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Add event details here for users to read about the event. Abide to
-            the datatypes used in the form and use submit button to add the
-            event.
+            Add event details here for users to read about the event. Abide to the datatypes used in the form and use
+            submit button to add the event.
           </DialogContentText>
           <div className={classes.fields}>
             <TextField
@@ -315,35 +307,18 @@ export const AddEventDialog = props => {
           </div>
           <div className={classes.fields}>
             <FormControl variant="outlined" className={classes.formControl}>
-              <InputLabel id="ecat-select-label">
-                Society or Affinity
-              </InputLabel>
-              <Select
-                labelId="ecat-select-label"
-                id="ecat-select"
-                value={values.ecat}
-                onChange={handleChange('ecat')}
-              >
+              <InputLabel id="ecat-select-label">Society or Affinity</InputLabel>
+              <Select labelId="ecat-select-label" id="ecat-select" value={values.ecat} onChange={handleChange('ecat')}>
                 <MenuItem value={ecats.main}>Main IEEE</MenuItem>
                 <MenuItem value={ecats.compsoc}>Computer Society</MenuItem>
                 <MenuItem value={ecats.comsoc}>Communication Society</MenuItem>
-                <MenuItem value={ecats.aps}>
-                  Antenna Propogation Society
-                </MenuItem>
+                <MenuItem value={ecats.aps}>Antenna Propogation Society</MenuItem>
                 <MenuItem value={ecats.sps}>Signal Processing Society</MenuItem>
                 <MenuItem value={ecats.pes}>Power and Energy Society</MenuItem>
-                <MenuItem value={ecats.ras}>
-                  Robotic and Automation Society
-                </MenuItem>
-                <MenuItem value={ecats.cas}>
-                  Circuits and Systems Society
-                </MenuItem>
-                <MenuItem value={ecats.sc}>
-                  Sensors Council
-                </MenuItem>
-                <MenuItem value={ecats.sight}>
-                  Special Interest Group on Humanitarian Technology
-                </MenuItem>
+                <MenuItem value={ecats.ras}>Robotic and Automation Society</MenuItem>
+                <MenuItem value={ecats.cas}>Circuits and Systems Society</MenuItem>
+                <MenuItem value={ecats.sc}>Sensors Council</MenuItem>
+                <MenuItem value={ecats.sight}>Special Interest Group on Humanitarian Technology</MenuItem>
                 <MenuItem value={ecats.wie}>Women in Engineering</MenuItem>
               </Select>
             </FormControl>
@@ -370,12 +345,7 @@ export const AddEventDialog = props => {
                     justifyContent: 'center',
                   }}
                 >
-                  <img
-                    src={values.smallposterlink}
-                    alt="smallposter"
-                    width="100"
-                    height="100"
-                  />
+                  <img src={values.smallposterlink} alt="smallposter" width="100" height="100" />
                 </div>
               ) : null}
             </div>
@@ -553,10 +523,7 @@ export const AddEventDialog = props => {
             onClick={() => {
               setValues({
                 ...values,
-                hosts: [
-                  ...values.hosts,
-                  { name: '', piclink: '', details: '' },
-                ],
+                hosts: [...values.hosts, { name: '', piclink: '', details: '' }],
               });
             }}
             className={classes.button}
@@ -570,36 +537,14 @@ export const AddEventDialog = props => {
           </Button>
         </DialogActions>
       </Dialog>
-      <Snackbar
-        open={meta.error}
-        autoHideDuration={6000}
-        onClose={handleClose('error')}
-      >
-        <Alert
-          elevation={6}
-          variant="filled"
-          onClose={handleClose('error')}
-          severity="error"
-        >
-          {props.edit
-            ? 'An error occurred while editing an event'
-            : 'An error occurred while adding event'}
+      <Snackbar open={meta.error} autoHideDuration={6000} onClose={handleClose('error')}>
+        <Alert elevation={6} variant="filled" onClose={handleClose('error')} severity="error">
+          {props.edit ? 'An error occurred while editing an event' : 'An error occurred while adding event'}
         </Alert>
       </Snackbar>
-      <Snackbar
-        open={meta.success}
-        autoHideDuration={6000}
-        onClose={handleClose('success')}
-      >
-        <Alert
-          elevation={6}
-          variant="filled"
-          onClose={handleClose('success')}
-          severity="success"
-        >
-          {props.edit
-            ? 'Event edited successfully'
-            : 'Event added successfully'}
+      <Snackbar open={meta.success} autoHideDuration={6000} onClose={handleClose('success')}>
+        <Alert elevation={6} variant="filled" onClose={handleClose('success')} severity="success">
+          {props.edit ? 'Event edited successfully' : 'Event added successfully'}
         </Alert>
       </Snackbar>
     </>

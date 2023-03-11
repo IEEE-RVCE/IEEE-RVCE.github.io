@@ -1,14 +1,7 @@
 import React from 'react';
 import 'draft-js/dist/Draft.css';
 import './RichEditor.css';
-import {
-  Editor,
-  EditorState,
-  RichUtils,
-  getDefaultKeyBinding,
-  convertToRaw,
-  convertFromRaw,
-} from 'draft-js';
+import { Editor, EditorState, RichUtils, getDefaultKeyBinding, convertToRaw, convertFromRaw } from 'draft-js';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -16,9 +9,7 @@ export default class App extends React.Component {
     this.state = {
       editorState:
         (this.props.edit || this.props.readOnly) && this.props.editorContent
-          ? EditorState.createWithContent(
-              convertFromRaw(this.props.editorContent)
-            )
+          ? EditorState.createWithContent(convertFromRaw(this.props.editorContent))
           : EditorState.createEmpty(),
     };
 
@@ -47,11 +38,7 @@ export default class App extends React.Component {
 
   _mapKeyToEditorCommand(e) {
     if (e.keyCode === 9 /* TAB */) {
-      const newEditorState = RichUtils.onTab(
-        e,
-        this.state.editorState,
-        4 /* maxDepth */
-      );
+      const newEditorState = RichUtils.onTab(e, this.state.editorState, 4 /* maxDepth */);
       if (newEditorState !== this.state.editorState) {
         this.onChange(newEditorState);
       }
@@ -65,9 +52,7 @@ export default class App extends React.Component {
   }
 
   _toggleInlineStyle(inlineStyle) {
-    this.onChange(
-      RichUtils.toggleInlineStyle(this.state.editorState, inlineStyle)
-    );
+    this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, inlineStyle));
   }
 
   render() {
@@ -89,14 +74,8 @@ export default class App extends React.Component {
       <div className={readOnly ? '' : 'RichEditor-root'}>
         {!readOnly && (
           <>
-            <BlockStyleControls
-              editorState={editorState}
-              onToggle={this.toggleBlockType}
-            />
-            <InlineStyleControls
-              editorState={editorState}
-              onToggle={this.toggleInlineStyle}
-            />
+            <BlockStyleControls editorState={editorState} onToggle={this.toggleBlockType} />
+            <InlineStyleControls editorState={editorState} onToggle={this.toggleInlineStyle} />
           </>
         )}
         <div className={readOnly ? '' : className} onClick={this.focus}>
@@ -182,10 +161,7 @@ const BLOCK_TYPES = [
 const BlockStyleControls = props => {
   const { editorState } = props;
   const selection = editorState.getSelection();
-  const blockType = editorState
-    .getCurrentContent()
-    .getBlockForKey(selection.getStartKey())
-    .getType();
+  const blockType = editorState.getCurrentContent().getBlockForKey(selection.getStartKey()).getType();
 
   return (
     <div className="RichEditor-controls">

@@ -56,9 +56,8 @@ export default function PESSocietyPage(props) {
           <Typography variant="h3">Vision</Typography>
           <br />
           <Typography variant="body1">
-            To inclulcate scientific and engineering knowledge in Power and
-            Energy sector for the betterment of the society along with
-            professional development of the members.
+            To inclulcate scientific and engineering knowledge in Power and Energy sector for the betterment of the
+            society along with professional development of the members.
           </Typography>
         </Paper>
         <SpacyDivider color="rgb(53 176 232)" />
@@ -67,24 +66,16 @@ export default function PESSocietyPage(props) {
           <br />
           <Typography variant="body1">
             <ul>
+              <li>To embrace Research and Development in power generation and energy storage.</li>
               <li>
-                To embrace Research and Development in power generation and
-                energy storage.
+                To provide a platform for professionals in power and energy to share interchange the technological
+                development, ideas and experience amongst one another and to the masses{' '}
               </li>
               <li>
-                To provide a platform for professionals in power and energy to
-                share interchange the technological development, ideas and
-                experience amongst one another and to the masses{' '}
+                To ensure many student members of PES chapter become professionals in power and energy field and
+                contribute to the society in this sector.
               </li>
-              <li>
-                To ensure many student members of PES chapter become
-                professionals in power and energy field and contribute to the
-                society in this sector.
-              </li>
-              <li>
-                {' '}
-                To ensure overall professional development of the members.
-              </li>
+              <li> To ensure overall professional development of the members.</li>
             </ul>
           </Typography>
         </Paper>
@@ -119,11 +110,7 @@ export default function PESSocietyPage(props) {
           <Grid container spacing={2} justify="center">
             {execom.pes.map(member => (
               <Grid item xs={12} md={4}>
-                <Avatar
-                  name={member.name}
-                  position={member.position}
-                  src={member.image}
-                />
+                <Avatar name={member.name} position={member.position} src={member.image} />
               </Grid>
             ))}
           </Grid>

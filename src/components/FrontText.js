@@ -18,13 +18,7 @@ export default function FrontText() {
   const classes = useStyles();
   return (
     <>
-      <Grid
-        className={classes.less}
-        container
-        justify="space-around"
-        alignItems="center"
-        spacing={2}
-      >
+      <Grid className={classes.less} container justify="space-around" alignItems="center" spacing={2}>
         <Grid item sm={12} md={6}>
           <Typography variant="h4">What we do</Typography>
           <br />

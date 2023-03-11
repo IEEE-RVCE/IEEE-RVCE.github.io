@@ -88,10 +88,7 @@ export default class SchoolPride extends React.Component {
 
     return (
       <>
-        <ReactCanvasConfetti
-          refConfetti={this.getInstance}
-          style={canvasStyles}
-        />
+        <ReactCanvasConfetti refConfetti={this.getInstance} style={canvasStyles} />
       </>
     );
   }

@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import {
-  Container,
-  Grid,
-  Typography,
-  Paper,
-  List,
-  ListItem,
-} from '@material-ui/core';
+import { Container, Grid, Typography, Paper, List, ListItem } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '../components/Avatar';
@@ -63,8 +56,7 @@ export default function SIGHTAffinityPage(props) {
           <Typography variant="h3">Vision</Typography>
           <br />
           <Typography variant="body1">
-            Positively impact society through engineering projects on
-            sustainable development.
+            Positively impact society through engineering projects on sustainable development.
           </Typography>
         </Paper>
         <SpacyDivider color="rgb(61 144 142)" />
@@ -77,20 +69,18 @@ export default function SIGHTAffinityPage(props) {
             <List>
               <ListItem>
                 <Typography variant="body1">
-                  - Develop solutions for challenges faced by undeserved
-                  communities.{' '}
+                  - Develop solutions for challenges faced by undeserved communities.{' '}
                 </Typography>
               </ListItem>
               <ListItem>
                 <Typography variant="body1">
-                  - Encourage engineering students to apply technological skills
-                  by working on projects that support the community around us.
+                  - Encourage engineering students to apply technological skills by working on projects that support the
+                  community around us.
                 </Typography>
               </ListItem>
               <ListItem>
                 <Typography variant="body1">
-                  - Incorporate new humanitarian technologies and upskill
-                  ourselves as engineers.
+                  - Incorporate new humanitarian technologies and upskill ourselves as engineers.
                 </Typography>
               </ListItem>
             </List>
@@ -114,10 +104,7 @@ export default function SIGHTAffinityPage(props) {
               </Grid>
               <br />
               {events.length >= 4 && (
-                <Link
-                  to={'/events?ecat=' + ecats.sight}
-                  className={classes.link}
-                >
+                <Link to={'/events?ecat=' + ecats.sight} className={classes.link}>
                   Click here for more events
                 </Link>
               )}
@@ -131,11 +118,7 @@ export default function SIGHTAffinityPage(props) {
           <Grid hidden container spacing={2} justify="center">
             {execom.sight.map(member => (
               <Grid item xs={12} md={4}>
-                <Avatar
-                  name={member.name}
-                  position={member.position}
-                  src={member.image}
-                />
+                <Avatar name={member.name} position={member.position} src={member.image} />
               </Grid>
             ))}
           </Grid>

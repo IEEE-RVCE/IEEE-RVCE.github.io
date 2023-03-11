@@ -3,12 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { hostname } from '../links';
 import { makeStyles } from '@material-ui/core/styles';
-import {
-  Typography,
-  Container,
-  LinearProgress,
-  Paper,
-} from '@material-ui/core';
+import { Typography, Container, LinearProgress, Paper } from '@material-ui/core';
 import { SpeedDial, SpeedDialAction, SpeedDialIcon } from '@material-ui/lab';
 import { Delete, Edit } from '@material-ui/icons';
 import { AddArticleDialog } from '../components/AddArticleDialog';
@@ -146,11 +141,7 @@ export default function ArticlePage() {
             <Typography variant="h3">{article.title}</Typography>
             <Typography variant="h6">- {article.author}</Typography>
             <Paper className={classes.paper}>
-              <EditArticle
-                readOnly={true}
-                edit={false}
-                editorContent={article.content}
-              />
+              <EditArticle readOnly={true} edit={false} editorContent={article.content} />
             </Paper>
           </Container>
           <AddArticleDialog

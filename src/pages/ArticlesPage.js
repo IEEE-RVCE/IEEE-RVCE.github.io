@@ -64,12 +64,7 @@ export default function ArticlesPage(props) {
   const { ecat } = queryString.parse(props.location.search);
 
   const [articles, setArticles] = useState([]);
-  const [list, setList] = useState([
-    { hi: 'these' },
-    { dont: 'mean' },
-    { anything: 'they' },
-    { help: 'skeletons' },
-  ]);
+  const [list, setList] = useState([{ hi: 'these' }, { dont: 'mean' }, { anything: 'they' }, { help: 'skeletons' }]);
 
   //search text
   const [text, setText] = React.useState('');
@@ -112,11 +107,7 @@ export default function ArticlesPage(props) {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(
-        ecat !== undefined
-          ? hostname + '/api/article/cat/' + ecat
-          : hostname + '/api/article'
-      )
+      .get(ecat !== undefined ? hostname + '/api/article/cat/' + ecat : hostname + '/api/article')
       .then(response => {
         setArticles(response.data.articles);
         setList(response.data.articles);
@@ -250,13 +241,7 @@ export default function ArticlesPage(props) {
         </Typography> */}
         <br />
         {Array.isArray(list) && list.length !== 0 ? (
-          <Grid
-            container
-            spacing={3}
-            direction="row"
-            alignItems="stretch"
-            className={classes.grid}
-          >
+          <Grid container spacing={3} direction="row" alignItems="stretch" className={classes.grid}>
             {list.map(function (item) {
               if (loading) {
                 return (
@@ -282,22 +267,13 @@ export default function ArticlesPage(props) {
       {loggedIn && (
         <>
           <Tooltip title="Add article" aria-label="add-article-tooltip">
-            <Fab
-              onClick={handleDialogOpen}
-              aria-label="addArticle"
-              className={classes.fab}
-            >
+            <Fab onClick={handleDialogOpen} aria-label="addArticle" className={classes.fab}>
               <Add />
             </Fab>
           </Tooltip>
         </>
       )}
-      <AddArticleDialog
-        open={dialog}
-        onClose={handleDialogClose}
-        edit={false}
-        aria-label="add-article-dialog"
-      />
+      <AddArticleDialog open={dialog} onClose={handleDialogClose} edit={false} aria-label="add-article-dialog" />
       <GiveMeABreak />
       <GiveMeABreak />
       <GiveMeABreak />

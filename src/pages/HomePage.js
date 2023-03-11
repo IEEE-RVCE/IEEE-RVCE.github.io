@@ -1,16 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-import {
-  Container,
-  Typography,
-  Grid,
-  CssBaseline,
-  Box,
-  Button,
-  TextField,
-  Paper,
-} from '@material-ui/core';
+import { Container, Typography, Grid, CssBaseline, Box, Button, TextField, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import EventsCalendar from '../components/Calendar';
@@ -89,11 +80,7 @@ export default function HomePage(props) {
             {/* <Grid container item xs={12} sm={6} md={4} lg={3}> */}
             {execom.main.map(member => (
               <Grid item xs={12} sm={6} md={4} lg={4}>
-                <Avatar
-                  name={member.name}
-                  position={member.position}
-                  src={member.image}
-                />
+                <Avatar name={member.name} position={member.position} src={member.image} />
               </Grid>
             ))}
             {/* </Grid> */}
@@ -118,10 +105,7 @@ export default function HomePage(props) {
               </Grid>
               <br />
               {events.length >= 4 && (
-                <Link
-                  to={'/events?ecat=' + ecats.main}
-                  className={classes.link}
-                >
+                <Link to={'/events?ecat=' + ecats.main} className={classes.link}>
                   Click here for more events
                 </Link>
               )}
@@ -152,20 +136,10 @@ export default function HomePage(props) {
         </Typography>
         <br />
         <Box align="center">
-          <form
-            action="https://formspree.io/f/xjvjbrdz"
-            method="POST"
-            target="_blank"
-          >
+          <form action="https://formspree.io/f/xjvjbrdz" method="POST" target="_blank">
             {/* <InputLabel> */}
             {/* Your email:  */}
-            <TextField
-              type="text"
-              name="_name"
-              variant="outlined"
-              className={classes.textField}
-              label="Your name"
-            />
+            <TextField type="text" name="_name" variant="outlined" className={classes.textField} label="Your name" />
             <TextField
               type="email"
               name="_replyto"

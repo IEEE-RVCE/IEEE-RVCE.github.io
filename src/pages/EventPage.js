@@ -173,9 +173,7 @@ export default function EventPage() {
               <Typography variant="h6">
                 <b>Description:</b> <br />
                 <br />
-                <span style={{ display: 'block', textAlign: 'justify' }}>
-                  {event.details}
-                </span>
+                <span style={{ display: 'block', textAlign: 'justify' }}>{event.details}</span>
               </Typography>
               <br />
               <Typography variant="h6">
@@ -202,12 +200,7 @@ export default function EventPage() {
               <br />
               <Typography variant="h5">
                 Register for the event{' '}
-                <a
-                  className={classes.link}
-                  href={event.reglink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a className={classes.link} href={event.reglink} target="_blank" rel="noopener noreferrer">
                   here
                 </a>
               </Typography>
@@ -215,11 +208,7 @@ export default function EventPage() {
           </Grid>
           <Grid xs={12} md={6}>
             <div className={classes.griditem}>
-              <img
-                src={imgLink}
-                alt="Event poster"
-                style={{ width: 'inherit' }}
-              />
+              <img src={imgLink} alt="Event poster" style={{ width: 'inherit' }} />
             </div>
           </Grid>
         </Grid>

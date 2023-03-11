@@ -56,10 +56,9 @@ export default function COMSOCSocietyPage(_props) {
           <Typography variant="h3">Vision</Typography>
           <br />
           <Typography variant="body1">
-            To get the students community interested in Communication and
-            networking together and help in developing the society by conducting
-            research, education, invitation, projects and implementation of new
-            ideas provided by the members of this Society.
+            To get the students community interested in Communication and networking together and help in developing the
+            society by conducting research, education, invitation, projects and implementation of new ideas provided by
+            the members of this Society.
           </Typography>
         </Paper>
         <SpacyDivider color="rgb(61 144 142)" />
@@ -67,13 +66,10 @@ export default function COMSOCSocietyPage(_props) {
           <Typography variant="h3">Mission</Typography>
           <br />
           <Typography variant="body1">
-            The IEEE RVCE Communication Society intends to help understand its
-            members, the importance of Communication and develop a forum to
-            share information related to it. The society provides an opportunity
-            to its members, improving themselves in technical, non-technical and
-            professional aspects by building the right network. The society
-            provides a platform to exchange ideas amongst the members and
-            experts in both academia and industry.
+            The IEEE RVCE Communication Society intends to help understand its members, the importance of Communication
+            and develop a forum to share information related to it. The society provides an opportunity to its members,
+            improving themselves in technical, non-technical and professional aspects by building the right network. The
+            society provides a platform to exchange ideas amongst the members and experts in both academia and industry.
           </Typography>
         </Paper>
         <SpacyDivider color="rgb(61 144 142)" />
@@ -93,10 +89,7 @@ export default function COMSOCSocietyPage(_props) {
               </Grid>
               <br />
               {events.length >= 4 && (
-                <Link
-                  to={'/events?ecat=' + ecats.comsoc}
-                  className={classes.link}
-                >
+                <Link to={'/events?ecat=' + ecats.comsoc} className={classes.link}>
                   Click here for more events
                 </Link>
               )}
@@ -110,11 +103,7 @@ export default function COMSOCSocietyPage(_props) {
           <Grid container spacing={2} justify="center">
             {execom.comsoc.map(member => (
               <Grid item xs={12} md={4}>
-                <Avatar
-                  name={member.name}
-                  position={member.position}
-                  src={member.image}
-                />
+                <Avatar name={member.name} position={member.position} src={member.image} />
               </Grid>
             ))}
           </Grid>
