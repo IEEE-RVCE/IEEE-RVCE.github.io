@@ -1,5 +1,5 @@
-import React from "react";
-import { SbachievementsText } from "../data/FrontPage/Text";
+import React from 'react';
+import { SbachievementsText } from '../data/FrontPage/Text';
 
 /**
  * Display a list of achievements
@@ -8,7 +8,7 @@ import { SbachievementsText } from "../data/FrontPage/Text";
 export default function Achievements() {
   return (
     <ul>
-      {SbachievementsText.map((e) => (
+      {SbachievementsText.map(e => (
         <li key={e}>{e}</li>
       ))}
     </ul>

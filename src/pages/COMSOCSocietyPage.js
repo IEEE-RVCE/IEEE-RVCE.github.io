@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Container, Grid, Typography, Paper } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import Avatar from "../components/Avatar";
-import EventCard from "../components/EventCard";
-import { hostname, ecats, images, execom, alumni } from "../links";
-import { Link } from "react-router-dom";
-import AlumniAccordions from "../components/AlumniAccordions";
-import SpacyDivider from "../components/SpacyDivider";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Container, Grid, Typography, Paper } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import Avatar from '../components/Avatar';
+import EventCard from '../components/EventCard';
+import { hostname, ecats, images, execom, alumni } from '../links';
+import { Link } from 'react-router-dom';
+import AlumniAccordions from '../components/AlumniAccordions';
+import SpacyDivider from '../components/SpacyDivider';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: theme.root,
   container: theme.page,
   paper: {
@@ -18,11 +18,11 @@ const useStyles = makeStyles((theme) => ({
   },
   link: {
     ...theme.link,
-    float: "right",
-    textDecoration: "none",
+    float: 'right',
+    textDecoration: 'none',
   },
   carousel: {
-    margin: "auto",
+    margin: 'auto',
     paddingTop: theme.spacing(4),
   },
 }));
@@ -33,7 +33,7 @@ export default function COMSOCSocietyPage(_props) {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    axios.get(hostname + "/api/event/cat/" + ecats.comsoc).then((response) => {
+    axios.get(hostname + '/api/event/cat/' + ecats.comsoc).then(response => {
       setEvents(
         response.data.events.sort((a, b) => {
           return new Date(b.eventstart) - new Date(a.eventstart);
@@ -48,7 +48,7 @@ export default function COMSOCSocietyPage(_props) {
         src={images.landing.comsoc}
         id="soclanding"
         alt="Communication Society"
-        style={{ maxHeight: "100vh", width: "100%" }}
+        style={{ maxHeight: '100vh', width: '100%' }}
       />
       <Container maxWidth="md">
         <br />
@@ -56,10 +56,9 @@ export default function COMSOCSocietyPage(_props) {
           <Typography variant="h3">Vision</Typography>
           <br />
           <Typography variant="body1">
-            To get the students community interested in Communication and
-            networking together and help in developing the society by conducting
-            research, education, invitation, projects and implementation of new
-            ideas provided by the members of this Society.
+            To get the students community interested in Communication and networking together and help in developing the
+            society by conducting research, education, invitation, projects and implementation of new ideas provided by
+            the members of this Society.
           </Typography>
         </Paper>
         <SpacyDivider color="rgb(61 144 142)" />
@@ -67,13 +66,10 @@ export default function COMSOCSocietyPage(_props) {
           <Typography variant="h3">Mission</Typography>
           <br />
           <Typography variant="body1">
-            The IEEE RVCE Communication Society intends to help understand its
-            members, the importance of Communication and develop a forum to
-            share information related to it. The society provides an opportunity
-            to its members, improving themselves in technical, non-technical and
-            professional aspects by building the right network. The society
-            provides a platform to exchange ideas amongst the members and
-            experts in both academia and industry.
+            The IEEE RVCE Communication Society intends to help understand its members, the importance of Communication
+            and develop a forum to share information related to it. The society provides an opportunity to its members,
+            improving themselves in technical, non-technical and professional aspects by building the right network. The
+            society provides a platform to exchange ideas amongst the members and experts in both academia and industry.
           </Typography>
         </Paper>
         <SpacyDivider color="rgb(61 144 142)" />
@@ -83,7 +79,7 @@ export default function COMSOCSocietyPage(_props) {
               <Typography variant="h3">Events</Typography>
               <br />
               <Grid container spacing={2} justify="center">
-                {events.slice(0, 3).map((item) => {
+                {events.slice(0, 3).map(item => {
                   return (
                     <Grid item xs={12} md={4}>
                       <EventCard event={item} />
@@ -93,10 +89,7 @@ export default function COMSOCSocietyPage(_props) {
               </Grid>
               <br />
               {events.length >= 4 && (
-                <Link
-                  to={"/events?ecat=" + ecats.comsoc}
-                  className={classes.link}
-                >
+                <Link to={'/events?ecat=' + ecats.comsoc} className={classes.link}>
                   Click here for more events
                 </Link>
               )}
@@ -108,13 +101,9 @@ export default function COMSOCSocietyPage(_props) {
           <Typography variant="h3">Executive Committee</Typography>
           <br />
           <Grid container spacing={2} justify="center">
-            {execom.comsoc.map((member) => (
+            {execom.comsoc.map(member => (
               <Grid item xs={12} md={4}>
-                <Avatar
-                  name={member.name}
-                  position={member.position}
-                  src={member.image}
-                />
+                <Avatar name={member.name} position={member.position} src={member.image} />
               </Grid>
             ))}
           </Grid>

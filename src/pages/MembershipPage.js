@@ -1,5 +1,5 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import {
   Container,
   Typography,
@@ -13,27 +13,27 @@ import {
   TableCell,
   TableBody,
   TableRow,
-} from "@material-ui/core";
-import { images } from "../links";
-import { costs } from "../data/membershipCosts";
+} from '@material-ui/core';
+import { images } from '../links';
+import { costs } from '../data/membershipCosts';
 // import { useParams } from "react-router-dom";
-import MembershipBox from "../components/MembershipBox";
+import MembershipBox from '../components/MembershipBox';
 // import { HashLink } from "react-router-hash-link";
-import GiveMeABreak from "../components/GiveMeABreak";
-import SpacyDivider from "../components/SpacyDivider";
-import { isMobileOnly } from "react-device-detect";
-import CostFragment from "../components/CostFragment";
+import GiveMeABreak from '../components/GiveMeABreak';
+import SpacyDivider from '../components/SpacyDivider';
+import { isMobileOnly } from 'react-device-detect';
+import CostFragment from '../components/CostFragment';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     ...theme.root,
     //   ...theme.page,
   },
   button: {
     ...theme.button,
-    display: "flex",
+    display: 'flex',
     // float: 'right',
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   backButton: {
     marginRight: theme.spacing(1),
@@ -46,11 +46,11 @@ const useStyles = makeStyles((theme) => ({
   },
   link: theme.link,
   snapshot: {
-    width: isMobileOnly ? "100%" : "45%",
+    width: isMobileOnly ? '100%' : '45%',
   },
   heading: {
-    margin: "auto",
-    textAlign: "center",
+    margin: 'auto',
+    textAlign: 'center',
     padding: theme.spacing(2),
   },
   content: {
@@ -65,41 +65,41 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(1),
   },
   stepper: {
-    backgroundColor: "inherit",
+    backgroundColor: 'inherit',
   },
   steps: {
     ...theme.backgroundBlend,
   },
   bigbutton1: {
     background: `linear-gradient( -45deg, #fe8c00 30%, #f83600 90%)`,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   bigbutton2: {
     background: `linear-gradient( 45deg, #fe8c00 30%, #f83600 90%)`,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   image: {
     ...theme.img,
-    width: "27%",
-    height: "auto",
-    [theme.breakpoints.down("md")]: {
-      width: "100%",
+    width: '27%',
+    height: 'auto',
+    [theme.breakpoints.down('md')]: {
+      width: '100%',
     },
   },
   typo: {
     ...theme.typography,
-    variant: "body1",
-    fontSize: "1.2rem",
-    width: "60%",
-    [theme.breakpoints.down("md")]: {
-      width: "100%",
+    variant: 'body1',
+    fontSize: '1.2rem',
+    width: '60%',
+    [theme.breakpoints.down('md')]: {
+      width: '100%',
     },
   },
   history: {
-    display: "flex",
-    flexDirection: "row",
-    [theme.breakpoints.down("md")]: {
-      flexDirection: "column",
+    display: 'flex',
+    flexDirection: 'row',
+    [theme.breakpoints.down('md')]: {
+      flexDirection: 'column',
     },
   },
 }));
@@ -325,103 +325,66 @@ export default function MembershipPage() {
       <MembershipBox />
       {
         <>
-          <Container maxWidth="lg" style={{ display: "grid" }}>
+          <Container maxWidth="lg" style={{ display: 'grid' }}>
             <div id="whyjoinieee"></div>
             <br />
-            <Paper
-              className={classes.paper}
-              style={{ backgroundColor: "transparent" }}
-            >
+            <Paper className={classes.paper} style={{ backgroundColor: 'transparent' }}>
               <Typography variant="h3">Why Join IEEE?</Typography>
               <GiveMeABreak num={2} />
 
               <Grid container spacing={4} justify="center">
                 <Grid item xs={12} md={4} align="center">
                   <div>
-                    <img
-                      src={images.membership.benefit1}
-                      alt="benefit"
-                      style={{ width: "40%", height: "40%" }}
-                    />
-                    <p style={{ fontSize: "1.2rem" }}>
-                      <b>Staying Technically Relevant: </b>Be aware of the new
-                      and changing technologies by getting access to the recent
-                      journals, publications and conferences
+                    <img src={images.membership.benefit1} alt="benefit" style={{ width: '40%', height: '40%' }} />
+                    <p style={{ fontSize: '1.2rem' }}>
+                      <b>Staying Technically Relevant: </b>Be aware of the new and changing technologies by getting
+                      access to the recent journals, publications and conferences
                     </p>
                   </div>
                 </Grid>
                 <Grid item xs={12} md={4} align="center">
                   <div>
-                    <img
-                      src={images.membership.benefit2}
-                      alt="benefit"
-                      style={{ width: "40%", height: "40%" }}
-                    />
-                    <p style={{ fontSize: "1.2rem" }}>
-                      <b>Career Resources and Recognition: </b>Leadership is a
-                      skill that must be crafted over time. Keep your career
-                      moving in the right direction with IEEE career benefits
-                      and resources.
+                    <img src={images.membership.benefit2} alt="benefit" style={{ width: '40%', height: '40%' }} />
+                    <p style={{ fontSize: '1.2rem' }}>
+                      <b>Career Resources and Recognition: </b>Leadership is a skill that must be crafted over time.
+                      Keep your career moving in the right direction with IEEE career benefits and resources.
                     </p>
                   </div>
                 </Grid>
                 <Grid item xs={12} md={4} align="center">
-                  <div style={{ justifyContent: "center" }}>
-                    <img
-                      src={images.membership.benefit3}
-                      alt="benefit"
-                      style={{ width: "40%", height: "40%" }}
-                    />
-                    <p style={{ fontSize: "1.2rem" }}>
-                      <b>Professional Networking: </b>With other IEEE members
-                      who share similar interests, you can build a network
-                      revolving around your profession, industry or projects.
+                  <div style={{ justifyContent: 'center' }}>
+                    <img src={images.membership.benefit3} alt="benefit" style={{ width: '40%', height: '40%' }} />
+                    <p style={{ fontSize: '1.2rem' }}>
+                      <b>Professional Networking: </b>With other IEEE members who share similar interests, you can build
+                      a network revolving around your profession, industry or projects.
                     </p>
                   </div>
                 </Grid>
                 <Grid item xs={12} md={4} align="center">
                   <div>
-                    <img
-                      src={images.membership.benefit4}
-                      alt="benefit"
-                      style={{ width: "40%", height: "40%" }}
-                    />
-                    <p style={{ fontSize: "1.2rem" }}>
-                      <b>IEEE Chapters: </b> Engage with others through
-                      informative technical meetings
+                    <img src={images.membership.benefit4} alt="benefit" style={{ width: '40%', height: '40%' }} />
+                    <p style={{ fontSize: '1.2rem' }}>
+                      <b>IEEE Chapters: </b> Engage with others through informative technical meetings
                     </p>
                   </div>
                 </Grid>
                 <Grid item xs={12} md={4} align="center">
                   <div>
-                    <img
-                      src={images.membership.benefit5}
-                      alt="benefit"
-                      style={{ width: "40%", height: "40%" }}
-                    />
-                    <p style={{ fontSize: "1.2rem" }}>
-                      <b>Member discounts:</b> IEEE Member Discounts offer
-                      substantial cost savings on a variety of products and
-                      services as a benefit of IEEE membership. These include
-                      IEEE books and eBooks, journals and articles, conferences
-                      and proceedings, standards, society memberships etc..{" "}
+                    <img src={images.membership.benefit5} alt="benefit" style={{ width: '40%', height: '40%' }} />
+                    <p style={{ fontSize: '1.2rem' }}>
+                      <b>Member discounts:</b> IEEE Member Discounts offer substantial cost savings on a variety of
+                      products and services as a benefit of IEEE membership. These include IEEE books and eBooks,
+                      journals and articles, conferences and proceedings, standards, society memberships etc..{' '}
                     </p>
                   </div>
                 </Grid>
                 <Grid item xs={12} md={4} align="center">
                   <div>
-                    <img
-                      src={images.membership.benefit6}
-                      alt="benefit"
-                      style={{ width: "40%", height: "40%" }}
-                    />
-                    <p style={{ fontSize: "1.2rem" }}>
-                      <b>Global benefits finder: </b> To uncover IEEE member
-                      benefits that are most relevant to you, you may use the
-                      Global Benefits finder which will render a list of key
-                      IEEE member benefits that can help you accelerate your
-                      career plans and help you grow as a technology
-                      professional.
+                    <img src={images.membership.benefit6} alt="benefit" style={{ width: '40%', height: '40%' }} />
+                    <p style={{ fontSize: '1.2rem' }}>
+                      <b>Global benefits finder: </b> To uncover IEEE member benefits that are most relevant to you, you
+                      may use the Global Benefits finder which will render a list of key IEEE member benefits that can
+                      help you accelerate your career plans and help you grow as a technology professional.
                     </p>
                   </div>
                 </Grid>
@@ -429,51 +392,27 @@ export default function MembershipPage() {
             </Paper>
             <br />
             <SpacyDivider color="#3be52e" />
-            <Paper
-              className={classes.paper}
-              style={{ backgroundColor: "transparent" }}
-            >
-              <Typography variant="h3">
-                What does the SB have to offer?
-              </Typography>
+            <Paper className={classes.paper} style={{ backgroundColor: 'transparent' }}>
+              <Typography variant="h3">What does the SB have to offer?</Typography>
               <br />
               <div className={classes.history}>
-                <img
-                  src={images.membership.whatSBOffers}
-                  className={classes.image}
-                  alt="image2"
-                />
+                <img src={images.membership.whatSBOffers} className={classes.image} alt="image2" />
                 <Typography variant="body1" className={classes.typo}>
                   <ul>
                     <li>Opportunities to network on a local level</li>
-                    <li>
-                      Receive support for hosting professional awareness
-                      programs
-                    </li>
+                    <li>Receive support for hosting professional awareness programs</li>
                     <li>Obtain funding for events, projects, and activities</li>
-                    <li>
-                      Develop projects and obtain sponsorship based on your IEEE
-                      affiliation
-                    </li>
-                    <li>
-                      Connect with other like minded student groups to advance
-                      the IEEE mission
-                    </li>
+                    <li>Develop projects and obtain sponsorship based on your IEEE affiliation</li>
+                    <li>Connect with other like minded student groups to advance the IEEE mission</li>
                   </ul>
                 </Typography>
               </div>
             </Paper>
             <br />
             <SpacyDivider color="#3be52e" />
-            <Typography variant="h3">
-              What do the membership costs look like?
-            </Typography>
+            <Typography variant="h3">What do the membership costs look like?</Typography>
             <Container maxWidth="md">
-              <TableContainer
-                component={Paper}
-                className={classes.paper}
-                md={6}
-              >
+              <TableContainer component={Paper} className={classes.paper} md={6}>
                 <Table>
                   <TableHead>
                     <TableRow>
@@ -483,24 +422,19 @@ export default function MembershipPage() {
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    {costs.map((e) => (
+                    {costs.map(e => (
                       <TableRow>
                         <TableCell>{e.name}</TableCell>
                         {/* This passes in the object as props - be careful */}
                         <CostFragment {...e} />
-                        <TableCell>{e.notes ?? ""}</TableCell>
+                        <TableCell>{e.notes ?? ''}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
                 </Table>
               </TableContainer>
             </Container>
-            <Paper
-              className={classes.paper1}
-              id="beamember"
-              align="center"
-              style={{ backgroundColor: "transparent" }}
-            >
+            <Paper className={classes.paper1} id="beamember" align="center" style={{ backgroundColor: 'transparent' }}>
               {/* <HashLink smooth to="#steps" style={{ textDecoration: "none" }}>
                 <Button
                   style={{ margin: "1rem", width: "50%", color: "black" }}
@@ -524,11 +458,11 @@ export default function MembershipPage() {
               >
                 <Button
                   style={{
-                    margin: "1rem",
-                    width: "50%",
-                    color: "black",
-                    textDecoration: "none",
-                    underline: "none",
+                    margin: '1rem',
+                    width: '50%',
+                    color: 'black',
+                    textDecoration: 'none',
+                    underline: 'none',
                   }}
                   className={`${classes.bigbutton} ${classes.bigbutton2} ${classes.button}`}
                   //   onClick={() => {

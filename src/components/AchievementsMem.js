@@ -1,5 +1,5 @@
-import React from "react";
-import { MemAchivementText } from "../data/FrontPage/Text";
+import React from 'react';
+import { MemAchivementText } from '../data/FrontPage/Text';
 
 /**
  * Display a list of achievements
@@ -8,7 +8,7 @@ import { MemAchivementText } from "../data/FrontPage/Text";
 export default function AchievementsMem() {
   return (
     <ul>
-      {MemAchivementText.map((e) => (
+      {MemAchivementText.map(e => (
         <li key={e}>{e}</li>
       ))}
     </ul>

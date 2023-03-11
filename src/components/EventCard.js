@@ -1,40 +1,40 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardHeader from "@material-ui/core/CardHeader";
-import CardMedia from "@material-ui/core/CardMedia";
-import CardContent from "@material-ui/core/CardContent";
-import CardActions from "@material-ui/core/CardActions";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import Snackbar from "@material-ui/core/Snackbar";
-import MuiAlert from "@material-ui/lab/Alert";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
+import { Link } from 'react-router-dom';
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-const useStyles = makeStyles((theme) => ({
-  "@global": {
-    ".MuiCardHeader-content": {
+const useStyles = makeStyles(theme => ({
+  '@global': {
+    '.MuiCardHeader-content': {
       minWidth: 0,
     },
   },
-  root: {
+  'root': {
     ...theme.eventcard,
-    height: "100%",
-    maxWidth: 345,
-    "&:hover": {
+    'height': '100%',
+    'maxWidth': 345,
+    '&:hover': {
       boxShadow:
-        "0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12)",
+        '0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12)',
       transitionDuration: 200,
     },
-    margin: "auto",
+    'margin': 'auto',
   },
-  media: {
+  'media': {
     height: 0,
-    paddingTop: "56.25%", // 16:9
+    paddingTop: '56.25%', // 16:9
   },
 }));
 
@@ -50,13 +50,11 @@ export default function EventCard(props) {
   //Shows snackbar with message and copies link in '' for user
   const handleClick = () => {
     setOpen(true);
-    navigator.clipboard.writeText(
-      window.location.origin + "/#/events/" + props.event.eid
-    );
+    navigator.clipboard.writeText(window.location.origin + '/#/events/' + props.event.eid);
   };
 
   const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
+    if (reason === 'clickaway') {
       return;
     }
 
@@ -65,8 +63,8 @@ export default function EventCard(props) {
 
   // Image Verification Stufff, better ideas than this, come on lesgoo !!
 
-  const doesImageExist = (url) =>
-    new Promise((resolve) => {
+  const doesImageExist = url =>
+    new Promise(resolve => {
       const img = new Image();
 
       img.src = url;
@@ -74,9 +72,9 @@ export default function EventCard(props) {
       img.onerror = () => resolve(false);
     });
 
-  const joke = "No Image Available";
+  const joke = 'No Image Available';
 
-  doesImageExist(props.event.smallposterlink).then((result) => {
+  doesImageExist(props.event.smallposterlink).then(result => {
     if (!result) {
       setImgLink(`https://fakeimg.pl/350x200/?text=${joke}&font_size=50`);
     }
@@ -87,37 +85,22 @@ export default function EventCard(props) {
       <Card
         title={props.event.ename}
         className={classes.root}
-        onDoubleClick={() =>
-          (window.location.href = window.location.href + "/" + props.event.eid)
-        }
+        onDoubleClick={() => (window.location.href = window.location.href + '/' + props.event.eid)}
       >
         <CardHeader
           title={props.event.ename}
-          subheader={
-            eventTimes.start.toString().slice(4, 15) +
-            " to " +
-            eventTimes.end.toString().slice(4, 15)
-          }
+          subheader={eventTimes.start.toString().slice(4, 15) + ' to ' + eventTimes.end.toString().slice(4, 15)}
           titleTypographyProps={{
             noWrap: true,
           }}
         />
-        <CardMedia
-          className={classes.media}
-          image={imgLink}
-          title={props.event.ename}
-        />
+        <CardMedia className={classes.media} image={imgLink} title={props.event.ename} />
         <CardContent>
-          <Typography
-            variant="body2"
-            color="textSecondary"
-            component="p"
-            noWrap
-          >
+          <Typography variant="body2" color="textSecondary" component="p" noWrap>
             Keywords: {props.event.keywords}
           </Typography>
         </CardContent>
-        <CardActions disableSpacing style={{ marginTop: "auto" }}>
+        <CardActions disableSpacing style={{ marginTop: 'auto' }}>
           <Button size="small" onClick={handleClick}>
             Share
           </Button>
@@ -126,10 +109,7 @@ export default function EventCard(props) {
               Link Copied!
             </Alert>
           </Snackbar>
-          <Link
-            style={{ textDecoration: "none" }}
-            to={"/events/" + props.event.eid}
-          >
+          <Link style={{ textDecoration: 'none' }} to={'/events/' + props.event.eid}>
             <Button size="small">Read More</Button>
           </Link>
         </CardActions>
