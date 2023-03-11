@@ -1,8 +1,8 @@
 //@ts-check
 /** Hostname link for API requests */
-export const hostname = "https://ieee.devcoffee.me";
+export const hostname = 'https://ieee.devcoffee.me';
 /** Image source links */
-export const imagePath = "/assets/images";
+export const imagePath = '/assets/images';
 
 /**
  * Template function to add imagepath to string (Beginning slash added automatically)
@@ -11,7 +11,7 @@ export const imagePath = "/assets/images";
  */
 export function imgify(x) {
   // dont put slash ifn't needed
-  const optionalSlash = x[0][0] === "/" ? "" : "/";
+  const optionalSlash = x[0][0] === '/' ? '' : '/';
   // join up x and add everything in
-  return imagePath + optionalSlash + x.join("");
+  return imagePath + optionalSlash + x.join('');
 }

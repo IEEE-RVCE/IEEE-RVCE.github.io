@@ -1,11 +1,11 @@
-import React from "react";
-import ReactCanvasConfetti from "react-canvas-confetti";
+import React from 'react';
+import ReactCanvasConfetti from 'react-canvas-confetti';
 
 const canvasStyles = {
-  position: "fixed",
-  pointerEvents: "none",
-  width: "100%",
-  height: "100%",
+  position: 'fixed',
+  pointerEvents: 'none',
+  width: '100%',
+  height: '100%',
   top: 0,
   left: 0,
 };
@@ -30,7 +30,7 @@ export default class SchoolPride extends React.Component {
         angle,
         spread: 55,
         origin: { x: originX },
-        colors: ["#bb0000", "#ffffff"],
+        colors: ['#bb0000', '#ffffff'],
         speed: 1,
       });
   };
@@ -69,7 +69,7 @@ export default class SchoolPride extends React.Component {
     this.stopAnimation();
   };
 
-  getInstance = (instance) => {
+  getInstance = instance => {
     this.animationInstance = instance;
   };
 
@@ -88,10 +88,7 @@ export default class SchoolPride extends React.Component {
 
     return (
       <>
-        <ReactCanvasConfetti
-          refConfetti={this.getInstance}
-          style={canvasStyles}
-        />
+        <ReactCanvasConfetti refConfetti={this.getInstance} style={canvasStyles} />
       </>
     );
   }

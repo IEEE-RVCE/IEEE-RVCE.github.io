@@ -1,30 +1,24 @@
-import React from "react";
-import { Grid, Typography, Box } from "@material-ui/core";
-import { FPAchievementImages, whatWeDoText, FPWhatWeDoImages } from "../links";
-import { makeStyles } from "@material-ui/core/styles";
-import Achievements from "./Achievements";
-import HomeCarousel from "./Carousel";
-import AchievementsMem from "./AchievementsMem";
+import React from 'react';
+import { Grid, Typography, Box } from '@material-ui/core';
+import { FPAchievementImages, whatWeDoText, FPWhatWeDoImages } from '../links';
+import { makeStyles } from '@material-ui/core/styles';
+import Achievements from './Achievements';
+import HomeCarousel from './Carousel';
+import AchievementsMem from './AchievementsMem';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   less: {
-    padding: "1rem",
+    padding: '1rem',
   },
   smallImage: {
-    borderRadius: ".25rem",
+    borderRadius: '.25rem',
   },
 }));
 export default function FrontText() {
   const classes = useStyles();
   return (
     <>
-      <Grid
-        className={classes.less}
-        container
-        justify="space-around"
-        alignItems="center"
-        spacing={2}
-      >
+      <Grid className={classes.less} container justify="space-around" alignItems="center" spacing={2}>
         <Grid item sm={12} md={6}>
           <Typography variant="h4">What we do</Typography>
           <br />

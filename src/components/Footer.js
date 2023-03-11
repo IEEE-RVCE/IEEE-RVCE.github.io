@@ -1,48 +1,42 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import {
-  Typography,
-  Container,
-  Box,
-  Grid,
-  IconButton,
-} from "@material-ui/core";
-import { Link } from "react-router-dom";
-import { Instagram, LinkedIn, EmailOutlined } from "@material-ui/icons";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { Typography, Container, Box, Grid, IconButton } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import { Instagram, LinkedIn, EmailOutlined } from '@material-ui/icons';
 
-import { navs, societies, affinities } from "../links";
-import SpacyDivider from "./SpacyDivider";
+import { navs, societies, affinities } from '../links';
+import SpacyDivider from './SpacyDivider';
 
 // Makes new style for footer
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
-    backgroundColor: "#111111",
+    backgroundColor: '#111111',
     padding: theme.spacing(6),
-    borderTop: localStorage.getItem("darkMode") ? "1px solid #eee" : "none",
+    borderTop: localStorage.getItem('darkMode') ? '1px solid #eee' : 'none',
   },
   typography: {
-    color: "#eeeeee",
+    color: '#eeeeee',
   },
   devs: {
-    color: "#bbbbbb",
-    margin: "auto",
-    textAlign: "center",
+    color: '#bbbbbb',
+    margin: 'auto',
+    textAlign: 'center',
     paddingBottom: 20,
     paddingLeft: 5,
     paddingRight: 5,
   },
   link: {
-    textDecoration: "none",
-    color: "#bbbbbb",
-    "&:hover": {
-      textDecoration: "underline",
+    'textDecoration': 'none',
+    'color': '#bbbbbb',
+    '&:hover': {
+      textDecoration: 'underline',
     },
   },
   body: {
-    color: "#bbbbbb",
+    color: '#bbbbbb',
   },
   icon: {
-    color: "#eeeeee",
+    color: '#eeeeee',
   },
   iconbutton: {
     padding: 0,
@@ -63,7 +57,7 @@ export default function Footer(props) {
                 Useful links
               </Typography>
               {navs.map(({ name, link, isMenu }) => {
-                if (!isMenu && name !== "Login") {
+                if (!isMenu && name !== 'Login') {
                   return (
                     <Link to={link} className={classes.link}>
                       <Typography variant="body1">{name}</Typography>
@@ -94,29 +88,17 @@ export default function Footer(props) {
                 </Link>
               ))}
             </Grid>
-            <Grid
-              item
-              xs={12}
-              md={6}
-              lg={3}
-              key={4}
-              style={{ paddingRight: 60 }}
-            >
+            <Grid item xs={12} md={6} lg={3} key={4} style={{ paddingRight: 60 }}>
               <Typography className={classes.typography} variant="h6">
                 Address:
                 <br />
               </Typography>
               <Typography className={classes.body} variant="body1">
-                Mysore Road, RV Vidyanikethan Post, Bengaluru-560059, Karnataka,
-                India
+                Mysore Road, RV Vidyanikethan Post, Bengaluru-560059, Karnataka, India
                 <br />
               </Typography>
               <br />
-              <Grid
-                container
-                justify="space-between"
-                style={{ paddingRight: 60 }}
-              >
+              <Grid container justify="space-between" style={{ paddingRight: 60 }}>
                 <IconButton
                   href="https://instagram.com/ieee_rvce?igshid=1hbfgquvdu0yt"
                   target="_blank"

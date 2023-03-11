@@ -1,89 +1,89 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
-import { hostname } from "../links";
-import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Container, Grid, LinearProgress } from "@material-ui/core";
-import { SpeedDial, SpeedDialAction, SpeedDialIcon } from "@material-ui/lab";
-import { Delete, Edit, Mail } from "@material-ui/icons";
-import { AddEventDialog } from "../components/AddEventDialog";
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import { hostname } from '../links';
+import { makeStyles } from '@material-ui/core/styles';
+import { Typography, Container, Grid, LinearProgress } from '@material-ui/core';
+import { SpeedDial, SpeedDialAction, SpeedDialIcon } from '@material-ui/lab';
+import { Delete, Edit, Mail } from '@material-ui/icons';
+import { AddEventDialog } from '../components/AddEventDialog';
 
-const useStyles = makeStyles((theme) => ({
-  "@global": {
-    ".MuiFab-primary": {
-      backgroundColor: theme.fab.backgroundColor,
-      color: theme.fab.color,
-      "&:hover": {
+const useStyles = makeStyles(theme => ({
+  '@global': {
+    '.MuiFab-primary': {
+      'backgroundColor': theme.fab.backgroundColor,
+      'color': theme.fab.color,
+      '&:hover': {
         backgroundColor: theme.fab.backgroundColor,
         color: theme.fab.color,
       },
     },
   },
-  root: {
+  'root': {
     ...theme.root,
     ...theme.page,
     paddingBottom: theme.spacing(4),
   },
-  link: theme.link,
-  griditem: {
-    width: "90%",
+  'link': theme.link,
+  'griditem': {
+    width: '90%',
     padding: theme.spacing(4),
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down('md')]: {
       padding: theme.spacing(1),
     },
   },
-  backButton: {
-    float: "left",
-    display: "flex",
-    flexDirection: "row-reverse",
-    [theme.breakpoints.down("sm")]: {
-      display: "none",
+  'backButton': {
+    float: 'left',
+    display: 'flex',
+    flexDirection: 'row-reverse',
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
     },
   },
-  adminButtons: {
-    float: "right",
-    display: "flex",
-    flexDirection: "row",
-    [theme.breakpoints.down("sm")]: {
-      display: "none",
+  'adminButtons': {
+    float: 'right',
+    display: 'flex',
+    flexDirection: 'row',
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
     },
   },
-  loadingBar: {
+  'loadingBar': {
     paddingTop: 60,
     minHeight: 1000,
   },
-  header: {
-    textAlign: "center",
+  'header': {
+    textAlign: 'center',
   },
-  speedDial: {
-    position: "fixed",
+  'speedDial': {
+    position: 'fixed',
     bottom: 32,
     right: 100,
   },
-  container: {
+  'container': {
     ...theme.backgroundBlend,
   },
 }));
 
 export default function EventPage() {
   const classes = useStyles();
-  let loggedIn = localStorage.getItem("isAuthenticated") === "true";
+  let loggedIn = localStorage.getItem('isAuthenticated') === 'true';
   const [loaded, setLoaded] = useState(false);
   let { eid } = useParams();
-  const [event, setEvent] = useState({ ename: "" });
+  const [event, setEvent] = useState({ ename: '' });
   const [error, setError] = useState(false);
-  const [imgLink, setImgLink] = useState("");
+  const [imgLink, setImgLink] = useState('');
   useEffect(() => {
     setLoaded(false);
     axios
-      .get(hostname + "/api/event/" + eid)
-      .then((response) => {
+      .get(hostname + '/api/event/' + eid)
+      .then(response => {
         if (response.data.ok) {
           setEvent(response.data.event);
           setLoaded(true);
         } else setError(true);
       })
-      .catch((error) => {
+      .catch(error => {
         console.error(error);
         setError(true);
       });
@@ -96,17 +96,17 @@ export default function EventPage() {
 
   const deleteEvent = () => {
     axios
-      .delete(hostname + "/api/event/" + eid, {
+      .delete(hostname + '/api/event/' + eid, {
         headers: {
-          Authorization: "Bearer " + localStorage.getItem("atoken"),
+          Authorization: 'Bearer ' + localStorage.getItem('atoken'),
         },
       })
-      .then((response) => {
+      .then(response => {
         if (response.data.ok === true) {
-          console.log("Successfully deleted event " + eid);
+          console.log('Successfully deleted event ' + eid);
           window.history.back();
         } else {
-          console.error("Deletion failed");
+          console.error('Deletion failed');
         }
       });
   };
@@ -130,18 +130,18 @@ export default function EventPage() {
   };
 
   const notifyAll = () => {
-    console.log("Yay! Notified!!");
+    console.log('Yay! Notified!!');
   };
   const actions = [
-    { icon: <Edit />, name: "Edit event", onClick: handleDialogOpen },
-    { icon: <Delete />, name: "Delete event", onClick: deleteEvent },
-    { icon: <Mail />, name: "Notify attendees", onClick: notifyAll },
+    { icon: <Edit />, name: 'Edit event', onClick: handleDialogOpen },
+    { icon: <Delete />, name: 'Delete event', onClick: deleteEvent },
+    { icon: <Mail />, name: 'Notify attendees', onClick: notifyAll },
   ];
 
   // Image Verification Stufff, better ideas than this, come on lesgoo !!
 
-  const doesImageExist = (url) =>
-    new Promise((resolve) => {
+  const doesImageExist = url =>
+    new Promise(resolve => {
       const img = new Image();
 
       img.src = url;
@@ -149,9 +149,9 @@ export default function EventPage() {
       img.onerror = () => resolve(false);
     });
 
-  const joke = "No Image Available";
+  const joke = 'No Image Available';
 
-  doesImageExist(event.smallposterlink).then((result) => {
+  doesImageExist(event.smallposterlink).then(result => {
     if (!result) {
       setImgLink(`https://fakeimg.pl/600x800/?text=${joke}&font_size=50`);
     } else {
@@ -173,9 +173,7 @@ export default function EventPage() {
               <Typography variant="h6">
                 <b>Description:</b> <br />
                 <br />
-                <span style={{ display: "block", textAlign: "justify" }}>
-                  {event.details}
-                </span>
+                <span style={{ display: 'block', textAlign: 'justify' }}>{event.details}</span>
               </Typography>
               <br />
               <Typography variant="h6">
@@ -196,18 +194,13 @@ export default function EventPage() {
                 <b>Speakers:</b>
               </Typography>
               <br />
-              {event.hosts.map((host) => (
+              {event.hosts.map(host => (
                 <Typography variant="h6">{host.name}</Typography>
               ))}
               <br />
               <Typography variant="h5">
-                Register for the event{" "}
-                <a
-                  className={classes.link}
-                  href={event.reglink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                Register for the event{' '}
+                <a className={classes.link} href={event.reglink} target="_blank" rel="noopener noreferrer">
                   here
                 </a>
               </Typography>
@@ -215,11 +208,7 @@ export default function EventPage() {
           </Grid>
           <Grid xs={12} md={6}>
             <div className={classes.griditem}>
-              <img
-                src={imgLink}
-                alt="Event poster"
-                style={{ width: "inherit" }}
-              />
+              <img src={imgLink} alt="Event poster" style={{ width: 'inherit' }} />
             </div>
           </Grid>
         </Grid>
@@ -284,7 +273,7 @@ export default function EventPage() {
             onOpen={handleDialOpen}
             open={dialopen}
           >
-            {actions.map((action) => (
+            {actions.map(action => (
               <SpeedDialAction
                 key={action.name}
                 icon={action.icon}
@@ -302,9 +291,9 @@ export default function EventPage() {
         <Typography
           variant="h3"
           style={{
-            textAlign: "center",
-            paddingTop: "20%",
-            paddingBottom: "20%",
+            textAlign: 'center',
+            paddingTop: '20%',
+            paddingBottom: '20%',
           }}
         >
           <b>No such event</b>
