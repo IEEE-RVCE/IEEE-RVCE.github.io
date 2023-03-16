@@ -34,9 +34,9 @@ export default function DevelopersPage() {
             <Grid item xs={12} md={4}>
               <Avatar src={images.devs.naveen} name="Naveen B Teli" />
             </Grid>
-            <Grid item xs={12} md={4}>
+            {/* <Grid item xs={12} md={4}>
               <Avatar src={images.devs.jahnavi} name="Jahnavi Urs" />
-            </Grid>
+            </Grid> */}
             <Grid item xs={12} md={4}>
               <Avatar src={images.devs.prajwal} name="Prajwal P" />
             </Grid>
