@@ -102,6 +102,11 @@ export const images = {
     risha: imagePath + '/devs/Risha_Dassi.jpg',
     vishal: imagePath + '/devs/Vishal_M.jpeg',
     akshara: imagePath + '/devs/Akshara_Udupa.jpg',
+    sannidhi: imagePath + '/devs/sannidhi.jpg',
+    mayur: imagePath + '/devs/mayur_s_chittaragi.jpg',
+    naveen: imagePath + '/devs/naveen.jpeg',
+    prajwal: imagePath + '/devs/pp.jpg',
+    jahnavi: imagePath + '/devs/jahnavi.jpg',
   },
   logos: {
     ieee_aps: imagePath + '/logos/ieee_APS.png',

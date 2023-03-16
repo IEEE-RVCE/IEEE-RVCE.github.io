@@ -22,26 +22,47 @@ export default function DevelopersPage() {
   return (
     <div className={classes.root}>
       <Container maxWidth="lg" className={classes.page}>
+        <h1>Active Maintainers</h1>
         <Paper className={classes.paper}>
-          <Grid container spacing={2} justify="space-evenly" className={classes.grid}>
+          <Grid container spacing={2} justifyContent="space-evenly" className={classes.grid}>
             <Grid item xs={12} md={4}>
-              <Avatar src={images.devs.ambu} name="Ambu Karthik" />
+              <Avatar src={images.devs.mayur} name="Mayur S Chittaragi" />
             </Grid>
             <Grid item xs={12} md={4}>
-              <Avatar src={images.devs.risha} name="Risha Dassi" />
+              <Avatar src={images.devs.sannidhi} name="Sannidhi" />
             </Grid>
             <Grid item xs={12} md={4}>
-              <Avatar src={images.devs.bain} name="Atreya Bain" />
+              <Avatar src={images.devs.naveen} name="Naveen B Teli" />
             </Grid>
+            {/* <Grid item xs={12} md={4}>
+              <Avatar src={images.devs.jahnavi} name="Jahnavi Urs" />
+            </Grid> */}
             <Grid item xs={12} md={4}>
-              <Avatar src={images.devs.chirag} name="Chirag Bapat" />
+              <Avatar src={images.devs.prajwal} name="Prajwal P" />
             </Grid>
-            <Grid item xs={12} md={4}>
-              <Avatar src={images.devs.vishal} name="Vishal M" />
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Avatar src={images.devs.akshara} name="Akshara N Udupa" />
-            </Grid>
+            <Container maxWidth="lg" className={classes.page}>
+              <h1>Contributors</h1>
+              <Grid container spacing={2} justifyContent="space-evenly" className={classes.grid}>
+                <Grid item xs={12} md={4}>
+                  <Avatar src={images.devs.ambu} name="Ambu Karthik" />
+                </Grid>
+                <Grid item xs={12} md={4}>
+                  <Avatar src={images.devs.risha} name="Risha Dassi" />
+                </Grid>
+                <Grid item xs={12} md={4}>
+                  <Avatar src={images.devs.bain} name="Atreya Bain" />
+                </Grid>
+                <Grid item xs={12} md={4}>
+                  <Avatar src={images.devs.chirag} name="Chirag Bapat" />
+                </Grid>
+                <Grid item xs={12} md={4}>
+                  <Avatar src={images.devs.vishal} name="Vishal M" />
+                </Grid>
+                <Grid item xs={12} md={4}>
+                  <Avatar src={images.devs.akshara} name="Akshara N Udupa" />
+                </Grid>
+              </Grid>
+            </Container>
           </Grid>
         </Paper>
       </Container>

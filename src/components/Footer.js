@@ -41,6 +41,14 @@ const useStyles = makeStyles(theme => ({
   iconbutton: {
     padding: 0,
   },
+
+  specialLink: {
+    'textDecoration': 'none',
+    'color': '#12c48c ',
+    '&:hover': {
+      textDecoration: 'underline',
+    },
+  },
 }));
 
 export default function Footer(props) {
@@ -134,14 +142,10 @@ export default function Footer(props) {
       </Box>
       <SpacyDivider color="#eeeeee" length="2" />
       <Typography className={classes.devs} variant="body1">
-        Made with <span className={classes.typography}>&#10084;</span> by&nbsp;
-        <span className={classes.typography}>Atreya Bain</span>,&nbsp;
-        <span className={classes.typography}>Ambu Karthik</span>,&nbsp;
-        <span className={classes.typography}>Akshara N Udupa</span>,&nbsp;
-        <span className={classes.typography}>Vishal M</span>,&nbsp;
-        <span className={classes.typography}>Chirag Bapat</span>,&nbsp;
-        <span className={classes.typography}>Risha Dassi</span> and&nbsp;
-        <span className={classes.typography}>Prajwal Prakash</span>.
+        Crafted with <span className={classes.typography}>&#10084; & passion</span> by&nbsp;
+        <a href="#/devs" className={classes.specialLink}>
+          IEEE RVCE Web Team
+        </a>
       </Typography>
     </footer>
   );
