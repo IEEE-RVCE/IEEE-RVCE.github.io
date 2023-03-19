@@ -121,7 +121,9 @@ export const AddEventDialog = props => {
     const requestData = {
       ...values,
       eventstart: new Date(values.eventstart).toISOString(),
-      eventend: new Date(values.eventend).toISOString()
+      eventend: new Date(values.eventend).toISOString(),
+      pubstart: new Date(values.pubstart).toISOString(),
+      pubend: new Date(values.pubend).toISOString(),
     };
     if (props.edit === true) {
       axios
