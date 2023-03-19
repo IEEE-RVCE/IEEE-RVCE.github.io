@@ -103,10 +103,13 @@ export const AddArticleDialog = props => {
   };
 
   const handleSubmit = () => {
-    console.log(values);
+    const requestData = {
+      ...values,
+      adate: new Date(values.adate).toISOString()
+    };
     if (props.edit === true) {
       axios
-        .put(hostname + '/api/article/' + props.data.arid, values, {
+        .put(hostname + '/api/article/' + props.data.arid, requestData, {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + localStorage.getItem('atoken'),
@@ -125,7 +128,7 @@ export const AddArticleDialog = props => {
         });
     } else {
       axios
-        .post(hostname + '/api/article', values, {
+        .post(hostname + '/api/article', requestData, {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + localStorage.getItem('atoken'),

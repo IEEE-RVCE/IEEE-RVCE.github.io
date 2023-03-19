@@ -118,9 +118,14 @@ export const AddEventDialog = props => {
 
   const submitData = () => {
     props.onClose();
+    const requestData = {
+      ...values,
+      eventstart: new Date(values.eventstart).toISOString(),
+      eventend: new Date(values.eventend).toISOString()
+    };
     if (props.edit === true) {
       axios
-        .put(hostname + '/api/event/' + props.data.eid, values, {
+        .put(hostname + '/api/event/' + props.data.eid, requestData, {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + localStorage.getItem('atoken'),
@@ -139,7 +144,7 @@ export const AddEventDialog = props => {
         });
     } else {
       axios
-        .post(hostname + '/api/event', values, {
+        .post(hostname + '/api/event', requestData, {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + localStorage.getItem('atoken'),
