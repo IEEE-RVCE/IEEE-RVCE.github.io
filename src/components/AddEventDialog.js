@@ -51,6 +51,17 @@ Date.prototype.toDatetimeLocal = function toDatetimeLocal() {
   return YYYY + '-' + MM + '-' + DD + 'T' + HH + ':' + II + ':' + SS;
 };
 
+// Converts the dates in the values object for the form into UTC
+const convertDatesInValuestoUTC = (values) => {
+  return {
+    ...values,
+    eventstart: new Date(values.eventstart).toISOString(),
+    eventend: new Date(values.eventend).toISOString(),
+    pubstart: new Date(values.pubstart).toISOString(),
+    pubend: new Date(values.pubend).toISOString()
+  };
+};
+
 export const AddEventDialog = props => {
   const classes = useStyles();
 
@@ -118,13 +129,7 @@ export const AddEventDialog = props => {
 
   const submitData = () => {
     props.onClose();
-    const requestData = {
-      ...values,
-      eventstart: new Date(values.eventstart).toISOString(),
-      eventend: new Date(values.eventend).toISOString(),
-      pubstart: new Date(values.pubstart).toISOString(),
-      pubend: new Date(values.pubend).toISOString(),
-    };
+    const requestData = convertDatesInValuestoUTC(values);
     if (props.edit === true) {
       axios
         .put(hostname + '/api/event/' + props.data.eid, requestData, {
