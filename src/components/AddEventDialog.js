@@ -21,6 +21,7 @@ import React, { useState, useEffect } from 'react';
 import { ecats, hostname } from '../links';
 import Alert from '@material-ui/lab/Alert';
 import { CircularProgress } from '@material-ui/core';
+import { convertDatesinValuestoUTC } from '../utils';
 const useStyles = makeStyles(theme => ({
   root: {
     position: 'absolute',
@@ -118,9 +119,10 @@ export const AddEventDialog = props => {
 
   const submitData = () => {
     props.onClose();
+    const requestData = convertDatesinValuestoUTC(values, ['eventstart', 'eventend', 'pubstart', 'pubend']);
     if (props.edit === true) {
       axios
-        .put(hostname + '/api/event/' + props.data.eid, values, {
+        .put(hostname + '/api/event/' + props.data.eid, requestData, {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + localStorage.getItem('atoken'),
@@ -139,7 +141,7 @@ export const AddEventDialog = props => {
         });
     } else {
       axios
-        .post(hostname + '/api/event', values, {
+        .post(hostname + '/api/event', requestData, {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + localStorage.getItem('atoken'),

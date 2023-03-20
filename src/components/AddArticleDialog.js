@@ -20,6 +20,7 @@ import { Close } from '@material-ui/icons';
 import EditArticle from './EditArticle';
 import { ecats, hostname } from '../links';
 import axios from 'axios';
+import { convertDatesinValuestoUTC } from '../utils';
 
 //Nice prototype to convert Date objects to datetime local strings
 // eslint-disable-next-line
@@ -103,10 +104,10 @@ export const AddArticleDialog = props => {
   };
 
   const handleSubmit = () => {
-    console.log(values);
+    const requestData = convertDatesinValuestoUTC(values, ['adate']);
     if (props.edit === true) {
       axios
-        .put(hostname + '/api/article/' + props.data.arid, values, {
+        .put(hostname + '/api/article/' + props.data.arid, requestData, {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + localStorage.getItem('atoken'),
@@ -125,7 +126,7 @@ export const AddArticleDialog = props => {
         });
     } else {
       axios
-        .post(hostname + '/api/article', values, {
+        .post(hostname + '/api/article', requestData, {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + localStorage.getItem('atoken'),
