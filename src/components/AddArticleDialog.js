@@ -20,6 +20,7 @@ import { Close } from '@material-ui/icons';
 import EditArticle from './EditArticle';
 import { ecats, hostname } from '../links';
 import axios from 'axios';
+import { convertDatesinValuestoUTC } from '../utils';
 
 //Nice prototype to convert Date objects to datetime local strings
 // eslint-disable-next-line
@@ -35,14 +36,6 @@ Date.prototype.toDatetimeLocal = function toDatetimeLocal() {
     II = ten(date.getMinutes()),
     SS = ten(date.getSeconds());
   return YYYY + '-' + MM + '-' + DD + 'T' + HH + ':' + II + ':' + SS;
-};
-
-// Converts the dates in the values object for the form into UTC
-const convertDatesInValuestoUTC = (values) => {
-  return {
-    ...values,
-    adate: new Date(values.adate).toISOString()
-  };
 };
 
 const useStyles = makeStyles(theme => ({
@@ -111,7 +104,7 @@ export const AddArticleDialog = props => {
   };
 
   const handleSubmit = () => {
-    const requestData = convertDatesInValuestoUTC();
+    const requestData = convertDatesinValuestoUTC(values, ['adate']);
     if (props.edit === true) {
       axios
         .put(hostname + '/api/article/' + props.data.arid, requestData, {

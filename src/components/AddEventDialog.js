@@ -21,6 +21,7 @@ import React, { useState, useEffect } from 'react';
 import { ecats, hostname } from '../links';
 import Alert from '@material-ui/lab/Alert';
 import { CircularProgress } from '@material-ui/core';
+import { convertDatesinValuestoUTC } from '../utils';
 const useStyles = makeStyles(theme => ({
   root: {
     position: 'absolute',
@@ -49,17 +50,6 @@ Date.prototype.toDatetimeLocal = function toDatetimeLocal() {
     II = ten(date.getMinutes()),
     SS = ten(date.getSeconds());
   return YYYY + '-' + MM + '-' + DD + 'T' + HH + ':' + II + ':' + SS;
-};
-
-// Converts the dates in the values object for the form into UTC
-const convertDatesInValuestoUTC = (values) => {
-  return {
-    ...values,
-    eventstart: new Date(values.eventstart).toISOString(),
-    eventend: new Date(values.eventend).toISOString(),
-    pubstart: new Date(values.pubstart).toISOString(),
-    pubend: new Date(values.pubend).toISOString()
-  };
 };
 
 export const AddEventDialog = props => {
@@ -129,7 +119,7 @@ export const AddEventDialog = props => {
 
   const submitData = () => {
     props.onClose();
-    const requestData = convertDatesInValuestoUTC(values);
+    const requestData = convertDatesinValuestoUTC(values, ['eventstart', 'eventend', 'pubstart', 'pubend']);
     if (props.edit === true) {
       axios
         .put(hostname + '/api/event/' + props.data.eid, requestData, {
