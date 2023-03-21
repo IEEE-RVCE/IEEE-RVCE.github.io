@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => {
  */
 export default function AvatarCard(props) {
   const classes = useStyles();
-  console.log('I', classes);
+  // console.log('I', classes);
   return (
     <Card className={classes.root} elevation={0}>
       <CardContent className={classes.content}>

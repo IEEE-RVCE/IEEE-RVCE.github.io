@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Container, Grid, Typography, Paper } from '@material-ui/core';
+import { Container,
+  Grid, 
+  Typography, 
+  Paper,
+  Fab,
+  Tooltip } from '@material-ui/core';
+  import { Add } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '../components/Avatar';
@@ -8,6 +14,7 @@ import EventCard from '../components/EventCard';
 import { hostname, ecats, images, execom, alumni } from '../links';
 import AlumniAccordions from '../components/AlumniAccordions';
 import SpacyDivider from '../components/SpacyDivider';
+import { AddExecomDialog } from '../components/AddExecomDialog';
 
 const useStyles = makeStyles(theme => ({
   root: theme.root,
@@ -26,13 +33,26 @@ const useStyles = makeStyles(theme => ({
     paddingTop: theme.spacing(4),
   },
   grid: theme.grid,
+  fab: {
+    color:"green",
+  }
 }));
 
 export default function CSSocietyPage(props) {
   const classes = useStyles();
+  let loggedIn = localStorage.getItem('isAuthenticated') === 'true';
 
   const [events, setEvents] = useState([]);
 
+    //Dialog stuff
+    const [dialog, setDialog] = useState(false);
+    const handleDialogClose = () => {
+      setDialog(false);
+    };
+    const handleDialogOpen = () => {
+      setDialog(true);
+    };
+  
   useEffect(() => {
     axios.get(hostname + '/api/event/cat/' + ecats.compsoc).then(response => {
       setEvents(
@@ -117,6 +137,16 @@ export default function CSSocietyPage(props) {
             ))}
           </Grid>
         </Paper>
+        {loggedIn && (
+        <>
+        <Tooltip title="Add Execom" aria-label="add-execom-tooltip">
+            <Fab onClick={handleDialogOpen} aria-label="addExecom" className={classes.fab}>
+              <Add />
+            </Fab>
+          </Tooltip>
+          <AddExecomDialog onClose={handleDialogClose} aria-label="add-execom-dialog" open={dialog} />
+        </>
+      )}
         <AlumniAccordions members={alumni.compsoc} color="rgb(80 161 99)" />
         <br />
       </Container>
