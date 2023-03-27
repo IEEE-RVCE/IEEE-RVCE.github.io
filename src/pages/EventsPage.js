@@ -189,6 +189,12 @@ export default function EventPage(props) {
                 <MenuItem key={'WIE'} value={ecats.wie}>
                   Women in Engineering
                 </MenuItem>
+                <MenuItem key={'CAS'} value={ecats.cas}>
+                  Circuits and Systems
+                </MenuItem>
+                <MenuItem key={'SC'} value={ecats.sc}>
+                  Sensors Council
+                </MenuItem>
               </Select>
             </FormControl>
           </div>
