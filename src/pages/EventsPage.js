@@ -173,10 +173,10 @@ export default function EventPage() {
                 <MenuItem key={'WIE'} value={ecats.wie}>
                   Women in Engineering
                 </MenuItem>
-                <MenuItem key={'cas'} value={ecats.cas}>
+                <MenuItem key={'CAS'} value={ecats.cas}>
                   Circuits and Systems
                 </MenuItem>
-                <MenuItem key={'sensors'} value={ecats.sc}>
+                <MenuItem key={'SC'} value={ecats.sc}>
                   Sensors Council
                 </MenuItem>
               </Select>
