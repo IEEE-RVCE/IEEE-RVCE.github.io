@@ -144,7 +144,7 @@ export default function CSSocietyPage(props) {
               <Add />
             </Fab>
           </Tooltip>
-          <AddExecomDialog onClose={handleDialogClose} aria-label="add-execom-dialog" open={dialog} />
+          <AddExecomDialog onClose={handleDialogClose} aria-label="add-execom-dialog" open={dialog} sid={ecats.compsoc}/>
         </>
       )}
         <AlumniAccordions members={alumni.compsoc} color="rgb(80 161 99)" />
