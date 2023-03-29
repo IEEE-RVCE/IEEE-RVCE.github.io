@@ -94,7 +94,7 @@ export default function EventPage() {
     }
   };
 
-  const [category, setCategory] = useState(ecat ? ecat : 0);
+  const [category, setCategory] = useState(ecat ?? 0);
   const handleFilter = event => {
     setCategory(event.target.value);
     window.location.href =
