@@ -16,15 +16,14 @@ import {
     Grid,
     InputAdornment,
     Input,
-    IconButton,
     Checkbox,
     OutlinedInput,
     // Typography,
   } from '@material-ui/core';
   import axios from 'axios';
   import React, { useState, useEffect } from 'react';
-
   import { ecats, hostname} from '../links';
+  import { useImageUploader,FileUploadButton } from '../utils';
 
   import Alert from '@material-ui/lab/Alert';
   import { CircularProgress } from '@material-ui/core';
@@ -83,7 +82,6 @@ Date.prototype.toDatetimeLocal = function toDatetimeLocal() {
       imagepath:'',
     });
 
-    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
       if (props.data !== undefined) {
@@ -96,23 +94,12 @@ Date.prototype.toDatetimeLocal = function toDatetimeLocal() {
       }
     }, [props.data]);
   
-
-    const handleFileInput = async file => {
-      const data = new FormData();
-      data.append('image', file);
-      try {
-        const res = await axios.post(`https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_IMGBB_API_KEY}`, data);
-        setValues({
-          ...values,
-          imagepath: res.data.data.display_url,
-        });
-        setLoading(v => !v);
-      } catch (err) {
-        console.log(err);
-        setLoading(v => !v);
-      }
+    const {isLoading, error, uploadImage } = useImageUploader();
+    const handleFileInputChange = async file => {
+      uploadImage(file);
+      if(error) console.log(error.message);
     };
-  
+
     const handleChange = prop => event => {
       setValues({
         ...values,
@@ -230,25 +217,6 @@ Date.prototype.toDatetimeLocal = function toDatetimeLocal() {
                 fullWidth
               />
            </Grid>
-            
-            {/* <Grid  item xs={12} className={classes.fields}>
-              <FormControl variant="outlined" fullWidth required className={classes.formControl}>
-                <InputLabel id="sid-select-label">Society or Affinity</InputLabel>
-                <Select labelId="sid-select-label" id="sid-select" value={values.sid} onChange={handleChange('sid')}>
-                  <MenuItem value={ecats.main}>Main Execom</MenuItem>
-                  <MenuItem value={ecats.compsoc}>Computer Society</MenuItem>
-                  <MenuItem value={ecats.comsoc}>Communication Society</MenuItem>
-                  <MenuItem value={ecats.aps}>Antenna Propogation Society</MenuItem>
-                  <MenuItem value={ecats.sps}>Signal Processing Society</MenuItem>
-                  <MenuItem value={ecats.pes}>Power and Energy Society</MenuItem>
-                  <MenuItem value={ecats.ras}>Robotic and Automation Society</MenuItem>
-                  <MenuItem value={ecats.cas}>Circuits and Systems Society</MenuItem>
-                  <MenuItem value={ecats.sc}>Sensors Council</MenuItem>
-                  <MenuItem value={ecats.sight}>Special Interest Group on Humanitarian Technology</MenuItem>
-                  <MenuItem value={ecats.wie}>Women in Engineering</MenuItem>
-                </Select>
-              </FormControl>
-            </Grid> */}
 
             <Grid  item xs={12} className={classes.fields}>
               <FormControl variant="outlined" fullWidth required className={classes.formControl}>
@@ -273,7 +241,7 @@ Date.prototype.toDatetimeLocal = function toDatetimeLocal() {
                 variant="outlined"
                 fullWidth
                 required
-                defaultValue={new Date().toDatetimeLocal}
+                //defaultValue={new Date().toDatetimeLocal}
                 value={values.tenureStart}
                 onChange={handleChange('tenureStart')}
                 InputLabelProps={{
@@ -309,38 +277,6 @@ Date.prototype.toDatetimeLocal = function toDatetimeLocal() {
               />
                 </Grid>
               )}
-            {/* {!loading ? (
-              <Grid  item xs={12} className={classes.fields}>
-                <Button variant="contained" component="label">
-                  Upload Photo
-                  <input
-                    type="file"
-                    hidden
-                    onChange={async e => {
-                      setLoading(v => !v);
-                      const file = e.target.files[0];
-                      await handleFileInput(file);
-                    }}
-                  />
-                </Button>
-                {values.imagepath !== '' ? (
-                  <div
-                    style={{
-                      padding: '10px',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                    }}
-                  >
-                    <img src={values.imagepath} alt="execomimage" width="100" height="100" />
-                  </div>
-                ) : null}
-              </Grid>
-            ) : (
-              <div className={classes.fields}>
-                <CircularProgress />
-              </div>
-            )} */}
-            
 
         <FormControl fullWidth>
               <InputLabel htmlFor="image-input">Image Link</InputLabel>
@@ -358,18 +294,12 @@ Date.prototype.toDatetimeLocal = function toDatetimeLocal() {
                       id="image-file"
                       type="file"
                       onChange={async e => {
-                        setLoading(v => !v);
                         const file = e.target.files[0];
-                        await handleFileInput(file);
+                        await handleFileInputChange(file);
                       }}
                     />
                     <label htmlFor="image-file">
-                      <IconButton component="span">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-arrow-up" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M7.646 5.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2z"/>
-                      <path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383zm.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z"/>
-                      </svg>
-                      </IconButton>
+                      <FileUploadButton />
                     </label>
                   </InputAdornment>
                 }
@@ -386,7 +316,7 @@ Date.prototype.toDatetimeLocal = function toDatetimeLocal() {
                 <img src={values.imagepath} alt="execomimage" width="100" height="100" />
               </div>
             ) : null}
-            {loading && (
+            {isLoading && (
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <CircularProgress />
               </div>
