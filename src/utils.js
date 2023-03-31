@@ -22,7 +22,6 @@ export function convertDatesinValuestoUTC(object, keys) {
 }
 
 export const useImageUploader = () => {
-  const [imageUrl, setImageUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -37,15 +36,15 @@ export const useImageUploader = () => {
         `https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_IMGBB_API_KEY}`,
         data
       );
-      setImageUrl(res.data.data.display_url);
       setIsLoading(false);
+      return res.data.data.display_url;
     } catch (err) {
       setError(err);
       setIsLoading(false);
     }
   };
 
-  return { imageUrl, isLoading, error, uploadImage };
+  return {isLoading, error, uploadImage };
 };
 
 

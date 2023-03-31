@@ -94,10 +94,13 @@ Date.prototype.toDatetimeLocal = function toDatetimeLocal() {
       }
     }, [props.data]);
   
-    const {isLoading, error, uploadImage } = useImageUploader();
+    const {isLoading,error,uploadImage } = useImageUploader();
     const handleFileInputChange = async file => {
-      uploadImage(file);
-      if(error) console.log(error.message);
+      const url = await uploadImage(file);
+      setValues({
+      ...values,
+      imagepath:url,
+    });
     };
 
     const handleChange = prop => event => {
@@ -305,6 +308,7 @@ Date.prototype.toDatetimeLocal = function toDatetimeLocal() {
                 }
               />
             </FormControl>
+            {error && <p>Error: {error.message}</p>}
             {values.imagepath !== '' ? (
               <div
                 style={{
