@@ -169,6 +169,20 @@ export const ecats = {
   sc: 10,
 };
 
+export const societyNames = {
+  0 : 'Main Execom',
+  1 : 'Computer Society',
+  2 : 'Communications Society',
+  3 : 'Power and Energy Society',
+  4 : 'Antennas and Propagation Society',
+  5 : 'Signal Processing Society',
+  6 : 'Robotics and Automation Society',
+  7 : 'WIE',
+  8 : 'Sight',
+  9 : 'Circuits and Systems Society',
+ 10 : 'Sensor Council',
+};
+
 /** Execom details */
 export const execom = {
   main: [

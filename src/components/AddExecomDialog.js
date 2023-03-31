@@ -22,7 +22,7 @@ import {
   } from '@material-ui/core';
   import axios from 'axios';
   import React, { useState, useEffect } from 'react';
-  import { ecats, hostname} from '../links';
+  import {hostname,societyNames} from '../links';
   import { useImageUploader,FileUploadButton } from '../utils';
 
   import Alert from '@material-ui/lab/Alert';
@@ -118,7 +118,7 @@ Date.prototype.toDatetimeLocal = function toDatetimeLocal() {
     const submitData = (e) => {
       e.preventDefault();
       props.onClose();
-      console.log(values);
+      // console.log(values);
       // if (props.edit === true) {
       //   axios
       //     .put(hostname + '/api/event/' + props.data.eid, values, {
@@ -139,24 +139,24 @@ Date.prototype.toDatetimeLocal = function toDatetimeLocal() {
       //       setMeta({ ...meta, error: true });
       //     });
       // } else {
-      //   axios
-      //     .post(hostname + '/api/execom', values, {
-      //       headers: {
-      //         'Content-Type': 'application/json',
-      //         'Authorization': 'Bearer ' + localStorage.getItem('atoken'),
-      //       },
-      //     })
-      //     .then(response => {
-      //       if (response.data.ok === true) setMeta({ ...meta, success: true });
-      //       else setMeta({ ...meta, error: true });
-      //     })
-      //     .then(() => {
-      //       window.location.reload();
-      //     })
-      //     .catch(error => {
-      //       console.error(error.response);
-      //       setMeta({ ...meta, error: true });
-      //     });
+        axios
+          .post(hostname + '/api/execom', values, {
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + localStorage.getItem('atoken'),
+            },
+          })
+          .then(response => {
+            if (response.data.ok === true) setMeta({ ...meta, success: true });
+            else setMeta({ ...meta, error: true });
+          })
+          .then(() => {
+            window.location.reload();
+          })
+          .catch(error => {
+            console.error(error.response);
+            setMeta({ ...meta, error: true });
+          });
       // }
     };
   
@@ -179,7 +179,7 @@ Date.prototype.toDatetimeLocal = function toDatetimeLocal() {
     return (
       <>
         <Dialog onClose={props.onClose} open={props.open} className={classes.root}>
-          <DialogTitle className={classes.textHead}>Add Execom</DialogTitle>
+          <DialogTitle className={classes.textHead}>Add Execom Member for {societyNames[props.sid]}</DialogTitle>
           <DialogContent>
             <DialogContentText>
               Add execom details. Abide by the datatypes used in the form and use
