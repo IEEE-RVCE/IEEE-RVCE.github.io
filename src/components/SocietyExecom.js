@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { hostname, ecats} from '../links';
+import { hostname} from '../links';
 import React, {useState} from 'react';
 import Alert from '@material-ui/lab/Alert';
 import {  Snackbar,
@@ -10,6 +10,7 @@ import { Add,School}from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '../components/Avatar';
 import { AddExecomDialog } from './AddExecomDialog';
+import { ConfirmEndTenureDialog} from './ConfirmTenureEnd';
 
 const useStyles = makeStyles(theme => ({
     root: theme.root,
@@ -48,6 +49,27 @@ export default function SocietyExecom(props) {
     const handleDialogOpen = () => {
       setDialog(true);
     };
+    
+    //Dialog of end tenure
+    const [openEndTenureDialog, setOpen] = useState(false);
+    const [endTenureState, changeTenureState] = useState(false);
+
+    const handleEndTenureStateChange = (newState) => {
+        // console.log(newState);
+        changeTenureState(newState);
+      }
+      
+    const handleEndTenureClickOpen = () => {
+      setOpen(true);
+    }; 
+    const handleEndTenureClose = () => {
+      setOpen(false);
+      if(endTenureState)
+      {
+        deleteExecom();
+        changeTenureState(false);
+      }
+    };
   
     const [del, setDel] = useState({
         error: false,
@@ -58,29 +80,28 @@ export default function SocietyExecom(props) {
         if (reason === 'clickaway') return;
         setDel({ ...del, [prop]: false });
       };
+      const deleteExecom = () => {
+        console.log(hostname + '/api/execom/end/'+ sid);
+        axios
+          .post(hostname + '/api/execom/end/', sid, {
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + localStorage.getItem('atoken'),
+            },
+        })
+        .then(response => {
+          if (response.data.ok === true) setDel({ ...del, success: true });
+          else setDel({ ...del, error: true });
+        })
+        .then(() => {
+          window.location.reload();
+        })
+        .catch(error => {
+          console.error(error.response);
+          setDel({ ...del, error: true });
+        });
+      }
     
-    const deleteExecom = () => {
-    console.log(hostname + '/api/execom/end/'+ ecats.compsoc);
-    axios
-      .post(hostname + '/api/execom/end/', sid, {
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + localStorage.getItem('atoken'),
-        },
-    })
-    .then(response => {
-      if (response.data.ok === true) setDel({ ...del, success: true });
-      else setDel({ ...del, error: true });
-    })
-    .then(() => {
-      window.location.reload();
-    })
-    .catch(error => {
-      console.error(error.response);
-      setDel({ ...del, error: true });
-    });
-  }
-
   return(
     <>
     <Grid container spacing={2} justifyContent="center">
@@ -91,8 +112,10 @@ export default function SocietyExecom(props) {
             src={member.image} />
         </Grid>
         ))}
+    </Grid>
     {loggedIn && (
         <>
+        <Grid container spacing={2} justifyContent="center">
         <Grid item xs={6} container justifyContent="center" alignItems="center">
         <Tooltip title="Add Execom" arrow placement="top" aria-label="add-execom-tooltip">
             <span>
@@ -101,20 +124,28 @@ export default function SocietyExecom(props) {
             </Fab>
             </span>
         </Tooltip>
-        <AddExecomDialog onClose={handleDialogClose} aria-label="add-execom-dialog" open={dialog} sid={ecats.compsoc}/>
+        <AddExecomDialog onClose={handleDialogClose} aria-label="add-execom-dialog" open={dialog} sid={sid}/>
         </Grid>
         <Grid item xs={6} container justifyContent="center" alignItems="center">
         <Tooltip title="End Tenure" arrow placement="top" aria-label="end-tenure-execom-tooltip">
             <span>
-            <Fab onClick={deleteExecom} aria-label="endTenureOfExecom" className={classes.fab}>
+            <Fab onClick={handleEndTenureClickOpen} aria-label="endTenureOfExecom" className={classes.fab}>
             <School />
             </Fab>
             </span>
         </Tooltip>
+        <ConfirmEndTenureDialog 
+        onClose={handleEndTenureClose} 
+        aria-label="end-tenure-execom-dialog" 
+        open={openEndTenureDialog} 
+        sid={sid} 
+        endTenureState={endTenureState}
+        onEndTenureStateChange={handleEndTenureStateChange}
+        />
+        </Grid>
         </Grid>
         </>
       )}
-    </Grid>
     <Snackbar open={del.error} autoHideDuration={6000} onClose={handleClose('error')}>
     <Alert elevation={6} variant="filled" onClose={handleClose('error')} severity="error">
       An error occurred , please try again

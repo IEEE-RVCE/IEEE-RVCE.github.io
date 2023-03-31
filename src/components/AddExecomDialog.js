@@ -118,7 +118,7 @@ Date.prototype.toDatetimeLocal = function toDatetimeLocal() {
     const submitData = (e) => {
       e.preventDefault();
       props.onClose();
-      // console.log(values);
+      console.log(values);
       // if (props.edit === true) {
       //   axios
       //     .put(hostname + '/api/event/' + props.data.eid, values, {

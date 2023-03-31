@@ -6,7 +6,6 @@ import { Container,
   Paper} from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-
 import EventCard from '../components/EventCard';
 import { hostname, ecats, images,execom, alumni } from '../links';
 import AlumniAccordions from '../components/AlumniAccordions';
