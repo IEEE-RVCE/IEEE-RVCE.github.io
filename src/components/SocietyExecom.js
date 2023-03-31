@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { hostname} from '../links';
+import { hostname,societyNames,execom} from '../links';
 import React, {useState} from 'react';
 import Alert from '@material-ui/lab/Alert';
 import {  Snackbar,
@@ -35,8 +35,8 @@ const useStyles = makeStyles(theme => ({
   }));
 
 export default function SocietyExecom(props) {
-    const exelist = props.exelist;
     const sid = props.sid;
+    const exelist = execom[societyNames[sid]["sub"]];
 
     let loggedIn = localStorage.getItem('isAuthenticated') === 'true';
     const classes = useStyles();

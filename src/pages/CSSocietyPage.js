@@ -7,7 +7,7 @@ import { Container,
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import EventCard from '../components/EventCard';
-import { hostname, ecats, images,execom, alumni } from '../links';
+import { hostname, ecats, images,alumni } from '../links';
 import AlumniAccordions from '../components/AlumniAccordions';
 import SpacyDivider from '../components/SpacyDivider';
 import SocietyExecom from '../components/SocietyExecom';
@@ -112,7 +112,7 @@ export default function CSSocietyPage(props) {
         <Paper className={classes.paper}>
           <Typography variant="h3">Executive Committee</Typography>
           <br />
-          <SocietyExecom sid = {ecats.compsoc} exelist = {execom.compsoc} />
+          <SocietyExecom sid = {ecats.compsoc} />
         </Paper>
         <AlumniAccordions members={alumni.compsoc} color="rgb(80 161 99)" />
         <br />

@@ -179,7 +179,7 @@ Date.prototype.toDatetimeLocal = function toDatetimeLocal() {
     return (
       <>
         <Dialog onClose={props.onClose} open={props.open} className={classes.root}>
-          <DialogTitle className={classes.textHead}>Add Execom Member for {societyNames[props.sid]}</DialogTitle>
+          <DialogTitle className={classes.textHead}>Add Execom Member for {societyNames[props.sid]["name"]}</DialogTitle>
           <DialogContent>
             <DialogContentText>
               Add execom details. Abide by the datatypes used in the form and use
