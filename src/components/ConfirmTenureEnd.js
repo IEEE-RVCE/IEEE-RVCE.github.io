@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import {
     Button,
     Dialog,
@@ -10,7 +10,20 @@ import {
 } from '@material-ui/core';
 
 export const ConfirmEndTenureDialog = props => {
+    const [match, setMatch] = useState(true);
 
+    useEffect(() => {
+      const nomatchElement = document.getElementById("nomatch");
+      if (nomatchElement) {
+        nomatchElement.style.display = match ? "none" : "block";
+        if (!match) {
+          setTimeout(() => {
+            nomatchElement.style.display = "none";
+            setMatch(true);
+          }, 1500);
+        }
+      }
+    }, [match]);
     const endTenure = async e => {
         e.preventDefault();
         const inputField = document.getElementById('confirmationText');
@@ -23,8 +36,8 @@ export const ConfirmEndTenureDialog = props => {
             props.onClose();
         }
         else{
+            setMatch(false);
             console.log("no match");
-            props.onClose();
         }
     };
   return (
@@ -46,6 +59,7 @@ export const ConfirmEndTenureDialog = props => {
             fullWidth
             variant="standard"
           />
+          {!match && <p id = "nomatch">Strings do not match.</p>}
         </DialogContent>
         <DialogActions>
             <Button variant="contained" style={{backgroundColor: "red", color:"white"}} onClick={endTenure} >

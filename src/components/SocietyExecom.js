@@ -139,7 +139,6 @@ export default function SocietyExecom(props) {
         aria-label="end-tenure-execom-dialog" 
         open={openEndTenureDialog} 
         sid={sid} 
-        endTenureState={endTenureState}
         onEndTenureStateChange={handleEndTenureStateChange}
         />
         </Grid>
