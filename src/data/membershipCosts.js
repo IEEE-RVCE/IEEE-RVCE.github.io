@@ -8,9 +8,10 @@ export const exchangeRate = 77;
 export const costs = [
   {
     name: 'Student Membership',
-    cost: 14,
+    cost: 3.5,
     // discountedCost: 27 / 2,
     //notes: "FUTURE50 (50% off)",
+    notes: 'Valid till Dec 31st',
   },
 
   {
@@ -33,12 +34,12 @@ export const costs = [
     name: 'Power & Energy Society (PES)',
     cost: 7.5,
     // discountedCost: 0,
-    notes: 'Free for first year!',
+    notes: 'Free for new members!',
   },
 
   { name: 'Robotics and Automation (RAS)', cost: 5 },
 
-  { name: 'Sensor Council', cost: 0 },
+  { name: 'Sensors Council', cost: 0 },
 
   { name: 'Signal Processing Society (SPS)', cost: 0.5 },
 
