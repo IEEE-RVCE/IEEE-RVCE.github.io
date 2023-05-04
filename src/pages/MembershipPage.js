@@ -417,8 +417,8 @@ export default function MembershipPage() {
                   <TableHead>
                     <TableRow>
                       <TableCell>Name</TableCell>
-                      <TableCell>Cost</TableCell>
-                      <TableCell>Discounts</TableCell>
+                      <TableCell align="right">New Membership</TableCell>
+                      <TableCell align="right">Membership Renewal</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
@@ -426,8 +426,9 @@ export default function MembershipPage() {
                       <TableRow>
                         <TableCell>{e.name}</TableCell>
                         {/* This passes in the object as props - be careful */}
-                        <CostFragment {...e} />
-                        <TableCell>{e.notes ?? ''}</TableCell>
+                        <CostFragment cost={e.newCost} />
+                        <CostFragment cost={e.renewalCost} />
+                        {/* <TableCell>{e.notes ?? ''}</TableCell> */}
                       </TableRow>
                     ))}
                   </TableBody>
