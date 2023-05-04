@@ -5,10 +5,14 @@ export const exchangeRate = 77;
  * @type {{name:string,cost?:number,discountedCost?:number,notes?:string}[]}
  */
 
+//newCost ===> membership cost for new members
+//renewalCost ===> membership cost for membership renewal
+
 export const costs = [
   {
     name: 'Student Membership',
-    cost: 3.5,
+    newCost: 3.5,
+    renewalCost: 14,
     // discountedCost: 27 / 2,
     //notes: "FUTURE50 (50% off)",
     notes: 'Valid till Dec 31st',
@@ -16,34 +20,37 @@ export const costs = [
 
   {
     name: 'Antennas and Propagation Society (APS)',
-    cost: 8,
+    newCost: 8,
+    renewalCost: 8,
   },
 
-  { name: 'Circuits and Systems (CAS)', cost: 11 },
+  { name: 'Circuits and Systems (CAS)', newCost: 5.5, renewalCost: 5.5 },
 
-  { name: 'Communications Society', cost: 0.5 },
+  { name: 'Communications Society', newCost: 0.5, renewalCost: 0.5 },
 
   {
     name: 'Computer Society',
-    cost: 4,
+    newCost: 4,
+    renewalCost: 4,
     // discountedCost: 4,
     // notes: "CS202250 (50% off)",
   },
 
   {
     name: 'Power & Energy Society (PES)',
-    cost: 7.5,
+    newCost: 0,
+    renewalCost: 7.5,
     // discountedCost: 0,
-    notes: 'Free for new members!',
+    // notes: 'Free for new members!',
   },
 
-  { name: 'Robotics and Automation (RAS)', cost: 5 },
+  { name: 'Robotics and Automation (RAS)', newCost: 5, renewalCost: 5 },
 
-  { name: 'Sensors Council', cost: 0 },
+  { name: 'Signal Processing Society (SPS)', newCost: 0.5, renewalCost: 0.5 },
+  
+  { name: 'Sensors Council', newCost: 0, renewalCost: 0 },
+  
+  { name: 'SIGHT', newCost: 0, renewalCost: 0 },
 
-  { name: 'Signal Processing Society (SPS)', cost: 0.5 },
-
-  { name: 'SIGHT', cost: 0 },
-
-  { name: 'Women in Engineering (WIE)', cost: 0 },
+  { name: 'Women in Engineering (WIE)', newCost: 0, renewalCost: 0 },
 ];
