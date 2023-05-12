@@ -8,6 +8,7 @@ import EventCard from '../components/EventCard';
 import { hostname, ecats, images, execom, alumni } from '../links';
 import AlumniAccordions from '../components/AlumniAccordions';
 import SpacyDivider from '../components/SpacyDivider';
+import SocietyExec from './SocietyExec';
 
 const useStyles = makeStyles(theme => ({
   root: theme.root,
@@ -112,7 +113,7 @@ export default function SIGHTAffinityPage(props) {
             <br />
           </>
         )}
-        <Paper className={classes.paper}>
+        {/* <Paper className={classes.paper}>
           <Typography variant="h3">Executive Committee</Typography>
           <br />
           <Grid hidden container spacing={2} justify="center">
@@ -122,9 +123,10 @@ export default function SIGHTAffinityPage(props) {
               </Grid>
             ))}
           </Grid>
-        </Paper>
+        </Paper> */}
+         <SocietyExec sid = {ecats.sight}/>
         <br />
-        <AlumniAccordions members={alumni.sight} />
+        <AlumniAccordions members={alumni.sight} sid = {ecats.sight} />
         <br />
       </Container>
     </div>

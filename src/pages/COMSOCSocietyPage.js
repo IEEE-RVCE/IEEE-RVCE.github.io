@@ -8,6 +8,8 @@ import { hostname, ecats, images, execom, alumni } from '../links';
 import { Link } from 'react-router-dom';
 import AlumniAccordions from '../components/AlumniAccordions';
 import SpacyDivider from '../components/SpacyDivider';
+import SocietyExec from './SocietyExec';
+import Aluminiapi from '../components/Aluminiapi';
 
 const useStyles = makeStyles(theme => ({
   root: theme.root,
@@ -27,7 +29,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function COMSOCSocietyPage(_props) {
+export default function COMSOCSocietyPage(props) {
   const classes = useStyles();
 
   const [events, setEvents] = useState([]);
@@ -97,7 +99,7 @@ export default function COMSOCSocietyPage(_props) {
             <SpacyDivider color="rgb(61 144 142)" />
           </>
         )}
-        <Paper className={classes.paper}>
+        {/* <Paper className={classes.paper}>
           <Typography variant="h3">Executive Committee</Typography>
           <br />
           <Grid container spacing={2} justify="center">
@@ -107,10 +109,17 @@ export default function COMSOCSocietyPage(_props) {
               </Grid>
             ))}
           </Grid>
-        </Paper>
-        <AlumniAccordions members={alumni.comsoc} color="rgb(61 144 142)" />
+        </Paper> */}
+        <SocietyExec sid = {ecats.comsoc}/>
+
+        <AlumniAccordions members={alumni.compsoc} sid={ecats.comsoc} color="rgb(61 144 142)" />
+        {/* <Aluminiapi  /> */}
+
         <br />
       </Container>
+
+      
+
     </div>
   );
 }

@@ -8,7 +8,7 @@ import EventCard from '../components/EventCard';
 import { hostname, ecats, images, execom, alumni } from '../links';
 import AlumniAccordions from '../components/AlumniAccordions';
 import SpacyDivider from '../components/SpacyDivider';
-
+import SocietyExec from './SocietyExec';
 const useStyles = makeStyles(theme => ({
   root: theme.root,
   container: theme.page,
@@ -106,7 +106,7 @@ export default function CSSocietyPage(props) {
             <SpacyDivider color="rgb(80 161 99)" />
           </>
         )}
-        <Paper className={classes.paper}>
+        {/* <Paper className={classes.paper}>
           <Typography variant="h3">Executive Committee</Typography>
           <br />
           <Grid container spacing={2} justify="center">
@@ -116,8 +116,9 @@ export default function CSSocietyPage(props) {
               </Grid>
             ))}
           </Grid>
-        </Paper>
-        <AlumniAccordions members={alumni.compsoc} color="rgb(80 161 99)" />
+        </Paper> */}
+         <SocietyExec sid = {ecats.compsoc}/>
+        <AlumniAccordions members={alumni.compsoc} sid = {ecats.compsoc} color="rgb(80 161 99)" />
         <br />
       </Container>
     </div>
