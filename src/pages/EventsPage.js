@@ -1,5 +1,6 @@
-/* eslint-disable no-lone-blocks */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useQuery } from 'react-query';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Typography,
@@ -25,7 +26,6 @@ import GiveMeABreak from '../components/GiveMeABreak';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    // ...theme.page,
     ...theme.root,
     textAlign: 'center',
     alignContent: 'center',
@@ -54,52 +54,55 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function EventPage(props) {
+const getEvents = async ecat => {
+  try {
+    const url = ecat !== undefined ? `${hostname}/api/event/cat/${ecat}` : `${hostname}/api/event`;
+    const response = await axios.get(url);
+    const events = response.data.events;
+    events.forEach(event => (event.eventstart = new Date(event.eventstart)));
+    return events.sort((a, b) => b.eventstart - a.eventstart);
+  } catch (error) {
+    console.error(error);
+    throw new Error('Failed to fetch events');
+  }
+};
+
+export default function EventPage() {
   const classes = useStyles();
-  const [loading, setLoading] = React.useState(false);
+  const { search } = useLocation();
+  const { ecat } = queryString.parse(search);
   let loggedIn = localStorage.getItem('isAuthenticated') === 'true';
-  const { ecat } = queryString.parse(props.location.search);
+  // Get events from db and use a list to manage which events are being shown
+  const { data: events, isFetching, error } = useQuery(['events', ecat], () => getEvents(ecat));
 
-  //Get events from db and use a list to manage which events are being shown
-  const [events, setEvents] = useState([]);
-  const [list, setList] = React.useState([
-    { hi: 'these' },
-    { dont: 'mean' },
-    { anything: 'they' },
-    { help: 'skeletons' },
-  ]);
+  // Keyword search
+  const [text, setText] = useState('');
+  const [filteredEvents, setFilteredEvents] = useState([]);
 
-  //search text
-  const [text, setText] = React.useState('');
-  //Keyword search
   const handleSearch = event => {
-    setText(event.target.value);
+    const searchText = event.target.value;
+    setText(searchText);
+    if (searchText === '') {
+      setFilteredEvents([]);
+    } else {
+      const filteredEvents = events.filter(event => {
+        const titleMatch = event.ename.toLowerCase().includes(text.toLowerCase());
+        const descriptionMatch = event.details.toLowerCase().includes(text.toLowerCase());
+        return titleMatch || descriptionMatch;
+      });
+      setFilteredEvents(filteredEvents);
+    }
   };
 
-  useEffect(() => {
-    var updatedList = events;
-    updatedList = events.filter(function (item) {
-      if (text === '') return events;
-      return (
-        item.keywords.toLowerCase().search(text.toLowerCase()) !== -1 ||
-        item.ename.toLowerCase().search(text.toLowerCase()) !== -1
-      );
-    });
-    setList(updatedList);
-  }, [events, text]);
-
-  //Society names for dropdown filter
-  const [category, setCategory] = React.useState(ecat !== undefined ? ecat : 0);
-  //Society filter
+  const [category, setCategory] = useState(ecat ?? 0);
   const handleFilter = event => {
     setCategory(event.target.value);
     window.location.href =
       event.target.value !== 0
-        ? window.location.origin + '/#/events?ecat=' + event.target.value
-        : window.location.origin + '/#/events';
+        ? `${window.location.origin}/#/events?ecat=${event.target.value}`
+        : `${window.location.origin}/#/events`;
   };
 
-  //Dialog stuff
   const [dialog, setDialog] = useState(false);
   const handleDialogClose = () => {
     setDialog(false);
@@ -107,24 +110,6 @@ export default function EventPage(props) {
   const handleDialogOpen = () => {
     setDialog(true);
   };
-
-  useEffect(() => {
-    setLoading(true);
-    axios
-      .get(ecat !== undefined ? hostname + '/api/event/cat/' + ecat : hostname + '/api/event')
-      .then(response => {
-        // Event Sorted on basis of Event Start Date; (if anyone has a better idea, let's goooo!)
-        setEvents(
-          response.data.events.sort((a, b) => {
-            return new Date(b.eventstart) - new Date(a.eventstart);
-          })
-        );
-        setList(response.data.events);
-      })
-      .then(() => {
-        setLoading(false);
-      });
-  }, [ecat]);
 
   return (
     <div className={classes.root}>
@@ -141,7 +126,6 @@ export default function EventPage(props) {
                 InputLabelProps={{
                   shrink: true,
                 }}
-                defaultValue="All"
               />
             </FormControl>
           </div>
@@ -199,12 +183,49 @@ export default function EventPage(props) {
             </FormControl>
           </div>
         </div>
-        {/* <Typography variant='h4' style={{textAlign: 'center'}}><b>Events</b></Typography> */}
+        {/* <Typography variant="h4" style={{ textAlign: 'center' }}>
+          <b>Events</b>
+        </Typography> */}
         <br />
-        {Array.isArray(list) && list.length !== 0 ? (
+
+        {isFetching && (
           <Grid container spacing={3} direction="row" alignItems="stretch" className={classes.grid}>
-            {list.map(function (item) {
-              if (loading) {
+            {Array.from({ length: 4 }).map((_, index) => (
+              <Grid item lg={3} sm={6} xs={12} md={4} key={`skeleton-${index}`}>
+                <Skeleton animation="wave" variant="rect" height={400} />
+              </Grid>
+            ))}
+          </Grid>
+        )}
+
+        {error && (
+          <Typography variant="body1" style={{ textAlign: 'center' }}>
+            Failed to fetch events.
+          </Typography>
+        )}
+
+        {Array.isArray(filteredEvents) && filteredEvents.length !== 0 ? (
+          <Grid container spacing={3} direction="row" alignItems="stretch" className={classes.grid}>
+            {filteredEvents.map(item => {
+              if (isFetching) {
+                return (
+                  <Grid item lg={3} sm={6} xs={12} md={4}>
+                    <Skeleton animation="wave" variant="rect" height={400} />
+                  </Grid>
+                );
+              } else {
+                return (
+                  <Grid item lg={3} sm={6} xs={12} md={4}>
+                    <EventCard event={item} />
+                  </Grid>
+                );
+              }
+            })}
+          </Grid>
+        ) : Array.isArray(events) && events.length !== 0 ? (
+          <Grid container spacing={3} direction="row" alignItems="stretch" className={classes.grid}>
+            {events.map(item => {
+              if (isFetching) {
                 return (
                   <Grid item lg={3} sm={6} xs={12} md={4}>
                     <Skeleton animation="wave" variant="rect" height={400} />
@@ -220,9 +241,7 @@ export default function EventPage(props) {
             })}
           </Grid>
         ) : (
-          <Typography variant="h5" style={{ textAlign: 'center' }}>
-            No events to display
-          </Typography>
+          <Typography variant="body1">No events found.</Typography>
         )}
       </Container>
       {loggedIn && (
@@ -235,9 +254,7 @@ export default function EventPage(props) {
           <AddEventDialog onClose={handleDialogClose} aria-label="add-event-dialog" open={dialog} />
         </>
       )}
-      <GiveMeABreak />
-      <GiveMeABreak />
-      <GiveMeABreak />
+      <GiveMeABreak num={3} />
     </div>
   );
 }
