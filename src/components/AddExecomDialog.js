@@ -95,7 +95,7 @@ export const AddExecomDialog = props => {
 
   const { isLoading, error, uploadImage } = useImageUploader();
   const handleFileInputChange = async file => {
-    const url = await uploadImage(file);
+      const url = await uploadImage(file);
     setValues({
       ...values,
       imagepath: url,
@@ -311,7 +311,7 @@ export const AddExecomDialog = props => {
                 }
               />
             </FormControl>
-            {error && <p>Error: {error.message}</p>}
+            {error && <p style={{ color: 'red' }} id="errorUpload">Error: {error.message}</p>}
             {values.imagepath !== '' ? (
               <div
                 style={{
