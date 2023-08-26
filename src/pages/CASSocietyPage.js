@@ -3,9 +3,8 @@ import axios from 'axios';
 import { Container, Grid, Typography, Paper } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import Avatar from '../components/Avatar';
 import EventCard from '../components/EventCard';
-import { hostname, ecats, images, execom, alumni } from '../links';
+import { hostname, ecats, images, alumni } from '../links';
 import AlumniAccordions from '../components/AlumniAccordions';
 import SpacyDivider from '../components/SpacyDivider';
 import SocietyExec from './SocietyExec';
@@ -84,7 +83,7 @@ export default function CASSocietyPage(props) {
             <Paper className={classes.paper}>
               <Typography variant="h3">Events</Typography>
               <br />
-              <Grid container spacing={2} justify="center">
+              <Grid container spacing={2} justifyContent="center">
                 {events.slice(0, 3).map(item => {
                   return (
                     <Grid item xs={12} md={4}>

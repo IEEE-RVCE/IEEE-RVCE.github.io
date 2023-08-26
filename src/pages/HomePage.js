@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import EventsCalendar from '../components/Calendar';
 import Avatar from '../components/Avatar';
 import FrontText from '../components/FrontText';
-import { execom, alumni, ecats, hostname } from '../links';
+import { alumni, ecats, hostname } from '../links';
 import FrontBox from '../components/FrontBox';
 import SpacyDivider from '../components/SpacyDivider';
 import AlumniAccordions from '../components/AlumniAccordions';
@@ -70,7 +70,7 @@ export default function HomePage(props) {
           <Grid
             container
             spacing={3}
-            justify="space-evenly"
+            justifyContent="space-evenly"
             onScroll={() => {
               console.log('Came here ');
             }}
@@ -91,7 +91,7 @@ export default function HomePage(props) {
                 <Avatar name={member.name} position={member.position} src={member.image} />
               </Grid>
             ))} */}
-             <Grid container spacing={2} justify="center">
+             <Grid container spacing={2} justifyContent="center">
                 {member.map(mem => {
                   return (
                     <Grid item xs={12} md={4}>
@@ -112,7 +112,7 @@ export default function HomePage(props) {
             <Paper className={classes.paper}>
               <Typography variant="h3">Events</Typography>
               <br />
-              <Grid container spacing={2} justify="center">
+              <Grid container spacing={2} justifyContent="center">
                 {events.slice(0, 3).map(item => {
                   return (
                     <Grid item xs={12} md={4}>

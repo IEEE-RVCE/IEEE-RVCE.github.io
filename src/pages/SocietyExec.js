@@ -34,7 +34,7 @@ export default function SocietyExec({sid}) {
     axios.get(hostname + `/api/execom/${sid}`).then(response => {
         setMember(response.data.execom);
       });
-  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -45,10 +45,10 @@ export default function SocietyExec({sid}) {
         <Paper className={classes.paper}>
           <Typography variant="h3">Executive Committee</Typography>
           <br />
-          <Grid container spacing={2} justify="center">
+          <Grid container spacing={2} justifyContent="center">
                 {member.map(mem => {
                   return (
-                    <Grid item xs={12} md={4}>
+                    <Grid item xs={12} md={4} key={mem.name}>
                      <Avatar name={mem.name} position={mem.position} src={mem.image} />
                     </Grid>
                   );

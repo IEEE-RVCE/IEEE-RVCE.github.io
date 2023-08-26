@@ -84,7 +84,7 @@ export default function PESSocietyPage(props) {
             <Paper className={classes.paper}>
               <Typography variant="h3">Events</Typography>
               <br />
-              <Grid container spacing={2} justify="center">
+              <Grid container spacing={2} justifyContent="center">
                 {events.slice(0, 3).map(item => {
                   return (
                     <Grid item xs={12} md={4}>
