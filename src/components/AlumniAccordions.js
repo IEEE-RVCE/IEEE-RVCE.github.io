@@ -1,4 +1,7 @@
 import React from 'react';
+import { useState,useEffect } from 'react';
+import axios from 'axios';
+import { hostname } from '../links';
 import { makeStyles } from '@material-ui/core/styles';
 import { Paper, Typography, Accordion, AccordionSummary, AccordionDetails, Grid } from '@material-ui/core';
 import Avatar from './Avatar';
@@ -14,8 +17,20 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function AlumniAccordions(props) {
-  const { members } = props;
+ //const { members } = props;
+
+  const [members, setMembers] = useState({});
+
+  useEffect(() => {
+    axios.get(hostname + '/api/execom/alumini/' + props.sid).then(response => {
+      setMembers(response.data.alumini);
+      console.log(response.data.alumini);
+    });
+  }, [props.sid]);
+
+
   const classes = useStyles();
+ // console.log(members);
   let color = props.color ?? '#222222';
   return (
     <>
@@ -29,8 +44,9 @@ export default function AlumniAccordions(props) {
                 Alumni
               </Typography>
               <GiveMeABreak num={2} />
-              {Object.keys(members).map(batch => (
+              {Object.keys(members).map((batch,index) => (
                 <Accordion
+                  key={index}
                   style={{
                     borderLeft: '1px solid ' + color,
                     borderBottom: '2px solid ' + color,
@@ -42,9 +58,9 @@ export default function AlumniAccordions(props) {
                     <Typography>{batch}</Typography>
                   </AccordionSummary>
                   <AccordionDetails>
-                    <Grid container spacing={2} justify="center">
-                      {members[batch].map(member => (
-                        <Grid item xs={12} md={4}>
+                    <Grid container spacing={2} justifyContent="center">
+                      {members[batch].map((member,index) => (
+                        <Grid item xs={12} md={4} key={index}>
                           <Avatar name={member.name} position={member.position} src={member.image} />
                         </Grid>
                       ))}

@@ -10,9 +10,7 @@ import EventCard from '../components/EventCard';
 import { hostname, ecats, images,alumni } from '../links';
 import AlumniAccordions from '../components/AlumniAccordions';
 import SpacyDivider from '../components/SpacyDivider';
-import SocietyExecom from '../components/SocietyExecom';
-
-
+import SocietyExec from './SocietyExec';
 const useStyles = makeStyles(theme => ({
   root: theme.root,
   container: theme.page,
@@ -90,10 +88,10 @@ export default function CSSocietyPage(props) {
             <Paper className={classes.paper}>
               <Typography variant="h3">Events</Typography>
               <br />
-              <Grid container spacing={2} justify="center">
-                {events.slice(0, 3).map(item => {
+              <Grid container spacing={2} justifyContent="center">
+                {events.slice(0, 3).map((item,index) => {
                   return (
-                    <Grid item xs={12} md={4}>
+                    <Grid item xs={12} md={4} key={index}>
                       <EventCard event={item} />
                     </Grid>
                   );
@@ -109,12 +107,19 @@ export default function CSSocietyPage(props) {
             <SpacyDivider color="rgb(80 161 99)" />
           </>
         )}
-        <Paper className={classes.paper}>
+        {/* <Paper className={classes.paper}>
           <Typography variant="h3">Executive Committee</Typography>
           <br />
-          <SocietyExecom sid = {ecats.compsoc} />
-        </Paper>
-        <AlumniAccordions members={alumni.compsoc} color="rgb(80 161 99)" />
+          <Grid container spacing={2} justify="center">
+            {execom.compsoc.map(member => (
+              <Grid item xs={12} md={4}>
+                <Avatar name={member.name} position={member.position} src={member.image} />
+              </Grid>
+            ))}
+          </Grid>
+        </Paper> */}
+         <SocietyExec sid = {ecats.compsoc}/>
+        <AlumniAccordions members={alumni.compsoc} sid = {ecats.compsoc} color="rgb(80 161 99)" />
         <br />
       </Container>
     </div>

@@ -7,8 +7,7 @@ import EventCard from '../components/EventCard';
 import { hostname, ecats, images, alumni } from '../links';
 import AlumniAccordions from '../components/AlumniAccordions';
 import SpacyDivider from '../components/SpacyDivider';
-import SocietyExecom from '../components/SocietyExecom';
-
+import SocietyExec from './SocietyExec';
 const useStyles = makeStyles(theme => ({
   root: theme.root,
   container: theme.page,
@@ -80,7 +79,7 @@ export default function RASSocietyPage(props) {
             <Paper className={classes.paper}>
               <Typography variant="h3">Events</Typography>
               <br />
-              <Grid container spacing={2} justify="center">
+              <Grid container spacing={2} justifyContent="center">
                 {events.slice(0, 3).map(item => {
                   return (
                     <Grid item xs={12} md={4}>
@@ -99,12 +98,19 @@ export default function RASSocietyPage(props) {
             <SpacyDivider color="rgb(12 104 171)" />
           </>
         )}
-        <Paper className={classes.paper}>
+        {/* <Paper className={classes.paper}>
           <Typography variant="h3">Executive Committee</Typography>
           <br />
-          <SocietyExecom sid = {ecats.ras} />
-        </Paper>
-        <AlumniAccordions members={alumni.ras} color="rgb(12 104 171)" />
+          <Grid container spacing={2} justify="center">
+            {execom.ras.map(member => (
+              <Grid item xs={12} md={4}>
+                <Avatar name={member.name} position={member.position} src={member.image} />
+              </Grid>
+            ))}
+          </Grid>
+        </Paper> */}
+         <SocietyExec sid = {ecats.ras}/>
+        <AlumniAccordions members={alumni.ras} sid={ecats.ras} color="rgb(12 104 171)" />
         <br />
       </Container>
     </div>
