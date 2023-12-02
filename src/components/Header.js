@@ -178,39 +178,7 @@ export default function Header(props) {
     }
     setDrawer(open);
   };
-
-  // Makes list for drawer
-  const list = () => (
-    <div>
-      <List>
-        {navs.map(nav => {
-          if (nav.name === 'Societies') {
-            return <AppBarMenu drawerHandle={setDrawer} name={nav.name} items={societies} />;
-          } else if (nav.name === 'Affinities') {
-            return <AppBarMenu drawerHandle={setDrawer} name={nav.name} items={affinities} />;
-          } else if (nav.name === 'Login') {
-            if (loggedin) {
-              return (
-                <ListItem button key={nav.name} onClick={logout}>
-                  <ListItemText primary="Logout" />
-                </ListItem>
-              );
-            } else {
-              return <React.Fragment />;
-            }
-          } else {
-            return (
-              <Link to={nav.link} className={classes.nav}>
-                <ListItem onClick={handleDrawerToggle(false)} button key={nav.name}>
-                  <ListItemText primary={nav.name} />
-                </ListItem>
-              </Link>
-            );
-          }
-        })}
-      </List>
-    </div>
-  );
+  const IeeeGlobalLink = ()=>{
     const globalSocietyLink = [
       {
         hash : "#/",
@@ -248,7 +216,47 @@ export default function Header(props) {
         hash : "#/society/sc",
         jsxElement : <a href="https://www.ieee.org/" target="_blank" rel="noreferrer"><Button color="inherit" className={classes.button}>IEEE-Global</Button></a>
       }
-    ]
+    ];
+    return (
+      <>
+      {globalSocietyLink.filter((obj)=>window.location.hash===obj.hash)[0].jsxElement}
+      </>
+    )
+
+  }
+  // Makes list for drawer
+  const list = () => (
+    <div>
+      <List>
+        {navs.map(nav => {
+          if (nav.name === 'Societies') {
+            return <AppBarMenu drawerHandle={setDrawer} name={nav.name} items={societies} />;
+          } else if (nav.name === 'Affinities') {
+            return <AppBarMenu drawerHandle={setDrawer} name={nav.name} items={affinities} />;
+          } else if (nav.name === 'Login') {
+            if (loggedin) {
+              return (
+                <ListItem button key={nav.name} onClick={logout}>
+                  <ListItemText primary="Logout" />
+                </ListItem>
+              );
+            } else {
+              return <React.Fragment />;
+            }
+          } else {
+            return (
+              <Link to={nav.link} className={classes.nav}>
+                <ListItem onClick={handleDrawerToggle(false)} button key={nav.name}>
+                  <ListItemText primary={nav.name} />
+                </ListItem>
+              </Link>
+            );
+          }
+        })}
+      </List>
+    </div>
+  );
+    
   // Combines all the stuff above and makes the header. It works great on phones as well.
   return (
     <div className={classes.root}>
@@ -268,7 +276,7 @@ export default function Header(props) {
 
             <div className={classes.navs}>
               <Buttons />
-              {globalSocietyLink.filter((obj)=>window.location.hash===obj.hash)[0].jsxElement}
+              <IeeeGlobalLink />
             </div>
 
             {/* <div className={classes.brand}>
