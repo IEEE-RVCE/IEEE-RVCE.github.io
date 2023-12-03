@@ -180,46 +180,52 @@ export default function Header(props) {
   };
   const IeeeGlobalLink = ()=>{
     const globalSocietyLink = [
-      {
-        hash : "#/",
-        jsxElement : <a href="https://www.ieee.org/" target="_blank" rel="noreferrer"><Button color="inherit" className={classes.button}>IEEE-Global</Button></a>
-      },
+    
       {
         hash : "#/society/cs",
-        jsxElement : <a href="https://www.computer.org/" target="_blank" rel="noreferrer"><Button color="inherit" className={classes.button}>IEEE-Global</Button></a>
+        link : "https://www.computer.org"
       },
       {
         hash : "#/society/comsoc",
-        jsxElement : <a href="https://www.comsoc.org/" target="_blank" rel="noreferrer"><Button color="inherit" className={classes.button}>IEEE-Global</Button></a>
+        link : "https://www.comsoc.org"
       },
       {
         hash : "#/society/pes",
-        jsxElement : <a href="http://www.ieee-pes.org/" target="_blank" rel="noreferrer"><Button color="inherit" className={classes.button}>IEEE-Global</Button></a>
+        link : "http://www.ieee-pes.org"
       },
       {
         hash : "#/society/sps",
-        jsxElement : <a href="https://signalprocessingsociety.org/" target="_blank" rel="noreferrer"><Button color="inherit" className={classes.button}>IEEE-Global</Button></a>
+        link : "https://signalprocessingsociety.org/" 
       },
       {
         hash : "#/society/aps",
-        jsxElement : <a href="https://ieeeaps.org/" target="_blank" rel="noreferrer"><Button color="inherit" className={classes.button}>IEEE-Global</Button></a>
+        link : "https://ieeeaps.org"
       },
       {
         hash : "#/society/ras",
-        jsxElement : <a href="http://www.ieee-ras.org/" target="_blank" rel="noreferrer"><Button color="inherit" className={classes.button}>IEEE-Global</Button></a>
+        link : "http://www.ieee-ras.org/" 
       },
       {
         hash : "#/society/cas",
-        jsxElement : <a href="https://ieee-cas.org/" target="_blank" rel="noreferrer"><Button color="inherit" className={classes.button}>IEEE-Global</Button></a>
+        link : "https://ieee-cas.org/" 
       },
       {
         hash : "#/society/sc",
-        jsxElement : <a href="https://ieee-sensors.org/" target="_blank" rel="noreferrer"><Button color="inherit" className={classes.button}>IEEE-Global</Button></a>
+        link : "https://ieee-sensors.org"
+      },
+      {
+        hash : "#/affinity/sight",
+        link : "https://sight.ieee.org" 
+      },
+      {
+        hash : "#/affinity/wie",
+        link : "http://wie.ieee.org/?utm_source=linkslist_text&utm_medium=lp-communities&utm_campaign=wie" 
       }
+
     ];
     return (
       <>
-      {globalSocietyLink.filter((obj)=>window.location.hash===obj.hash)[0]?.jsxElement || globalSocietyLink[0].jsxElement}
+      <a href = {globalSocietyLink.filter((obj)=>window.location.hash===obj.hash)[0]?.link || "https://www.ieee.org/"} target='_blank' rel="noreferrer"><Button color='inherit' className={classes.button}>IEEE-Global</Button></a>
       </>
     )
 
