@@ -178,7 +178,52 @@ export default function Header(props) {
     }
     setDrawer(open);
   };
+  const IeeeGlobalLink = ()=>{
+    const globalSocietyLink = [
+      {
+        hash : "#/",
+        jsxElement : <a href="https://www.ieee.org/" target="_blank" rel="noreferrer"><Button color="inherit" className={classes.button}>IEEE-Global</Button></a>
+      },
+      {
+        hash : "#/society/cs",
+        jsxElement : <a href="https://www.computer.org/" target="_blank" rel="noreferrer"><Button color="inherit" className={classes.button}>IEEE-Global</Button></a>
+      },
+      {
+        hash : "#/society/comsoc",
+        jsxElement : <a href="https://www.comsoc.org/" target="_blank" rel="noreferrer"><Button color="inherit" className={classes.button}>IEEE-Global</Button></a>
+      },
+      {
+        hash : "#/society/pes",
+        jsxElement : <a href="http://www.ieee-pes.org/" target="_blank" rel="noreferrer"><Button color="inherit" className={classes.button}>IEEE-Global</Button></a>
+      },
+      {
+        hash : "#/society/sps",
+        jsxElement : <a href="https://signalprocessingsociety.org/" target="_blank" rel="noreferrer"><Button color="inherit" className={classes.button}>IEEE-Global</Button></a>
+      },
+      {
+        hash : "#/society/aps",
+        jsxElement : <a href="https://ieeeaps.org/" target="_blank" rel="noreferrer"><Button color="inherit" className={classes.button}>IEEE-Global</Button></a>
+      },
+      {
+        hash : "#/society/ras",
+        jsxElement : <a href="http://www.ieee-ras.org/" target="_blank" rel="noreferrer"><Button color="inherit" className={classes.button}>IEEE-Global</Button></a>
+      },
+      {
+        hash : "#/society/cas",
+        jsxElement : <a href="https://ieee-cas.org/" target="_blank" rel="noreferrer"><Button color="inherit" className={classes.button}>IEEE-Global</Button></a>
+      },
+      {
+        hash : "#/society/sc",
+        jsxElement : <a href="https://ieee-sensors.org/" target="_blank" rel="noreferrer"><Button color="inherit" className={classes.button}>IEEE-Global</Button></a>
+      }
+    ];
+    return (
+      <>
+      {globalSocietyLink.filter((obj)=>window.location.hash===obj.hash)[0].jsxElement}
+      </>
+    )
 
+  }
   // Makes list for drawer
   const list = () => (
     <div>
@@ -211,7 +256,7 @@ export default function Header(props) {
       </List>
     </div>
   );
-
+    
   // Combines all the stuff above and makes the header. It works great on phones as well.
   return (
     <div className={classes.root}>
@@ -231,6 +276,7 @@ export default function Header(props) {
 
             <div className={classes.navs}>
               <Buttons />
+              <IeeeGlobalLink />
             </div>
 
             {/* <div className={classes.brand}>
