@@ -219,7 +219,7 @@ export default function Header(props) {
     ];
     return (
       <>
-      {globalSocietyLink.filter((obj)=>window.location.hash===obj.hash)[0].jsxElement}
+      {globalSocietyLink.filter((obj)=>window.location.hash===obj.hash)[0]?.jsxElement || globalSocietyLink[0].jsxElement}
       </>
     )
 
