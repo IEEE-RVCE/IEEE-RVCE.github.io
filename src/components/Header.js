@@ -277,6 +277,11 @@ export default function Header(props) {
             <div className={classes.navs}>
               <Buttons />
               <IeeeGlobalLink />
+              <a href="https://csitss.ieee-rvce.org" target="_blank" rel="noreferrer">
+                <Button color="inherit" className={classes.button}>
+                  CSITSS
+                </Button>
+              </a>
             </div>
 
             {/* <div className={classes.brand}>
