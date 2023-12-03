@@ -214,7 +214,7 @@ export default function Header(props) {
       },
       {
         hash : "#/society/sc",
-        jsxElement : <a href="https://www.ieee.org/" target="_blank" rel="noreferrer"><Button color="inherit" className={classes.button}>IEEE-Global</Button></a>
+        jsxElement : <a href="https://ieee-sensors.org/" target="_blank" rel="noreferrer"><Button color="inherit" className={classes.button}>IEEE-Global</Button></a>
       }
     ];
     return (
