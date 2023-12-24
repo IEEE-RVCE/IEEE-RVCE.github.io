@@ -29,7 +29,8 @@ export default function CostFragment({ cost }) {
       style={{ userSelect: 'none' }}
       align="right"
     >
-      {isDollars ? '$' + Math.ceil(costsNumber/exchangeRate) : '₹' + costsNumber }
+      {/* ceils the number up to 2 decimal places */}
+      {isDollars ? '$' + Math.ceil((costsNumber/exchangeRate)*100)/100 : '₹' + costsNumber }
     </TableCell>
   );
 }
