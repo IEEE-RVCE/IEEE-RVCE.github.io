@@ -456,7 +456,7 @@ export default function MembershipPage() {
                 </Button>
               </HashLink> */}
               {/* <Button size='large' className={classes.button} style={{ margin: "auto", color: "white", backgroundColor: "green" }} onClick={() => { setStart(true); window.location.href = window.location.href + '/1' }}>Become a member now!! </Button> */}
-              <a href="https://bit.ly/IeeeRvceMembership" target="_blank" rel="noreferrer">
+              <a href="https://bit.ly/MembershipIeeeRvce" target="_blank" rel="noreferrer">
                 <Button
                   style={{
                     margin: '1rem',
