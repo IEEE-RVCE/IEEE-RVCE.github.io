@@ -50,12 +50,12 @@ export const costs = [
     // notes: 'Free for new members!',
   },
 
-  { name: 'Power and Energy Society(PES)', newCost:  47.5, renewalCost:  47.5},
+  { name: 'Power and Energy Society(PES)', newCost: 47.5, renewalCost: 47.5 },
 
-  { name: ' Robotics and Automation Society(RAS)', newCost: 465, renewalCost: 465 }, 
-  
-  { name: 'Signal Processing Society(SPS)', newCost: 47.5, renewalCost:  47.5},
-  
+  { name: ' Robotics and Automation Society(RAS)', newCost: 465, renewalCost: 465 },
+
+  { name: 'Signal Processing Society(SPS)', newCost: 47.5, renewalCost: 47.5 },
+
   { name: '  Affinity Group-SIGHT', newCost: 0, renewalCost: 0 },
 
   { name: 'Affinity Group-Women in Engineering(WIE)', newCost: 0, renewalCost: 0 },

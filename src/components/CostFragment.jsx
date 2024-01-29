@@ -29,7 +29,7 @@ export default function CostFragment({ cost }) {
       style={{ userSelect: 'none' }}
       align="right"
     >
-      {isDollars ? '$' + (costsNumber/exchangeRate).toFixed(2) : '₹' + costsNumber }
+      {isDollars ? '$' + (costsNumber / exchangeRate).toFixed(2) : '₹' + costsNumber}
     </TableCell>
   );
 }

@@ -1,8 +1,8 @@
 {
-  "name": "ieee-rvce.github.io",
+  "name": "ieee-rvce.org",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ieee-rvce.github.io/",
+  "homepage": "https://ieee-rvce.org/#",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
@@ -51,8 +51,11 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.1.0",
     "husky": "^8.0.3",
     "prettier": "^2.8.4"
+  },
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=18.0.0"
   }
 }
