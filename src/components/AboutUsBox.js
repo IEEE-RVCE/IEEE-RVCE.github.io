@@ -65,7 +65,7 @@ export default function AboutUsBox() {
   return (
     <>
       <Box className={classes.bigbadBackground} ref={myRef}>
-        <Grid container style={{ padding: '2rem' }} alignContent="center" justify="center">
+        <Grid container style={{ padding: '2rem' }} alignContent="center" justifyContent="center">
           <Grid item>
             <Box>
               <h1>
