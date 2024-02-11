@@ -145,9 +145,9 @@ export default function Header(props) {
   const Buttons = () => {
     let buttons = navs.map(nav => {
       if (nav.name === 'Societies') {
-        return <AppBarMenu name={nav.name} items={societies} />;
+        return <AppBarMenu name={nav.name} items={societies} key={nav.name}/>;
       } else if (nav.name === 'Affinities') {
-        return <AppBarMenu name={nav.name} items={affinities} />;
+        return <AppBarMenu name={nav.name} items={affinities} key={nav.name}/>;
       } else if (nav.name === 'Login') {
         if (loggedin) {
           return (
@@ -185,9 +185,9 @@ export default function Header(props) {
       <List>
         {navs.map(nav => {
           if (nav.name === 'Societies') {
-            return <AppBarMenu drawerHandle={setDrawer} name={nav.name} items={societies} />;
+            return <AppBarMenu drawerHandle={setDrawer} name={nav.name} items={societies} key={nav.name}/>;
           } else if (nav.name === 'Affinities') {
-            return <AppBarMenu drawerHandle={setDrawer} name={nav.name} items={affinities} />;
+            return <AppBarMenu drawerHandle={setDrawer} name={nav.name} items={affinities} key={nav.name}/>;
           } else if (nav.name === 'Login') {
             if (loggedin) {
               return (
@@ -200,7 +200,7 @@ export default function Header(props) {
             }
           } else {
             return (
-              <Link to={nav.link} className={classes.nav}>
+              <Link to={nav.link} className={classes.nav} key={nav.name}>
                 <ListItem onClick={handleDrawerToggle(false)} button key={nav.name}>
                   <ListItemText primary={nav.name} />
                 </ListItem>
