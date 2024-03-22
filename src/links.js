@@ -46,8 +46,8 @@ export const societies = [
   { name: 'Robotics and Automation Society', link: '/society/ras' },
   { name: 'Circuits and Systems Society', link: '/society/cas' },
   { name: 'Sensor Council', link: '/society/sc' },
-  { name: 'Microwave Theory and Technology Society(MTTS)', link:'/'},
-  {name:'Antennas and Propagation Society',link:'/'}
+  { name: 'Microwave Theory and Technology Society(MTTS)', link: '/' },
+  { name: 'Antennas and Propagation Society', link: '/' },
 ];
 
 /**
@@ -264,7 +264,6 @@ export const execom = {
       position: 'Treasurer',
       image: imagePath + '/execom/compsoc/Ganesh Naik - Treasurer.jpg',
     },
-    
   ],
   comsoc: [
     {
@@ -278,9 +277,9 @@ export const execom = {
       image: imagePath + '/execom/comsoc/Pavan Kumar C Banasode - Vice Chair.jpg',
     },
     //{
-      //name: 'Pradyumna S Athreya ',
-      //position: 'Secretary',
-      //image: imagePath + '/execom/comsoc/pradyumna_s_athreya.jpg',
+    //name: 'Pradyumna S Athreya ',
+    //position: 'Secretary',
+    //image: imagePath + '/execom/comsoc/pradyumna_s_athreya.jpg',
     //},
     {
       name: 'Preeti',
@@ -302,7 +301,7 @@ export const execom = {
     {
       name: 'Ishan Varun',
       position: 'Secretary',
-      image: imagePath + '/execom/pes/ishan varun(Secretary).jpg',  
+      image: imagePath + '/execom/pes/ishan varun(Secretary).jpg',
     },
     {
       name: 'Laxmi',
@@ -339,19 +338,19 @@ export const execom = {
       image: imagePath + '/execom/wie/deepika_maam.jpg',
     },
     {
-      name: 'Jahnavi M Math',
+      name: 'Anisha Bhattacharya',
       position: 'Chair',
-      image: imagePath + '/execom/wie/jahnavi_m_math.jpg',
+      image: imagePath + '/execom/wie/Anisha Bhattacharya -  Chair.JPG',
     },
     {
-      name: 'Omisha Singh',
+      name: 'Swara Gingade',
       position: 'Secretary',
-      image: imagePath + '/execom/wie/omisha_singh.jpg',
+      image: imagePath + '/execom/wie/Swara Gingade- Secretary .HEIC',
     },
     {
-      name: 'Gohitha Maheshwari J',
+      name: 'Tanmaya WM',
       position: 'Treasurer',
-      image: imagePath + '/execom/wie/gohitha_maheshwari.jpg',
+      image: imagePath + '/execom/wie/Tanmaya WM - Treasurer .jpeg',
     },
   ],
   ras: [
@@ -405,19 +404,24 @@ export const execom = {
       image: imagePath + '/execom/cas/dr_shylashree.jpeg',
     },
     {
-      name: 'Akash Kotagi',
+      name: 'Pratham G',
       position: 'Chair',
-      image: imagePath + '/execom/cas/akash_kotagi.jpg',
+      image: imagePath + '/execom/cas/PrathamG-Chair.jpg',
     },
     {
-      name: 'Sanjana Carol',
+      name: 'Kamath Abhay Sunil',
+      position: 'Vice Chair',
+      image: imagePath + '/execom/cas/Kamath Abhay Sunil Vice Chair.jpg',
+    },
+    {
+      name: 'Dhtuthi MD',
       position: 'Secretary',
-      image: imagePath + '/execom/cas/sanjana_carol.jpg',
+      image: imagePath + '/execom/cas/Dhtuthi_MD-secretary_CAS.jpg',
     },
     {
-      name: 'Sai Surya Sreekar Mulukutla',
+      name: 'Paridhi Sudarshan',
       position: 'Treasurer',
-      image: imagePath + '/execom/cas/sreekar_mulukutla.jpg',
+      image: imagePath + '/execom/cas/Paridhi Sudarshan-Treasurer.jpg',
     },
   ],
   sc: [
@@ -449,8 +453,8 @@ export const execom = {
  */
 export const alumni = {
   main: {
-    2023:[
-   {
+    2023: [
+      {
         name: 'Dr. Mahesh A',
         position: 'Branch Counselor',
         image: imagePath + '/execom/main/mahesh_sir.jpg',
@@ -740,7 +744,8 @@ export const alumni = {
         name: 'Joshua Elias Alva',
         position: 'Treasurer',
         image: imagePath + '/execom/compsoc/joshua.jpg',
-      },],
+      },
+    ],
     2022: [
       {
         name: 'Dr. Ashok Kumar AR',
@@ -883,8 +888,7 @@ export const alumni = {
     2019: [{ name: 'Trilok Girish', position: 'Chair' }],
   },
   pes: {
-    2023:
-    [
+    2023: [
       {
         name: 'Prof. SG Srivani',
         position: 'Faculty Advisor',
@@ -904,7 +908,7 @@ export const alumni = {
         name: 'Nitin S',
         position: 'Treasurer',
         image: imagePath + '/execom/pes/nitin_s.jpg',
-        },
+      },
     ],
     2022: [
       {
@@ -1042,6 +1046,28 @@ export const alumni = {
     ],
   },
   wie: {
+    2023: [
+      {
+        name: 'Prof Deepika',
+        position: 'Faculty Advisor',
+        image: imagePath + '/execom/wie/deepika_maam.jpg',
+      },
+      {
+        name: 'Jahnavi M Math',
+        position: 'Chair',
+        image: imagePath + '/alumni/2023/wie/jahnavi_m_math.jpg',
+      },
+      {
+        name: 'Omisha Singh',
+        position: 'Secretary',
+        image: imagePath + '/alumni/2023/wie/omisha_singh.jpg',
+      },
+      {
+        name: 'Gohitha Maheshwari J',
+        position: 'Treasurer',
+        image: imagePath + '/alumni/2023/wie/gohitha_maheshwari.jpg',
+      },
+    ],
     2022: [
       {
         name: 'Dr. Usha Rani K R',
@@ -1114,8 +1140,7 @@ export const alumni = {
     ],
   },
   ras: {
-    2023:
-    [
+    2023: [
       {
         name: 'Dr. Abhay Deshpande',
         position: 'Faculty Advisor',
@@ -1135,7 +1160,7 @@ export const alumni = {
         name: 'S Vedram',
         position: 'Treasurer',
         image: imagePath + '/execom/ras/s_vedram.png',
-          },
+      },
     ],
     2022: [
       {
@@ -1219,6 +1244,28 @@ export const alumni = {
     ],
   },
   cas: {
+    2023: [
+      {
+        name: 'Dr. Shylashree.N ', //needs to be updated
+        position: 'Faculty Advisor',
+        image: imagePath + '/execom/cas/dr_shylashree.jpeg',
+      },
+      {
+        name: 'Akash Kotagi',
+        position: 'Chair',
+        image: imagePath + '/alumni/2023/cas/akash_kotagi.jpg',
+      },
+      {
+        name: 'Sanjana Carol',
+        position: 'Secretary',
+        image: imagePath + '/alumni/2023/cas/sanjana_carol.jpg',
+      },
+      {
+        name: 'Sai Surya Sreekar Mulukutla',
+        position: 'Treasurer',
+        image: imagePath + '/alumni/2023/cas/sreekar_mulukutla.jpg',
+      },
+    ],
     2022: [
       {
         name: 'Dr. Shylashree N',
