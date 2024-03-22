@@ -449,77 +449,42 @@ export const execom = {
  */
 export const alumni = {
   main: {
-    2023: [
+    2023:[
       {
-        name: 'Dr. Ashok Kumar AR',
-        position: 'Faculty Advisor',
-        image: imagePath + '/execom/compsoc/ashok_sir.jpg',
-      },
-      {
-        name: 'Prajwal M Pawar',
-        position: 'Chair',
-        image: imagePath + '/execom/compsoc/prajwal_pawar.jpg',
-      },
-      {
-        name: 'Likhith ',
-        position: 'Vice Chair',
-        image: imagePath + '/execom/compsoc/likhith.jpg',
-      },
-      {
-        name: 'Jayanth C',
-        position: 'Joint Secretary',
-        image: imagePath + '/execom/compsoc/jayanth_c.jpg',
-      },
-      {
-        name: 'Sneha P.M',
-        position: 'Joint Secretary',
-        image: imagePath + '/execom/compsoc/sneha_p_m.jpg',
-      },
-      {
-        name: 'Joshua Elias Alva',
-        position: 'Treasurer',
-        image: imagePath + '/execom/compsoc/joshua.jpg',
-      },
-  {
-    name: 'Prof. SG Srivani',
-    position: 'Faculty Advisor',
-    image: imagePath + '/execom/pes/srivani_maam.jpg',
-  },
-  {
-    name: 'Punith R C',
-    position: 'Chair',
-    image: imagePath + '/execom/pes/punith_r_c.JPG',
-  },
-  {
-    name: 'Pragya Singh',
-    position: 'Secretary',
-    image: imagePath + '/execom/pes/pragya_singh.png',
-  },
-  {
-    name: 'Nitin S',
-    position: 'Treasurer',
-    image: imagePath + '/execom/pes/nitin_s.jpg',
-    },
-{
-  name: 'Dr. Abhay Deshpande',
-  position: 'Faculty Advisor',
-  image: imagePath + '/execom/ras/abhay_a_deshpande.jpg',
-},
-{
-  name: 'Shreya Sakri',
-  position: 'Chair',
-  image: imagePath + '/execom/ras/shreya_sakri.jpeg',
-},
-{
-  name: 'S Lingeshwara',
-  position: 'Secretary',
-  image: imagePath + '/execom/ras/s_lingeshwara.jpg',
-},
-{
-  name: 'S Vedram',
-  position: 'Treasurer',
-  image: imagePath + '/execom/ras/s_vedram.png',
-    },
+           name: 'Dr. Mahesh A',
+           position: 'Branch Counselor',
+           image: imagePath + '/execom/main/mahesh_sir.jpg',
+         },
+         {
+           name: 'Dhanush Prabhakar ',
+           position: 'Chair',
+           image: imagePath + '/execom/main/dhanush_prabhakar.jpg',
+         },
+         {
+           name: 'Ritesh Gandhi',
+           position: 'Vice Chair',
+           image: imagePath + '/execom/main/ritesh.jpeg',
+         },
+         {
+           name: 'Nisarga V',
+           position: 'Secretary',
+           image: imagePath + '/execom/main/nisarga.jpg',
+         },
+         {
+           name: 'Lathangi N',
+           position: 'Treasurer',
+           image: imagePath + '/execom/main/lathangi_n.jpg',
+         },
+         {
+           name: 'Mayur S Chittaragi',
+           position: 'Webmaster',
+           image: imagePath + '/execom/main/mayur_s_chittaragi.jpg',
+         },
+         {
+           name: 'Adarsh V',
+           position: 'Social Media Head',
+           image: imagePath + '/execom/socialMedia/adarsh.jpeg', //to be changed
+         },
     ],
     2022: [
       {
@@ -745,6 +710,37 @@ export const alumni = {
     ],
   },
   compsoc: {
+    2023: [
+      {
+        name: 'Dr. Ashok Kumar AR',
+        position: 'Faculty Advisor',
+        image: imagePath + '/execom/compsoc/ashok_sir.jpg',
+      },
+      {
+        name: 'Prajwal M Pawar',
+        position: 'Chair',
+        image: imagePath + '/execom/compsoc/prajwal_pawar.jpg',
+      },
+      {
+        name: 'Likhith ',
+        position: 'Vice Chair',
+        image: imagePath + '/execom/compsoc/likhith.jpg',
+      },
+      {
+        name: 'Jayanth C',
+        position: 'Joint Secretary',
+        image: imagePath + '/execom/compsoc/jayanth_c.jpg',
+      },
+      {
+        name: 'Sneha P.M',
+        position: 'Joint Secretary',
+        image: imagePath + '/execom/compsoc/sneha_p_m.jpg',
+      },
+      {
+        name: 'Joshua Elias Alva',
+        position: 'Treasurer',
+        image: imagePath + '/execom/compsoc/joshua.jpg',
+      },],
     2022: [
       {
         name: 'Dr. Ashok Kumar AR',
@@ -887,6 +883,29 @@ export const alumni = {
     2019: [{ name: 'Trilok Girish', position: 'Chair' }],
   },
   pes: {
+    2023:
+    [
+      {
+        name: 'Prof. SG Srivani',
+        position: 'Faculty Advisor',
+        image: imagePath + '/execom/pes/srivani_maam.jpg',
+      },
+      {
+        name: 'Punith R C',
+        position: 'Chair',
+        image: imagePath + '/execom/pes/punith_r_c.JPG',
+      },
+      {
+        name: 'Pragya Singh',
+        position: 'Secretary',
+        image: imagePath + '/execom/pes/pragya_singh.png',
+      },
+      {
+        name: 'Nitin S',
+        position: 'Treasurer',
+        image: imagePath + '/execom/pes/nitin_s.jpg',
+        },
+    ],
     2022: [
       {
         name: 'Prof. SG Srivani',
@@ -1095,6 +1114,29 @@ export const alumni = {
     ],
   },
   ras: {
+    2023:
+    [
+      {
+        name: 'Dr. Abhay Deshpande',
+        position: 'Faculty Advisor',
+        image: imagePath + '/execom/ras/abhay_a_deshpande.jpg',
+      },
+      {
+        name: 'Shreya Sakri',
+        position: 'Chair',
+        image: imagePath + '/execom/ras/shreya_sakri.jpeg',
+      },
+      {
+        name: 'S Lingeshwara',
+        position: 'Secretary',
+        image: imagePath + '/execom/ras/s_lingeshwara.jpg',
+      },
+      {
+        name: 'S Vedram',
+        position: 'Treasurer',
+        image: imagePath + '/execom/ras/s_vedram.png',
+          },
+    ],
     2022: [
       {
         name: 'Dr. Geetha K S',
