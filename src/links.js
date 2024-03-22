@@ -255,10 +255,16 @@ export const execom = {
       image: imagePath + '/execom/compsoc/Sravya D-Vice Chair.jpg',
     },
     {
+      name: 'Vibhav Simha',
+      position: 'Secretary',
+      image: imagePath + '/execom/compsoc/Vibhav Simha - Secretary .jpg',
+    },
+    {
       name: 'Ganesh Naik',
       position: 'Treasurer',
       image: imagePath + '/execom/compsoc/Ganesh Naik - Treasurer.jpg',
     },
+    
   ],
   comsoc: [
     {
@@ -267,19 +273,19 @@ export const execom = {
       image: imagePath + '/execom/comsoc/p_n_jayanti.jpg',
     },
     {
-      name: 'Shamanth S Bhat',
-      position: 'Chair',
-      image: imagePath + '/execom/comsoc/Shamanth_S_Bhat.jpg',
+      name: 'Pavan Kumar C Banasode',
+      position: 'Vice Chair',
+      image: imagePath + '/execom/comsoc/Pavan Kumar C Banasode - Vice Chair.jpg',
     },
+    //{
+      //name: 'Pradyumna S Athreya ',
+      //position: 'Secretary',
+      //image: imagePath + '/execom/comsoc/pradyumna_s_athreya.jpg',
+    //},
     {
-      name: 'Pradyumna S Athreya ',
-      position: 'Secretary',
-      image: imagePath + '/execom/comsoc/pradyumna_s_athreya.jpg',
-    },
-    {
-      name: 'Chethan S Badiger ',
+      name: 'Preeti',
       position: 'Treasurer',
-      image: imagePath + '/execom/comsoc/chethan_badiger.jpg',
+      image: imagePath + '/execom/comsoc/Preeti-Treasurer.jpg',
     },
   ],
   pes: [
@@ -311,19 +317,19 @@ export const execom = {
       image: imagePath + '/execom/sps/nagamani_maam.jpg',
     },
     {
-      name: 'Chirag C Rao ',
+      name: 'Yuvraj Singh',
       position: 'Chair',
-      image: imagePath + '/execom/sps/chirag_c_rao.jpg',
+      image: imagePath + '/execom/sps/Yuvraj Singh - SPS CHAIR.JPG',
     },
     {
-      name: 'Mustafa Chikhliwala',
+      name: 'Atharva',
       position: 'Secretary',
-      image: imagePath + '/execom/sps/mustafa_chikhliwala.jpg',
+      image: imagePath + '/execom/sps/Atharva _SPS_Sec.jpg',
     },
     {
-      name: 'Rajeev Singh ',
+      name: 'Ayush Raj',
       position: 'Treasurer',
-      image: imagePath + '/execom/sps/rajeev_singh.jpg',
+      image: imagePath + '/execom/sps/Ayush_Raj_SPS_Treasurer.jpg',
     },
   ],
   wie: [
