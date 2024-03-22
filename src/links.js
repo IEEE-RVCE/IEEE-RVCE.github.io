@@ -404,19 +404,24 @@ export const execom = {
       image: imagePath + '/execom/cas/dr_shylashree.jpeg',
     },
     {
-      name: 'Akash Kotagi',
+      name: 'Pratham G',
       position: 'Chair',
-      image: imagePath + '/execom/cas/akash_kotagi.jpg',
+      image: imagePath + '/execom/cas/PrathamG-Chair.jpg',
     },
     {
-      name: 'Sanjana Carol',
+      name: 'Kamath Abhay Sunil',
+      position: 'Vice Chair',
+      image: imagePath + '/execom/cas/Kamath Abhay Sunil Vice Chair.jpg',
+    },
+    {
+      name: 'Dhtuthi MD',
       position: 'Secretary',
-      image: imagePath + '/execom/cas/sanjana_carol.jpg',
+      image: imagePath + '/execom/cas/Dhtuthi_MD-secretary_CAS.jpg',
     },
     {
-      name: 'Sai Surya Sreekar Mulukutla',
+      name: 'Paridhi Sudarshan',
       position: 'Treasurer',
-      image: imagePath + '/execom/cas/sreekar_mulukutla.jpg',
+      image: imagePath + '/execom/cas/Paridhi Sudarshan-Treasurer.jpg',
     },
   ],
   sc: [
@@ -1239,6 +1244,28 @@ export const alumni = {
     ],
   },
   cas: {
+    2023: [
+      {
+        name: 'Dr. Shylashree.N ', //needs to be updated
+        position: 'Faculty Advisor',
+        image: imagePath + '/execom/cas/dr_shylashree.jpeg',
+      },
+      {
+        name: 'Akash Kotagi',
+        position: 'Chair',
+        image: imagePath + '/alumni/2023/cas/akash_kotagi.jpg',
+      },
+      {
+        name: 'Sanjana Carol',
+        position: 'Secretary',
+        image: imagePath + '/alumni/2023/cas/sanjana_carol.jpg',
+      },
+      {
+        name: 'Sai Surya Sreekar Mulukutla',
+        position: 'Treasurer',
+        image: imagePath + '/alumni/2023/cas/sreekar_mulukutla.jpg',
+      },
+    ],
     2022: [
       {
         name: 'Dr. Shylashree N',
