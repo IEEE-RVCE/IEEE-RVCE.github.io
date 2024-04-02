@@ -208,7 +208,7 @@ export const execom = {
     {
       name: 'Sundarakrishnan N',
       position: 'Webmaster',
-      image: imagePath + '/execom/main/Sundarakrishnan N.jpg',
+      image: imagePath + '/execom/main/Sundarakrishnan.jpeg',
     },
     {
       name: 'Amrit Raj',
