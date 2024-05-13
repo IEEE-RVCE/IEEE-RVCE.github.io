@@ -46,8 +46,9 @@ export const societies = [
   { name: 'Robotics and Automation Society', link: '/society/ras' },
   { name: 'Circuits and Systems Society', link: '/society/cas' },
   { name: 'Sensor Council', link: '/society/sc' },
-  { name: 'Microwave Theory and Technology Society(MTTS)', link: '/' },
-  { name: 'Antennas and Propagation Society', link: '/' },
+  { name: 'Microwave Theory and Technology Society', link: '/' },
+  { name: 'Aerospace and Electronic Systems Society ', link: '/' },
+  
 ];
 
 /**
@@ -355,9 +356,9 @@ export const execom = {
   ],
   ras: [
     {
-      name: 'Dr. Abhay Deshpande',
+      name: 'Dr. Geetha KS',
       position: 'Faculty Advisor',
-      image: imagePath + '/execom/ras/abhay_a_deshpande.jpg',
+      image: imagePath + '/execom/ras/geetha_maam.jpeg',
     },
     {
       name: 'Sanjay S',
