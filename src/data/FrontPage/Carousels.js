@@ -11,6 +11,7 @@ import { imgify } from '../misc';
  */
 export const achievements = [
   { src: imgify`fp/achievements/1.JPG` },
+  {src: imgify`fp/achievements/9.JPG` },
   { src: imgify`fp/achievements/2.JPG` },
   { src: imgify`fp/achievements/3.JPG` },
   { src: imgify`fp/achievements/4.JPG` },
@@ -18,6 +19,7 @@ export const achievements = [
   { src: imgify`fp/achievements/6.JPG` },
   { src: imgify`fp/achievements/7.JPG` },
   { src: imgify`fp/achievements/8.JPG` },
+  
 ];
 
 /**
