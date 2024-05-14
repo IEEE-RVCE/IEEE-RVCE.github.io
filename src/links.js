@@ -219,24 +219,24 @@ export const execom = {
   ],
   aps: [
     {
-      name: 'Dr. Shanthi',
+      name: 'Prof. Shanti P',
       position: 'Faculty Advisor',
       image: imagePath + '/execom/aps/shanthi_maam.jpg',
     },
     {
-      name: 'Amogh G',
+      name: 'V Dheeraj',
       position: 'Chair',
-      image: imagePath + '/execom/aps/amogh_g.jpg',
+      image: imagePath + '/execom/aps/Dheeraj V.jpg',
     },
     {
-      name: 'Anusha Khot',
+      name: 'Vrinda V Patil',
       position: 'Secretary',
-      image: imagePath + '/execom/aps/anusha_k.jpeg',
+      image: imagePath + '/execom/aps/Vrinda V Patil.jpg',
     },
     {
-      name: 'Dheeraj G',
+      name: 'Anish Shaw',
       position: 'Treasurer',
-      image: imagePath + '/execom/aps/dheeraj.jpg',
+      image: imagePath + '/execom/aps/Anish_Shaw.jpg.JPG',
     },
   ],
   compsoc: [
@@ -273,15 +273,20 @@ export const execom = {
       image: imagePath + '/execom/comsoc/p_n_jayanti.jpg',
     },
     {
+      name: 'Pradyumna S Athreya',
+      position: 'Chair',
+      image: imagePath + '/execom/comsoc/Pradyumna.jpg',
+    },
+    {
       name: 'Pavan Kumar C Banasode',
       position: 'Vice Chair',
       image: imagePath + '/execom/comsoc/Pavan Kumar C Banasode - Vice Chair.jpg',
     },
-    //{
-    //name: 'Pradyumna S Athreya ',
-    //position: 'Secretary',
-    //image: imagePath + '/execom/comsoc/pradyumna_s_athreya.jpg',
-    //},
+    {
+    name: 'Chetan Badiger ',
+    position: 'Secretary',
+    image: imagePath + '/execom/comsoc/chetan.jpg',
+    },
     {
       name: 'Preeti',
       position: 'Treasurer',
