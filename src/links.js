@@ -218,7 +218,11 @@ export const execom = {
     },
   ],
   aps: [
-    
+    {
+      name: 'Prof. Shanti P',
+      position: 'Faculty Advisor',
+      image: imagePath + '/execom/aps/shanthi_maam.jpg',
+    },
     {
       name: 'V Dheeraj',
       position: 'Chair',
@@ -263,11 +267,11 @@ export const execom = {
     },
   ],
   comsoc: [
-    //{
-      //name: 'Dr. Jayanthi',
-      //position: 'Faculty Advisor',
-      //image: imagePath + '/execom/comsoc/p_n_jayanti.jpg',
-    //},
+    {
+      name: 'Dr. Jayanthi',
+      position: 'Faculty Advisor',
+      image: imagePath + '/execom/comsoc/p_n_jayanti.jpg',
+    },
     {
       name: 'Pradyumna S Athreya',
       position: 'Chair',
