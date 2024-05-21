@@ -226,6 +226,8 @@ export const AddArticleDialog = props => {
                 <MenuItem value={ecats.sps}>Signal Processing Society</MenuItem>
                 <MenuItem value={ecats.pes}>Power and Energy Society</MenuItem>
                 <MenuItem value={ecats.ras}>Robotic and Automation Society</MenuItem>
+                <MenuItem value={ecats.mtts}>Microwave Theory and Technology Society</MenuItem>
+                <MenuItem value={ecats.aess}>Aerospace and Electronic Systems Society</MenuItem>
                 <MenuItem value={ecats.sight}>Special Interest Group on Humanitarian Technology</MenuItem>
                 <MenuItem value={ecats.wie}>Women in Engineering</MenuItem>
               </Select>

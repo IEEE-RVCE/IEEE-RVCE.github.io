@@ -10,10 +10,11 @@ import { imgify } from '../misc';
  * @type {imagebase}
  */
 export const achievements = [
+  {src: imgify`fp/achievements/9.jpg` },
   { src: imgify`fp/achievements/1.JPG` },
-  {src: imgify`fp/achievements/9.JPG` },
   { src: imgify`fp/achievements/2.JPG` },
   { src: imgify`fp/achievements/3.JPG` },
+  { src: imgify`fp/achievements/10.JPG` },
   { src: imgify`fp/achievements/4.JPG` },
   { src: imgify`fp/achievements/5.JPG` },
   { src: imgify`fp/achievements/6.JPG` },

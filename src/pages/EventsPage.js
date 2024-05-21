@@ -195,6 +195,12 @@ export default function EventPage(props) {
                 <MenuItem key={'SC'} value={ecats.sc}>
                   Sensors Council
                 </MenuItem>
+                <MenuItem key={'MTTS'} value={ecats.mtts}>
+                Microwave Theory and Technology Society
+                </MenuItem>
+                <MenuItem key={'AESS'} value={ecats.aess}>
+                Aerospace and Electronic Systems Society
+                </MenuItem>
               </Select>
             </FormControl>
           </div>
