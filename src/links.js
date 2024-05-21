@@ -405,9 +405,9 @@ export const execom = {
   ],
   cas: [
     {
-      name: 'Dr. Shylashree.N ', //needs to be updated
+      name: 'Dr.N.Ramavenkateswaran', 
       position: 'Faculty Advisor',
-      image: imagePath + '/execom/cas/dr_shylashree.jpeg',
+      image: imagePath + '/execom/cas/Dr N Ramavenkateswaran.jpeg',
     },
     {
       name: 'Pratham G',
@@ -437,19 +437,19 @@ export const execom = {
       image: imagePath + '/execom/sensorscouncil/veena_maam.jpg',
     },
     {
-      name: 'Rakshan R Kulkarni ',
+      name: 'Bhavik Bafna ',
       position: 'Chair',
-      image: imagePath + '/execom/sensorscouncil/rakshan_kulkarni.jpg',
+      image: imagePath + '/execom/sensorscouncil/Bhavik Bafna - Chair.JPG',
     },
     {
-      name: 'Soundarya Desai',
+      name: 'Ashray A Pai',
       position: 'Secretary',
-      image: imagePath + '/execom/sensorscouncil/soundarya_desai.jpg',
+      image: imagePath + '/execom/sensorscouncil/Ashray A Pai- Secretory.JPG',
     },
     {
-      name: 'Akansha Singh',
+      name: 'Shikhar Verma',
       position: 'Treasurer',
-      image: imagePath + '/execom/sensorscouncil/akansha_singh.jpg',
+      image: imagePath + '/execom/sensorscouncil/Shikhar Verma-Treasurer.jpg',
     },
   ],
 };
