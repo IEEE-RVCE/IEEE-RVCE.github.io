@@ -478,7 +478,7 @@ export const execom = {
     {
       name: 'Pratik B Matt',
       position: 'Treasurer',
-      image: imagePath + '/execom/sensorscouncil/Pratik B Matt - Treasurer .jpg',
+      image: imagePath + '/execom/aess/Pratik_B_Matt_-_Treasurer_.jpg',
     },
   ],
 };
