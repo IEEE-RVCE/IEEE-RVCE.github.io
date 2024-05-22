@@ -46,7 +46,7 @@ export const societies = [
   { name: 'Robotics and Automation Society', link: '/society/ras' },
   { name: 'Circuits and Systems Society', link: '/society/cas' },
   { name: 'Sensor Council', link: '/society/sc' },
-  { name: 'Microwave Theory and Technology Society', link: '/' },
+  { name: 'Microwave Theory and Technology Society', link: '/society/mtts' },
   { name: 'Aerospace and Electronic Systems Society ', link: '/society/aess'},
   
 ];
@@ -154,6 +154,7 @@ export const images = {
     mainWhite: imagePath + '/landing/MainWhite.png',
     cas: imagePath + '/landing/cas.png',
     sc: imagePath + '/landing/sc.png',
+    mtts: imagePath+'/landing/mtts.png',
     aess: imagePath + '/landing/aess.png',
   },
 };
@@ -455,12 +456,13 @@ export const execom = {
       image: imagePath + '/execom/sensorscouncil/Shikhar Verma-Treasurer.jpg',
     },
   ],
+  
   aess: [
-    //{
-      //name: 'Dr. Veena Divya K',
-      //position: 'Faculty Advisor',
-      //image: imagePath + '/execom/sensorscouncil/veena_maam.jpg',
-    //},
+    {
+      name: 'Dr. K S Shushrutha',
+      position: 'Faculty Advisor',
+      image: imagePath + '/execom/aess/drksshushrutha.png',
+    },
     {
       name: 'Vishal Hugar ',
       position: 'Chair',
@@ -480,6 +482,29 @@ export const execom = {
       name: 'Pratik B Matt',
       position: 'Treasurer',
       image: imagePath + '/execom/aess/Pratik_B_Matt_-_Treasurer_.jpg',
+    },
+  ],
+  mtts: [
+    {
+      name: 'Dr. Mahesh A',
+      position: 'Faculty Advisor',
+      image: imagePath + '/execom/mtts/drmahesh.jpg',
+    },
+    {
+      name: 'Yasha Mandawat ',
+      position: 'Chair',
+      image: imagePath + '/execom/mtts/MTT_Chair_Yasha Mandawat.jpg',
+    },
+
+    {
+      name: 'Yashasvi Jana',
+      position: 'Secretary',
+      image: imagePath + '/execom/mtts/YashasviJana - MTTS_Secretary .jpg',
+    },
+    {
+      name: 'Ananya Bhat',
+      position: 'Treasurer',
+      image: imagePath + '/execom/mtts/MTTS_Treasurer_AnanyaRBhat.jpg',
     },
   ],
 };
