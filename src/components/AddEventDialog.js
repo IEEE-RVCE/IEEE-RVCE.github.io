@@ -320,6 +320,8 @@ export const AddEventDialog = props => {
                 <MenuItem value={ecats.ras}>Robotic and Automation Society</MenuItem>
                 <MenuItem value={ecats.cas}>Circuits and Systems Society</MenuItem>
                 <MenuItem value={ecats.sc}>Sensors Council</MenuItem>
+                <MenuItem value={ecats.mtts}>Microwave Theory and Technology Society</MenuItem>
+                <MenuItem value={ecats.aess}>Aerospace and Electronic Systems Society</MenuItem>
                 <MenuItem value={ecats.sight}>Special Interest Group on Humanitarian Technology</MenuItem>
                 <MenuItem value={ecats.wie}>Women in Engineering</MenuItem>
               </Select>

@@ -171,7 +171,8 @@ export const ecats = {
   sight: 8,
   cas: 9,
   sc: 10,
-  aess:12,
+  mtts:11,
+  aess:12
 };
 
 /** Execom details */
