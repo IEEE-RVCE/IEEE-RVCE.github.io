@@ -47,7 +47,7 @@ export const societies = [
   { name: 'Circuits and Systems Society', link: '/society/cas' },
   { name: 'Sensor Council', link: '/society/sc' },
   { name: 'Microwave Theory and Technology Society', link: '/' },
-  { name: 'Aerospace and Electronic Systems Society ', link: '/' },
+  { name: 'Aerospace and Electronic Systems Society ', link: '/society/aess'},
   
 ];
 
@@ -154,6 +154,7 @@ export const images = {
     mainWhite: imagePath + '/landing/MainWhite.png',
     cas: imagePath + '/landing/cas.png',
     sc: imagePath + '/landing/sc.png',
+    aess: imagePath + '/landing/aess.png',
   },
 };
 
@@ -170,6 +171,7 @@ export const ecats = {
   sight: 8,
   cas: 9,
   sc: 10,
+  aess:12,
 };
 
 /** Execom details */
@@ -450,6 +452,33 @@ export const execom = {
       name: 'Shikhar Verma',
       position: 'Treasurer',
       image: imagePath + '/execom/sensorscouncil/Shikhar Verma-Treasurer.jpg',
+    },
+  ],
+  aess: [
+    //{
+      //name: 'Dr. Veena Divya K',
+      //position: 'Faculty Advisor',
+      //image: imagePath + '/execom/sensorscouncil/veena_maam.jpg',
+    //},
+    {
+      name: 'Vishal Hugar ',
+      position: 'Chair',
+      image: imagePath + '/execom/aess/Vishal Hugar - Chair.jpeg',
+    },
+    {
+      name: 'Deepika ',
+      position: 'Vice Chair',
+      image: imagePath + '/execom/aess/Deepika- Vice chair.jpg',
+    },
+    {
+      name: 'Om Daxini',
+      position: 'Secretary',
+      image: imagePath + '/execom/aess/Om Daxini - Secratary.jpg',
+    },
+    {
+      name: 'Pratik B Matt',
+      position: 'Treasurer',
+      image: imagePath + '/execom/sensorscouncil/Pratik B Matt - Treasurer .jpg',
     },
   ],
 };

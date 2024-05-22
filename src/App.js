@@ -18,6 +18,7 @@ import CASSocietyPage from './pages/CASSocietyPage';
 import SCSocietyPage from './pages/SCSocietyPage';
 import PESSocietyPage from './pages/PESSocietyPage';
 import COMSOCSocietyPage from './pages/COMSOCSocietyPage';
+import AESSScoietyPage from './pages/AESSSocietyPage';
 import WIEAffinityPage from './pages/WIEAffinityPage';
 import SIGHTAffinityPage from './pages/SIGHTAffinityPage';
 import Header from './components/Header';
@@ -173,6 +174,9 @@ export default function App() {
         </Route>
         <Route path="/society/sc">
           <SCSocietyPage />
+        </Route>
+        <Route path="/society/aess">
+          <AESSScoietyPage />
         </Route>
         <Route path="/affinity/wie">
           <WIEAffinityPage />
