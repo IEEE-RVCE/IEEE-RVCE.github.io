@@ -25,7 +25,22 @@ export default function DevelopersPage() {
         <h1>Active Maintainers</h1>
         <Paper className={classes.paper}>
           <Grid container spacing={2} justifyContent="space-evenly" className={classes.grid}>
+          <Grid item xs={12} md={4}>
+              <Avatar src={images.devs.sundar} name="Sundarakrishnan N" />
+            </Grid>
             <Grid item xs={12} md={4}>
+              <Avatar src={images.devs.ayush} name="Ayush Ratan" />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Avatar src={images.devs.chiragJ} name="Chirag Kumar Jaiswal" />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Avatar src={images.devs.tejas} name="Tejas Pattar" />
+            </Grid>
+            <Container maxWidth="lg" className={classes.page}>
+              <h1>Contributors</h1>
+              <Grid container spacing={2} justifyContent="space-evenly" className={classes.grid}>
+              <Grid item xs={12} md={4}>
               <Avatar src={images.devs.mayur} name="Mayur S Chittaragi" />
             </Grid>
             <Grid item xs={12} md={4}>
@@ -40,9 +55,6 @@ export default function DevelopersPage() {
             <Grid item xs={12} md={4}>
               <Avatar src={images.devs.prajwal} name="Prajwal P" />
             </Grid>
-            <Container maxWidth="lg" className={classes.page}>
-              <h1>Contributors</h1>
-              <Grid container spacing={2} justifyContent="space-evenly" className={classes.grid}>
                 <Grid item xs={12} md={4}>
                   <Avatar src={images.devs.ambu} name="Ambu Karthik" />
                 </Grid>

@@ -110,6 +110,10 @@ export const images = {
     naveen: imagePath + '/devs/naveen.jpeg',
     prajwal: imagePath + '/devs/pp.jpg',
     jahnavi: imagePath + '/devs/jahnavi.jpg',
+    sundar: imagePath + '/devs/sundarakrishnan.jpeg',
+    ayush: imagePath + '/devs/Ayush Ratan Web Team .jpg',
+    chiragJ: imagePath + '/devs/Chirag Kumar Jaiswal Web team .jpg',
+    tejas:imagePath + '/devs/TejasPattarWebTeam.jpg',
   },
   logos: {
     ieee_aps: imagePath + '/logos/ieee_APS.png',
