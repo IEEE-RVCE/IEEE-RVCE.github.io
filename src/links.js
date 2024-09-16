@@ -180,6 +180,20 @@ export const ecats = {
   aess:12
 };
 
+export const societyNames = {
+  0 : {name :'Main Execom', sub : 'main'},
+  1 : {name :'Computer Society', sub : 'compsoc'},
+  2 : {name :'Communications Society', sub : 'comsoc'},
+  3 : {name : 'Power and Energy Society',sub : 'pes'},
+  4 : {name : 'Antennas and Propagation Society',sub : 'aps'},
+  5 : {name : 'Signal Processing Society',sub : 'sps'},
+  6 : {name : 'Robotics and Automation Society',sub : 'ras'},
+  7 : {name : 'WIE',sub : 'wie'},
+  8 : {name : 'Sight',sub : 'sight'},
+  9 : {name : 'Circuits and Systems Society',sub : 'cas'},
+ 10 : {name : 'Sensor Council',sub : 'sc'},
+};
+
 /** Execom details */
 export const execom = {
   main: [
