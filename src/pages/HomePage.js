@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import EventsCalendar from '../components/Calendar';
 import Avatar from '../components/Avatar';
 import FrontText from '../components/FrontText';
-import { execom, alumni, ecats, hostname } from '../links';
+import { alumni, ecats, hostname } from '../links';
 import FrontBox from '../components/FrontBox';
 import SpacyDivider from '../components/SpacyDivider';
 import AlumniAccordions from '../components/AlumniAccordions';
@@ -15,6 +15,8 @@ import GiveMeABreak from '../components/GiveMeABreak';
 import EventCard from '../components/EventCard';
 import axios from 'axios';
 import Confetti from '../animations/Confettie';
+
+
 const useStyles = makeStyles(theme => ({
   'root': theme.root,
   'container': theme.page,
@@ -40,12 +42,18 @@ const useStyles = makeStyles(theme => ({
 export default function HomePage(props) {
   const classes = useStyles();
   const [events, setEvents] = useState([]);
+  const [member, setMember] = useState([]);
   const { ref: myRef, inView: myElementIsVisible } = useInView();
 
   useEffect(() => {
     axios.get(hostname + '/api/event/cat/' + ecats.main).then(response => {
       setEvents(response.data.events);
     });
+
+    axios.get(hostname + `/api/execom/${ecats.main}`).then(response => {
+      setMember(response.data.execom);
+    });
+
   }, []);
   return (
     <div className={classes.root}>
@@ -62,7 +70,7 @@ export default function HomePage(props) {
           <Grid
             container
             spacing={3}
-            justify="space-evenly"
+            justifyContent="space-evenly"
             onScroll={() => {
               console.log('Came here ');
             }}
@@ -78,23 +86,33 @@ export default function HomePage(props) {
               ) : null}
             </div>
             {/* <Grid container item xs={12} sm={6} md={4} lg={3}> */}
-            {execom.main.map(member => (
+            {/* {execom.main.map(member => (
               <Grid item xs={12} sm={6} md={4} lg={4}>
                 <Avatar name={member.name} position={member.position} src={member.image} />
               </Grid>
-            ))}
+            ))} */}
+             <Grid container spacing={2} justifyContent="center">
+                {member.map(mem => {
+                  return (
+                    <Grid item xs={12} md={4}>
+                     <Avatar name={mem.name} position={mem.position} src={mem.image} />
+                    </Grid>
+                  );
+                })}
+              </Grid>
+            
             {/* </Grid> */}
           </Grid>
         </Container>
 
-        <AlumniAccordions members={alumni.main} color="#12c48c" />
+        <AlumniAccordions members={alumni.main} sid={ecats.main} color="#12c48c" />
         <SpacyDivider num={2} color="#12c48c" />
         {events.length !== 0 && (
           <div hidden>
             <Paper className={classes.paper}>
               <Typography variant="h3">Events</Typography>
               <br />
-              <Grid container spacing={2} justify="center">
+              <Grid container spacing={2} justifyContent="center">
                 {events.slice(0, 3).map(item => {
                   return (
                     <Grid item xs={12} md={4}>
