@@ -1,6 +1,8 @@
 export const whatWeDoText =
   "As members of a larger technical community, IEEE RVCE aims to connect future engineers and researchers with industry experts and top academicians. We provide a platform for students to stay updated with today's research through webinars and technical talks by eminent professors and professionals. We also arrange workshops and Industrial visits that help students upgrade their skills to stay relevant in today's global market.";
 export const SbachievementsText = [
+  'Circuits and Systems Society Society - Outstanding Student Chapter Award 2024',
+  'Power and Energy Society Society - Outstanding Student Chapter Award 2024',
   'IEEE Bangalore Section-Outstanding Student Branch Digital Presence Award 2023',
   'IEEE R10 - Exemplary Student Branch Award - 2022',
   'Winner - Global Student Branch Website Contest 2021',
