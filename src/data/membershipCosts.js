@@ -11,8 +11,8 @@ export const exchangeRate = 83;
 export const costs = [
   {
     name: 'Student Membership',
-    newCost: 1372,
-    renewalCost: 1372,
+    newCost: 703,
+    renewalCost: 1405,
     // discountedCost: 27 / 2,
     //notes: "FUTURE50 (50% off)",
     notes: 'Valid till Dec 31st',
@@ -20,41 +20,41 @@ export const costs = [
 
   {
     name: ' Aerospace and Electronic Systems Society(AESS))',
-    newCost: 465,
-    renewalCost: 465,
+    newCost: 120,
+    renewalCost: 251,
   },
 
   {
     name: 'Antennas and Propagation Society (APS)',
-    newCost: 93,
-    renewalCost: 93,
+    newCost: 49,
+    renewalCost: 51,
   },
 
-  { name: 'Circuits and Systems (CAS)', newCost: 0, renewalCost: 0 },
+  { name: 'Circuits and Systems (CAS)', newCost: 0, renewalCost: 552 },
 
-  { name: 'Communications Society(ComSoc)', newCost: 47.5, renewalCost: 47.5 },
+  { name: 'Communications Society(ComSoc)', newCost: 24, renewalCost: 51 },
 
   {
     name: 'Computer Society(CompSoc)',
-    newCost: 392,
-    renewalCost: 392,
+    newCost: 201,
+    renewalCost: 402,
     // discountedCost: 4,
     // notes: "CS202250 (50% off)",
   },
 
   {
     name: 'Microwave Theory and Technology Society(MTTS)',
-    newCost: 93,
-    renewalCost: 93,
+    newCost: 49,
+    renewalCost: 51,
     // discountedCost: 0,
     // notes: 'Free for new members!',
   },
 
-  { name: 'Power and Energy Society(PES)', newCost: 47.5, renewalCost: 47.5 },
+  { name: 'Power and Energy Society(PES)', newCost: 24, renewalCost: 51 },
 
-  { name: ' Robotics and Automation Society(RAS)', newCost: 465, renewalCost: 465 },
+  { name: ' Robotics and Automation Society(RAS)', newCost: 239, renewalCost: 251 },
 
-  { name: 'Signal Processing Society(SPS)', newCost: 47.5, renewalCost: 47.5 },
+  { name: 'Signal Processing Society(SPS)', newCost: 24, renewalCost: 51 },
 
   { name: '  Affinity Group-SIGHT', newCost: 0, renewalCost: 0 },
 
