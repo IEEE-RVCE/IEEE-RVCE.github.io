@@ -47,8 +47,7 @@ export const societies = [
   { name: 'Circuits and Systems Society', link: '/society/cas' },
   { name: 'Sensor Council', link: '/society/sc' },
   { name: 'Microwave Theory and Technology Society', link: '/society/mtts' },
-  { name: 'Aerospace and Electronic Systems Society ', link: '/society/aess'},
-  
+  { name: 'Aerospace and Electronic Systems Society ', link: '/society/aess' },
 ];
 
 /**
@@ -113,7 +112,7 @@ export const images = {
     sundar: imagePath + '/devs/sundarakrishnan.jpeg',
     ayush: imagePath + '/devs/Ayush Ratan Web Team .jpg',
     chiragJ: imagePath + '/devs/Chirag Kumar Jaiswal Web team .jpg',
-    tejas:imagePath + '/devs/TejasPattarWebTeam.jpg',
+    tejas: imagePath + '/devs/TejasPattarWebTeam.jpg',
   },
   logos: {
     ieee_aps: imagePath + '/logos/ieee_APS.png',
@@ -158,7 +157,7 @@ export const images = {
     mainWhite: imagePath + '/landing/MainWhite.png',
     cas: imagePath + '/landing/cas.png',
     sc: imagePath + '/landing/sc.png',
-    mtts: imagePath+'/landing/mtts.png',
+    mtts: imagePath + '/landing/mtts.png',
     aess: imagePath + '/landing/aess.png',
   },
 };
@@ -176,8 +175,8 @@ export const ecats = {
   sight: 8,
   cas: 9,
   sc: 10,
-  mtts:11,
-  aess:12
+  mtts: 11,
+  aess: 12,
 };
 
 /** Execom details */
@@ -186,43 +185,53 @@ export const execom = {
     {
       name: 'Dr. Shylashree N',
       position: 'Branch Counselor',
-      image: 'http://www.rvce.edu.in/sites/default/files/ec-ssn.png',
-    },
-    {
-      name: 'Sreekar Mulukutla',
-      position: 'Chair',
-      image: imagePath + '/execom/main/Chair.jpeg',
-    },
-    {
-      name: 'Vedram S',
-      position: 'Vice Chair',
-      image: imagePath + '/execom/main/vedram.jpg',
-    },
-    {
-      name: 'Mayur G Parvatikar',
-      position: 'Secretary',
-      image: imagePath + '/execom/main/Mayur G Parvatikar-Secretary.jpg',
-    },
-    {
-      name: 'Jahnavi M Math',
-      position: 'Treasurer',
-      image: imagePath + '/execom/main/Jahnavi M Math_Treasurer .JPG',
+      image: 'https://rvce.edu.in/department/wp-content/uploads/2025/07/SHYLASHREE-N-1-scaled.jpg',
     },
     {
       name: 'Harini G Iyar',
+      position: 'Chair',
+      image: imagePath + '/execom/main/Harini_Chair.jpg',
+    },
+    {
+      name: 'Ishan Varun',
+      position: 'Vice Chair',
+      image: imagePath + '/execom/main/Ishan Varun(VC).jpg',
+    },
+    {
+      name: 'Akshara Sridhara',
+      position: 'Secretary',
+      image: imagePath + '/execom/main/Akshara Sridhara, Secretary.jpg',
+    },
+    {
+      name: 'Tanmaya W M',
+      position: 'Joint Secratary',
+      image: imagePath + '/execom/main/Tanmaya WM- joint secretary.jpg',
+    },
+    {
+      name: 'Chirag V',
+      position: 'Treasurer',
+      image: imagePath + '/execom/main/Chirag V Treasurer.jpg',
+    },
+    {
+      name: 'Manodanya Korishetty',
       position: 'Joint Treasurer',
-      image: imagePath + '/execom/main/Harini G Iyar- Joint Treasurer.jpeg',
+      image: imagePath + '/execom/main/Manodnya Korishetty-joint treasurer .jpg',
     },
 
     {
-      name: 'Sundarakrishnan N',
+      name: 'Ayush Ratan',
       position: 'Webmaster',
-      image: imagePath + '/execom/main/sundarakrishnan.jpeg',
+      image: imagePath + '/execom/main/AyushRatan_WebMaster.jpeg',
     },
     {
-      name: 'Amrit Raj',
+      name: 'Vijayalaxmi Ashok Patil',
       position: 'Design Lead',
-      image: imagePath + '/execom/main/AmritRaj.jpg', //to be changed
+      image: imagePath + '/execom/main/Vijaylakshmi_design.jpeg', //to be changed
+    },
+    {
+      name: 'Saara Unnathi R',
+      position: 'Design Lead',
+      image: imagePath + '/execom/main/SaaraUnnathi_design.png', //to be changed
     },
   ],
   aps: [
@@ -291,9 +300,9 @@ export const execom = {
       image: imagePath + '/execom/comsoc/Pavan Kumar C Banasode - Vice Chair.jpg',
     },
     {
-    name: 'Chetan Badiger ',
-    position: 'Secretary',
-    image: imagePath + '/execom/comsoc/chetan.jpg',
+      name: 'Chetan Badiger ',
+      position: 'Secretary',
+      image: imagePath + '/execom/comsoc/chetan.jpg',
     },
     {
       name: 'Preeti',
@@ -413,7 +422,7 @@ export const execom = {
   ],
   cas: [
     {
-      name: 'Dr.N.Ramavenkateswaran', 
+      name: 'Dr.N.Ramavenkateswaran',
       position: 'Faculty Advisor',
       image: imagePath + '/execom/cas/Dr N Ramavenkateswaran.jpeg',
     },
@@ -460,7 +469,7 @@ export const execom = {
       image: imagePath + '/execom/sensorscouncil/Shikhar Verma-Treasurer.jpg',
     },
   ],
-  
+
   aess: [
     {
       name: 'Dr. K S Shushrutha',
@@ -518,41 +527,84 @@ export const execom = {
  */
 export const alumni = {
   main: {
+    2024: [
+      {
+        name: 'Dr. Shylashree N',
+        position: 'Branch Counselor',
+        image: 'https://rvce.edu.in/department/wp-content/uploads/2025/07/SHYLASHREE-N-1-scaled.jpg',
+      },
+      {
+        name: 'Sreekar Mulukutla',
+        position: 'Chair',
+        image: imagePath + '/alumni/2024/main/Chair.jpeg',
+      },
+      {
+        name: 'Vedram S',
+        position: 'Vice Chair',
+        image: imagePath + '/alumni/2024/main/vedram.jpg',
+      },
+      {
+        name: 'Mayur G Parvatikar',
+        position: 'Secretary',
+        image: imagePath + '/alumni/2024/main/Mayur G Parvatikar-Secretary.jpg',
+      },
+      {
+        name: 'Jahnavi M Math',
+        position: 'Treasurer',
+        image: imagePath + '/alumni/2024/main/Jahnavi M Math_Treasurer .JPG',
+      },
+      {
+        name: 'Harini G Iyar',
+        position: 'Joint Treasurer',
+        image: imagePath + '/alumni/2024/main/Harini G Iyar- Joint Treasurer.jpeg',
+      },
+
+      {
+        name: 'Sundarakrishnan N',
+        position: 'Webmaster',
+        image: imagePath + '/alumni/2024/main/sundarakrishnan.jpeg',
+      },
+      {
+        name: 'Amrit Raj',
+        position: 'Design Lead',
+        image: imagePath + '/alumni/2024/main/AmritRaj.jpg', //to be changed
+      },
+    ],
     2023: [
       {
         name: 'Dr. Mahesh A',
         position: 'Branch Counselor',
-        image: imagePath + '/execom/main/mahesh_sir.jpg',
+        image: imagePath + '/alumni/2024/main/mahesh_sir.jpg',
       },
       {
         name: 'Dhanush Prabhakar ',
         position: 'Chair',
-        image: imagePath + '/execom/main/dhanush_prabhakar.jpg',
+        image: imagePath + '/alumni/2024/main/dhanush_prabhakar.jpg',
       },
       {
         name: 'Ritesh Gandhi',
         position: 'Vice Chair',
-        image: imagePath + '/execom/main/ritesh.jpeg',
+        image: imagePath + '/alumni/2024/main/ritesh.jpeg',
       },
       {
         name: 'Nisarga V',
         position: 'Secretary',
-        image: imagePath + '/execom/main/nisarga.jpg',
+        image: imagePath + '/alumni/2024/main/nisarga.jpg',
       },
       {
         name: 'Lathangi N',
         position: 'Treasurer',
-        image: imagePath + '/execom/main/lathangi_n.jpg',
+        image: imagePath + '/alumni/2024/main/lathangi_n.jpg',
       },
       {
         name: 'Mayur S Chittaragi',
         position: 'Webmaster',
-        image: imagePath + '/execom/main/mayur_s_chittaragi.jpg',
+        image: imagePath + '/alumni/2024/main/mayur_s_chittaragi.jpg',
       },
       {
         name: 'Adarsh V',
         position: 'Social Media Head',
-        image: imagePath + '/execom/socialMedia/adarsh.jpeg', //to be changed
+        image: imagePath + '/alumni/2024/socialMedia/adarsh.jpeg', //to be changed
       },
     ],
     2022: [
