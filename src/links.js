@@ -422,51 +422,56 @@ export const execom = {
   ],
   cas: [
     {
-      name: 'Dr.N.Ramavenkateswaran',
+      name: 'Dr. Shylashree N',
       position: 'Faculty Advisor',
-      image: imagePath + '/execom/cas/Dr N Ramavenkateswaran.jpeg',
+      image: 'https://rvce.edu.in/department/wp-content/uploads/2025/07/SHYLASHREE-N-1-scaled.jpg',
     },
     {
-      name: 'Pratham G',
+      name: 'Tharun Reddy P',
       position: 'Chair',
-      image: imagePath + '/execom/cas/PrathamG-Chair.jpg',
+      image: '',
     },
     {
-      name: 'Kamath Abhay Sunil',
+      name: 'Yash C Kerure',
       position: 'Vice Chair',
-      image: imagePath + '/execom/cas/Kamath Abhay Sunil Vice Chair.jpg',
+      image: '',
     },
     {
-      name: 'Dhtuthi MD',
+      name: 'Tanvi Prasad Kulkarni',
       position: 'Secretary',
-      image: imagePath + '/execom/cas/Dhtuthi_MD-secretary_CAS.jpg',
+      image: '',
     },
     {
-      name: 'Paridhi Sudarshan',
+      name: 'Atharv Aniyappanavar',
       position: 'Treasurer',
-      image: imagePath + '/execom/cas/Paridhi Sudarshan-Treasurer.jpg',
+      image: '',
+    },
+    {
+      name: 'Aditi Rupangundi',
+      position: 'Webmaster',
+      image: '',
     },
   ],
   sc: [
     {
-      name: 'Dr. Veena Divya K',
+      name: 'Dr. Ravishankar Holla',
       position: 'Faculty Advisor',
-      image: imagePath + '/execom/sensorscouncil/veena_maam.jpg',
+      image: '',
     },
     {
-      name: 'Bhavik Bafna ',
+      name: 'Vikas T',
       position: 'Chair',
-      image: imagePath + '/execom/sensorscouncil/Bhavik Bafna - Chair.JPG',
+      image: '',
     },
     {
-      name: 'Ashray A Pai',
+      name: 'Snigdha Raj',
       position: 'Secretary',
-      image: imagePath + '/execom/sensorscouncil/Ashray A Pai- Secretory.JPG',
+      image: '',
     },
     {
-      name: 'Shikhar Verma',
+      name: 'Suchitha M',
       position: 'Treasurer',
-      image: imagePath + '/execom/sensorscouncil/Shikhar Verma-Treasurer.jpg',
+      image: '',
     },
   ],
 
@@ -474,50 +479,49 @@ export const execom = {
     {
       name: 'Dr. K S Shushrutha',
       position: 'Faculty Advisor',
-      image: imagePath + '/execom/aess/drksshushrutha.png',
+      image: imagePath + '/alumni/2024/aess/drksshushrutha.png',
     },
     {
-      name: 'Vishal Hugar ',
+      name: 'Shambhavi Shukla',
       position: 'Chair',
-      image: imagePath + '/execom/aess/Vishal Hugar - Chair.jpeg',
+      image: imagePath + '/execom/aess/2026/Shambhavi Shukla-Chair.jpg',
     },
     {
-      name: 'Deepika ',
+      name: 'Shanthosh K V',
       position: 'Vice Chair',
-      image: imagePath + '/execom/aess/Deepika- Vice chair.jpg',
+      image: imagePath + '/execom/aess/2026/Shanthosh KV - Vice Chair.jpeg',
     },
     {
-      name: 'Om Daxini',
+      name: 'Sarvika Raju Chamarthy',
       position: 'Secretary',
-      image: imagePath + '/execom/aess/Om Daxini - Secratary.jpg',
+      image: imagePath + '/execom/aess/2026/Sarvika Raju Chamarthy - Secretary.jpg',
     },
     {
-      name: 'Pratik B Matt',
+      name: 'Nitesh S',
       position: 'Treasurer',
-      image: imagePath + '/execom/aess/Pratik_B_Matt_-_Treasurer_.jpg',
+      image: imagePath + '/execom/aess/2026/Nitesh.S-Treasurer.jpg',
     },
   ],
   mtts: [
     {
-      name: 'Dr. Mahesh A',
+      name: 'Dr. Shanthi P',
       position: 'Faculty Advisor',
-      image: imagePath + '/execom/mtts/drmahesh.jpg',
+      image: imagePath + '/execom/aps/shanthi_maam.jpg',
     },
     {
-      name: 'Yasha Mandawat ',
+      name: 'Shreya S',
       position: 'Chair',
-      image: imagePath + '/execom/mtts/MTT_Chair_Yasha Mandawat.jpg',
+      image: '',
     },
-
     {
-      name: 'Yashasvi Jana',
+      name: 'Siddharth Ghosh',
       position: 'Secretary',
-      image: imagePath + '/execom/mtts/YashasviJana - MTTS_Secretary .jpg',
+      image: '',
     },
     {
-      name: 'Ananya Bhat',
+      name: 'Pruthvi Kiran',
       position: 'Treasurer',
-      image: imagePath + '/execom/mtts/MTTS_Treasurer_AnanyaRBhat.jpg',
+      image: '',
     },
   ],
 };
@@ -1361,11 +1365,65 @@ export const alumni = {
     ],
   },
   cas: {
+    2025: [
+      {
+        name: 'Dr.N.Ramavenkateswaran',
+        position: 'Faculty Advisor',
+        image: imagePath + '/alumni/2024/cas/Dr N Ramavenkateswaran.jpeg',
+      },
+      {
+        name: 'Shravan V',
+        position: 'Chair',
+        image: imagePath + '/alumni/2025/cas/Shravan V Chair (CASS).jpg',
+      },
+      {
+        name: 'Suryansh Tripathi',
+        position: 'Vice Chair',
+        image: imagePath + '/alumni/2025/cas/Suryansh Tripathi Vice Chair (CASS).jpg',
+      },
+      {
+        name: 'Shreekara H',
+        position: 'Secretary',
+        image: imagePath + '/alumni/2025/cas/Shreekara H. Secretary (CASS).jpg',
+      },
+      {
+        name: 'Tharun Reddy',
+        position: 'Treasurer',
+        image: imagePath + '/alumni/2025/cas/Tharun Reddy treasurer(CASS).jpg',
+      },
+    ],
+    2024: [
+      {
+        name: 'Dr.N.Ramavenkateswaran',
+        position: 'Faculty Advisor',
+        image: imagePath + '/alumni/2024/cas/Dr N Ramavenkateswaran.jpeg',
+      },
+      {
+        name: 'Pratham G',
+        position: 'Chair',
+        image: imagePath + '/alumni/2024/cas/PrathamG-Chair.jpg',
+      },
+      {
+        name: 'Kamath Abhay Sunil',
+        position: 'Vice Chair',
+        image: imagePath + '/alumni/2024/cas/Kamath Abhay Sunil Vice Chair.jpg',
+      },
+      {
+        name: 'Dhtuthi MD',
+        position: 'Secretary',
+        image: imagePath + '/alumni/2024/cas/Dhtuthi_MD-secretary_CAS.jpg',
+      },
+      {
+        name: 'Paridhi Sudarshan',
+        position: 'Treasurer',
+        image: imagePath + '/alumni/2024/cas/Paridhi Sudarshan-Treasurer.jpg',
+      },
+    ],
     2023: [
       {
         name: 'Dr. Shylashree.N ', //needs to be updated
         position: 'Faculty Advisor',
-        image: imagePath + '/execom/cas/dr_shylashree.jpeg',
+        image: imagePath + '/alumni/2024/cas/dr_shylashree.jpeg',
       },
       {
         name: 'Akash Kotagi',
@@ -1411,6 +1469,159 @@ export const alumni = {
       },
     ],
   },
+  sc: {
+    2025: [
+      {
+        name: 'Dr. Ravishankar Holla',
+        position: 'Faculty Advisor',
+        image: '',
+      },
+      {
+        name: 'Aditya Balan',
+        position: 'Chair',
+        image: imagePath + '/alumni/2025/sensorscouncil/Chair-Aditya Balan.jpg',
+      },
+      {
+        name: 'Krishna Purwar',
+        position: 'Secretary',
+        image: imagePath + '/alumni/2025/sensorscouncil/Secretary - Krishna Purwar.jpg',
+      },
+      {
+        name: 'Muhammad Ammar Siddiqui',
+        position: 'Treasurer',
+        image: imagePath + '/alumni/2025/sensorscouncil/Treasurer - Muhammad Ammar Siddiqui_.jpg',
+      },
+    ],
+    2024: [
+      {
+        name: 'Dr. Veena Divya K',
+        position: 'Faculty Advisor',
+        image: imagePath + '/alumni/2024/sensorscouncil/veena_maam.jpg',
+      },
+      {
+        name: 'Bhavik Bafna ',
+        position: 'Chair',
+        image: imagePath + '/alumni/2024/sensorscouncil/Bhavik Bafna - Chair.JPG',
+      },
+      {
+        name: 'Ashray A Pai',
+        position: 'Secretary',
+        image: imagePath + '/alumni/2024/sensorscouncil/Ashray A Pai- Secretory.JPG',
+      },
+      {
+        name: 'Shikhar Verma',
+        position: 'Treasurer',
+        image: imagePath + '/alumni/2024/sensorscouncil/Shikhar Verma-Treasurer.jpg',
+      },
+    ],
+  },
+  aess: {
+    2025: [
+      {
+        name: 'Dr. K S Shushrutha',
+        position: 'Faculty Advisor',
+        image: imagePath + '/alumni/2024/aess/drksshushrutha.png',
+      },
+      {
+        name: 'Gagana Y',
+        position: 'Chair',
+        image: imagePath + '/alumni/2025/aess/Gagana Y - Chair.jpg',
+      },
+      {
+        name: 'Samany S',
+        position: 'Vice Chair',
+        image: imagePath + '/alumni/2025/aess/Samany S - Vice Chair.jpg',
+      },
+      {
+        name: 'Aditi A',
+        position: 'Secretary',
+        image: imagePath + '/alumni/2025/aess/Aditi A - Secretary_.jpg',
+      },
+      {
+        name: 'Lishika U',
+        position: 'Treasurer',
+        image: imagePath + '/alumni/2025/aess/Lishika U - Treasurer.jpg',
+      },
+    ],
+    2024: [
+      {
+        name: 'Dr. K S Shushrutha',
+        position: 'Faculty Advisor',
+        image: imagePath + '/alumni/2024/aess/drksshushrutha.png',
+      },
+      {
+        name: 'Vishal Hugar ',
+        position: 'Chair',
+        image: imagePath + '/alumni/2024/aess/Vishal Hugar - Chair.jpeg',
+      },
+      {
+        name: 'Deepika ',
+        position: 'Vice Chair',
+        image: imagePath + '/alumni/2024/aess/Deepika- Vice chair.jpg',
+      },
+      {
+        name: 'Om Daxini',
+        position: 'Secretary',
+        image: imagePath + '/alumni/2024/aess/Om Daxini - Secratary.jpg',
+      },
+      {
+        name: 'Pratik B Matt',
+        position: 'Treasurer',
+        image: imagePath + '/alumni/2024/aess/Pratik_B_Matt_-_Treasurer_.jpg',
+      },
+    ],
+  },
+  mtts: {
+    2025: [
+      {
+        name: 'Dr. Mahesh A',
+        position: 'Faculty Advisor',
+        image: imagePath + '/alumni/2024/mtts/drmahesh.jpg',
+      },
+      {
+        name: 'Yashasvi Jana',
+        position: 'Chair',
+        image: imagePath + '/alumni/2025/mtts/Yashasvi Jana - Chair_.jpg',
+      },
+      {
+        name: 'Vipul Joshi',
+        position: 'Vice Chair',
+        image: imagePath + '/alumni/2025/mtts/Vipul Joshi - Vice Chair.jpeg',
+      },
+      {
+        name: 'Tanmay Joshi',
+        position: 'Secretary',
+        image: imagePath + '/alumni/2025/mtts/Tanmay Joshi- Secretary.jpg',
+      },
+      {
+        name: 'Harshith B',
+        position: 'Treasurer',
+        image: imagePath + '/alumni/2025/mtts/Harshith B- Treasurer.jpg',
+      },
+    ],
+    2024: [
+      {
+        name: 'Dr. Mahesh A',
+        position: 'Faculty Advisor',
+        image: imagePath + '/alumni/2024/mtts/drmahesh.jpg',
+      },
+      {
+        name: 'Yasha Mandawat ',
+        position: 'Chair',
+        image: imagePath + '/alumni/2024/mtts/MTT_Chair_Yasha Mandawat.jpg',
+      },
+      {
+        name: 'Yashasvi Jana',
+        position: 'Secretary',
+        image: imagePath + '/alumni/2024/mtts/YashasviJana - MTTS_Secretary .jpg',
+      },
+      {
+        name: 'Ananya Bhat',
+        position: 'Treasurer',
+        image: imagePath + '/alumni/2024/mtts/MTTS_Treasurer_AnanyaRBhat.jpg',
+      },
+    ],
+  },
   cs: {
     2022: [], //to be added
   },
@@ -1423,3 +1634,4 @@ export const about = {
 export { achievements as FPAchievementImages, whatWeDo as FPWhatWeDoImages } from './data/FrontPage/Carousels';
 export { whatWeDoText, SbachievementsText } from './data/FrontPage/Text';
 export { imagePath, hostname };
+
