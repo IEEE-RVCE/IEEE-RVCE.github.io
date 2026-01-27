@@ -107,7 +107,7 @@ Foster a culture of excellence in research and publications, emphasizing quality
             ))}
           </Grid>
         </Paper>
-        <AlumniAccordions members={alumni.aess} color="rgb(110 110 193)" />
+        <AlumniAccordions members={alumni.mtts} color="rgb(110 110 193)" />
         <br />
       </Container>
     </div>
