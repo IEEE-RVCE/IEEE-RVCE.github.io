@@ -258,7 +258,7 @@ export const execom = {
   ],
   compsoc: [
     {
-      name: 'Dr. Jyothi Shetty',
+      name: 'Dr. Jyoti Shetty',
       position: 'Faculty Advisor',
       image: 'https://rvce.edu.in/department/wp-content/uploads/2025/07/JYOTI-SHETTY-1-scaled.jpg',
     },
@@ -410,9 +410,9 @@ export const execom = {
   ],
   sight: [
     {
-      name: 'Dr Usha J',
+      name: 'Dr. Andhe Dharani',
       position: 'Faculty Advisor',
-      image: 'https://rvce.rveducationalinstitutions.com/department/wp-content/uploads/2025/07/USHA-J-1-scaled.jpg',
+      image: 'https://rvce.edu.in/department/wp-content/uploads/2025/07/ANDHE-DHARANI-1-scaled.jpg',
     },
     {
       name: 'Gaurav Kumar',
