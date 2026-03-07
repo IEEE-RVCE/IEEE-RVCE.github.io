@@ -200,12 +200,12 @@ export const execom = {
     {
       name: 'Vijayalaxmi Ashok Patil',
       position: 'Secretary',
-      image: imagePath + '/execom/main/Vijayalaxmi Ashok Patil - Secretary.jpg',
+      image: imagePath + '/execom/main/Vijayalaxmi-Secretary.jpg',
     },
     {
       name: 'Shreekara H',
       position: 'Joint Secratary',
-      image: imagePath + '/execom/main/Shreekara H - Joint Secretary.jpg',
+      image: imagePath + '/execom/main/Shreekara H - Joint Secretary .jpg',
     },
     {
       name: 'Manodnya Korishetty',
@@ -215,7 +215,7 @@ export const execom = {
     {
       name: 'Samanvitha L',
       position: 'Joint Treasurer',
-      image: imagePath + '/execom/main/Samanvitha L - Joint Treasurer.jpg',
+      image: imagePath + '/execom/main/SamanvithaL-JointTreasurer.jpg',
     },
 
     {
@@ -226,12 +226,27 @@ export const execom = {
     {
       name: 'Hitarth Mehra',
       position: 'Design Lead',
-      image: imagePath + '/execom/main/Hitarth Mehra - Design Lead.jpeg', //to be changed
+      image: imagePath + '/execom/main/Hitarth Mehra- Design Lead.JPG', //to be changed
     },
     {
       name: 'Yadamreddy Navaneeth',
       position: 'Design Lead',
-      image: imagePath + '/execom/main/Yadamreddy Navaneeth - Design Lead.png', //to be changed
+      image: imagePath + '/execom/main/YadamreddyNavaneeth-DesignLead.png', //to be changed
+    },
+    {
+      name: 'Kavin Krishnan C',
+      position: 'MDC Chair',
+      image: imagePath + '/execom/mdc/KavinKrishnanC_MDCChair.jpg', //to be changed
+    },
+    {
+      name: 'Pratham G Bhat',
+      position: 'MDC Secretary',
+      image: imagePath + '/execom/mdc/Pratham G Bhat - MDC Secretary.jpg', //to be changed
+    },
+    {
+      name: 'Suneesh Bare',
+      position: 'MDC Secretary',
+      image: imagePath + '/execom/mdc/Suneesh Bare - MDC Secretary.jpeg', //to be changed
     },
   ],
   aps: [
@@ -258,7 +273,7 @@ export const execom = {
   ],
   compsoc: [
     {
-      name: 'Dr. Jyothi Shetty',
+      name: 'Dr. Jyoti Shetty',
       position: 'Faculty Advisor',
       image: 'https://rvce.edu.in/department/wp-content/uploads/2025/07/JYOTI-SHETTY-1-scaled.jpg',
     },
@@ -280,7 +295,7 @@ export const execom = {
     {
       name: 'Vikram S Iyengar',
       position: 'Treasurer',
-      image: imagePath + '/execom/compsoc/Vikram S Iyengar - Treasurer.jpg',
+      image: imagePath + '/execom/compsoc/Vikram S Iyengar- Treasurer.jpg',
     },
   ],
   comsoc: [
@@ -302,7 +317,7 @@ export const execom = {
     {
       name: 'Anup P Kothari',
       position: 'Secretary',
-      image: imagePath + '/execom/comsoc/anup.jpg',
+      image: imagePath + '/execom/comsoc/Anup P Kothari - Secratary.jpg',
     },
     {
       name: 'Anurag',
@@ -329,7 +344,7 @@ export const execom = {
     {
       name: 'Akshat Raj',
       position: 'Secretary',
-      image: imagePath + '/execom/pes/Akshat Raj-Secretary.jpg',
+      image: imagePath + '/execom/pes/Akshat Raj --Secretary.png',
     },
     {
       name: 'Parth Rathi',
@@ -351,17 +366,17 @@ export const execom = {
     {
       name: 'Vrinda V Katti',
       position: 'Chair',
-      image: imagePath + '/execom/sps/Vrinda V Katti - SPS CHAIR.JPG',
+      image: imagePath + '/execom/sps/VRINDA V KATTI - CHAIR.jpg',
     },
     {
       name: 'V Megha',
       position: 'Secretary',
-      image: imagePath + '/execom/sps/V Megha_SPS_Sec.jpg',
+      image: imagePath + '/execom/sps/V Megha.jpg',
     },
     {
       name: 'Sughosha Rao R',
       position: 'Treasurer',
-      image: imagePath + '/execom/sps/Sughosha Rao R_SPS_Treasurer.jpg',
+      image: imagePath + '/execom/sps/SughoshaRaoR-Treasures.png',
     },
   ],
   wie: [
@@ -383,7 +398,7 @@ export const execom = {
     {
       name: 'Khushi N',
       position: 'Treasurer',
-      image: imagePath + '/execom/wie/Khushi- Treasurer .jpeg',
+      image: imagePath + '/execom/wie/Khushi N-Treasurer.jpg',
     },
   ],
   ras: [
@@ -395,24 +410,24 @@ export const execom = {
     {
       name: 'Y Sanjana',
       position: 'Chair',
-      image: imagePath + '/execom/ras/Sanjana Chair.jpg',
+      image: imagePath + '/execom/ras/Y Sanjana_Chair.jpeg',
     },
     {
       name: 'D Aaditya',
       position: 'Secretary',
-      image: imagePath + '/execom/ras/D Aaditya Secretary .jpg',
+      image: imagePath + '/execom/ras/D.Aaditya secretary.jpg',
     },
     {
       name: 'Vartika Mrigwani',
       position: 'Treasurer',
-      image: imagePath + '/execom/ras/Vartika Mrigwani-Treasurer .jpg',
+      image: imagePath + '/execom/ras/Vartika_Treasurer.jpeg',
     },
   ],
   sight: [
     {
-      name: 'Dr Usha J',
+      name: 'Dr. Andhe Dharani',
       position: 'Faculty Advisor',
-      image: 'https://rvce.rveducationalinstitutions.com/department/wp-content/uploads/2025/07/USHA-J-1-scaled.jpg',
+      image: 'https://rvce.edu.in/department/wp-content/uploads/2025/07/ANDHE-DHARANI-1-scaled.jpg',
     },
     {
       name: 'Gaurav Kumar',
@@ -427,7 +442,7 @@ export const execom = {
     {
       name: 'Kulkarni Aditya Vivek',
       position: 'Treasurer',
-      image: imagePath + '/execom/sight/neha_p.jpg',
+      image: imagePath + '/execom/sight/Kulkarni Aditya - Treasurer.jpeg',
     },
   ],
   cas: [
@@ -439,17 +454,17 @@ export const execom = {
     {
       name: 'Tharun Reddy P',
       position: 'Chair',
-      image: '',
+      image: imagePath + '/execom/cas/Tharun Reddy P -chair.jpg',
     },
     {
       name: 'Yash C Kerure',
       position: 'Vice Chair',
-      image: '',
+      image: imagePath + '/execom/cas/Yash C Kerure - Vice Chair.jpg',
     },
     {
       name: 'Tanvi Prasad Kulkarni',
       position: 'Secretary',
-      image: '',
+      image: imagePath + '/execom/cas/Tanvi Prasad Kulkarni - Secretary.jpg',
     },
     {
       name: 'Atharv Aniyappanavar',
@@ -471,17 +486,17 @@ export const execom = {
     {
       name: 'Vikas T',
       position: 'Chair',
-      image: '',
+      image: imagePath + '/execom/sc/Vikas T Chair.png',
     },
     {
       name: 'Snigdha Raj',
       position: 'Secretary',
-      image: '',
+      image: imagePath + '/execom/sc/Snigdha Raj_Secretary.jpeg',
     },
     {
       name: 'Suchitha M',
       position: 'Treasurer',
-      image: '',
+      image: imagePath + '/execom/sc/Suchitha M Treasurer.jpeg',
     },
   ],
 
