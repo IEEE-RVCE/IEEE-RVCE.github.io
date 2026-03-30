@@ -66,7 +66,7 @@ export default function MembershipBox() {
   return (
     <>
       <Box className={classes.bigbadBackground} ref={myRef}>
-        <Grid container alignContent="center" justify="center">
+        <Grid container alignContent="center" justifyContent="center">
           <Grid item>
             <Box>
               <h1>
@@ -84,7 +84,7 @@ export default function MembershipBox() {
 
             <GiveMeABreak num={2} />
           </Grid>
-          <Grid container alignItems="center" justify="center">
+          <Grid container alignItems="center" justifyContent="center">
             <Grid item>
               <HashLink smooth to="#whyjoinieee" className={classes.noUnderline}>
                 <Button
