@@ -59,7 +59,7 @@ export default function Footer(props) {
     <footer>
       <Box sm={12} className={classes.root}>
         <Container maxWidth="xl">
-          <Grid container spacing={1} justify="space-evenly">
+          <Grid container spacing={1} justifyContent="space-evenly">
             <Grid item xs={12} md={6} lg={2} key={1}>
               <Typography className={classes.typography} variant="h6">
                 Useful links
@@ -106,7 +106,7 @@ export default function Footer(props) {
                 <br />
               </Typography>
               <br />
-              <Grid container justify="space-between" style={{ paddingRight: 60 }}>
+              <Grid container justifyContent="space-between" style={{ paddingRight: 60 }}>
                 <IconButton
                   href="https://instagram.com/ieee_rvce?igshid=1hbfgquvdu0yt"
                   target="_blank"
