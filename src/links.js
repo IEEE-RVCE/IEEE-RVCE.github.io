@@ -251,24 +251,24 @@ export const execom = {
   ],
   aps: [
     {
-      name: 'Prof. Shanti P',
+      name: 'Dr. Ramavenkateswaran N',
       position: 'Faculty Advisor',
-      image: imagePath + '/alumni/2024/aps/shanthi_maam.jpg',
+      image: 'https://rvce.edu.in/department/wp-content/uploads/2025/07/RAMAVENKATESWARAN-N-1-scaled.jpg',
     },
     {
-      name: 'Vrinda. V. Patil',
+      name: 'Vibhashree Vasuki',
       position: 'Chair',
-      image: imagePath + '/alumni/2025/aps/Chair - Vrinda V Patil.jpg',
+      image: imagePath + '/execom/aps/Vibhashree Vasuki - CHAIR.jpeg',
     },
     {
-      name: 'Srujan B N',
+      name: 'Manav Verma',
       position: 'Secretary',
-      image: imagePath + '/alumni/2025/aps/Secretary - Srujan B N.jpg',
+      image: imagePath + '/execom/aps/Manav_Verma-Secretary.jpeg',
     },
     {
-      name: 'Srujan Prasad',
+      name: 'Mahak',
       position: 'Treasurer',
-      image: imagePath + '/alumni/2025/aps/Treasurer - Srujan Prasad .jpg',
+      image: imagePath + '/execom/aps/Mahak-Treasurer.jpeg',
     },
   ],
   compsoc: [
@@ -302,7 +302,7 @@ export const execom = {
     {
       name: 'Dr. Nethravati',
       position: 'Faculty Advisor',
-      image: imagePath + '/execom/comsoc/Nethravati.jpg',
+      image: 'https://rvce.edu.in/department/wp-content/uploads/2025/07/NETRAVATHI-S-1-scaled.jpg',
     },
     {
       name: 'Trisha Bhattacharya',
@@ -329,7 +329,7 @@ export const execom = {
     {
       name: 'Prof. SG Srivani',
       position: 'Faculty Advisor',
-      image: 'https://rvce.rveducationalinstitutions.com/department/wp-content/uploads/2025/07/SRIVANI-1-scaled.jpg',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQENg1TB1F-y2A/profile-displayphoto-shrink_800_800/B56ZZ2Z07jHgAk-/0/1745743204494?e=1784160000&v=beta&t=jGZhECQnJiGBymywePUwjW1bO7i4HK_zxR5QBioHSn0',
     },
     {
       name: 'Pranav P Kamath',
@@ -502,9 +502,9 @@ export const execom = {
 
   aess: [
     {
-      name: 'Dr. K S Shushrutha',
+      name: 'Dr. Karthik Vel E',
       position: 'Faculty Advisor',
-      image: imagePath + '/alumni/2024/aess/drksshushrutha.png',
+      image: 'https://rvce.edu.in/department/wp-content/uploads/2026/03/AS-Karthik-Vel-2-scaled.png',
     },
     {
       name: 'Shambhavi Shukla',
@@ -531,7 +531,7 @@ export const execom = {
     {
       name: 'Dr. Shanthi P',
       position: 'Faculty Advisor',
-      image: imagePath + '/execom/aps/shanthi_maam.jpg',
+      image: 'https://rvce.edu.in/department/wp-content/uploads/2025/07/SHANTHI-P-ETE-1-scaled.jpg',
     },
     {
       name: 'Shreya S',
