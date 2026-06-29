@@ -502,9 +502,9 @@ export const execom = {
 
   aess: [
     {
-      name: 'Dr. Karthik Vel E',
+      name: 'Dr. Mahesh A',
       position: 'Faculty Advisor',
-      image: 'https://rvce.edu.in/department/wp-content/uploads/2026/03/AS-Karthik-Vel-2-scaled.png',
+      image: 'https://rvce.edu.in/department/wp-content/uploads/2025/07/MAHESH-A-1-2-scaled.jpg',
     },
     {
       name: 'Shambhavi Shukla',
