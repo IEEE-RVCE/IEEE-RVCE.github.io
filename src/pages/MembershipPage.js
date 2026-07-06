@@ -332,7 +332,7 @@ export default function MembershipPage() {
               <Typography variant="h3">Why Join IEEE?</Typography>
               <GiveMeABreak num={2} />
 
-              <Grid container spacing={4} justify="center">
+              <Grid container spacing={4} justifyContent="center">
                 <Grid item xs={12} md={4} align="center">
                   <div>
                     <img src={images.membership.benefit1} alt="benefit" style={{ width: '40%', height: '40%' }} />
