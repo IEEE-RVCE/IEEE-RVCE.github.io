@@ -101,7 +101,7 @@ export default function AppBarMenu(props) {
     let listitems = props.items;
     let items = listitems.map(item => {
       return (
-        <Link to={item.link} className={classes.menuitem}>
+        <Link to={item.link} className={classes.menuitem} key={item.name}>
           <ListItem onClick={() => handleDrawer(false)} button key={item.name} className={classes.nested}>
             <ListItemText primary={item.name} />
           </ListItem>

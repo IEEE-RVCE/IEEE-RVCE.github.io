@@ -167,7 +167,7 @@ export default function EventPage() {
         </Typography>
         <br />
         <br />
-        <Grid container spacing={3} justify="center">
+        <Grid container spacing={3} justifyContent="center">
           <Grid xs={12} md={6}>
             <div className={classes.griditem}>
               <Typography variant="h6">
