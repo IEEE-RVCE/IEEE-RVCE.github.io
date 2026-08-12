@@ -403,9 +403,9 @@ export const execom = {
   ],
   ras: [
     {
-      name: 'Dr. Geetha KS',
+      name: 'Dr. Rohini S Hallikar',
       position: 'Faculty Advisor',
-      image: 'https://rvce.edu.in/department/wp-content/uploads/2025/07/Vice-Principal-1-scaled.jpg',
+      image: imagePath + '/execom/ras/Rohini S Hallikar - Faculty Advisor.jpg',
     },
     {
       name: 'Y Sanjana',
